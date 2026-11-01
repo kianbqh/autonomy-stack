@@ -21,4 +21,4 @@ draw.text((5, 5), f"Red: candidate gaps | {row['image']} | {len(row['gaps'])} ca
 Path(args.out).parent.mkdir(parents=True, exist_ok=True)
 image.save(args.out, quality=85)
 print(json.dumps({'output': args.out, 'source_image': row['image'], 'gap_candidates': len(row['gaps']),
-                  'selection': 'most candidates among the eight measured images', 'inference_rerun': False}))
+                  'selection': f"most candidates among the {len(report['per_image'])} measured images", 'inference_rerun': False}))

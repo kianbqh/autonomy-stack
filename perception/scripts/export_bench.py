@@ -10,8 +10,19 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--weights", default="runs/smoke/weights/best.pt"); ap.add_argument("--imgsz", type=int, default=640)
 ap.add_argument("--images", default="data/sku110k_yolo/images/val"); ap.add_argument("--n", type=int, default=20)
 ap.add_argument("--image-list", help="Official val.txt; resolves paths relative to the list instead of globbing mixed splits")
+ap.add_argument("--data", help="Resolve the official validation list/directory from this dataset YAML")
 ap.add_argument("--threads", type=int, default=4); ap.add_argument("--out", default="results/onnx_bench.json")
 a = ap.parse_args()
+if a.data:
+    from pathlib import Path
+    from ultralytics.data.utils import check_det_dataset
+    assert not a.image_list, 'Choose --data or --image-list'
+    validation_path = Path(check_det_dataset(a.data, autodownload=False)['val'])
+    if validation_path.suffix == '.txt':
+        a.image_list = str(validation_path)
+    else:
+        assert validation_path.is_dir(), validation_path
+        a.images = str(validation_path)
 os.makedirs(os.path.dirname(a.out) or '.', exist_ok=True)
 
 onnx_path = YOLO(a.weights).export(format="onnx", imgsz=a.imgsz, simplify=True, dynamic=False)
@@ -64,7 +75,8 @@ for i, p in enumerate(imgs):
 pct = lambda v, q: float(np.percentile(v, q))
 res = {"weights": a.weights, "onnx": onnx_path, "imgsz": a.imgsz, "threads": a.threads,
        "input_seed": 0, "warmup_runs": 5, "timed_runs": 50, "batch": 1,
-       "image_list": a.image_list, "image_split": "official validation" if a.image_list else "--images directory",
+       "data": a.data, "image_list": a.image_list,
+       "image_split": "official validation" if a.image_list or a.data else "--images directory",
        "onnx_size_mb": round(os.path.getsize(onnx_path) / 1e6, 2),
        "onnxruntime_ms": {"p50": round(pct(ort_ms, 50), 1), "p95": round(pct(ort_ms, 95), 1)},
        "pytorch_ms": {"p50": round(pct(pt_ms, 50), 1), "p95": round(pct(pt_ms, 95), 1)},

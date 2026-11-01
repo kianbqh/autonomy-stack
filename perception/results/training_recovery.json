@@ -1,0 +1,18 @@
+{
+  "run": "sku110k_full_yolo11s_b8",
+  "observed_absent_utc": "2026-11-01T09:25:04+00:00",
+  "exact_termination_utc": null,
+  "observation": "The previous WSL instance and its trainer were absent on continuation; the exact termination time and cause are unknown.",
+  "last_checkpoint_saved_utc": "2026-11-01T07:21:57.211417+00:00",
+  "checkpoint_bytes": 56936485,
+  "checkpoint_sha256": "0f2ee9b2e56e3cd7211c10b532c72de2f6d974a65cd9ef323ce7e3b2057fda83",
+  "completed_epochs_retained": 1,
+  "discarded_incomplete_epoch": 2,
+  "last_observed_incomplete_batch": "381/1027",
+  "resumed_utc": "2026-11-01T09:31:20.522793+00:00",
+  "total_epoch_target": 100,
+  "resume_state_verified": ["optimizer", "EMA", "scaler", "100-epoch schedule"],
+  "unchanged_configuration": {"model": "YOLO11s", "imgsz": 640, "batch": 8, "workers": 8, "seed": 0, "AMP": true},
+  "protocol": "Resume the same last.pt and redo the incomplete second epoch. The first completed epoch remains in the raw CSV and epoch callback records. This is checkpoint recovery, not a new pretrained run.",
+  "elapsed_time_protocol": "The final training timer sums completed epoch callback windows, including in-epoch validation and checkpoint work. It excludes initialization, the interruption gap and discarded incomplete-epoch work. Raw Ultralytics CSV time has an invocation-local origin and is preserved unchanged."
+}

@@ -43,6 +43,8 @@ python scripts/export_bench.py --weights /path/to/runs/sku110k_full_yolo11s/weig
 
 The preparation script safely resumes extraction by reusing complete files, then atomically rewrites labels so repeated conversion does not append duplicates. It hashes the supplied archive; `--download-record` can reuse an existing downloader's URL, size and checksum record. The training script saves exact arguments, actual loader counts, each epoch's elapsed time and metrics, the full raw CSV, best-weight hash and a separate validation of the best model with `max_det=1000`.
 
+To recover an interrupted run, repeat its training command with `--resume /path/to/runs/<same-name>/weights/last.pt`, keeping the same name, project, output and saved progress JSON. This restores optimizer/EMA state and retains completed epochs. The training timer sums completed epoch wall-time windows, including validation, checkpoint work and any logged pause within an epoch; initialization, interruption gaps and discarded partial epochs are separate. The full-data run's [checkpoint recovery record](results/training_recovery.json) preserves its actual interruption and retained checkpoint.
+
 ONNX export compares raw outputs against PyTorch on the same seed-0 input. Raw CPU forward measurements use five warmup calls followed by 50 timed calls, batch 1 and four threads. The separate validation-image calls include image loading, preprocessing, inference and NMS, including first-call initialization; gap grouping and drawing are outside that timer. The script records all timings, model hashes and per-image detections/candidates.
 
 ## Code and checks

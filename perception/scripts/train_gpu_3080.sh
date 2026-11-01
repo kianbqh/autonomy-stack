@@ -4,8 +4,10 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 MODEL=${MODEL:-yolo11s.pt}; EPOCHS=${EPOCHS:-100}; IMGSZ=${IMGSZ:-640}; BATCH=${BATCH:-8}
 DATA=${DATA:-SKU-110K.yaml}; RUN_PROJECT=${RUN_PROJECT:-runs}
+RUN_NAME=${RUN_NAME:-sku110k_full_yolo11s}
+resume_args=()
+if [[ -n "${RESUME:-}" ]]; then resume_args=(--resume "$RESUME"); fi
 python scripts/train.py --model "$MODEL" --data "$DATA" --device 0 --epochs "$EPOCHS" --imgsz "$IMGSZ" \
-  --batch "$BATCH" --workers 8 --seed 0 --name sku110k_full_yolo11s --project "$RUN_PROJECT" --out results/train_full_3080.json
-# Pass the official validation image directory explicitly when images are not in data/.
-python scripts/export_bench.py --weights "$RUN_PROJECT/sku110k_full_yolo11s/weights/best.pt" \
-  --images "${VAL_IMAGES:-data/sku110k_yolo/images/val}" --out results/onnx_bench_full.json
+  --batch "$BATCH" --workers 8 --seed 0 --name "$RUN_NAME" --project "$RUN_PROJECT" --out results/train_full_3080.json "${resume_args[@]}"
+python scripts/export_bench.py --weights "$RUN_PROJECT/$RUN_NAME/weights/best.pt" \
+  --data "$DATA" --out results/onnx_bench_full.json

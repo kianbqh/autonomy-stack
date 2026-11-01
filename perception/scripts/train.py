@@ -28,12 +28,14 @@ parser.add_argument('--project', default='runs')
 parser.add_argument('--warmup-epochs', type=float, default=3.0)
 parser.add_argument('--out', default='results/train_full_3080.json')
 parser.add_argument('--seed', type=int, default=0)
+parser.add_argument('--resume', type=Path, help='Resume this run from its last.pt, retaining optimizer and completed epochs')
 args = parser.parse_args()
 out = Path(args.out).resolve()
 out.parent.mkdir(parents=True, exist_ok=True)
 project = Path(args.project).resolve()
 run = project / args.name
-assert not (run / 'results.csv').exists(), 'Existing run must not be overwritten; choose a new name or explicitly resume it'
+progress = out.with_name(out.stem + '_progress.json')
+assert args.resume or not (run / 'results.csv').exists(), 'Existing run must not be overwritten; choose a new name or explicitly resume it'
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -43,9 +45,9 @@ def save(path, data):
     temporary.write_text(json.dumps(data, indent=2, allow_nan=False, default=str) + '\n')
     temporary.replace(path)
 
-model = YOLO(args.model)
+model = YOLO(str(args.resume) if args.resume else args.model)
 pretrained = Path(model.ckpt_path)
-metadata = {
+metadata = json.loads(progress.read_text()) if args.resume else {
     'started_utc': datetime.now(timezone.utc).isoformat(), 'requested': vars(args),
     'pretrained': {'file': pretrained.name, 'sha256': sha(pretrained)},
     'environment': {'platform': platform.platform(), 'python': platform.python_version(),
@@ -56,7 +58,25 @@ metadata = {
     'pretrained_source': 'Official Ultralytics assets release, resolved by the installed YOLO loader',
     'status': 'preparing', 'epochs': [],
 }
-progress = out.with_name(out.stem + '_progress.json')
+resume_epochs = 0
+invocation_started = datetime.now(timezone.utc).isoformat()
+if args.resume:
+    assert args.resume.resolve() == (run / 'weights/last.pt').resolve(), 'Resume only this run\'s last checkpoint'
+    resume_epochs = int(model.ckpt['epoch']) + 1
+    rows = list(csv.DictReader((run / 'results.csv').open()))
+    assert len(rows) == resume_epochs, (len(rows), resume_epochs)
+    assert [record['epoch'] for record in metadata['epochs']] == list(range(1, resume_epochs + 1))
+    assert int(model.ckpt['train_args']['epochs']) == args.epochs
+    assert model.ckpt.get('optimizer') is not None, 'A resumable optimizer state is required'
+    metadata.setdefault('resume_history', []).append({
+        'started_utc': invocation_started, 'checkpoint_epoch': resume_epochs,
+        'checkpoint_sha256': sha(args.resume), 'script_sha256': sha(__file__),
+        'requested': vars(args), 'previous_status': metadata['status'],
+        'reason': 'The previous WSL instance exited; resume the saved epoch and discard the incomplete next epoch.',
+    })
+metadata['status'] = 'preparing'
+metadata['current_invocation_started_utc'] = invocation_started
+metadata['current_script_sha256'] = sha(__file__)
 save(progress, metadata)
 epoch_start = 0
 
@@ -71,6 +91,8 @@ def loader_report(loader, list_path):
             'batch_size': loader.batch_size, 'workers': loader.num_workers}
 
 def prepared(trainer):
+    assert trainer.start_epoch == resume_epochs
+    assert trainer.epochs == args.epochs and trainer.batch_size == args.batch
     metadata['loaders'] = {'train': loader_report(trainer.train_loader, trainer.data['train']),
                            'val': loader_report(trainer.test_loader, trainer.data[trainer.args.split])}
     metadata['actual_device'] = str(trainer.device)
@@ -107,11 +129,13 @@ try:
     model.train(data=str(Path(args.data).resolve()) if Path(args.data).is_file() else args.data,
                 epochs=args.epochs, imgsz=args.imgsz, batch=args.batch, device=args.device, workers=args.workers,
                 project=str(project), name=args.name, exist_ok=True, max_det=1000, plots=False, verbose=False,
-                amp=args.device != 'cpu', warmup_epochs=args.warmup_epochs, seed=args.seed, deterministic=True)
+                amp=args.device != 'cpu', warmup_epochs=args.warmup_epochs, seed=args.seed, deterministic=True,
+                resume=str(args.resume) if args.resume else False)
     train_elapsed = time.perf_counter() - t0
     best = run / 'weights/best.pt'
     raw_epochs = list(csv.DictReader((run / 'results.csv').open()))
     assert len(raw_epochs) == args.epochs, (len(raw_epochs), args.epochs)
+    assert [record['epoch'] for record in metadata['epochs']] == list(range(1, args.epochs + 1))
     copied = out.with_name('full_training_epochs.csv')
     shutil.copyfile(run / 'results.csv', copied)
     shutil.copyfile(run / 'args.yaml', out.with_name('full_training_args.yaml'))
@@ -120,7 +144,10 @@ try:
                                     imgsz=args.imgsz, batch=model.trainer.batch_size, device=args.device, max_det=1000,
                                     plots=False, verbose=False, project=str(project), name=args.name + '_val', exist_ok=True)
     metadata.update({'status': 'complete', 'finished_utc': datetime.now(timezone.utc).isoformat(),
-                     'epochs_completed': len(raw_epochs), 'train_seconds': train_elapsed,
+                     'epochs_completed': len(raw_epochs),
+                     'train_seconds': sum(record['elapsed_s'] for record in metadata['epochs']),
+                     'training_timer_scope': 'Sum of completed epoch wall-time windows, including in-epoch validation; excludes setup and discarded incomplete epoch work.',
+                     'last_invocation_seconds': train_elapsed,
                      'validation_seconds': time.perf_counter() - t_val,
                      'validation_split': 'official val', 'max_det': 1000,
                      'actual_final_batch': model.trainer.batch_size,
