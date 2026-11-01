@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-11-01T03:14:21.5067541Z",
+  "environment": "node:24-alpine container in G-backed WSL2 Docker runtime",
+  "node": "24.22.2",
+  "npm": "11.19.1",
+  "typecheck": "passed",
+  "tests": 14,
+  "failures": 0,
+  "skipped": 0,
+  "production_build": "passed",
+  "javascript_bundle": {
+    "file": "index-B6G15bDD.js",
+    "bytes": 785609,
+    "gzip_reported_kb": 209.53,
+    "sha256": "693802625f0fdd94652d4a6746c6d2e40c32572446279d0a14bcaef071c65824"
+  },
+  "benchmark_script_syntax": "node --check passed; browser was not launched locally"
+}

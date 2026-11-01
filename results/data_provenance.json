@@ -1,0 +1,17 @@
+{
+  "exported_utc": "2026-11-01T03:09:52.3933394Z",
+  "command": "python tools/export_run.py --fusion-repo <current ros2-sensor-fusion-sim checkout> --seed 3 --duration 120",
+  "source_repository": "https://github.com/kianbqh/ros2-sensor-fusion-sim",
+  "source_commit": "d47c6e01a08c8d25d2a07a395d1dd88b49b05d1b",
+  "source_sha256": {
+    "fusion_core/sim.py": "aa02f78ddefa58d34d4c903ef1c438a7de5be3faccf6c73d8222dd4433433220",
+    "fusion_core/ekf.py": "585a344316bd3d7655d6b570b7d4e38afac7704c8ea0657778ea03e322ee30b3"
+  },
+  "run_sha256": "b66329f01654709eeb5b37d0d012b32a40ec961d5d40a8ab48efd3767bda891c",
+  "bytes": 174518,
+  "seed": 3,
+  "duration_s": 120,
+  "samples": 1200,
+  "gps_fixes": 120,
+  "gps_rejected": 5
+}

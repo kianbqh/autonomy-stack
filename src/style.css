@@ -1,0 +1,9 @@
+html, body, #root { margin: 0; height: 100%; background: #0e1116; color: #e5e7eb; font: 13px system-ui, sans-serif; }
+.app { position: relative; height: 100%; }
+.viewport { position: absolute; inset: 0; }
+.panel { position: absolute; top: 12px; left: 12px; background: rgba(17, 24, 39, .85); padding: 10px 12px; border-radius: 8px; max-width: 520px; }
+.panel h1 { font-size: 15px; margin: 0 0 8px; }
+.row { display: flex; gap: 10px; align-items: center; margin: 6px 0; }
+.row input[type=range] { flex: 1; }
+.hud, .legend { margin-top: 6px; color: #9ca3af; }
+.error, .loading { padding: 20px; }
