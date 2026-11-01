@@ -84,6 +84,7 @@ metadata['current_invocation_started_utc'] = invocation_started
 metadata['current_script_sha256'] = sha(__file__)
 save(progress, metadata)
 epoch_start = 0
+active_training_epoch = None
 
 def loader_report(loader, list_path):
     dataset = loader.dataset
@@ -109,10 +110,11 @@ def prepared(trainer):
     print('VERIFIED_LOADERS ' + json.dumps(metadata['loaders']), flush=True)
 
 def start_epoch(trainer):
-    global epoch_start
+    global epoch_start, active_training_epoch
     if trainer.device.type == 'cuda':
         torch.cuda.synchronize()
     epoch_start = time.perf_counter()
+    active_training_epoch = trainer.epoch + 1
 
 def finish_epoch(trainer):
     if metadata['epochs'] and metadata['epochs'][-1]['epoch'] == trainer.epoch + 1:
@@ -123,6 +125,17 @@ def finish_epoch(trainer):
     record = {'epoch': trainer.epoch + 1, 'elapsed_s': elapsed, 'batch': trainer.batch_size,
               'metrics': {key: float(value) for key, value in trainer.metrics.items()},
               'gpu_peak_allocated_bytes': torch.cuda.max_memory_allocated() if trainer.device.type == 'cuda' else None}
+    if record['epoch'] != active_training_epoch:
+        # The library logs final-best validation at epochs+1 without starting a training epoch.
+        record['event'] = 'post_training_best_validation'
+        record['callback_epoch_label'] = record.pop('epoch')
+        record['elapsed_since_last_training_epoch_start_s'] = record.pop('elapsed_s')
+        record['last_training_epoch'] = active_training_epoch
+        record['timer_scope'] = 'Overlaps the last training epoch; not an additional epoch or isolated validation time.'
+        metadata.setdefault('post_training_evaluations', []).append(record)
+        save(progress, metadata)
+        print('POST_TRAIN_EVAL_EVENT ' + json.dumps(record), flush=True)
+        return
     metadata['epochs'].append(record)
     save(progress, metadata)
     print('EPOCH_COMPLETE ' + json.dumps(record), flush=True)
