@@ -1,0 +1,73 @@
+[1/30] gps0.5_none_odom-ok: 6s
+[2/30] gps0.5_none_odom-dropout_10s: 11s
+[3/30] gps0.5_dropout_10s_odom-ok: 16s
+[4/30] gps0.5_dropout_10s_odom-dropout_10s: 21s
+[5/30] gps0.5_dropout_30s_odom-ok: 29s
+[6/30] gps0.5_dropout_30s_odom-dropout_10s: 36s
+[7/30] gps0.5_spikes_odom-ok: 42s
+[8/30] gps0.5_spikes_odom-dropout_10s: 48s
+[9/30] gps0.5_bias_step_odom-ok: 55s
+[10/30] gps0.5_bias_step_odom-dropout_10s: 62s
+[11/30] gps1.5_none_odom-ok: 68s
+[12/30] gps1.5_none_odom-dropout_10s: 73s
+[13/30] gps1.5_dropout_10s_odom-ok: 79s
+[14/30] gps1.5_dropout_10s_odom-dropout_10s: 84s
+[15/30] gps1.5_dropout_30s_odom-ok: 91s
+[16/30] gps1.5_dropout_30s_odom-dropout_10s: 97s
+[17/30] gps1.5_spikes_odom-ok: 101s
+[18/30] gps1.5_spikes_odom-dropout_10s: 105s
+[19/30] gps1.5_bias_step_odom-ok: 110s
+[20/30] gps1.5_bias_step_odom-dropout_10s: 114s
+[21/30] gps3_none_odom-ok: 119s
+[22/30] gps3_none_odom-dropout_10s: 124s
+[23/30] gps3_dropout_10s_odom-ok: 129s
+[24/30] gps3_dropout_10s_odom-dropout_10s: 134s
+[25/30] gps3_dropout_30s_odom-ok: 139s
+[26/30] gps3_dropout_30s_odom-dropout_10s: 145s
+[27/30] gps3_spikes_odom-ok: 150s
+[28/30] gps3_spikes_odom-dropout_10s: 155s
+[29/30] gps3_bias_step_odom-ok: 161s
+[30/30] gps3_bias_step_odom-dropout_10s: 166s
+# AV safety evaluation (synthetic 2-D robot, see README)
+
+Scenario coverage: 30/30 matrix cells x 5 estimators x 20 seeds = 3000 episodes. Fault active at the closest obstacle approach in 68.9% of faulted episodes. Cells with any EKF collision: ekf 26, ekf_monitor 19 of 30. Wall time 167s with 3 workers.
+
+Localization errors compare the updated estimate and truth at the same simulator time. NEES summaries are equal-weight means of per-episode summaries; the exceedance column averages each episode's sampled exceedance fraction.
+
+## By estimator (all scenarios)
+| estimator | episodes | collision_rate | collision_ci95 | success_rate | timeout_rate | min_clear_p05 | min_clear_median | loc_rmse_median | loc_max_p95 | time_success_median | nees_mean | frac_nees_gt_chi2_95 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| truth | 600 | 0.000 | [0.000, 0.006] | 1.000 | 0.000 | 0.909 | 0.931 | 0.000 | 0.000 | 26.450 | nan | nan |
+| raw | 600 | 0.723 | [0.686, 0.758] | 0.157 | 0.120 | -0.008 | -0.001 | 3.219 | 17.111 | 31.700 | nan | nan |
+| ekf_nogate | 600 | 0.442 | [0.402, 0.482] | 0.403 | 0.155 | -0.005 | 0.120 | 0.905 | 9.532 | 30.750 | 593.537 | 0.331 |
+| ekf | 600 | 0.297 | [0.262, 0.334] | 0.593 | 0.110 | -0.004 | 0.516 | 0.711 | 9.309 | 29.750 | 68.462 | 0.209 |
+| ekf_monitor | 600 | 0.102 | [0.080, 0.128] | 0.597 | 0.302 | -0.001 | 1.302 | 0.736 | 8.842 | 55.150 | 139.664 | 0.289 |
+
+## By GPS fault
+| gps_fault | estimator | episodes | collision_rate | collision_ci95 | success_rate | timeout_rate | min_clear_p05 | min_clear_median | loc_rmse_median | loc_max_p95 | time_success_median | nees_mean | frac_nees_gt_chi2_95 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| none | truth | 120 | 0.000 | [0.000, 0.031] | 1.000 | 0.000 | 0.909 | 0.931 | 0.000 | 0.000 | 26.450 | nan | nan |
+| none | raw | 120 | 0.633 | [0.544, 0.714] | 0.250 | 0.117 | -0.008 | -0.001 | 2.279 | 10.684 | 28.200 | nan | nan |
+| none | ekf_nogate | 120 | 0.325 | [0.248, 0.413] | 0.625 | 0.050 | -0.004 | 0.473 | 0.672 | 3.332 | 29.400 | 5.681 | 0.187 |
+| none | ekf | 120 | 0.258 | [0.188, 0.343] | 0.725 | 0.017 | -0.003 | 0.590 | 0.606 | 3.378 | 29.400 | 3.009 | 0.128 |
+| none | ekf_monitor | 120 | 0.033 | [0.013, 0.083] | 0.767 | 0.200 | 0.390 | 1.263 | 0.597 | 2.750 | 51.800 | 4.436 | 0.194 |
+| dropout_10s | truth | 120 | 0.000 | [0.000, 0.031] | 1.000 | 0.000 | 0.909 | 0.931 | 0.000 | 0.000 | 26.450 | nan | nan |
+| dropout_10s | raw | 120 | 0.717 | [0.630, 0.790] | 0.183 | 0.100 | -0.009 | -0.001 | 2.369 | 12.565 | 31.950 | nan | nan |
+| dropout_10s | ekf_nogate | 120 | 0.358 | [0.278, 0.447] | 0.583 | 0.058 | -0.004 | 0.365 | 0.706 | 4.743 | 28.950 | 22.319 | 0.188 |
+| dropout_10s | ekf | 120 | 0.325 | [0.248, 0.413] | 0.642 | 0.033 | -0.004 | 0.468 | 0.667 | 4.184 | 28.900 | 4.671 | 0.135 |
+| dropout_10s | ekf_monitor | 120 | 0.050 | [0.023, 0.105] | 0.725 | 0.225 | 0.070 | 1.364 | 0.639 | 2.651 | 54.000 | 4.997 | 0.199 |
+| dropout_30s | truth | 120 | 0.000 | [0.000, 0.031] | 1.000 | 0.000 | 0.909 | 0.931 | 0.000 | 0.000 | 26.450 | nan | nan |
+| dropout_30s | raw | 120 | 0.700 | [0.613, 0.775] | 0.117 | 0.183 | -0.009 | -0.001 | 3.417 | 16.788 | 54.150 | nan | nan |
+| dropout_30s | ekf_nogate | 120 | 0.333 | [0.255, 0.422] | 0.567 | 0.100 | -0.003 | 0.450 | 1.116 | 10.308 | 41.250 | 153.754 | 0.264 |
+| dropout_30s | ekf | 120 | 0.275 | [0.203, 0.361] | 0.633 | 0.092 | -0.002 | 0.580 | 1.041 | 9.819 | 41.300 | 15.263 | 0.214 |
+| dropout_30s | ekf_monitor | 120 | 0.125 | [0.077, 0.196] | 0.533 | 0.342 | -0.000 | 1.446 | 0.840 | 3.748 | 59.925 | 19.395 | 0.283 |
+| spikes | truth | 120 | 0.000 | [0.000, 0.031] | 1.000 | 0.000 | 0.909 | 0.931 | 0.000 | 0.000 | 26.450 | nan | nan |
+| spikes | raw | 120 | 0.800 | [0.720, 0.862] | 0.100 | 0.100 | -0.008 | -0.002 | 6.671 | 21.488 | 33.275 | nan | nan |
+| spikes | ekf_nogate | 120 | 0.683 | [0.596, 0.760] | 0.100 | 0.217 | -0.007 | -0.001 | 1.524 | 12.335 | 39.375 | 1798.519 | 0.496 |
+| spikes | ekf | 120 | 0.225 | [0.159, 0.308] | 0.700 | 0.075 | -0.003 | 0.538 | 0.652 | 3.847 | 29.525 | 5.194 | 0.171 |
+| spikes | ekf_monitor | 120 | 0.075 | [0.040, 0.136] | 0.675 | 0.250 | -0.000 | 1.299 | 0.663 | 3.113 | 52.600 | 6.050 | 0.226 |
+| bias_step | truth | 120 | 0.000 | [0.000, 0.031] | 1.000 | 0.000 | 0.909 | 0.931 | 0.000 | 0.000 | 26.450 | nan | nan |
+| bias_step | raw | 120 | 0.767 | [0.683, 0.833] | 0.133 | 0.100 | -0.008 | -0.002 | 3.026 | 12.353 | 30.825 | nan | nan |
+| bias_step | ekf_nogate | 120 | 0.508 | [0.420, 0.596] | 0.142 | 0.350 | -0.005 | -0.000 | 1.611 | 9.825 | 63.100 | 987.412 | 0.522 |
+| bias_step | ekf | 120 | 0.400 | [0.317, 0.489] | 0.267 | 0.333 | -0.005 | 0.431 | 0.965 | 14.564 | 29.775 | 314.173 | 0.396 |
+| bias_step | ekf_monitor | 120 | 0.225 | [0.159, 0.308] | 0.283 | 0.492 | -0.002 | 1.183 | 1.497 | 12.909 | 45.675 | 663.445 | 0.541 |

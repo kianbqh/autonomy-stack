@@ -1,0 +1,26 @@
+{
+  "source_repository": "kianbqh/ros2-sensor-fusion-sim",
+  "source_commit": "d47c6e01a08c8d25d2a07a395d1dd88b49b05d1b",
+  "implementation_files_byte_identical": true,
+  "initializer_note": "Package initializer has different exports/docstring; sim.py and ekf.py are byte-identical.",
+  "files": [
+    {
+      "file": "__init__.py",
+      "project2_sha256": "f504061a82ae8b7e60fe9a664b5aab92d141f3a228eb3aa8a7b07e5bf3202674",
+      "vendored_sha256": "685978c1dd9fc42d7b69a015c8a0fe118829caea0ba46236c1e326a0372c0e88",
+      "byte_identical": false
+    },
+    {
+      "file": "ekf.py",
+      "project2_sha256": "585a344316bd3d7655d6b570b7d4e38afac7704c8ea0657778ea03e322ee30b3",
+      "vendored_sha256": "585a344316bd3d7655d6b570b7d4e38afac7704c8ea0657778ea03e322ee30b3",
+      "byte_identical": true
+    },
+    {
+      "file": "sim.py",
+      "project2_sha256": "aa02f78ddefa58d34d4c903ef1c438a7de5be3faccf6c73d8222dd4433433220",
+      "vendored_sha256": "aa02f78ddefa58d34d4c903ef1c438a7de5be3faccf6c73d8222dd4433433220",
+      "byte_identical": true
+    }
+  ]
+}
