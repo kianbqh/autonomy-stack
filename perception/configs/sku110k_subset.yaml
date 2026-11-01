@@ -1,0 +1,5 @@
+# Small subset produced by scripts/prepare_subset.sh (smoke test on CPU)
+train: ../data/sku110k_yolo/images/train
+val: ../data/sku110k_yolo/images/val
+names:
+  0: object
