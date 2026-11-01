@@ -1,0 +1,25 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  viewer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test -- --reporter=default --reporter=junit --outputFile=results/vitest-junit.xml
+      - run: npm run build
+      - name: Install managed Chromium
+        run: npx playwright-core install --with-deps chromium
+      - name: Check interactions and measure SwiftShader rendering
+        run: npm run bench
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ci-swiftshader
+          path: results/
