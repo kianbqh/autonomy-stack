@@ -74,8 +74,11 @@ if args.resume:
         'started_utc': invocation_started, 'checkpoint_epoch': resume_epochs,
         'checkpoint_sha256': sha(args.resume), 'script_sha256': sha(__file__),
         'requested': vars(args), 'previous_status': metadata['status'],
+        'previous_failure': {key: metadata[key] for key in ['failed_utc', 'error', 'elapsed_before_failure_s'] if key in metadata},
         'reason': 'Explicit checkpoint recovery, retaining completed epochs and optimizer/EMA state.',
     })
+    for key in ['failed_utc', 'error', 'elapsed_before_failure_s']:
+        metadata.pop(key, None)  # the prior interruption is preserved in resume_history
 metadata['status'] = 'preparing'
 metadata['current_invocation_started_utc'] = invocation_started
 metadata['current_script_sha256'] = sha(__file__)
