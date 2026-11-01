@@ -4,6 +4,8 @@ I wanted a way to inspect the trajectories and uncertainty from my sensor-fusion
 
 A deterministic procedural point cloud provides a separate rendering workload, from 10,000 to two million points. It uses one `BufferGeometry` and one point draw call; the covariance ellipses are merged into one line-segment geometry.
 
+![100,000 points in the synchronized CI SwiftShader benchmark](results/screenshot_100k.png)
+
 ## Run
 
 Use Node 24:
@@ -38,7 +40,7 @@ The parser checks increasing sample times, finite vectors and positive-semidefin
 
 ## Local checks
 
-On 31 October 2026, **14/14 Vitest tests passed**, strict TypeScript checking passed, and the production build completed. The JavaScript bundle is **785.60 kB**, or **209.53 kB gzipped**. Checks used Node 24.22.2 and npm 11.19.1 in a Linux container backed by the local WSL2 disk. Details are in [`results/local_checks.json`](results/local_checks.json).
+On 31 October 2026, **14/14 Vitest tests passed**, strict TypeScript checking passed, and the production build completed. Local checks used Node 24.22.2 and npm 11.19.1 in a Linux container backed by the WSL2 disk; [`results/local_checks.json`](results/local_checks.json) identifies that revision. The final CI build also passed all 14 tests and typechecking, producing a **785,925-byte JavaScript bundle**, or **207,851 bytes with Node gzip**.
 
 Tests cover covariance ellipse geometry (including the quadratic-form identity at each vertex), ENU conversion, timeline lookup and yaw interpolation, RMSE, run validation, deterministic cloud generation and frame statistics.
 
@@ -50,6 +52,15 @@ Each group uses 31 warmup frame intervals followed by a nominal three-second mea
 
 The script validates the requested point count, a positive frame count, finite FPS and frame-time percentiles, draw calls, canvas size, and an actual renderer string containing `SwiftShader`. The `ci-swiftshader` artifact contains `bench.json`, browser and runner details, interaction results, and fresh screenshots. These measurements describe that CI software renderer.
 
+[CI run 41269265850](https://github.com/kianbqh/webgl-3d-viewer/actions/runs/41269265850) passed on tested code revision `9796ebda1732633b5223eb704ccfbda7607dac7f`. The runner exposed four CPUs from an AMD EPYC 9V45 processor; Chromium was 156.0.8078.4, with the renderer reporting ANGLE/Vulkan SwiftShader Device (Subzero).
+
+| Points | Frames | FPS | Frame p50 / p95 | CPU cloud preparation |
+|---:|---:|---:|---:|---:|
+| 10,000 | 463 | 154.64 | 6.4 / 9.7 ms | 4.8 ms |
+| 100,000 | 158 | 52.99 | 19.0 / 32.6 ms | 8.2 ms |
+| 1,000,000 | 22 | 7.44 | 134.6 / 137.7 ms | 35.5 ms |
+
+All three groups used **nine draw calls**. Full values and environment details are in [`results/bench.json`](results/bench.json). The interaction check dragged the timeline to 61.3 seconds, switched to 100,000 points and verified the cloud toggle changed draw calls from 9 to 8 and back to 9, with one canvas and no page errors; see [`results/ui-smoke.json`](results/ui-smoke.json) and its [screenshot](results/ui-smoke.png). The interactive HUD shows unsynchronized animation-callback frequency. The benchmark table uses synchronous pixel readback after every render.
 To run the same headless checks in another environment:
 
 ```bash
