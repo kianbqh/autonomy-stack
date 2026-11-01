@@ -1,6 +1,6 @@
 task: detect
 mode: train
-model: /opt/codex-resume/autonomy-stack/cache/yolo11s.pt
+model: /opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt
 data: /opt/codex-resume/autonomy-stack/datasets/SKU110K_fixed/data.yaml
 epochs: 100
 time: null
@@ -9,7 +9,7 @@ batch: 8
 imgsz: 640
 save: true
 save_period: -1
-cache: false
+cache: ram
 device: '0'
 workers: 8
 project: /opt/codex-resume/autonomy-stack/runs
@@ -17,7 +17,7 @@ name: sku110k_full_yolo11s_b8
 exist_ok: true
 pretrained: true
 cls_remap: true
-optimizer: auto
+optimizer: MuSGD
 verbose: false
 seed: 0
 deterministic: true
@@ -25,7 +25,7 @@ single_cls: false
 rect: false
 cos_lr: false
 close_mosaic: 10
-resume: false
+resume: /opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt
 amp: true
 fraction: 1.0
 profile: false
@@ -76,7 +76,7 @@ momentum: 0.937
 weight_decay: 0.0005
 warmup_epochs: 3.0
 warmup_momentum: 0.8
-warmup_bias_lr: 0.1
+warmup_bias_lr: 0.0
 distill_model: null
 dis: 6.0
 box: 7.5

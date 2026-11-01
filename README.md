@@ -54,11 +54,16 @@ Open `http://127.0.0.1:5176`. The command reruns two recorded safety cases, chec
 | Actual ROS 2 loop | 180 s launch, 175.05 s recorded metrics; fused RMSE 0.905 m vs held GPS 2.894 m | [ROS metrics](results/ros2_metrics.json) |
 | Safety matrix, 3,000 simulated episodes | Gated EKF 178/600 collisions; uncertainty monitor 61/600, with more timeouts | [Safety report](safety/results/safety_report.md) |
 | Native Windows RTX 3080 rendering | 10k / 100k / 1M points: 535.30 / 572.39 / 433.20 FPS | [Every frame interval and renderer](viz/results/native-gpu/bench.json) |
-| Full SKU-110K detector | Full official split prepared; 100-epoch YOLO11s training running | [Dataset provenance](perception/results/sku110k_full_provenance.json) |
+| Full SKU-110K detector | YOLO11s, 100 epochs; official 588-image validation mAP50 0.9281 / mAP50–95 0.5782 | [Training and validation](perception/results/train_full_3080.json) |
+| Detector ONNX export, CPU raw forward | 52.5 ms p50 / 53.9 ms p95, batch 1, four threads; raw output parity passed | [All timing samples and model hashes](perception/results/onnx_bench_full.json) |
 
 Fusion, control, ROS and the full safety matrix were measured locally on 31 October 2026. The integration reruns the two exported safety cases and verifies their outcomes, duration, minimum clearance and localization RMSE against those saved matrix rows. [Replay checks and hashes](results/replay_integration.json).
 
 The hardware rendering run used native Windows Chromium 156, NVIDIA driver 621.01 and actual RTX 3080 / ANGLE D3D11. It measured three-second windows at 1280×720 after 31 warmup intervals, synchronizing each GPU frame with `readPixels`. The safety scene has 12 draw calls. These are not a single-factor speedup comparison with the older fusion-only SwiftShader scene. [Rendering protocol and interactions](viz/README.md).
+
+The detector used the full official training split: 8,216 usable images and 1,207,996 product boxes after loader verification. Its reported scores come from a separate validation of the selected best checkpoint on all 588 validation images. [Detector setup, artifacts and CPU protocol](perception/README.md).
+
+[Download the trained weights and ONNX package](https://github.com/kianbqh/autonomy-stack/releases/download/sku110k-yolo11s-v1/yolo11s-sku110k-full.zip). The package includes the original model bytes, attribution and manifest; [download checksum](perception/results/model_release.json) and [individual model hashes](perception/results/model_artifacts.json) identify them.
 
 ## Modules and data
 

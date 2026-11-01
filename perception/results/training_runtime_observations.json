@@ -1,0 +1,308 @@
+[
+  {
+    "utc": "2026-11-01T09:59:04.058036+00:00",
+    "monotonic_s": 2058.153937237,
+    "label": "epoch2-postpause",
+    "completed_epochs": 1,
+    "last_epoch": [
+      {
+        "epoch": 1,
+        "elapsed_s": 504.99224424199974,
+        "batch": 8,
+        "metrics": {
+          "metrics/precision(B)": 0.85797,
+          "metrics/recall(B)": 0.7893,
+          "metrics/mAP50(B)": 0.8584,
+          "metrics/mAP50-95(B)": 0.494,
+          "val/box_loss": 1.42681,
+          "val/cls_loss": 0.69396,
+          "val/dfl_loss": 1.01662
+        },
+        "gpu_peak_allocated_bytes": 3083497984
+      }
+    ],
+    "status": "training",
+    "latest_log_lines": [
+      "\u001b[K      2/100      6.19G       1.51     0.7302      1.014       1851        640: 45% \u2501\u2501\u2501\u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500 470/1027 8.8it/s 19:47<1:04",
+      "\u001b[K      2/100      6.19G      1.509       0.73      1.014       1975        640: 45% \u2501\u2501\u2501\u2501\u2501\u2578\u2500\u2500\u2500\u2500\u2500\u2500 472/1027 10.3it/s 19:48<54.1s",
+      "\u001b[K      2/100      6.19G       1.51     0.7305      1.014       1434        640: 46% \u2501\u2501\u2501\u2501\u2501\u2578\u2500\u2500\u2500\u2500\u2500\u2500 473/1027 7.4it/s 19:49<1:15"
+    ],
+    "gpu_query": [
+      "nvidia-smi",
+      "--query-gpu=name,driver_version,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
+      "--format=csv"
+    ],
+    "gpu": "name, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, power.draw [W]\nNVIDIA GeForce RTX 3080, 621.01, 9 %, 8189 MiB, 12288 MiB, 48.80, 132.66 W\n",
+    "gpu_scope": "Adapter totals with ordinary desktop background; not per-process attribution.",
+    "io_pressure": "some avg10=88.59 avg60=77.61 avg300=49.81 total=1150910584\nfull avg10=85.08 avg60=75.14 avg300=48.73 total=1141228056\n",
+    "memory": {
+      "MemTotal": "16279428 kB",
+      "MemAvailable": "9370584 kB",
+      "SwapFree": "4194304 kB"
+    }
+  },
+  {
+    "utc": "2026-11-01T10:05:29.197573+00:00",
+    "monotonic_s": 2443.293476015,
+    "label": "epoch3-start",
+    "completed_epochs": 2,
+    "last_epoch": [
+      {
+        "epoch": 2,
+        "elapsed_s": 1516.697168435,
+        "batch": 8,
+        "metrics": {
+          "metrics/precision(B)": 0.8727,
+          "metrics/recall(B)": 0.81103,
+          "metrics/mAP50(B)": 0.87331,
+          "metrics/mAP50-95(B)": 0.51298,
+          "val/box_loss": 1.39337,
+          "val/cls_loss": 0.66424,
+          "val/dfl_loss": 0.99788
+        },
+        "gpu_peak_allocated_bytes": 3125420544
+      }
+    ],
+    "status": "training",
+    "latest_log_lines": [
+      "\u001b[K      3/100      3.72G       1.51     0.7335      1.004       1634        640: 17% \u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 184/1027 8.0it/s 55.2s<1:46",
+      "\u001b[K      3/100      3.72G      1.509     0.7329      1.004       1891        640: 18% \u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 186/1027 10.8it/s 55.3s<1:18Corrupt JPEG data: premature end of data segment",
+      "\u001b[K      3/100      3.72G       1.51      0.733      1.004       1542        640: 18% \u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 187/1027 7.7it/s 57.3s<1:49"
+    ],
+    "gpu_query": [
+      "nvidia-smi",
+      "--query-gpu=name,driver_version,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
+      "--format=csv"
+    ],
+    "gpu": "name, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, power.draw [W]\nNVIDIA GeForce RTX 3080, 621.01, 67 %, 5655 MiB, 12288 MiB, 57.60, 195.38 W\n",
+    "gpu_scope": "Adapter totals with ordinary desktop background; not per-process attribution.",
+    "io_pressure": "some avg10=82.70 avg60=80.18 avg300=73.42 total=1473404299\nfull avg10=80.18 avg60=77.40 avg300=70.72 total=1450389309\n",
+    "memory": {
+      "MemTotal": "16279428 kB",
+      "MemAvailable": "7854536 kB",
+      "SwapFree": "4177728 kB"
+    }
+  },
+  {
+    "utc": "2026-11-01T10:59:30.795664+00:00",
+    "monotonic_s": 5684.891564653,
+    "label": "after-f1-stop-epoch7",
+    "completed_epochs": 6,
+    "last_epoch": [
+      {
+        "epoch": 6,
+        "elapsed_s": 437.499803146,
+        "batch": 8,
+        "metrics": {
+          "metrics/precision(B)": 0.89312,
+          "metrics/recall(B)": 0.83005,
+          "metrics/mAP50(B)": 0.89514,
+          "metrics/mAP50-95(B)": 0.53828,
+          "val/box_loss": 1.3482,
+          "val/cls_loss": 0.61775,
+          "val/dfl_loss": 0.97911
+        },
+        "gpu_peak_allocated_bytes": 3434649600
+      }
+    ],
+    "status": "training",
+    "latest_log_lines": [
+      "\u001b[K      7/100      4.28G      1.429     0.6611     0.9775       1871        640: 35% \u2501\u2501\u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 363/1027 9.7it/s 15:12<1:08",
+      "\u001b[K      7/100      4.28G      1.429     0.6609     0.9774       1831        640: 35% \u2501\u2501\u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 365/1027 11.2it/s 15:13<59.2s",
+      "\u001b[K      7/100      4.28G      1.429      0.661     0.9773       2064        640: 35% \u2501\u2501\u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 367/1027 13.3it/s 15:13<49.5s"
+    ],
+    "gpu_query": [
+      "nvidia-smi",
+      "--query-gpu=name,driver_version,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
+      "--format=csv"
+    ],
+    "gpu": "name, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, power.draw [W]\nNVIDIA GeForce RTX 3080, 621.01, 2 %, 5739 MiB, 12288 MiB, 53.40, 136.24 W\n",
+    "gpu_scope": "Adapter totals with ordinary desktop background; not per-process attribution.",
+    "io_pressure": "some avg10=87.27 avg60=68.67 avg300=34.94 total=3322427947\nfull avg10=82.33 avg60=65.80 avg300=33.81 total=3224842896\n",
+    "memory": {
+      "MemTotal": "16279428 kB",
+      "MemAvailable": "10773104 kB",
+      "SwapFree": "2868032 kB"
+    }
+  },
+  {
+    "utc": "2026-11-01T11:13:38.046109+00:00",
+    "monotonic_s": 6532.14200857,
+    "label": "natural-pagecache-after-epoch9",
+    "completed_epochs": 9,
+    "last_epoch": [
+      {
+        "epoch": 9,
+        "elapsed_s": 213.7418570079999,
+        "batch": 8,
+        "metrics": {
+          "metrics/precision(B)": 0.89891,
+          "metrics/recall(B)": 0.83754,
+          "metrics/mAP50(B)": 0.90216,
+          "metrics/mAP50-95(B)": 0.54849,
+          "val/box_loss": 1.33153,
+          "val/cls_loss": 0.58963,
+          "val/dfl_loss": 0.97284
+        },
+        "gpu_peak_allocated_bytes": 3434649600
+      }
+    ],
+    "status": "training",
+    "latest_log_lines": [
+      "\u001b[K     10/100      4.28G      1.395     0.6296     0.9654       1778        640: 76% \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2500\u2500\u2500 786/1027 10.1it/s 1:49<23.9s",
+      "\u001b[K     10/100      4.28G      1.395     0.6296     0.9654       1316        640: 76% \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2500\u2500\u2500 788/1027 11.5it/s 1:49<20.7s",
+      "\u001b[K     10/100      4.28G      1.395     0.6296     0.9654       1758        640: 76% \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2500\u2500\u2500 789/1027 8.9it/s 1:49<26.9s"
+    ],
+    "gpu_query": [
+      "nvidia-smi",
+      "--query-gpu=name,driver_version,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
+      "--format=csv"
+    ],
+    "gpu": "name, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, power.draw [W]\nNVIDIA GeForce RTX 3080, 621.01, 63 %, 5739 MiB, 12288 MiB, 64.60, 249.30 W\n",
+    "gpu_scope": "Adapter totals with ordinary desktop background; not per-process attribution.",
+    "io_pressure": "some avg10=70.86 avg60=69.31 avg300=72.83 total=3998755340\nfull avg10=69.63 avg60=68.18 avg300=71.09 total=3882176990\n",
+    "memory": {
+      "MemTotal": "16279428 kB",
+      "MemAvailable": "11488924 kB",
+      "SwapFree": "2184316 kB"
+    }
+  },
+  {
+    "utc": "2026-11-01T11:30:36.778217+00:00",
+    "monotonic_s": 7550.874142247,
+    "label": "loader-ready-cache-fallback",
+    "completed_epochs": 11,
+    "last_epoch": [
+      {
+        "epoch": 11,
+        "elapsed_s": 97.48909489299967,
+        "batch": 8,
+        "metrics": {
+          "metrics/precision(B)": 0.89839,
+          "metrics/recall(B)": 0.84642,
+          "metrics/mAP50(B)": 0.90698,
+          "metrics/mAP50-95(B)": 0.55405,
+          "val/box_loss": 1.32109,
+          "val/cls_loss": 0.57959,
+          "val/dfl_loss": 0.96646
+        },
+        "gpu_peak_allocated_bytes": 3434649600
+      }
+    ],
+    "status": "training",
+    "latest_log_lines": [
+      "\u001b[K     12/100      6.19G      1.381     0.6194      0.963       1733        640: 44% \u2501\u2501\u2501\u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500 461/1027 10.6it/s 3:00<53.5s",
+      "\u001b[K     12/100      6.19G      1.381     0.6194     0.9631       1436        640: 45% \u2501\u2501\u2501\u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500 463/1027 8.1it/s 3:01<1:10",
+      "\u001b[K     12/100      6.19G      1.382     0.6196     0.9632       1537        640: 45% \u2501\u2501\u2501\u2501\u2501\u2500\u2500\u2500\u2500\u2500\u2500\u2500 465/1027 9.8it/s 3:01<57.1s"
+    ],
+    "loaders": {
+      "train": {
+        "official_list_count": 8219,
+        "usable_images": 8216,
+        "skipped_images": [
+          "train_4222.jpg",
+          "train_882.jpg",
+          "train_924.jpg"
+        ],
+        "usable_boxes": 1207996,
+        "batch_size": 8,
+        "workers": 8,
+        "cache_mode": null,
+        "ram_cache_packed": false
+      },
+      "val": {
+        "official_list_count": 588,
+        "usable_images": 588,
+        "skipped_images": [],
+        "usable_boxes": 90968,
+        "batch_size": 16,
+        "workers": 16,
+        "cache_mode": "ram",
+        "ram_cache_packed": true
+      }
+    },
+    "executed_source_sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044",
+    "gpu_query": [
+      "nvidia-smi",
+      "--query-gpu=name,driver_version,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
+      "--format=csv"
+    ],
+    "gpu": "name, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, power.draw [W]\nNVIDIA GeForce RTX 3080, 621.01, 5 %, 7699 MiB, 12288 MiB, 50.90, 104.72 W\n",
+    "gpu_scope": "Adapter totals with ordinary desktop background; not per-process attribution.",
+    "io_pressure": "some avg10=90.67 avg60=87.84 avg300=74.90 total=4577711247\nfull avg10=87.00 avg60=84.70 avg300=73.48 total=4453597425\n",
+    "memory": {
+      "MemTotal": "16279428 kB",
+      "MemAvailable": "10463604 kB",
+      "SwapFree": "4151844 kB"
+    }
+  },
+  {
+    "utc": "2026-11-01T11:35:51.650423+00:00",
+    "monotonic_s": 7865.746388637,
+    "label": "after-complete-epoch12",
+    "completed_epochs": 12,
+    "last_epoch": [
+      {
+        "epoch": 12,
+        "elapsed_s": 395.6212326490004,
+        "batch": 8,
+        "metrics": {
+          "metrics/precision(B)": 0.89705,
+          "metrics/recall(B)": 0.8492,
+          "metrics/mAP50(B)": 0.91113,
+          "metrics/mAP50-95(B)": 0.55508,
+          "val/box_loss": 1.32257,
+          "val/cls_loss": 0.57638,
+          "val/dfl_loss": 0.96608
+        },
+        "gpu_peak_allocated_bytes": 3125420544
+      }
+    ],
+    "status": "training",
+    "latest_log_lines": [
+      "\u001b[K     13/100      3.72G      1.378     0.6155     0.9618       2049        640: 49% \u2501\u2501\u2501\u2501\u2501\u2578\u2500\u2500\u2500\u2500\u2500\u2500 504/1027 11.8it/s 1:39<44.4s",
+      "\u001b[K     13/100      3.72G      1.378     0.6155     0.9618       1439        640: 49% \u2501\u2501\u2501\u2501\u2501\u2578\u2500\u2500\u2500\u2500\u2500\u2500 506/1027 13.4it/s 1:39<38.8s",
+      "\u001b[K     13/100      3.72G      1.378     0.6154     0.9618       1539        640: 49% \u2501\u2501\u2501\u2501\u2501\u2578\u2500\u2500\u2500\u2500\u2500\u2500 508/1027 14.8it/s 1:39<35.0s"
+    ],
+    "loaders": {
+      "train": {
+        "official_list_count": 8219,
+        "usable_images": 8216,
+        "skipped_images": [
+          "train_4222.jpg",
+          "train_882.jpg",
+          "train_924.jpg"
+        ],
+        "usable_boxes": 1207996,
+        "batch_size": 8,
+        "workers": 8,
+        "cache_mode": null,
+        "ram_cache_packed": false
+      },
+      "val": {
+        "official_list_count": 588,
+        "usable_images": 588,
+        "skipped_images": [],
+        "usable_boxes": 90968,
+        "batch_size": 16,
+        "workers": 16,
+        "cache_mode": "ram",
+        "ram_cache_packed": true
+      }
+    },
+    "executed_source_sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044",
+    "gpu_query": [
+      "nvidia-smi",
+      "--query-gpu=name,driver_version,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
+      "--format=csv"
+    ],
+    "gpu": "name, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, power.draw [W]\nNVIDIA GeForce RTX 3080, 621.01, 2 %, 5173 MiB, 12288 MiB, 57.60, 169.27 W\n",
+    "gpu_scope": "Adapter totals with ordinary desktop background; not per-process attribution.",
+    "io_pressure": "some avg10=74.20 avg60=76.08 avg300=77.99 total=4832458041\nfull avg10=71.84 avg60=73.73 avg300=75.75 total=4699589442\n",
+    "memory": {
+      "MemTotal": "16279428 kB",
+      "MemAvailable": "8534396 kB",
+      "SwapFree": "4113104 kB"
+    }
+  }
+]

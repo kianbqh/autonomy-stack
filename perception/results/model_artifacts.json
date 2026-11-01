@@ -1,0 +1,863 @@
+{
+  "created_utc": "2026-11-01T13:43:02.161882+00:00",
+  "training_epochs": 100,
+  "checkpoint_selection": "Actual best.pt selected during full100epoch run and separately validated on official val.",
+  "validation_split": "official val",
+  "validation_metrics": {
+    "mAP50": 0.9281214545999971,
+    "mAP50_95": 0.5781538474556148,
+    "precision": 0.91112035545225,
+    "recall": 0.8739226980916366
+  },
+  "training_complete_epoch_wall_seconds": 14048.445309482002,
+  "training_timer_scope": "Sum of100 completed training epoch callback windows, including logged pauses; excludes overlapping final-best-eval callback101, setup and discarded partial work.",
+  "last_training_invocation_elapsed_seconds": 7965.104089410999,
+  "recorded_first_batch8_start_utc": "2026-11-01T07:12:15.888224+00:00",
+  "final_best_validation_finish_utc": "2026-11-01T13:41:01.224858+00:00",
+  "recorded_first_batch8_start_to_final_best_validation_finish_wall_span_seconds": 23325.336634,
+  "separate_best_checkpoint_validation_elapsed_seconds": 55.769344255999385,
+  "timing_interpretation": "Completed epoch callback sum, last invocation elapsed, and first recorded batch8 start-to-finish span are different quantities. The span includes recovery gaps/setup/discarded partial work after batch8 start and excludes the earlier batch16 attempt; callback sum includes all logged in-epoch pauses. No value is process CPU time.",
+  "coordinated_pauses_verbatim": {
+    "clock": "UTC and paired time.monotonic values within the same WSL instance",
+    "raw_epoch_wall_time_adjusted": false,
+    "pause_intervals": [
+      {
+        "stop_signal_recorded_utc": "2026-11-01T09:41:36.959794+00:00",
+        "continue_signal_recorded_utc": "2026-11-01T09:57:07.270517+00:00",
+        "stop_monotonic_s": 1011.055700219,
+        "continue_monotonic_s": 1941.366421775,
+        "signal_interval_s": 930.310721556,
+        "stopped_group_members": 11,
+        "all_members_confirmed_stopped": true,
+        "affected_epoch": 2,
+        "checkpoint_restarted": false,
+        "reason": "Coordinate sequential integration/build and HTTP measurements on the same G-backed HDD."
+      },
+      {
+        "stop_signal_recorded_utc": "2026-11-01T10:26:12.183046+00:00",
+        "continue_signal_recorded_utc": "2026-11-01T10:34:38.328391+00:00",
+        "stop_monotonic_s": 3686.278952522,
+        "continue_monotonic_s": 4192.424282859,
+        "signal_interval_s": 506.14533033700036,
+        "stopped_group_members": 27,
+        "all_members_confirmed_stopped": true,
+        "affected_epoch": 5,
+        "checkpoint_restarted": false,
+        "reason": "Coordinate sequential integration/build and HTTP measurements on the same G-backed HDD."
+      },
+      {
+        "stop_signal_recorded_utc": "2026-11-01T10:44:34.308966+00:00",
+        "continue_signal_recorded_utc": "2026-11-01T10:57:55.819971+00:00",
+        "stop_monotonic_s": 4788.404863984,
+        "continue_monotonic_s": 5589.91586162,
+        "signal_interval_s": 801.510997636,
+        "stopped_group_members": 27,
+        "all_members_confirmed_stopped": true,
+        "affected_epoch": 7,
+        "checkpoint_restarted": false,
+        "reason": "Coordinate sequential integration/build and HTTP measurements on the same G-backed HDD."
+      }
+    ],
+    "total_signal_interval_s": 2237.967049529,
+    "timer_scope": "These pauses remain included in raw epoch elapsed time; they are not subtracted from completed epoch wall-time totals."
+  },
+  "initial_incomplete_batch16_attempt_verbatim": {
+    "status": "interrupted before one complete epoch",
+    "completed_epochs": 0,
+    "valid_epoch_metrics": false,
+    "mAP": null,
+    "batch": 16,
+    "last_completed_batch": 502,
+    "batches_per_epoch": 514,
+    "last_progress_elapsed": "19:21",
+    "requested_epochs": 100,
+    "imgsz": 640,
+    "seed": 0,
+    "train_workers": 8,
+    "reason": "Dedicated/shared GPU memory residency pressure with concurrent desktop GPU usage; no OOM was logged",
+    "project_vm_gpu": {
+      "dedicated_bytes": 11399962624,
+      "shared_bytes": 1371537408,
+      "committed_bytes": 12771500032
+    },
+    "total_gpu": {
+      "dedicated_bytes": 12518817792,
+      "shared_bytes": 1441292288
+    },
+    "train_script_sha256": "cf4f73fa5b79db0c71db6617e58e1a407561d8dd5aafde48230bef38e35aa8d1",
+    "actual_args_sha256": "1c4fce2af3619db3e9f2011225ca53fbc38e75fef3ba0071b0f83891bcff2164",
+    "next_run": "Independent complete100 epochs at batch8, same full split/pretrained model/640/seed0/AMP/eight workers",
+    "gpu_memory_sample_interval_utc": [
+      "2026-11-01T07:04:49Z",
+      "2026-11-01T07:07:44Z"
+    ],
+    "gpu_memory_exact_sample_utc": null
+  },
+  "batch8_checkpoint_recovery_verbatim": {
+    "run": "sku110k_full_yolo11s_b8",
+    "observed_absent_utc": "2026-11-01T09:25:04+00:00",
+    "exact_termination_utc": null,
+    "observation": "The previous WSL instance and its trainer were absent on continuation; the exact termination time and cause are unknown.",
+    "last_checkpoint_saved_utc": "2026-11-01T07:21:57.211417+00:00",
+    "checkpoint_bytes": 56936485,
+    "checkpoint_sha256": "0f2ee9b2e56e3cd7211c10b532c72de2f6d974a65cd9ef323ce7e3b2057fda83",
+    "completed_epochs_retained": 1,
+    "discarded_incomplete_epoch": 2,
+    "last_observed_incomplete_batch": "381/1027",
+    "resumed_utc": "2026-11-01T09:31:20.522793+00:00",
+    "total_epoch_target": 100,
+    "resume_state_verified": [
+      "optimizer",
+      "EMA",
+      "scaler",
+      "100-epoch schedule"
+    ],
+    "unchanged_configuration": {
+      "model": "YOLO11s",
+      "imgsz": 640,
+      "batch": 8,
+      "workers": 8,
+      "seed": 0,
+      "AMP": true
+    },
+    "protocol": "Resume the same last.pt and redo the incomplete second epoch. The first completed epoch remains in the raw CSV and epoch callback records. This is checkpoint recovery, not a new pretrained run.",
+    "elapsed_time_protocol": "The final training timer sums completed epoch callback windows, including in-epoch validation and checkpoint work. It excludes initialization, the interruption gap and discarded incomplete-epoch work. Raw Ultralytics CSV time has an invocation-local origin and is preserved unchanged."
+  },
+  "official_cache_transition_verbatim": {
+    "recorded_utc": "2026-11-01T11:33:01.605543+00:00",
+    "completed_epochs_retained": 11,
+    "resumed_from_epoch": 12,
+    "total_epoch_target": 100,
+    "checkpoint_sha256": "c0849dcc453b75c64bfa30487a31a1a6bfc4f59477aed4e8e121cbcc2a714190",
+    "source_commit": "52381819736eec30d1f76cd30f4bf99bbc1dfa4d",
+    "source_sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044",
+    "requested_cache": "ram",
+    "official_train_gate_accepted": false,
+    "official_train_gate_message": "WARNING ⚠️ \u001b[34m\u001b[1mtrain: \u001b[0m13.0GB RAM required to cache images with 100% safety margin but only 13.0/15.5GB available, not caching images",
+    "official_gate_message_values_are_rounded": true,
+    "exact_gate_requirement_bytes_not_printed": null,
+    "safety_margin_percent": 100,
+    "margin_or_system_settings_modified": false,
+    "cache_attempts": 1,
+    "actual_loaders": {
+      "train": {
+        "official_list_count": 8219,
+        "usable_images": 8216,
+        "skipped_images": [
+          "train_4222.jpg",
+          "train_882.jpg",
+          "train_924.jpg"
+        ],
+        "usable_boxes": 1207996,
+        "batch_size": 8,
+        "workers": 8,
+        "cache_mode": null,
+        "ram_cache_packed": false
+      },
+      "val": {
+        "official_list_count": 588,
+        "usable_images": 588,
+        "skipped_images": [],
+        "usable_boxes": 90968,
+        "batch_size": 16,
+        "workers": 16,
+        "cache_mode": "ram",
+        "ram_cache_packed": true
+      }
+    },
+    "library_warnings": [
+      "WARNING ⚠️ cache='ram' may produce non-deterministic training results. Consider cache='disk' as a deterministic alternative if your disk space allows."
+    ],
+    "protocol": "The installed official gate rejected training RAM allocation and continued with training cache off. Validation independently passed and packed its images into RAM. No additional cache attempt or margin adjustment is made.",
+    "unchanged_training": {
+      "model": "YOLO11s",
+      "imgsz": 640,
+      "batch": 8,
+      "workers": 8,
+      "seed": 0,
+      "AMP": true
+    },
+    "raw_epoch_wall_times_adjusted": false
+  },
+  "training_environment": {
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "ultralytics": "8.4.196",
+    "torch": "2.15.0+cu132",
+    "torch_cuda": "13.2",
+    "torch_threads": 4,
+    "nvidia_smi": "NVIDIA GeForce RTX 3080, 621.01, 12288 MiB"
+  },
+  "actual_loaders": {
+    "train": {
+      "official_list_count": 8219,
+      "usable_images": 8216,
+      "skipped_images": [
+        "train_4222.jpg",
+        "train_882.jpg",
+        "train_924.jpg"
+      ],
+      "usable_boxes": 1207996,
+      "batch_size": 8,
+      "workers": 8,
+      "cache_mode": null,
+      "ram_cache_packed": false
+    },
+    "val": {
+      "official_list_count": 588,
+      "usable_images": 588,
+      "skipped_images": [],
+      "usable_boxes": 90968,
+      "batch_size": 16,
+      "workers": 16,
+      "cache_mode": "ram",
+      "ram_cache_packed": true
+    }
+  },
+  "export_environment": {
+    "torch": "2.15.0+cu132",
+    "onnx": "1.23.2",
+    "onnxruntime": "1.31.1"
+  },
+  "export_invocation_verbatim": {
+    "started_utc": "2026-11-01T13:42:12.247163+00:00",
+    "source_commit": "7be44f1f45277275b1f6bb0edc3599b678fae0b6",
+    "export_source_sha256": "198b2b17d960183e60af30e27b364b4d1b9a13b6274caafbf6fa1b3590ccbc99",
+    "weights_sha256": "b5a1e268064a2ddd1b0ef3401da228b6414bde7e25c4e9fd0efe32e5dc41adf2",
+    "entry": "export_full_onnx.sh",
+    "imgsz": 640,
+    "threads": 4,
+    "batch": 1,
+    "seed": 0,
+    "warmups": 5,
+    "raw_timed_calls_per_backend": 50,
+    "official_val_onnx_observations": 20,
+    "parity_scope": "One seed0 synthetic float32 tensor; all raw Torch/ORT outputs",
+    "finished_utc": "2026-11-01T13:42:28.883536+00:00",
+    "exit_code": 0
+  },
+  "final_training_report_sha256": "2ae8cc17a1c21d44f8f49ecd0706c765c0f80409251d419b63ce60ae84e34828",
+  "validation_metric_arrays": {
+    "class_names": {
+      "0": "object"
+    },
+    "ap_class_index": [
+      0
+    ],
+    "precision": [
+      0.91112035545225
+    ],
+    "recall": [
+      0.8739226980916366
+    ],
+    "ap_by_class_and_iou": [
+      [
+        0.9281214545999971,
+        0.9129149070058431,
+        0.8869931147793614,
+        0.8441551954693381,
+        0.7716050103803282,
+        0.653639259543705,
+        0.47240130218782084,
+        0.2454529769389768,
+        0.06390175869586918,
+        0.002353494954908617
+      ]
+    ],
+    "ap_iou_thresholds": [
+      0.5,
+      0.550000011920929,
+      0.6000000238418579,
+      0.6499999761581421,
+      0.699999988079071,
+      0.75,
+      0.800000011920929,
+      0.8500000238418579,
+      0.8999999761581421,
+      0.949999988079071
+    ]
+  },
+  "raw_epoch_csv_sha256": "b697312be3415e643bd0ede65bce5359b4704f7a3d81c62d8857d301445f5eab",
+  "files": [
+    {
+      "file": "best.pt",
+      "role": "trained100epoch-selected checkpoint",
+      "bytes": 19164634,
+      "sha256": "b5a1e268064a2ddd1b0ef3401da228b6414bde7e25c4e9fd0efe32e5dc41adf2"
+    },
+    {
+      "file": "best.onnx",
+      "role": "ONNX graph",
+      "bytes": 37928330,
+      "sha256": "39cf89ec577471f62e76c622320e48267c73b25be42c90dcc0380148c0effa92"
+    },
+    {
+      "file": "third-party/ultralytics-opencv-headless-8.4.196-LICENSE",
+      "role": "verbatim installed Ultralytics license",
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+    },
+    {
+      "file": "third-party/ultralytics-installed-metadata.json",
+      "role": "verbatim installed distribution attribution/provenance",
+      "bytes": 1647,
+      "sha256": "c6a5889017b208068f73b24eb09f8069f42125b8be244d77e907c14d6453e223"
+    }
+  ],
+  "pytorch_checkpoint_metadata_verbatim": {
+    "version": "8.4.196",
+    "date": "2026-11-01T04:43:42.959858-08:00",
+    "license": "AGPL-3.0 (https://ultralytics.com/license)",
+    "docs": "https://docs.ultralytics.com",
+    "author": null
+  },
+  "onnx_metadata_verbatim": {
+    "description": "Ultralytics YOLO11s model trained on /opt/codex-resume/autonomy-stack/datasets/SKU110K_fixed/data.yaml",
+    "author": "Ultralytics",
+    "date": "2026-11-01T05:42:15.134802-08:00",
+    "version": "8.4.196",
+    "license": "AGPL-3.0 License (https://ultralytics.com/license)",
+    "docs": "https://docs.ultralytics.com",
+    "stride": "32",
+    "task": "detect",
+    "head": "Detect",
+    "batch": "1",
+    "imgsz": "[640, 640]",
+    "names": "{0: 'object'}",
+    "args": "{'data': None, 'batch': 1, 'fraction': 1.0, 'quantize': None, 'nms': None, 'dynamic': False, 'simplify': True, 'opset': None}",
+    "channels": "3",
+    "end2end": "False"
+  },
+  "installed_distribution_metadata_verbatim": {
+    "Name": [
+      "ultralytics-opencv-headless"
+    ],
+    "Version": [
+      "8.4.196"
+    ],
+    "License": [
+      "AGPL-3.0"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Author-email": [
+      "Glenn Jocher <glenn.jocher@ultralytics.com>, Jing Qiu <jing.qiu@ultralytics.com>"
+    ],
+    "Project-URL": [
+      "Homepage, https://ultralytics.com",
+      "Source, https://github.com/ultralytics/ultralytics",
+      "Documentation, https://docs.ultralytics.com",
+      "Bug Reports, https://github.com/ultralytics/ultralytics/issues",
+      "Changelog, https://github.com/ultralytics/ultralytics/releases"
+    ],
+    "Summary": [
+      "Ultralytics YOLO 🚀 for SOTA computer vision in server, container, and headless environments."
+    ]
+  },
+  "pretrained_download_record": {
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11s.pt",
+    "path": "/opt/codex-resume/autonomy-stack/cache/yolo11s.pt",
+    "bytes": 19313732,
+    "sha256": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
+    "prepared_utc": "2026-11-01T06:19:29.842574+00:00"
+  },
+  "license_record_scope": "Existing package and actual serialized artifact metadata are preserved; no new license is assigned or inferred.",
+  "onnx_external_data_files": [],
+  "numeric_parity": {
+    "shape": [
+      1,
+      5,
+      8400
+    ],
+    "max_abs_error": 0.000152587890625,
+    "rtol": 0.001,
+    "atol": 0.001,
+    "allclose_passed": true
+  },
+  "numeric_parity_protocol": "One seed0 synthetic float32 tensor, batch1 at640, compares all raw Torch and ONNX Runtime outputs; rtol=atol=1e-3. The20 official val images below are ONNX end-to-end observations, not dual-backend parity.",
+  "official_validation_onnx_observation_count": 20,
+  "original_training_exit_receipt_verbatim": {
+    "utc": "2026-11-01T13:36:56.067032+00:00",
+    "trainer_exit_code": 1,
+    "tee_exit_code": 0,
+    "overall_exit_code": 1,
+    "entry": "train_full_b8_resume2_logged.sh"
+  },
+  "artifact_finalization_verbatim": {
+    "status": "complete",
+    "kind": "identified_final_eval_callback_bookkeeping",
+    "completed_utc": "2026-11-01T13:41:01.222852+00:00",
+    "original_training_commit": "52381819736eec30d1f76cd30f4bf99bbc1dfa4d",
+    "original_training_sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044",
+    "finalizer_file": "recover_final_eval.py",
+    "finalizer_sha256": "739c28d8fbfe7b69b35f72cf1153a5678e6a7a8574601ac54ca46a4f84095594",
+    "finalizer_commit": "7be44f1f45277275b1f6bb0edc3599b678fae0b6",
+    "original_exit_receipt_verbatim": {
+      "utc": "2026-11-01T13:36:56.067032+00:00",
+      "trainer_exit_code": 1,
+      "tee_exit_code": 0,
+      "overall_exit_code": 1,
+      "entry": "train_full_b8_resume2_logged.sh"
+    },
+    "failed_metadata_guard_line": 144,
+    "raw_inputs_archived": [
+      {
+        "file": "raw-progress-with-callback101.json",
+        "bytes": 49088,
+        "sha256": "0ec8e86386d3accafefe437adfd51c4a3c36b6feede8cecf49a445c7cf655dc6"
+      },
+      {
+        "file": "native-results.csv",
+        "bytes": 16370,
+        "sha256": "b697312be3415e643bd0ede65bce5359b4704f7a3d81c62d8857d301445f5eab"
+      },
+      {
+        "file": "native-args.yaml",
+        "bytes": 1911,
+        "sha256": "ba33799a83470913d746cf0954350ee8ddf9e5dbaa477b66acebbc4cca7a50fc"
+      },
+      {
+        "file": "compiled-training-source.py",
+        "bytes": 10011,
+        "sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044"
+      },
+      {
+        "file": "original-training-exit.json",
+        "bytes": 168,
+        "sha256": "698117a6f0d2eab8df423e22c5683fc5d5012906cd1fd8eb80c0c34b1501d80b"
+      },
+      {
+        "file": "original-training.log",
+        "bytes": 7730063,
+        "sha256": "d6d6b119f245b7c30f12537792d796396992a132a6f382fa0d1a4db385b5a0e6"
+      },
+      {
+        "file": "training-launch.json",
+        "bytes": 990,
+        "sha256": "7c616c47cdf382eead01a617fc7e2e735a3ba0734d3b24e358ed97b1870a5477"
+      },
+      {
+        "file": "training-active.json",
+        "bytes": 485,
+        "sha256": "32fdbcf853e3e3275bcd99b39116a3ae2197e1cbc0f6a1727377617119b0004c"
+      },
+      {
+        "file": "last.pt",
+        "bytes": 19164634,
+        "sha256": "e26c3333eb7a5a0c93e33ed4c4b3f71f10606667fbaf249f741fe461cf1abf51"
+      },
+      {
+        "file": "best.pt",
+        "bytes": 19164634,
+        "sha256": "b5a1e268064a2ddd1b0ef3401da228b6414bde7e25c4e9fd0efe32e5dc41adf2"
+      }
+    ],
+    "native_csv_training_rows": 100,
+    "raw_progress_callback_records": 101,
+    "library_source_sha256": "5d07ab34f91f9c5df6d85f061d32e64745a041861f186dcbee1912c809d8dd3e",
+    "library_final_eval_source": "def final_eval(self):\n        \"\"\"Perform final evaluation and validation for the YOLO model.\"\"\"\n        model = self.best if self.best.exists() else None\n        with torch_distributed_zero_first(LOCAL_RANK):  # strip only on GPU 0; other GPUs should wait\n            if RANK in {-1, 0}:\n                ckpt = strip_optimizer(self.last) if self.last.exists() else {}\n                if model:\n                    # update best.pt train_metrics from last.pt\n                    strip_optimizer(self.best, updates={\"train_results\": ckpt.get(\"train_results\")})\n        if model:\n            LOGGER.info(f\"\\nValidating {model}...\")\n            self.validator.args.plots = self.args.plots\n            self.validator.args.compile = False  # disable final val compile as too slow\n            self.metrics = self.validator(model=model)\n            self.metrics.pop(\"fitness\", None)\n            self.epoch += 1  # log best metrics at step epochs+1, not overwriting last epoch\n            self.run_callbacks(\"on_fit_epoch_end\")\n            self.epoch -= 1",
+    "checkpoint_checks": {
+      "last.pt": {
+        "sha256": "e26c3333eb7a5a0c93e33ed4c4b3f71f10606667fbaf249f741fe461cf1abf51",
+        "bytes": 19164634,
+        "train_results_rows": 100,
+        "columns": [
+          "epoch",
+          "lr/pg0",
+          "lr/pg1",
+          "lr/pg2",
+          "lr/pg3",
+          "lr/pg4",
+          "lr/pg5",
+          "lr/pg6",
+          "lr/pg7",
+          "metrics/mAP50(B)",
+          "metrics/mAP50-95(B)",
+          "metrics/precision(B)",
+          "metrics/recall(B)",
+          "time",
+          "train/box_loss",
+          "train/cls_loss",
+          "train/dfl_loss",
+          "val/box_loss",
+          "val/cls_loss",
+          "val/dfl_loss"
+        ],
+        "max_abs_csv_delta": 0.0,
+        "stripped_epoch": -1,
+        "optimizer_is_none": true,
+        "metadata_verbatim": {
+          "version": "8.4.196",
+          "date": "2026-11-01T05:35:48.573842-08:00",
+          "license": "AGPL-3.0 (https://ultralytics.com/license)",
+          "docs": "https://docs.ultralytics.com",
+          "author": null
+        },
+        "train_args": {
+          "task": "detect",
+          "mode": "train",
+          "model": "/opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt",
+          "data": "/opt/codex-resume/autonomy-stack/datasets/SKU110K_fixed/data.yaml",
+          "epochs": 100,
+          "time": null,
+          "patience": 100,
+          "batch": 8,
+          "imgsz": 640,
+          "save": true,
+          "save_period": -1,
+          "cache": "ram",
+          "device": "0",
+          "workers": 8,
+          "project": "/opt/codex-resume/autonomy-stack/runs",
+          "name": "sku110k_full_yolo11s_b8",
+          "exist_ok": true,
+          "pretrained": true,
+          "cls_remap": true,
+          "optimizer": "MuSGD",
+          "verbose": false,
+          "seed": 0,
+          "deterministic": true,
+          "single_cls": false,
+          "rect": false,
+          "cos_lr": false,
+          "close_mosaic": 10,
+          "resume": "/opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt",
+          "amp": true,
+          "fraction": 1.0,
+          "profile": false,
+          "freeze": null,
+          "multi_scale": 0.0,
+          "compile": false,
+          "channels_last": null,
+          "overlap_mask": true,
+          "mask_ratio": 4,
+          "dropout": 0.0,
+          "val": true,
+          "split": "val",
+          "save_json": false,
+          "conf": null,
+          "iou": 0.7,
+          "max_det": 1000,
+          "quantize": null,
+          "dnn": false,
+          "plots": false,
+          "nms": null,
+          "source": null,
+          "vid_stride": 1,
+          "stream_buffer": false,
+          "visualize": false,
+          "augment": false,
+          "agnostic_nms": false,
+          "classes": null,
+          "retina_masks": false,
+          "embed": null,
+          "show": false,
+          "save_frames": false,
+          "save_txt": false,
+          "save_conf": false,
+          "save_crop": false,
+          "show_labels": true,
+          "show_conf": true,
+          "show_boxes": true,
+          "line_width": null,
+          "format": "torchscript",
+          "optimize": false,
+          "dynamic": false,
+          "simplify": true,
+          "opset": null,
+          "workspace": null,
+          "lr0": 0.01,
+          "lrf": 0.01,
+          "momentum": 0.937,
+          "weight_decay": 0.0005,
+          "warmup_epochs": 3.0,
+          "warmup_momentum": 0.8,
+          "warmup_bias_lr": 0.0,
+          "distill_model": null,
+          "dis": 6.0,
+          "box": 7.5,
+          "cls": 0.5,
+          "cls_pw": 0.0,
+          "dfl": 1.5,
+          "pose": 12.0,
+          "kobj": 1.0,
+          "rle": 1.0,
+          "angle": 1.0,
+          "dlog": 1.0,
+          "dgrad": 0.5,
+          "dlam": 1.0,
+          "nbs": 64,
+          "hsv_h": 0.015,
+          "hsv_s": 0.7,
+          "hsv_v": 0.4,
+          "degrees": 0.0,
+          "translate": 0.1,
+          "scale": 0.5,
+          "shear": 0.0,
+          "perspective": 0.0,
+          "flipud": 0.0,
+          "fliplr": 0.5,
+          "bgr": 0.0,
+          "mosaic": 1.0,
+          "mixup": 0.0,
+          "cutmix": 0.0,
+          "copy_paste": 0.0,
+          "copy_paste_mode": "flip",
+          "auto_augment": "randaugment",
+          "erasing": 0.4,
+          "cfg": null,
+          "tracker": "tracktrack.yaml"
+        }
+      },
+      "best.pt": {
+        "sha256": "b5a1e268064a2ddd1b0ef3401da228b6414bde7e25c4e9fd0efe32e5dc41adf2",
+        "bytes": 19164634,
+        "train_results_rows": 100,
+        "columns": [
+          "epoch",
+          "lr/pg0",
+          "lr/pg1",
+          "lr/pg2",
+          "lr/pg3",
+          "lr/pg4",
+          "lr/pg5",
+          "lr/pg6",
+          "lr/pg7",
+          "metrics/mAP50(B)",
+          "metrics/mAP50-95(B)",
+          "metrics/precision(B)",
+          "metrics/recall(B)",
+          "time",
+          "train/box_loss",
+          "train/cls_loss",
+          "train/dfl_loss",
+          "val/box_loss",
+          "val/cls_loss",
+          "val/dfl_loss"
+        ],
+        "max_abs_csv_delta": 0.0,
+        "stripped_epoch": -1,
+        "optimizer_is_none": true,
+        "metadata_verbatim": {
+          "version": "8.4.196",
+          "date": "2026-11-01T04:43:42.959858-08:00",
+          "license": "AGPL-3.0 (https://ultralytics.com/license)",
+          "docs": "https://docs.ultralytics.com",
+          "author": null
+        },
+        "train_args": {
+          "task": "detect",
+          "mode": "train",
+          "model": "/opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt",
+          "data": "/opt/codex-resume/autonomy-stack/datasets/SKU110K_fixed/data.yaml",
+          "epochs": 100,
+          "time": null,
+          "patience": 100,
+          "batch": 8,
+          "imgsz": 640,
+          "save": true,
+          "save_period": -1,
+          "cache": "ram",
+          "device": "0",
+          "workers": 8,
+          "project": "/opt/codex-resume/autonomy-stack/runs",
+          "name": "sku110k_full_yolo11s_b8",
+          "exist_ok": true,
+          "pretrained": true,
+          "cls_remap": true,
+          "optimizer": "MuSGD",
+          "verbose": false,
+          "seed": 0,
+          "deterministic": true,
+          "single_cls": false,
+          "rect": false,
+          "cos_lr": false,
+          "close_mosaic": 10,
+          "resume": "/opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt",
+          "amp": true,
+          "fraction": 1.0,
+          "profile": false,
+          "freeze": null,
+          "multi_scale": 0.0,
+          "compile": false,
+          "channels_last": null,
+          "overlap_mask": true,
+          "mask_ratio": 4,
+          "dropout": 0.0,
+          "val": true,
+          "split": "val",
+          "save_json": false,
+          "conf": null,
+          "iou": 0.7,
+          "max_det": 1000,
+          "quantize": null,
+          "dnn": false,
+          "plots": false,
+          "nms": null,
+          "source": null,
+          "vid_stride": 1,
+          "stream_buffer": false,
+          "visualize": false,
+          "augment": false,
+          "agnostic_nms": false,
+          "classes": null,
+          "retina_masks": false,
+          "embed": null,
+          "show": false,
+          "save_frames": false,
+          "save_txt": false,
+          "save_conf": false,
+          "save_crop": false,
+          "show_labels": true,
+          "show_conf": true,
+          "show_boxes": true,
+          "line_width": null,
+          "format": "torchscript",
+          "optimize": false,
+          "dynamic": false,
+          "simplify": true,
+          "opset": null,
+          "workspace": null,
+          "lr0": 0.01,
+          "lrf": 0.01,
+          "momentum": 0.937,
+          "weight_decay": 0.0005,
+          "warmup_epochs": 3.0,
+          "warmup_momentum": 0.8,
+          "warmup_bias_lr": 0.0,
+          "distill_model": null,
+          "dis": 6.0,
+          "box": 7.5,
+          "cls": 0.5,
+          "cls_pw": 0.0,
+          "dfl": 1.5,
+          "pose": 12.0,
+          "kobj": 1.0,
+          "rle": 1.0,
+          "angle": 1.0,
+          "dlog": 1.0,
+          "dgrad": 0.5,
+          "dlam": 1.0,
+          "nbs": 64,
+          "hsv_h": 0.015,
+          "hsv_s": 0.7,
+          "hsv_v": 0.4,
+          "degrees": 0.0,
+          "translate": 0.1,
+          "scale": 0.5,
+          "shear": 0.0,
+          "perspective": 0.0,
+          "flipud": 0.0,
+          "fliplr": 0.5,
+          "bgr": 0.0,
+          "mosaic": 1.0,
+          "mixup": 0.0,
+          "cutmix": 0.0,
+          "copy_paste": 0.0,
+          "copy_paste_mode": "flip",
+          "auto_augment": "randaugment",
+          "erasing": 0.4,
+          "cfg": null,
+          "tracker": "tracktrack.yaml"
+        }
+      }
+    },
+    "planned_standalone_best_validation_loader": {
+      "images": 588,
+      "boxes": 90968,
+      "batch_size": 8,
+      "workers": 8,
+      "cache_mode": null,
+      "ram_cache_packed": false,
+      "ap_iou_thresholds": [
+        0.5,
+        0.550000011920929,
+        0.6000000238418579,
+        0.6499999761581421,
+        0.699999988079071,
+        0.75,
+        0.800000011920929,
+        0.8500000238418579,
+        0.8999999761581421,
+        0.949999988079071
+      ]
+    },
+    "training_reexecuted": false,
+    "raw_progress_overwritten": false
+  },
+  "finalizer_exit_receipt_verbatim": {
+    "started_utc": "2026-11-01T13:39:30.156110+00:00",
+    "source_sha256": "739c28d8fbfe7b69b35f72cf1153a5678e6a7a8574601ac54ca46a4f84095594",
+    "source_commit": "7be44f1f45277275b1f6bb0edc3599b678fae0b6",
+    "committed_source_blob_sha256": "739c28d8fbfe7b69b35f72cf1153a5678e6a7a8574601ac54ca46a4f84095594",
+    "entry": "finalize_full_b8_logged.sh",
+    "original_training_exit_verbatim": {
+      "utc": "2026-11-01T13:36:56.067032+00:00",
+      "trainer_exit_code": 1,
+      "tee_exit_code": 0,
+      "overall_exit_code": 1,
+      "entry": "train_full_b8_resume2_logged.sh"
+    },
+    "finished_utc": "2026-11-01T13:41:20.070752+00:00",
+    "finalizer_exit_code": 0,
+    "tee_exit_code": 0,
+    "overall_exit_code": 0
+  },
+  "final_executed_training_source_sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044",
+  "source_resume_history": [
+    {
+      "started_utc": "2026-11-01T09:33:06.843493+00:00",
+      "checkpoint_epoch": 1,
+      "checkpoint_sha256": "0f2ee9b2e56e3cd7211c10b532c72de2f6d974a65cd9ef323ce7e3b2057fda83",
+      "script_sha256": "6c0aced182ed8d3a9723f73dafe38cd0c983f72c6d639729ae3bf725c2bb2447",
+      "requested": {
+        "model": "/opt/codex-resume/autonomy-stack/cache/yolo11s.pt",
+        "data": "/opt/codex-resume/autonomy-stack/datasets/SKU110K_fixed/data.yaml",
+        "epochs": 100,
+        "imgsz": 640,
+        "batch": 8,
+        "device": "0",
+        "workers": 8,
+        "name": "sku110k_full_yolo11s_b8",
+        "project": "/opt/codex-resume/autonomy-stack/runs",
+        "warmup_epochs": 3.0,
+        "out": "/mnt/g/ResumeProject/platforms/autonomy-stack/perception/results/train_full_3080.json",
+        "seed": 0,
+        "resume": "/opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt"
+      },
+      "previous_status": "training",
+      "reason": "The previous WSL instance exited; resume the saved epoch and discard the incomplete next epoch."
+    },
+    {
+      "started_utc": "2026-11-01T11:23:21.897851+00:00",
+      "checkpoint_epoch": 11,
+      "checkpoint_sha256": "c0849dcc453b75c64bfa30487a31a1a6bfc4f59477aed4e8e121cbcc2a714190",
+      "script_sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044",
+      "requested": {
+        "model": "/opt/codex-resume/autonomy-stack/cache/yolo11s.pt",
+        "data": "/opt/codex-resume/autonomy-stack/datasets/SKU110K_fixed/data.yaml",
+        "epochs": 100,
+        "imgsz": 640,
+        "batch": 8,
+        "device": "0",
+        "workers": 8,
+        "name": "sku110k_full_yolo11s_b8",
+        "project": "/opt/codex-resume/autonomy-stack/runs",
+        "warmup_epochs": 3.0,
+        "out": "/mnt/g/ResumeProject/platforms/autonomy-stack/perception/results/train_full_3080.json",
+        "seed": 0,
+        "cache": "ram",
+        "resume": "/opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8/weights/last.pt"
+      },
+      "previous_status": "failed",
+      "previous_failure": {
+        "failed_utc": "2026-11-01T11:16:57.223088+00:00",
+        "error": "KeyboardInterrupt()",
+        "elapsed_before_failure_s": 6230.171916435
+      },
+      "reason": "Explicit checkpoint recovery, retaining completed epochs and optimizer/EMA state."
+    }
+  ],
+  "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/sku110k-yolo11s-v1/yolo11s-sku110k-full.zip"
+}

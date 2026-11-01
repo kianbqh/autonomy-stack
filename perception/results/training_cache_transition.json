@@ -1,0 +1,56 @@
+{
+  "recorded_utc": "2026-11-01T11:33:01.605543+00:00",
+  "completed_epochs_retained": 11,
+  "resumed_from_epoch": 12,
+  "total_epoch_target": 100,
+  "checkpoint_sha256": "c0849dcc453b75c64bfa30487a31a1a6bfc4f59477aed4e8e121cbcc2a714190",
+  "source_commit": "52381819736eec30d1f76cd30f4bf99bbc1dfa4d",
+  "source_sha256": "24ac8f2b5a847f1d3d8cfc0991da020eefddd00e381804d7fa56e60eba333044",
+  "requested_cache": "ram",
+  "official_train_gate_accepted": false,
+  "official_train_gate_message": "WARNING \u26a0\ufe0f \u001b[34m\u001b[1mtrain: \u001b[0m13.0GB RAM required to cache images with 100% safety margin but only 13.0/15.5GB available, not caching images",
+  "official_gate_message_values_are_rounded": true,
+  "exact_gate_requirement_bytes_not_printed": null,
+  "safety_margin_percent": 100,
+  "margin_or_system_settings_modified": false,
+  "cache_attempts": 1,
+  "actual_loaders": {
+    "train": {
+      "official_list_count": 8219,
+      "usable_images": 8216,
+      "skipped_images": [
+        "train_4222.jpg",
+        "train_882.jpg",
+        "train_924.jpg"
+      ],
+      "usable_boxes": 1207996,
+      "batch_size": 8,
+      "workers": 8,
+      "cache_mode": null,
+      "ram_cache_packed": false
+    },
+    "val": {
+      "official_list_count": 588,
+      "usable_images": 588,
+      "skipped_images": [],
+      "usable_boxes": 90968,
+      "batch_size": 16,
+      "workers": 16,
+      "cache_mode": "ram",
+      "ram_cache_packed": true
+    }
+  },
+  "library_warnings": [
+    "WARNING \u26a0\ufe0f cache='ram' may produce non-deterministic training results. Consider cache='disk' as a deterministic alternative if your disk space allows."
+  ],
+  "protocol": "The installed official gate rejected training RAM allocation and continued with training cache off. Validation independently passed and packed its images into RAM. No additional cache attempt or margin adjustment is made.",
+  "unchanged_training": {
+    "model": "YOLO11s",
+    "imgsz": 640,
+    "batch": 8,
+    "workers": 8,
+    "seed": 0,
+    "AMP": true
+  },
+  "raw_epoch_wall_times_adjusted": false
+}

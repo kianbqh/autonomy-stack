@@ -1,0 +1,17 @@
+{
+  "packaged_utc": "2026-11-01T13:46:35.005598+00:00",
+  "tag": "sku110k-yolo11s-v1",
+  "asset": "yolo11s-sku110k-full.zip",
+  "download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/sku110k-yolo11s-v1/yolo11s-sku110k-full.zip",
+  "bytes": 50198498,
+  "sha256": "751299d0795f364748341f72592eb30aec30b124551fe22bd63322364f0df353",
+  "manifest_sha256": "f430bd9a4e1cde811482ea80c59d96ed461b8e31cefe877a49c3f2bbf62f6c9d",
+  "members": [
+    "MODEL_MANIFEST.json",
+    "best.onnx",
+    "best.pt",
+    "third-party/ultralytics-installed-metadata.json",
+    "third-party/ultralytics-opencv-headless-8.4.196-LICENSE"
+  ],
+  "contents": "Full-data best.pt, its ONNX export, actual metadata and verbatim third-party attribution."
+}

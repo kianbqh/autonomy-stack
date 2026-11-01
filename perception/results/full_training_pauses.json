@@ -1,0 +1,44 @@
+{
+  "clock": "UTC and paired time.monotonic values within the same WSL instance",
+  "raw_epoch_wall_time_adjusted": false,
+  "pause_intervals": [
+    {
+      "stop_signal_recorded_utc": "2026-11-01T09:41:36.959794+00:00",
+      "continue_signal_recorded_utc": "2026-11-01T09:57:07.270517+00:00",
+      "stop_monotonic_s": 1011.055700219,
+      "continue_monotonic_s": 1941.366421775,
+      "signal_interval_s": 930.310721556,
+      "stopped_group_members": 11,
+      "all_members_confirmed_stopped": true,
+      "affected_epoch": 2,
+      "checkpoint_restarted": false,
+      "reason": "Coordinate sequential integration/build and HTTP measurements on the same G-backed HDD."
+    },
+    {
+      "stop_signal_recorded_utc": "2026-11-01T10:26:12.183046+00:00",
+      "continue_signal_recorded_utc": "2026-11-01T10:34:38.328391+00:00",
+      "stop_monotonic_s": 3686.278952522,
+      "continue_monotonic_s": 4192.424282859,
+      "signal_interval_s": 506.14533033700036,
+      "stopped_group_members": 27,
+      "all_members_confirmed_stopped": true,
+      "affected_epoch": 5,
+      "checkpoint_restarted": false,
+      "reason": "Coordinate sequential integration/build and HTTP measurements on the same G-backed HDD."
+    },
+    {
+      "stop_signal_recorded_utc": "2026-11-01T10:44:34.308966+00:00",
+      "continue_signal_recorded_utc": "2026-11-01T10:57:55.819971+00:00",
+      "stop_monotonic_s": 4788.404863984,
+      "continue_monotonic_s": 5589.91586162,
+      "signal_interval_s": 801.510997636,
+      "stopped_group_members": 27,
+      "all_members_confirmed_stopped": true,
+      "affected_epoch": 7,
+      "checkpoint_restarted": false,
+      "reason": "Coordinate sequential integration/build and HTTP measurements on the same G-backed HDD."
+    }
+  ],
+  "total_signal_interval_s": 2237.967049529,
+  "timer_scope": "These pauses remain included in raw epoch elapsed time; they are not subtracted from completed epoch wall-time totals."
+}
