@@ -5,7 +5,7 @@ data: /opt/codex-resume/autonomy-stack/datasets/SKU110K_fixed/data.yaml
 epochs: 100
 time: null
 patience: 100
-batch: 16
+batch: 8
 imgsz: 640
 save: true
 save_period: -1
@@ -13,7 +13,7 @@ cache: false
 device: '0'
 workers: 8
 project: /opt/codex-resume/autonomy-stack/runs
-name: sku110k_full_yolo11s
+name: sku110k_full_yolo11s_b8
 exist_ok: true
 pretrained: true
 cls_remap: true
@@ -111,4 +111,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: /opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s
+save_dir: /opt/codex-resume/autonomy-stack/runs/sku110k_full_yolo11s_b8

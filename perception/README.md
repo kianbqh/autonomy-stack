@@ -20,7 +20,9 @@ The test split is prepared but is not used for model selection or the validation
 
 Ultralytics verification accepted **8,216 training images / 1,207,996 boxes** and all **588 validation images / 90,968 boxes**. It rejected three truncated training JPEGs (`train_4222`, `train_882`, `train_924`, containing 483 labels), removed three duplicate labels, and automatically restored/re-saved 494 training and 33 validation JPEGs at their original dimensions. The downloaded archive remains unchanged. [Exact rejection reasons and loader counts](results/dataset_verification.json).
 
-The full local run uses COCO-pretrained YOLO11s, 640-pixel training input, 100 epochs, train batch 16, eight training workers, seed 0, deterministic training and three warmup epochs. The per-epoch validation loader uses batch 32 and 16 workers. It runs on a 12 GB RTX 3080 under Ubuntu 24.04 / WSL2, Ultralytics 8.4.196 and PyTorch 2.15.0+cu132. The primary pretrained model SHA-256 is `85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5`.
+The full local run uses COCO-pretrained YOLO11s, 640-pixel training input, 100 epochs, train batch 8, eight training workers, seed 0, deterministic training and three warmup epochs. The per-epoch validation loader uses batch 16 and 16 workers. It runs on a 12 GB RTX 3080 under Ubuntu 24.04 / WSL2, Ultralytics 8.4.196 and PyTorch 2.15.0+cu132. The primary pretrained model SHA-256 is `85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5`.
+
+An initial batch-16 attempt reached batch 502/514 of its first epoch, then was stopped after measured dedicated/shared GPU memory pressure produced multi-minute batches. It completed no epoch or validation metric and logged no OOM. The batch-8 run starts independently from the same pretrained checkpoint for the full 100 epochs. [Attempt and resource record](results/batch16_attempt.json).
 
 Training is currently running. Raw epoch/validation results and ONNX parity will be added after that run finishes; the earlier 48-image CPU experiment is retained in source history rather than used as the full-data result.
 
@@ -33,7 +35,7 @@ python scripts/prepare_full.py --archive /path/to/SKU110K_fixed.tar.gz \
   --root /path/to/datasets \
   --out results/sku110k_full_provenance.json
 python scripts/train.py --model yolo11s.pt --data /path/to/datasets/SKU110K_fixed/data.yaml \
-  --device 0 --epochs 100 --imgsz 640 --batch 16 --workers 8 --seed 0 \
+  --device 0 --epochs 100 --imgsz 640 --batch 8 --workers 8 --seed 0 \
   --name sku110k_full_yolo11s --project /path/to/runs --out results/train_full_3080.json
 python scripts/export_bench.py --weights /path/to/runs/sku110k_full_yolo11s/weights/best.pt \
   --imgsz 640 --image-list /path/to/datasets/SKU110K_fixed/val.txt --out results/onnx_bench_full.json

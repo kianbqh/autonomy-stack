@@ -11,7 +11,7 @@
         "train_924.jpg"
       ],
       "usable_boxes": 1207996,
-      "batch_size": 16,
+      "batch_size": 8,
       "workers": 8
     },
     "val": {
@@ -19,7 +19,7 @@
       "usable_images": 588,
       "skipped_images": [],
       "usable_boxes": 90968,
-      "batch_size": 32,
+      "batch_size": 16,
       "workers": 16
     }
   },
@@ -576,5 +576,28 @@
       "rejected_image_label_counts": {}
     }
   },
-  "jpeg_repair": "Ultralytics automatically restores missing JPEG end markers and saves a re-encoded image at its original dimensions; archive remains unchanged"
+  "jpeg_repair": "Ultralytics automatically restores missing JPEG end markers and saves a re-encoded image at its original dimensions; archive remains unchanged",
+  "initial_verification_loaders": {
+    "train": {
+      "official_list_count": 8219,
+      "usable_images": 8216,
+      "skipped_images": [
+        "train_4222.jpg",
+        "train_882.jpg",
+        "train_924.jpg"
+      ],
+      "usable_boxes": 1207996,
+      "batch_size": 16,
+      "workers": 8
+    },
+    "val": {
+      "official_list_count": 588,
+      "usable_images": 588,
+      "skipped_images": [],
+      "usable_boxes": 90968,
+      "batch_size": 32,
+      "workers": 16
+    }
+  },
+  "verification_phase": "JPEG repair and duplicate/rejection messages were captured during the initial verification. Those repairs remain in the prepared dataset used by the independent batch8 run."
 }

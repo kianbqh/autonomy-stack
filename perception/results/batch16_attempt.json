@@ -1,0 +1,32 @@
+{
+  "status": "interrupted before one complete epoch",
+  "completed_epochs": 0,
+  "valid_epoch_metrics": false,
+  "mAP": null,
+  "batch": 16,
+  "last_completed_batch": 502,
+  "batches_per_epoch": 514,
+  "last_progress_elapsed": "19:21",
+  "requested_epochs": 100,
+  "imgsz": 640,
+  "seed": 0,
+  "train_workers": 8,
+  "reason": "Dedicated/shared GPU memory residency pressure with concurrent desktop GPU usage; no OOM was logged",
+  "project_vm_gpu": {
+    "dedicated_bytes": 11399962624,
+    "shared_bytes": 1371537408,
+    "committed_bytes": 12771500032
+  },
+  "total_gpu": {
+    "dedicated_bytes": 12518817792,
+    "shared_bytes": 1441292288
+  },
+  "train_script_sha256": "cf4f73fa5b79db0c71db6617e58e1a407561d8dd5aafde48230bef38e35aa8d1",
+  "actual_args_sha256": "1c4fce2af3619db3e9f2011225ca53fbc38e75fef3ba0071b0f83891bcff2164",
+  "next_run": "Independent complete100 epochs at batch8, same full split/pretrained model/640/seed0/AMP/eight workers",
+  "gpu_memory_sample_interval_utc": [
+    "2026-11-01T07:04:49Z",
+    "2026-11-01T07:07:44Z"
+  ],
+  "gpu_memory_exact_sample_utc": null
+}
