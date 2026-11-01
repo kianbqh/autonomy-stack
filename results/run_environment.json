@@ -1,0 +1,21 @@
+{
+  "run_date": "2026-10-31",
+  "environment": "Windows / WSL2",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "policy_device": "cpu",
+  "torch_threads": 4,
+  "training_seed": 0,
+  "packages": {
+    "numpy": "2.5.4",
+    "torch": "2.15.0",
+    "gymnasium": "1.4.0",
+    "matplotlib": "3.11.2",
+    "pytest": "9.2.0"
+  },
+  "model_sha256": {
+    "models/bc_policy.npz": "c6dd66e8ecf1e441dc7c1675fe5d9aaee717a1c79c74d1130a9270b809918103",
+    "models/bc_policy.pt": "04c4f3492d4d584085b08a9bbf3c8c5825f24a583783d22449c3889044ef1253"
+  },
+  "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF"
+}

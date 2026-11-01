@@ -1,0 +1,15 @@
+{
+  "wall_time_s": 175.05337047576904,
+  "samples_10hz": 1738,
+  "rmse_fused_m": 0.9051578100720441,
+  "rmse_raw_gps_m": 2.893731815144899,
+  "goals_reached": 4,
+  "goals_timed_out": 2,
+  "topic_rates_hz": {
+    "imu/data": 99.54678366168399,
+    "wheel/odometry": 49.773391830841994,
+    "gps/fix_local": 0.99398257529743,
+    "odometry/filtered": 99.5353585746116,
+    "cmd_vel": 19.982477289600055
+  }
+}

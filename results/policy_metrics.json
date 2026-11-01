@@ -1,0 +1,38 @@
+{
+  "expert_truth_obs": {
+    "success_rate": 1.0,
+    "mean_return": 21.44123757718314,
+    "mean_steps_success": 223.99
+  },
+  "expert_ekf_obs": {
+    "success_rate": 0.99,
+    "mean_return": 20.40611755563672,
+    "mean_steps_success": 281.54545454545456
+  },
+  "expert_raw_obs": {
+    "success_rate": 0.61,
+    "mean_return": 11.646518619703102,
+    "mean_steps_success": 395.5
+  },
+  "bc_ekf_obs": {
+    "success_rate": 0.985,
+    "mean_return": 19.735143803318035,
+    "mean_steps_success": 325.98984771573606
+  },
+  "bc_raw_obs": {
+    "success_rate": 0.825,
+    "mean_return": 15.877356346703964,
+    "mean_steps_success": 358.0121212121212
+  },
+  "meta": {
+    "seed": 0,
+    "demo_episodes": 200,
+    "bc_transitions": 44440,
+    "bc_train_mse": 6.104677595430985e-05,
+    "eval_episodes": 200,
+    "success_radius_m": 0.75,
+    "park_speed_mps": 0.3,
+    "time_limit_s": 40.0,
+    "wall_time_s": 150.91755723953247
+  }
+}

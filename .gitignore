@@ -1,0 +1,10 @@
+__pycache__/
+.venv
+.cache/
+.tmp/
+*.log
+.pytest_cache/
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+results/ros2_metrics.current.json*

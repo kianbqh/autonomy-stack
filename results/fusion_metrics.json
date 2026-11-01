@@ -1,0 +1,39 @@
+{
+  "ekf_gated": {
+    "fused": 0.9793865318231402,
+    "gps": 2.6603128106711478,
+    "dead_reckoning": 51.841418301889014,
+    "heading_deg": 4.965471549779264,
+    "gps_at_fix": 2.563237772471932,
+    "fused_at_fix": 0.9543134864602801,
+    "fused_std": 0.47011388340806626,
+    "gps_rejected_frac": 0.05366666666666667
+  },
+  "ekf_no_gating": {
+    "fused": 1.0264309860616907,
+    "gps": 2.6603128106711478,
+    "dead_reckoning": 51.841418301889014,
+    "heading_deg": 5.4650787198862485,
+    "gps_at_fix": 2.563237772471932,
+    "fused_at_fix": 0.9993708552970462,
+    "fused_std": 0.4131061063707815,
+    "gps_rejected_frac": 0.0
+  },
+  "summary": {
+    "episodes": 50,
+    "duration_s": 120.0,
+    "position_rmse_m": {
+      "raw_gps_at_fix_instants": 2.563237772471932,
+      "ekf_at_fix_instants": 0.9543134864602801,
+      "raw_gps_held_10hz": 2.6603128106711478,
+      "dead_reckoning": 51.841418301889014,
+      "ekf_no_gating": 1.0264309860616907,
+      "ekf_gated": 0.9793865318231402
+    },
+    "rmse_reduction_vs_gps_pct": 63.18528678677981,
+    "rmse_reduction_vs_gps_at_fix_pct": 62.76921724901236,
+    "rmse_reduction_vs_dead_reckoning_pct": 98.11080297587566,
+    "heading_rmse_deg": 4.965471549779264,
+    "wall_time_s": 31.508896589279175
+  }
+}
