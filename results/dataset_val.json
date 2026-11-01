@@ -1,0 +1,1 @@
+{"split": "val", "source": "data/parquet/validation.parquet", "max_side": 1280, "offset": 0, "images": 16, "boxes": 2321, "skipped_corrupt": 0}
