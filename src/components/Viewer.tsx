@@ -8,7 +8,7 @@ import { boundsOf, generateCloud } from '../lib/pointcloud';
 import { FrameStats } from '../lib/fps';
 
 export interface Layers { truth: boolean; ekf: boolean; dr: boolean; gps: boolean; ellipses: boolean; cloud: boolean }
-interface Props { run: Run; points: number; layers: Layers; time: number; bench?: { seconds: number } | null; onStats?: (s: HudStats) => void }
+interface Props { run: Run; points: number; layers: Layers; time: number; bench?: { seconds: number } | null; capture?: boolean; onStats?: (s: HudStats) => void }
 export interface HudStats { fps: number; drawCalls: number; triangles: number; points: number; rmse: number }
 
 function line(xy: number[][], color: number) {
@@ -17,7 +17,7 @@ function line(xy: number[][], color: number) {
   return new THREE.Line(g, new THREE.LineBasicMaterial({ color }));
 }
 
-export default function Viewer({ run, points, layers, time, bench, onStats }: Props) {
+export default function Viewer({ run, points, layers, time, bench, capture = false, onStats }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const timeRef = useRef(time);
   timeRef.current = time;
@@ -89,8 +89,17 @@ export default function Viewer({ run, points, layers, time, bench, onStats }: Pr
     groups.current = { truth, ekf, dr, gps, ellipses, cloud };
 
     const stats = new FrameStats();
-    let raf = 0, lastHud = 0, benchStart = 0, done = false;
+    let raf = 0, lastHud = 0, benchStart = 0, done = false, frozen = false, captureRequested = false;
     const benchCfg = bench;
+    const freeze = () => {
+      if (frozen) return;
+      frozen = true;
+      cancelAnimationFrame(raf);
+      renderer.getContext().finish();
+      renderer.domElement.dataset.renderState = 'frozen';
+    };
+    const requestCapture = () => { captureRequested = true; };
+    if (capture) window.addEventListener('viewer:capture', requestCapture);
     const loop = (now: number) => {
       raf = requestAnimationFrame(loop);
       const t = timeRef.current;
@@ -111,13 +120,16 @@ export default function Viewer({ run, points, layers, time, bench, onStats }: Pr
           done = true;
           const gl = renderer.getContext();
           const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+          freeze();
           (window as any).__bench = {
             ...stats.summary(), points, cloudGenerateMs, drawCalls: renderer.info.render.calls,
             gpu: dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER),
             canvas: [renderer.domElement.width, renderer.domElement.height],
+            captureFrozen: true,
           };
         }
       }
+      if (captureRequested) freeze();
       if (now - lastHud > 500 && onStats) {
         lastHud = now;
         const sm = stats.summary();
@@ -133,11 +145,11 @@ export default function Viewer({ run, points, layers, time, bench, onStats }: Pr
     };
     window.addEventListener('resize', onResize);
     return () => {
-      cancelAnimationFrame(raf); window.removeEventListener('resize', onResize); controls.dispose();
+      cancelAnimationFrame(raf); window.removeEventListener('resize', onResize); window.removeEventListener('viewer:capture', requestCapture); controls.dispose();
       scene.traverse((o: any) => { o.geometry?.dispose?.(); o.material?.dispose?.(); });
       renderer.dispose(); el.removeChild(renderer.domElement); groups.current = null;
     };
-  }, [run, points, bench]);
+  }, [run, points, bench, capture]);
 
   useEffect(() => {
     const g = groups.current;

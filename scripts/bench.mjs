@@ -2,9 +2,10 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import { setTimeout as delay } from 'node:timers/promises';
+import { gzipSync } from 'node:zlib';
 import { chromium } from 'playwright-core';
 
 const POINTS = (process.env.BENCH_POINTS ?? '10000,100000,1000000').split(',').map(Number);
@@ -25,6 +26,10 @@ const report = {
   cpu: os.cpus()[0]?.model,
   logicalCpus: os.cpus().length,
   runDataSha256: createHash('sha256').update(readFileSync('public/data/run.json')).digest('hex'),
+  bundles: readdirSync('dist/assets').filter((name) => name.endsWith('.js')).map((name) => {
+    const bytes = readFileSync(`dist/assets/${name}`);
+    return { name, bytes: bytes.length, gzipBytes: gzipSync(bytes).length, sha256: createHash('sha256').update(bytes).digest('hex') };
+  }),
   seconds: SECONDS,
   warmupFrameIntervals: 31,
   viewport: [1280, 720],
@@ -57,7 +62,7 @@ async function checkInteractions() {
   const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
   const pageErrors = [];
   page.on('pageerror', (error) => pageErrors.push(String(error)));
-  await page.goto('http://127.0.0.1:4173/?points=10000');
+  await page.goto('http://127.0.0.1:4173/?points=10000&capture=1');
   await page.waitForSelector('canvas');
   await page.getByRole('button', { name: 'Pause', exact: true }).click();
   await page.getByRole('button', { name: 'Play', exact: true }).waitFor();
@@ -86,12 +91,14 @@ async function checkInteractions() {
   await page.waitForFunction((expected) => Number(document.querySelector('.hud')?.textContent?.match(/(\d+) draw calls/)?.[1]) === expected, before);
   assert.equal(await page.locator('.error').count(), 0);
   assert.deepEqual(pageErrors, []);
+  await page.evaluate(() => window.dispatchEvent(new Event('viewer:capture')));
+  await page.waitForSelector('canvas[data-render-state="frozen"]');
   await page.screenshot({ path: 'results/ui-smoke.png' });
   writeFileSync('results/ui-smoke.json', JSON.stringify({
     browserVersion: browser.version(), executionOrigin: report.executionOrigin,
     playPause: true, scrubbedTime, pointCountAfterChange: 100000,
     canvasCount: 1, drawCallsCloudVisible: before, drawCallsCloudHidden: hidden,
-    restoredDrawCalls: await drawCalls(), pageErrors,
+    restoredDrawCalls: await drawCalls(), captureFrozen: true, pageErrors,
   }, null, 2) + '\n');
   await page.close();
 }
@@ -122,6 +129,8 @@ try {
     assert(Number.isInteger(result.drawCalls) && result.drawCalls > 0);
     assert.match(result.gpu, /SwiftShader/i);
     assert.deepEqual(result.canvas, [1280, 720]);
+    assert.equal(result.captureFrozen, true);
+    await page.waitForSelector('canvas[data-render-state="frozen"]');
     assert.deepEqual(pageErrors, []);
     if (n === 100000) await page.screenshot({ path: 'results/screenshot_100k.png' });
     report.results.push({ ...result, pageLoadToCanvasMs });

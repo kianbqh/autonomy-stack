@@ -37,7 +37,7 @@ export default function App() {
   if (!run) return <div className="loading">Loading…</div>;
   return (
     <div className="app">
-      <Viewer run={run} points={points} layers={layers} time={time} bench={bench} onStats={setHud} />
+      <Viewer run={run} points={points} layers={layers} time={time} bench={bench} capture={params.get('capture') === '1'} onStats={setHud} />
       <div className="panel">
         <h1>Sensor-fusion run viewer</h1>
         <div className="row">

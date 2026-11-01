@@ -59,6 +59,7 @@ npm run bench
 ```
 
 The benchmark uses Playwright's managed Chromium by default; `CHROME_PATH` can select another Chromium executable. Its preview server has a bounded startup wait, and browser/server cleanup runs on success and failure.
+Screenshot capture completes a final frame, synchronizes WebGL and stops the render loop before acknowledging the capture request.
 
 ## Files
 
