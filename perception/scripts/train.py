@@ -28,6 +28,8 @@ parser.add_argument('--project', default='runs')
 parser.add_argument('--warmup-epochs', type=float, default=3.0)
 parser.add_argument('--out', default='results/train_full_3080.json')
 parser.add_argument('--seed', type=int, default=0)
+parser.add_argument('--cache', choices=('ram', 'disk'), default=False,
+                    help='Official Ultralytics image cache mode; RAM allocation remains subject to its memory check')
 parser.add_argument('--resume', type=Path, help='Resume this run from its last.pt, retaining optimizer and completed epochs')
 args = parser.parse_args()
 out = Path(args.out).resolve()
@@ -72,7 +74,7 @@ if args.resume:
         'started_utc': invocation_started, 'checkpoint_epoch': resume_epochs,
         'checkpoint_sha256': sha(args.resume), 'script_sha256': sha(__file__),
         'requested': vars(args), 'previous_status': metadata['status'],
-        'reason': 'The previous WSL instance exited; resume the saved epoch and discard the incomplete next epoch.',
+        'reason': 'Explicit checkpoint recovery, retaining completed epochs and optimizer/EMA state.',
     })
 metadata['status'] = 'preparing'
 metadata['current_invocation_started_utc'] = invocation_started
@@ -88,7 +90,8 @@ def loader_report(loader, list_path):
     return {'official_list_count': len(expected) or None, 'usable_images': len(dataset),
             'skipped_images': sorted(p.name for p in expected - usable),
             'usable_boxes': sum(len(label['cls']) for label in dataset.labels),
-            'batch_size': loader.batch_size, 'workers': loader.num_workers}
+            'batch_size': loader.batch_size, 'workers': loader.num_workers,
+            'cache_mode': dataset.cache, 'ram_cache_packed': dataset.cache == 'ram' and hasattr(dataset.ims, 'buffer')}
 
 def prepared(trainer):
     assert trainer.start_epoch == resume_epochs
@@ -130,7 +133,7 @@ try:
                 epochs=args.epochs, imgsz=args.imgsz, batch=args.batch, device=args.device, workers=args.workers,
                 project=str(project), name=args.name, exist_ok=True, max_det=1000, plots=False, verbose=False,
                 amp=args.device != 'cpu', warmup_epochs=args.warmup_epochs, seed=args.seed, deterministic=True,
-                resume=str(args.resume) if args.resume else False)
+                resume=str(args.resume) if args.resume else False, cache=args.cache)
     train_elapsed = time.perf_counter() - t0
     best = run / 'weights/best.pt'
     raw_epochs = list(csv.DictReader((run / 'results.csv').open()))
