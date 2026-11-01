@@ -41,8 +41,21 @@ def test_odom_dropout():
 
 def test_deterministic_episode():
     a = run_episode(Scenario(1.5, "bias_step"), "ekf", 3)
-    b = run_episode(Scenario(1.5, "bias_step"), "ekf", 3)
+    replay = {}
+    b = run_episode(Scenario(1.5, "bias_step"), "ekf", 3, replay=replay)
     assert a == b
+    assert replay["meta"]["outcome"] == b["outcome"]
+    assert replay["meta"]["raw_baseline"] == "held GPS position"
+    samples = replay["samples"]
+    assert np.all(np.diff([s["t"] for s in samples]) > 0)
+    assert samples[-1]["t"] == b["time"]
+    assert samples[-1]["outcome"] == b["outcome"]
+    assert min(s["min_clearance"] for s in samples) == b["min_clearance"]
+    for sample in samples:
+        assert len(sample["truth"]) == len(sample["estimated_pose"]) == 3
+        xx, xy, yy = sample["cov"]
+        assert xx >= 0 and yy >= 0 and xx * yy - xy ** 2 >= -1e-9
+    assert any(s["faults"]["gps_bias"] for s in samples)
 
 
 @pytest.mark.parametrize("seed", range(5))

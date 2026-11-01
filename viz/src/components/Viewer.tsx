@@ -36,7 +36,7 @@ export default function Viewer({ run, points, layers, time, bench, capture = fal
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x0e1116);
     const s = run.samples;
-    const b = boundsOf(s.map((x) => x.truth), 10);
+    const b = boundsOf([...s.map((x) => x.truth), ...(run.world ? [...run.world.obstacles, run.world.goal] : [])], 10);
     const cx = (b.minX + b.maxX) / 2, cy = (b.minY + b.maxY) / 2, span = Math.max(b.maxX - b.minX, b.maxY - b.minY);
     const camera = new THREE.PerspectiveCamera(55, el.clientWidth / el.clientHeight, 0.1, span * 10);
     camera.position.set(...enuToThree(cx - span * 0.4, cy - span * 0.7, span * 0.6));
@@ -47,6 +47,17 @@ export default function Viewer({ run, points, layers, time, bench, capture = fal
     const grid = new THREE.GridHelper(Math.ceil(span / 10) * 10, Math.ceil(span / 10), 0x334155, 0x1f2937);
     grid.position.set(...enuToThree(cx, cy, 0));
     scene.add(grid);
+    if (run.world) {
+      for (const [x, y, radius] of run.world.obstacles) {
+        const obstacle = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, 0.3, 32), new THREE.MeshBasicMaterial({ color: 0xb45309 }));
+        obstacle.position.set(...enuToThree(x, y, 0.15));
+        scene.add(obstacle);
+      }
+      const goal = new THREE.Mesh(new THREE.RingGeometry(0.5, 0.65, 32), new THREE.MeshBasicMaterial({ color: 0x4ade80, side: THREE.DoubleSide }));
+      goal.geometry.rotateX(-Math.PI / 2);
+      goal.position.set(...enuToThree(...run.world.goal, 0.05));
+      scene.add(goal);
+    }
 
     const truth = line(s.map((x) => [x.truth[0], x.truth[1]]), 0xffffff);
     const ekf = line(s.map((x) => [x.ekf[0], x.ekf[1]]), 0x3b82f6);
@@ -58,9 +69,10 @@ export default function Viewer({ run, points, layers, time, bench, capture = fal
       g.setAttribute('position', new THREE.Float32BufferAttribute(fixes.flatMap((f) => enuToThree(f.xy[0], f.xy[1], 0.3)), 3));
       gps.add(new THREE.Points(g, new THREE.PointsMaterial({ color: accepted ? 0xf59e0b : 0xef4444, size: accepted ? 0.6 : 1.0 })));
     }
-    // 2-sigma covariance ellipses, one per second, merged into a single LineSegments draw call
+    // 2-sigma covariance ellipses, merged into a single LineSegments draw call.
     const segs: number[] = [];
-    for (let i = 0; i < s.length; i += 10) {
+    const ellipseStride = Math.max(1, Math.round(Number(run.meta.sample_hz ?? 10)));
+    for (let i = 0; i < s.length; i += ellipseStride) {
       const p = ellipsePoints(s[i].ekf[0], s[i].ekf[1], covEllipse(...s[i].cov, 2), 24);
       for (let k = 0; k + 3 < p.length; k += 2) segs.push(...enuToThree(p[k], p[k + 1], 0.2), ...enuToThree(p[k + 2], p[k + 3], 0.2));
     }
@@ -104,6 +116,8 @@ export default function Viewer({ run, points, layers, time, bench, capture = fal
       raf = requestAnimationFrame(loop);
       const t = timeRef.current;
       const pe = poseAt(s, t, 'ekf'), pt = poseAt(s, t, 'truth');
+      const frame = s[indexAtTime(s, t)];
+      (robot.material as THREE.MeshBasicMaterial).color.set(frame.outcome === 'collision' ? 0xef4444 : 0x22c55e);
       robot.position.set(...enuToThree(pe[0], pe[1], 0.6)); robot.rotation.y = pe[2];
       ghost.position.set(...enuToThree(pt[0], pt[1], 0.6)); ghost.rotation.y = pt[2];
       if (benchCfg) { // orbit the camera so every frame does real work
@@ -122,15 +136,18 @@ export default function Viewer({ run, points, layers, time, bench, capture = fal
           const dbg = gl.getExtension('WEBGL_debug_renderer_info');
           freeze();
           (window as any).__bench = {
-            ...stats.summary(), points, cloudGenerateMs, drawCalls: renderer.info.render.calls,
+            ...stats.summary(), frameIntervalsMs: stats.intervals(), points, cloudGenerateMs, drawCalls: renderer.info.render.calls,
             gpu: dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER),
+            vendor: dbg ? gl.getParameter(dbg.UNMASKED_VENDOR_WEBGL) : gl.getParameter(gl.VENDOR),
+            webglVersion: gl.getParameter(gl.VERSION), shadingLanguageVersion: gl.getParameter(gl.SHADING_LANGUAGE_VERSION),
             canvas: [renderer.domElement.width, renderer.domElement.height],
             captureFrozen: true,
+            episode: run.meta.id ?? 'fusion-drive', outcome: run.meta.outcome ?? null,
           };
         }
       }
       if (captureRequested) freeze();
-      if (now - lastHud > 500 && onStats) {
+      if ((captureRequested || (benchCfg && done) || now - lastHud > 500) && onStats) {
         lastHud = now;
         const sm = stats.summary();
         onStats({ fps: sm.fps, drawCalls: renderer.info.render.calls, triangles: renderer.info.render.triangles, points,

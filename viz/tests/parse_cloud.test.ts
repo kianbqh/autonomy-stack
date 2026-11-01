@@ -18,6 +18,20 @@ describe('parseRun', () => {
     expect(() => parseRun(bad2)).toThrow(/PSD/);
     expect(() => parseRun({ samples: [] })).toThrow();
   });
+  it('loads both actual safety exports and preserves their outcome, world and covariance', () => {
+    for (const [id, outcome] of [['normal', 'success'], ['fault-collision', 'collision']]) {
+      const raw = JSON.parse(readFileSync(new URL(`../public/data/replays/${id}.json`, import.meta.url), 'utf8'));
+      const run = parseRun(raw);
+      expect(run.meta.id).toBe(id); expect(run.meta.outcome).toBe(outcome);
+      expect(run.world!.obstacles.length).toBeGreaterThan(0);
+      expect(run.samples[0].ekf).toEqual(raw.samples[0].estimated_pose);
+      expect(run.samples.at(-1)!.outcome).toBe(outcome);
+      if (outcome === 'collision') {
+        expect(run.samples.at(-1)!.clearance).toBeLessThan(0);
+        expect(run.samples.some((s) => s.faults?.gps_bias)).toBe(true);
+      }
+    }
+  });
 });
 
 describe('point cloud', () => {
@@ -43,5 +57,12 @@ describe('FrameStats', () => {
   it('computes fps from frame intervals', () => {
     const f = new FrameStats(); for (let i = 0; i <= 60; i++) f.tick(i * 16.6667);
     const s = f.summary(); expect(s.frames).toBe(60); expect(s.fps).toBeCloseTo(60, 0); expect(s.frameMsP50).toBeCloseTo(16.67, 1);
+  });
+  it('retains intervals and uses linear percentile interpolation', () => {
+    const f = new FrameStats();
+    [0, 10, 30, 60, 100].forEach((t) => f.tick(t));
+    expect(f.intervals()).toEqual([10, 20, 30, 40]);
+    expect(f.summary()).toEqual({ frames: 4, fps: 40, frameMsP50: 25, frameMsP95: 38.5 });
+    f.reset(); expect(f.summary().fps).toBe(0);
   });
 });

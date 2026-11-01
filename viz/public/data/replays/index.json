@@ -1,0 +1,18 @@
+[
+  {
+    "id": "normal",
+    "title": "Normal GPS \u00b7 successful arrival",
+    "path": "./data/replays/normal.json",
+    "outcome": "success",
+    "scenario": "gps1.5_none_odom-ok",
+    "seed": 0
+  },
+  {
+    "id": "fault-collision",
+    "title": "GPS bias \u00b7 collision",
+    "path": "./data/replays/fault-collision.json",
+    "outcome": "collision",
+    "scenario": "gps1.5_bias_step_odom-ok",
+    "seed": 0
+  }
+]

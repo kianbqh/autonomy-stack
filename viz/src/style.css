@@ -7,3 +7,8 @@ html, body, #root { margin: 0; height: 100%; background: #0e1116; color: #e5e7eb
 .row input[type=range] { flex: 1; }
 .hud, .legend { margin-top: 6px; color: #9ca3af; }
 .error, .loading { padding: 20px; }
+.status { display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 8px; margin: 8px 0; border-left: 3px solid #60a5fa; background: #172033; }
+.status strong { width: 100%; }
+.status.collision { border-color: #f87171; background: #331b22; }
+.status.success { border-color: #4ade80; }
+.panel select { max-width: 310px; }

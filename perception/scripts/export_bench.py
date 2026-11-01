@@ -9,6 +9,7 @@ from shelfvision.gaps import find_gaps
 ap = argparse.ArgumentParser()
 ap.add_argument("--weights", default="runs/smoke/weights/best.pt"); ap.add_argument("--imgsz", type=int, default=640)
 ap.add_argument("--images", default="data/sku110k_yolo/images/val"); ap.add_argument("--n", type=int, default=20)
+ap.add_argument("--image-list", help="Official val.txt; resolves paths relative to the list instead of globbing mixed splits")
 ap.add_argument("--threads", type=int, default=4); ap.add_argument("--out", default="results/onnx_bench.json")
 a = ap.parse_args()
 os.makedirs(os.path.dirname(a.out) or '.', exist_ok=True)
@@ -38,7 +39,12 @@ assert np.isfinite(pt_output).all() and np.isfinite(ort_output).all()
 np.testing.assert_allclose(ort_output, pt_output, rtol=1e-3, atol=1e-3)
 
 # end-to-end (pre + infer + NMS) through ultralytics with the ONNX model, plus gap heuristic
-imgs = sorted(glob.glob(os.path.join(a.images, "*.jpg")))[: a.n]
+if a.image_list:
+    from pathlib import Path
+    listing = Path(a.image_list).resolve()
+    imgs = sorted(str((listing.parent / line.strip()).resolve()) for line in listing.read_text().splitlines() if line.strip())[:a.n]
+else:
+    imgs = sorted(glob.glob(os.path.join(a.images, "*.jpg")))[: a.n]
 assert len(imgs) == a.n, f'Expected {a.n} validation images, found {len(imgs)}'
 om = YOLO(onnx_path, task="detect"); e2e, n_det, n_gaps = [], [], 0
 per_image = []
@@ -58,6 +64,7 @@ for i, p in enumerate(imgs):
 pct = lambda v, q: float(np.percentile(v, q))
 res = {"weights": a.weights, "onnx": onnx_path, "imgsz": a.imgsz, "threads": a.threads,
        "input_seed": 0, "warmup_runs": 5, "timed_runs": 50, "batch": 1,
+       "image_list": a.image_list, "image_split": "official validation" if a.image_list else "--images directory",
        "onnx_size_mb": round(os.path.getsize(onnx_path) / 1e6, 2),
        "onnxruntime_ms": {"p50": round(pct(ort_ms, 50), 1), "p95": round(pct(ort_ms, 95), 1)},
        "pytorch_ms": {"p50": round(pct(pt_ms, 50), 1), "p95": round(pct(pt_ms, 95), 1)},

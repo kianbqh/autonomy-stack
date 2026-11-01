@@ -9,7 +9,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from third_party.fusion_core import RobotSim, SensorConfig
+from fusion_core.sim import RobotSim, SensorConfig
 
 GPS_FAULTS = ("none", "dropout_10s", "dropout_30s", "spikes", "bias_step")
 ODOM_FAULTS = ("ok", "dropout_10s")
@@ -48,6 +48,13 @@ class FaultySensors:
         g = {"dropout_10s": 10, "dropout_30s": 30, "bias_step": 15}.get(self.sc.gps_fault)
         return bool((g and self._in(t, g)) or self.sc.gps_fault == "spikes"
                     or (self.sc.odom_fault == "dropout_10s" and self._in(t + 2.0, 10)))
+
+    def flags(self, t) -> dict[str, bool]:
+        duration = {"dropout_10s": 10, "dropout_30s": 30}.get(self.sc.gps_fault)
+        return {"gps_dropout": bool(duration and self._in(t, duration)),
+                "gps_bias": bool(self.sc.gps_fault == "bias_step" and self._in(t, 15)),
+                "gps_spike_regime": self.sc.gps_fault == "spikes",
+                "odom_dropout": bool(self.sc.odom_fault == "dropout_10s" and self._in(t + 2.0, 10))}
 
     def step(self, a, w):
         m = self.sim.step(a, w)

@@ -1,8 +1,8 @@
-# av-safety-eval
+# Safety under sensor faults
 
 I wanted to see how sensor faults turn localization error into missed clearance, and whether a small uncertainty-aware speed and margin rule helps. This project runs a differential-drive robot past two known circular obstacles, using the estimated pose to steer toward a goal 12–20 m away.
 
-The simulator and EKF implementation files, `sim.py` and `ekf.py`, are byte-identical to [ros2-sensor-fusion-sim](https://github.com/kianbqh/ros2-sensor-fusion-sim) at commit `d47c6e0`; the package initializer is a local wrapper. [File hashes](results/fusion_core_provenance.json).
+The runner imports the simulator and EKF directly from the repository's shared [`fusion_core`](../fusion_core). The original matrix used the same implementation at commit `d47c6e0`; [file hashes](results/fusion_core_provenance.json) retain that provenance. Obstacles, sensor faults and motion are synthetic 2-D simulation; no hardware or camera detections enter the controller.
 
 ## Experiment
 
@@ -66,4 +66,10 @@ pip install -r requirements-lock.txt
 PYTHON="$VIRTUAL_ENV/bin/python" bash scripts/run_all.sh
 ```
 
-`SEEDS=20` and `WORKERS=3` are the defaults. Each scenario is checkpointed to `results/episodes.csv`; `RESUME=1` reuses saved scenario rows. The requested scenario/estimator/seed coverage is checked before aggregation. GitHub Actions runs the 14 tests with the locked dependencies.
+Run these commands from `safety/`. `SEEDS=20` and `WORKERS=3` are the defaults. Each scenario is checkpointed to `results/episodes.csv`; `RESUME=1` reuses saved scenario rows. The requested scenario/estimator/seed coverage is checked before aggregation. The root workflow runs these 14 tests alongside fusion and perception checks.
+
+## Replay integration
+
+From the repository root, `PYTHONPATH=.:safety python -m avsafety.export` reruns two existing matrix cases: the first successful nominal-GPS seed and the first gated-EKF bias-fault collision seed, both with GPS sigma 1.5 m and normal odometry. It verifies outcome, duration, minimum clearance and localization RMSE against the recorded rows before writing [`viz/public/data/replays`](../viz/public/data/replays).
+
+Each trace carries timestamps, truth and estimated poses, position covariance, known obstacles and goal, sensor-fault regimes and individual injected-event flags, true clearance and terminal outcome. The grey raw-position baseline holds GPS between fixes; it is not dead reckoning. [`replay_integration.json`](../results/replay_integration.json) records the source matrix hash, exact case rows and exported-file hashes. The optional trace does not add random draws or change control actions.

@@ -1,0 +1,179 @@
+{
+  "sources": {
+    "fusion": {
+      "path": "G:\\ResumeProject\\2_ros2_sensor_fusion_sim\\ros2-sensor-fusion-sim",
+      "head": "d47c6e01a08c8d25d2a07a395d1dd88b49b05d1b",
+      "branch": "main",
+      "status": []
+    },
+    "safety": {
+      "path": "G:\\ResumeProject\\17_av_safety_eval\\av-safety-eval",
+      "head": "b1af28ca056d1a5230d06fe155ab8b3b6414c6e8",
+      "branch": "main",
+      "status": []
+    },
+    "viz": {
+      "path": "G:\\ResumeProject\\16_webgl_3d_viewer\\webgl-3d-viewer",
+      "head": "c39a0dfe21f31be97fcfd203b98a0a7a08c57ee2",
+      "branch": "main",
+      "status": []
+    },
+    "perception": {
+      "path": "G:\\ResumeProject\\19_retail_shelf_vision\\retail-shelf-vision",
+      "head": "2e6178496997b51a603093348eefe1e035b15411",
+      "branch": "main",
+      "status": []
+    }
+  },
+  "commands": [
+    {
+      "started_utc": "2026-11-01T05:30:20.1380732Z",
+      "argv": [
+        "git",
+        "clone",
+        "--no-hardlinks",
+        "G:\\ResumeProject\\2_ros2_sensor_fusion_sim\\ros2-sensor-fusion-sim",
+        "G:\\ResumeProject\\platforms\\autonomy-stack"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:30:34.0416083Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "config",
+        "user.name",
+        "kianbqh"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:30:34.1374086Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "config",
+        "user.email",
+        "311157779+kianbqh@users.noreply.github.com"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:30:35.091955Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "subtree",
+        "add",
+        "--prefix=safety",
+        "G:\\ResumeProject\\17_av_safety_eval\\av-safety-eval",
+        "main"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:31:11.7825893Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "subtree",
+        "add",
+        "--prefix=viz",
+        "G:\\ResumeProject\\16_webgl_3d_viewer\\webgl-3d-viewer",
+        "main"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:32:13.3647506Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "subtree",
+        "add",
+        "--prefix=perception",
+        "G:\\ResumeProject\\19_retail_shelf_vision\\retail-shelf-vision",
+        "main"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:32:58.013562Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "merge-base",
+        "--is-ancestor",
+        "d47c6e01a08c8d25d2a07a395d1dd88b49b05d1b",
+        "HEAD"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:32:58.7883656Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "merge-base",
+        "--is-ancestor",
+        "b1af28ca056d1a5230d06fe155ab8b3b6414c6e8",
+        "HEAD"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:32:58.8687695Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "merge-base",
+        "--is-ancestor",
+        "c39a0dfe21f31be97fcfd203b98a0a7a08c57ee2",
+        "HEAD"
+      ],
+      "exit_code": 0
+    },
+    {
+      "started_utc": "2026-11-01T05:32:58.9449775Z",
+      "argv": [
+        "git",
+        "-C",
+        "G:\\ResumeProject\\platforms\\autonomy-stack",
+        "merge-base",
+        "--is-ancestor",
+        "2e6178496997b51a603093348eefe1e035b15411",
+        "HEAD"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "ancestorProof": {
+    "fusion": {
+      "source_head": "d47c6e01a08c8d25d2a07a395d1dd88b49b05d1b",
+      "source_is_ancestor": true
+    },
+    "safety": {
+      "source_head": "b1af28ca056d1a5230d06fe155ab8b3b6414c6e8",
+      "source_is_ancestor": true
+    },
+    "viz": {
+      "source_head": "c39a0dfe21f31be97fcfd203b98a0a7a08c57ee2",
+      "source_is_ancestor": true
+    },
+    "perception": {
+      "source_head": "2e6178496997b51a603093348eefe1e035b15411",
+      "source_is_ancestor": true
+    },
+    "combined_head": "30f6c7cb9c85a297e31a872c60b61693371290c8",
+    "commit_count": 9
+  }
+}

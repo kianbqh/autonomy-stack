@@ -1,0 +1,57 @@
+{
+  "source": "https://github.com/eg4000/SKU110K_CVPR19",
+  "source_terms": "Official source states academic and non-commercial use",
+  "download": {
+    "url": "https://trax-geometry.s3.amazonaws.com/cvpr_challenge/SKU110K_fixed.tar.gz",
+    "official_reference": "https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/SKU-110K.yaml",
+    "started_utc": "2026-11-01T05:27:37.690705+00:00",
+    "expected_bytes": 12196152718,
+    "headers": {
+      "x-amz-id-2": "kutNKLv2mv2zh6AMFr+y3JhOTdqR764lm5YpeV1JDMzlnYOgcQTpE3UDUqQWkUJH4D9rwjzK+OsX3bHMbXYVoC0Iuv93caXx",
+      "x-amz-request-id": "9FF0ZE4DYW4FVEJN",
+      "Server": "AmazonS3",
+      "Date": "Sun, 01 Nov 2026 05:27:39 GMT",
+      "Last-Modified": "Fri, 27 Mar 2020 13:16:34 GMT",
+      "ETag": "\"9c6c51f959b337e5d30f61e25e1e8d1e-710\"",
+      "x-amz-storage-class": "INTELLIGENT_TIERING",
+      "x-amz-version-id": "ITJw53ZkcU7.8fHi3fo18DWdFpzp8JMD",
+      "Accept-Ranges": "bytes",
+      "Content-Length": "12196152718",
+      "Content-Type": "application/x-gzip",
+      "Connection": "close"
+    },
+    "cache_path": "/opt/codex-resume/autonomy-stack/cache/SKU110K_fixed.tar.gz",
+    "status": "complete",
+    "downloaded_bytes": 12196152718,
+    "sha256": "fd40deee21044af97804d6583e62d43f7b317c46c70153a5fb427bd26438c226",
+    "finished_utc": "2026-11-01T05:34:10.698253+00:00"
+  },
+  "conversion": "All official CSV rows; single object class; normalized xywh using CSV dimensions, five decimals; no image resizing",
+  "splits": {
+    "train": {
+      "official_images": 8219,
+      "annotation_rows": 1208482,
+      "missing_images": [],
+      "out_of_range_or_nonpositive_boxes": [],
+      "annotation_sha256": "6859fe75eeb0665aeb8ac0fa06be349020c41f244f04f53b7f77cf03187c6d65",
+      "image_verification": "Training loader performs image/label verification; usable and skipped counts are recorded by the trainer"
+    },
+    "val": {
+      "official_images": 588,
+      "annotation_rows": 90968,
+      "missing_images": [],
+      "out_of_range_or_nonpositive_boxes": [],
+      "annotation_sha256": "7032314e171064936fc342f1bbddf8d575892c46f84331ee7e07e585f2695ded",
+      "image_verification": "Training loader performs image/label verification; usable and skipped counts are recorded by the trainer"
+    },
+    "test": {
+      "official_images": 2936,
+      "annotation_rows": 431546,
+      "missing_images": [],
+      "out_of_range_or_nonpositive_boxes": [],
+      "annotation_sha256": "cd905bc73a3e97e5d458f48b4ac0622bf3b1a4c4f347ee5f25fda96e6a72315f",
+      "image_verification": "Training loader performs image/label verification; usable and skipped counts are recorded by the trainer"
+    }
+  },
+  "prepared_utc": "2026-11-01T06:31:53.640546+00:00"
+}

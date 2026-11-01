@@ -1,0 +1,19 @@
+{
+  "browserVersion": "156.0.8078.4",
+  "mode": "native Windows Chromium, NVIDIA hardware WebGL via ANGLE D3D11",
+  "executionOrigin": "local",
+  "playPause": true,
+  "scrubbedTime": 13.45,
+  "normalDurationS": 26.35000000000132,
+  "pointCountAfterChange": 100000,
+  "canvasCount": 1,
+  "drawCallsCloudVisible": 12,
+  "drawCallsCloudHidden": 11,
+  "replaySelection": [
+    "normal",
+    "fault-collision"
+  ],
+  "failureState": "Recorded outcome: collision\nFrame: collision\nFaults now: GPS bias\nTrue clearance: -0.006 m",
+  "captureFrozen": true,
+  "pageErrors": []
+}

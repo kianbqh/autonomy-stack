@@ -1,0 +1,11 @@
+# Integration validation
+
+The local integration checks passed: 11 fusion/policy tests, 14 safety tests, five perception converter/geometry tests, and 16 viewer unit tests. Node 24.22.2 typechecking and the production build also passed. Python checks used the modules' existing isolated environments: Python 3.12.3, NumPy 2.5.4, PyTorch 2.15.0+cu132 for fusion, pandas 3.1.0 for safety, and PyArrow 26.0.0/Pillow 13.0.0 for perception.
+
+The two new safety exports rerun actual recorded matrix cases with the shared root simulator/EKF. Their outcome, duration, minimum clearance and localization RMSE match the saved rows. The exporter records the matrix and replay hashes in `results/replay_integration.json`. Optional recording adds no random draws or control actions. Viewer tests parse those exports, and the native browser checks the normal/failure loader, playback, scrubbing, point counts, layers, exact collision terminal frame, fault state and terminal RMSE.
+
+Three native Windows rendering groups completed on RTX 3080 / ANGLE D3D11, Chromium 156.0.8078.4, driver 621.01. `viz/results/native-gpu/bench.json` preserves every frame interval, actual renderer and physical GPU information, UTC group windows, scene hash/world and source/bundle hashes. Final UI-only checks and refreshed screenshots are in `viz/results/native-ui-final`; a later End-key/HUD fix did not repeat the valid performance groups.
+
+The full official SKU archive was downloaded and hashed, all splits converted, and actual training-loader verification recorded in `perception/results/sku110k_full_provenance.json` and `dataset_verification.json`. Full 100-epoch YOLO11s training is running; no full-model validation or ONNX result is claimed at this checkpoint. `full_training_args.yaml` and `training_gpu_snapshot.json` record the actual configuration, source hashes and one GPU resource snapshot. The first completed epoch and final artifacts will supply the measured training results.
+
+The root workflow runs CPU tests, an actual 30-second ROS 2 loop and explicitly labeled SwiftShader browser correctness. The retained 180-second local ROS run and its environment/model provenance are in `results/VALIDATION.md`. Source histories remain intact; all four original HEADs are ancestors, recorded in `results/source_history.json`.

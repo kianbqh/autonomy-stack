@@ -1,33 +1,74 @@
-name: Tests
-on:
-  push:
-  pull_request:
+name: Autonomy stack
+on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  python:
+  simulation:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      OMP_NUM_THREADS: "4"
-      OPENBLAS_NUM_THREADS: "1"
-      MKL_NUM_THREADS: "4"
+      OMP_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '4'
+      PYTHONPATH: .:safety:perception
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
           cache: pip
-      - name: Install PyTorch CPU and dependencies
+      - name: Install CPU test dependencies
         run: |
           python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install -r requirements.txt
-      - name: Test the filter, environment, and exported policy
-        run: python -m pytest -q
+          python -m pip install -r requirements.txt pandas pillow pyarrow
+      - name: Fusion, policy, safety and perception unit tests
+        run: python -m pytest --capture=sys -q tests safety/tests perception/tests
+      - name: Regenerate actual normal and failure safety traces
+        run: python -m avsafety.export
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: safety-replay-check
+          path: results/replay_integration.json
   ros2:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Run ROS 2 nodes for 30 seconds
+      - name: Run actual ROS 2 nodes for 30 seconds
         run: bash scripts/run_ros2_docker.sh 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ros2-loop
+          path: results/ros2_metrics.json
+  viewer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: viz
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: viz/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: Install managed Chromium
+        run: npx playwright-core install --with-deps chromium
+      - name: Browser correctness using CPU software WebGL
+        env:
+          BENCH_MODE: ci-software
+          BENCH_POINTS: '10000'
+          BENCH_SECONDS: '1'
+        run: npm run bench
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-correctness-swiftshader-software
+          path: viz/results/ci-software/

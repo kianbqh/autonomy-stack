@@ -1,1 +1,0 @@
-{"split": "train", "source": "data/parquet/train-00008.parquet", "max_side": 1280, "offset": 0, "images": 48, "boxes": 7410, "skipped_corrupt": 0}

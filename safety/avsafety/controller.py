@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from third_party.fusion_core import wrap_angle
+from fusion_core.ekf import wrap_angle
 
 V_MAX, W_MAX, ROBOT_R = 1.2, 1.5, 0.3
 

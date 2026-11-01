@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T06:46:38.869729+00:00",
+  "training_status": "training",
+  "completed_epochs": 0,
+  "gpu_query": [
+    "nvidia-smi",
+    "--query-gpu=name,uuid,driver_version,utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw",
+    "--format=csv"
+  ],
+  "gpu": "name, uuid, driver_version, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu, power.draw [W]\nNVIDIA GeForce RTX 3080, GPU-b562b569-0a27-0511-7682-f3629b0785dc, 621.01, 16 %, 10659 MiB, 12288 MiB, 55.90, 169.45 W\n",
+  "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+  "source_sha256": {
+    "perception/scripts/train.py": "cf4f73fa5b79db0c71db6617e58e1a407561d8dd5aafde48230bef38e35aa8d1",
+    "perception/scripts/prepare_full.py": "14165c19c92569107111f0348171198b2732e79e37a8f47ffa5f234bbd2e454c",
+    "perception/scripts/export_bench.py": "8e809c03f05c4dc3274e591002c9cda834d41e1824deacf5b5f7e8c00aef7cb7"
+  }
+}
