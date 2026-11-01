@@ -1,0 +1,17 @@
+{
+  "requested_unique_episode_keys": 3000,
+  "observed_unique_episode_keys": 3000,
+  "episodes_per_estimator": {
+    "truth": 600,
+    "raw": 600,
+    "ekf_nogate": 600,
+    "ekf": 600,
+    "ekf_monitor": 600
+  },
+  "oracle_localization_error_all_zero": true,
+  "outcome_rates_sum_to_one": true,
+  "finite_clearance_localization_time": true,
+  "source_ast": "passed",
+  "episodes_sha256": "3db75fe893880478bbbb8d76de707f5023b027c7322ddaed884d2b75b38e845c",
+  "nees_aggregation": "Equal-weight mean of each episode's NEES sample mean / exceedance fraction."
+}

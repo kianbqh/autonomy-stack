@@ -1,0 +1,17 @@
+{
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700KF",
+  "logical_cpus": 20,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pytest": "9.2.0"
+  },
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "runtime_context": "Three simulation workers; a separately coordinated CPU training job overlapped part of the run."
+}

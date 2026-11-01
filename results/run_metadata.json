@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-11-01T03:54:05.938975+00:00",
+  "completed_utc": "2026-11-01T03:56:52.722073+00:00",
+  "elapsed_seconds": 166.78311324119568,
+  "workers": 3,
+  "seeds_per_cell_estimator": 20,
+  "scenario_cells": 30,
+  "estimators": [
+    "truth",
+    "raw",
+    "ekf_nogate",
+    "ekf",
+    "ekf_monitor"
+  ],
+  "episodes": 3000,
+  "unique_requested_episode_keys_verified": true,
+  "resume": false
+}
