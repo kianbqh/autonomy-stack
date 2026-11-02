@@ -52,21 +52,72 @@ def rpe(pred,truth,pairs):
     return {"count":len(samples),"translation_rmse_m":float(np.sqrt(np.mean([s["translation_m"]**2 for s in samples]))) if samples else None,
             "rotation_rmse_deg":float(np.degrees(np.sqrt(np.mean([s["rotation_rad"]**2 for s in samples])))) if samples else None,"samples":samples}
 
+def kitti_distances(truth):
+    """Official KITTI scalar precision; use input GT before origin alignment."""
+    d=np.zeros(len(truth),dtype=np.float32)
+    for i in range(1,len(truth)):
+        delta=np.asarray(truth[i-1,:3,3]-truth[i,:3,3],dtype=np.float32)
+        squared=np.float32(np.float32(delta[0]*delta[0]+delta[1]*delta[1])+delta[2]*delta[2])
+        d[i]=np.float32(d[i-1]+np.sqrt(squared))
+    return d
+
+def kitti_segment_pairs(truth,lengths,stride):
+    d=kitti_distances(truth);pairs=[]
+    # Official ordering matters for the serial float32 overall sum.
+    for i in range(0,len(d),stride):
+        for length in lengths:
+            nominal=np.float32(length)
+            j=bisect.bisect_right(d,np.float32(d[i]+nominal))
+            if j<len(d):pairs.append((i,j,float(nominal)))
+    return pairs
+
+def kitti_error_components(error):
+    # The devkit matrix arithmetic is double; its scalar errors are float.
+    t=np.asarray(error[:3,3],dtype=np.float32)
+    squared=np.float32(np.float32(t[0]*t[0]+t[1]*t[1])+t[2]*t[2])
+    translation=np.float32(np.sqrt(squared))
+    diagonal=np.asarray(np.diag(error[:3,:3]),dtype=np.float32)
+    trace=np.float32(np.float32(diagonal[0]+diagonal[1])+diagonal[2])
+    # 0.5 and 1.0 are double literals in the official source, before float d.
+    cosine=np.float32(.5*(float(trace)-1.0))
+    angle=np.float32(np.arccos(np.clip(cosine,np.float32(-1),np.float32(1))))
+    return translation,angle
+
+def kitti_float32_mean(values):
+    if not values:return None
+    total=np.float32(0)
+    for value in values:total=np.float32(total+np.float32(value))
+    return float(np.float32(total/np.float32(len(values))))
+
+def kitti_segments(pred,truth,cfg):
+    samples=[]
+    for i,j,length in kitti_segment_pairs(truth,cfg["segment_lengths_m"],cfg["segment_start_stride_frames"]):
+        translation,angle=kitti_error_components(relative_error(pred,truth,i,j))
+        ratio=float(np.float32(translation/np.float32(length)))
+        rad=float(np.float32(angle/np.float32(length)))
+        samples.append({"i":i,"j":j,"length_m":length,"translation_ratio":ratio,"translation_percent":ratio*100,
+                        "rotation_rad_per_m":rad,"rotation_deg_per_m":float(np.degrees(rad)),"rotation_deg_per_100m":float(np.degrees(rad)*100)})
+    def summary(rows):
+        ratio=kitti_float32_mean([row["translation_ratio"] for row in rows])
+        rad=kitti_float32_mean([row["rotation_rad_per_m"] for row in rows])
+        return {"count":len(rows),"translation_ratio_mean":ratio,"rotation_rad_per_m_mean":rad,
+                "translation_percent_mean":ratio*100 if ratio is not None else None,
+                "rotation_deg_per_100m_mean":float(np.degrees(rad)*100) if rad is not None else None}
+    result=summary(samples)
+    result.update(by_length={str(length):summary([row for row in samples if row["length_m"]==length]) for length in cfg["segment_lengths_m"]},
+                  samples=samples,pair_order="start_frame_then_length",scalar_precision="float32_components_distances_and_serial_sums;float64_pose_matrices",
+                  official_devkit_parity="not yet run; must cross-check exact pair/aggregation before final acceptance")
+    return result
+
+
 def metrics(pred,truth,cfg):
     if len(pred)!=len(truth):raise ValueError("pose count mismatch")
+    kitti=kitti_segments(pred,truth,cfg)
     truth=normalize(truth);pred=normalize(pred);aligned,A=align_no_scale(pred,truth)
     ate=np.linalg.norm(aligned[:,:3,3]-truth[:,:3,3],axis=1)
-    segments=[]
-    for length in cfg["segment_lengths_m"]:
-        for i,j in distance_pairs(truth,length,cfg["segment_start_stride_frames"]):
-            e=relative_error(pred,truth,i,j);rad=rotation_angle(e[:3,:3])/length
-            segments.append({"i":i,"j":j,"length_m":length,"translation_percent":float(np.linalg.norm(e[:3,3])/length*100),"rotation_rad_per_m":rad,"rotation_deg_per_m":float(np.degrees(rad)),"rotation_deg_per_100m":float(np.degrees(rad)*100)})
-    per_length={str(length):{"count":sum(s["length_m"]==length for s in segments),
-                 "translation_percent_mean":float(np.mean([s["translation_percent"] for s in segments if s["length_m"]==length])) if any(s["length_m"]==length for s in segments) else None,
-                 "rotation_deg_per_100m_mean":float(np.mean([s["rotation_deg_per_100m"] for s in segments if s["length_m"]==length])) if any(s["length_m"]==length for s in segments) else None} for length in cfg["segment_lengths_m"]}
     return {"ate":{"alignment":"SE3_no_scale","rmse_m":float(np.sqrt(np.mean(ate**2))),"per_frame_m":ate.tolist(),"T_aligned_pred":A.tolist()},
             "rpe_1frame":rpe(pred,truth,[(i,i+1) for i in range(len(pred)-1)]),"rpe_100m":rpe(pred,truth,distance_pairs(truth,cfg["rpe_distance_m"])),
-            "kitti_segments":{"count":len(segments),"translation_percent_mean":float(np.mean([s["translation_percent"] for s in segments])) if segments else None,"rotation_deg_per_100m_mean":float(np.mean([s["rotation_deg_per_100m"] for s in segments])) if segments else None,"by_length":per_length,"samples":segments,"official_devkit_parity":"not yet run; must cross-check exact pair/aggregation before final acceptance"}}
+            "kitti_segments":kitti}
 
 def eval_loops(log,truth,threshold):
     truth=normalize(truth);rows=[]
