@@ -2,7 +2,7 @@
 
 I use this module to follow how scan-registration error changes a recorded trajectory, then check what an independently verified loop adds. The front end is a C++17 point-to-plane ICP implementation; Eigen handles matrix algebra, nanoflann supplies kNN queries, and GTSAM 4.2 optimizes the pose graph.
 
-This is a prepared implementation. Native compilation, the GoogleTest fixtures, KITTI runs, numerical Python tests, evo comparison and calibration plots are **not run**. [Execution status](results/README.md) lists the outstanding evidence. No accuracy or speed number is claimed.
+The [Python CI checks](results/ci-6393986/import.json) pass on synthetic trajectories, including an actual evo CLI comparison. Native compilation and the KITTI runs are next; [execution status](results/README.md) tracks their results.
 
 ## Registration and bounded mapping
 
@@ -82,7 +82,7 @@ The external evo 1.31.0 CLI independently checks ATE and translation/rotation RP
 
 ## Recorded-data replay and failed attempts
 
-The private replay candidate uses `kitti-slam-replay/v1`, preserving full camera0-relative SE(3), original timestamps, separate ICP/optimized/GT tracks and every loop decision. It does not manufacture EKF covariance/GPS fields or a procedural point cloud. A failed attempt retains only its durable accepted odometry prefix; failed-frame pose and optimization are unavailable. Prefix checkpoint flush is included in frame-inclusive timing, while registration-only timing is unchanged.
+The replay format, `kitti-slam-replay/v1`, preserves full camera0-relative SE(3), original timestamps, separate ICP/optimized/GT tracks and every loop decision. A failed attempt retains its accepted odometry prefix. Prefix checkpoint flush is included in frame-inclusive timing, while registration-only timing is unchanged.
 
 ```bash
 python slam/python/export_replay.py --run /path/on/G/slam-runs/UNIQUE \
@@ -90,9 +90,9 @@ python slam/python/export_replay.py --run /path/on/G/slam-runs/UNIQUE \
   --repo-root "$PWD" --output-parent /path/on/G/slam-replay-exports
 ```
 
-The actual viewer is still unchanged. Its existing 2D EKF parser cannot accept this schema. At integration, the parser/component/TS test candidates are targeted to `viz/src/slam/` inside the existing viewer package, with a separate root-owned entry mode; source mapping is recorded in private `INTEGRATION_TARGETS-v2.json`. C++ failure-prefix behavior, TypeScript/Vitest/build and browser playback remain unexecuted. The browser smoke tool reuses an explicit installed browser, starts no server and writes its profile/artifacts under a caller-supplied G path. No rendering performance claim is made.
+Open the separate [3D viewer](../viz/README.md#recorded-slam-entry) with `?view=slam&replay=<same-origin-json-url>`. TypeScript and the viewer build pass in CI. Playback of a real KITTI export and its browser checks are still pending.
 
-The existing shared 2D simulator's explicit sensor-noise checks are prepared in `tests/test_sim_sensor_models.py`. They are not run and do not characterize KITTI sensors. Its baseline model is synchronous; sampling cadence is not a communication-delay model. Reduced Fetch sensing/command latency remains a separate simulation contract.
+The existing 2D simulator's sensor-noise and sampling checks pass in the same Python CI run. They exercise the simulator's synchronous Gaussian noise, bias random walk and GPS outliers; KITTI sensor calibration is evaluated separately.
 
 ## Camera–LiDAR diagnostic
 

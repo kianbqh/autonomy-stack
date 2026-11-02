@@ -1,0 +1,33 @@
+{
+  "accepted_at_utc": "2026-11-02T13:00:54.531541+00:00",
+  "branch_commit": "6393986dae300d9fad4ea87bac21597401b1bd7c",
+  "ci_checkout_merge": "70a76737d1ca59e4174c86e25a493b7f250b8569",
+  "workflow_run": 41448451512,
+  "python_tests_passed": 28,
+  "python_pytest_wall_seconds": 2.29,
+  "viewer_existing_tests_passed": 16,
+  "scope": "Actual remote synthetic Python/evo/sensor tests and existing viewer checks; recorded KITTI/native C++/new SLAM browser playback not run",
+  "files": [
+    {
+      "path": "api-evidence.json",
+      "bytes": 9620,
+      "sha256": "dc019bf3d0e89efd4ef6dcf381ce208f254e2c6536e06b0d93e08932ffad1545"
+    },
+    {
+      "path": "slam-python.raw.log",
+      "bytes": 32169,
+      "sha256": "765dc0609c2cfb6bd920a892a404fcf2b304f7a22a18a987dae497316bc914fb"
+    },
+    {
+      "path": "viewer.raw.log",
+      "bytes": 42700,
+      "sha256": "3574854b1f3d6cbf655fad9bf72c68e3e4321a4daa32e9da8f84e8abc6c94059"
+    },
+    {
+      "path": "LOG_EVIDENCE_MANIFEST.json",
+      "bytes": 973,
+      "sha256": "5ee28132795e575da39ac6714b5564dd17db25bb8b37c81bbc919d3d17496e24"
+    }
+  ],
+  "artifact_zip_verified": false
+}

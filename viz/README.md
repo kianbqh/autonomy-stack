@@ -86,6 +86,5 @@ same entry. The Safety replay link removes only `view` and `replay`, preserving 
 requested episode/time/benchmark parameters. SLAM mode does not run a legacy safety
 scene or its rendering benchmark.
 
-This entry is prepared source. Loading real exports, TypeScript/Vitest/build and
-native-browser acceptance remain not run until the actual dataset run and UI
-checks finish. Existing safety/renderer measurements above do not validate SLAM.
+TypeScript and the viewer build pass in [CI](../slam/results/ci-6393986/import.json).
+Loading a real KITTI export and checking its native-browser playback are next.
