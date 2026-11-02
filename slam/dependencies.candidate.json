@@ -1,0 +1,11 @@
+{
+  "status": "candidate pins; no archive was downloaded or hashed during preparation",
+  "automatic_downloads": false,
+  "sources": [
+    {"name":"eigen","version":"3.4.0","source":"https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz","sha256":null,"license":"MPL-2.0"},
+    {"name":"nanoflann","version":"1.6.3","source":"https://github.com/jlblancoc/nanoflann/archive/refs/tags/v1.6.3.tar.gz","sha256":null,"license":"BSD-2-Clause"},
+    {"name":"gtsam","version":"4.2","source":"https://github.com/borglab/gtsam/archive/refs/tags/4.2.tar.gz","sha256":null,"license":"BSD-3-Clause"},
+    {"name":"googletest","version":"1.15.2","source":"https://github.com/google/googletest/archive/refs/tags/v1.15.2.tar.gz","sha256":null,"license":"BSD-3-Clause"}
+  ],
+  "release_gate":"Root must authorize source retrieval, verify actual official archive bytes, fill SHA256 in a committed lock, run isolated native build/tests and record binary/source receipts. Null hashes are not a resolved lock."
+}

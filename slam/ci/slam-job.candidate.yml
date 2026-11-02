@@ -1,0 +1,37 @@
+# Add ONLY this job beneath the existing workflow jobs, after the dependency lock is verified.
+# Candidate is intentionally not applied; simulation/ros2/viewer job bodies remain untouched.
+slam:
+  runs-on: ubuntu-24.04
+  timeout-minutes: 30
+  env:
+    OMP_NUM_THREADS: '2'
+    OPENBLAS_NUM_THREADS: '1'
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: Install explicit CPU toolchain
+      run: sudo apt-get update && sudo apt-get install -y ninja-build libboost-all-dev
+    - uses: actions/cache@v4
+      with:
+        path: ${{ runner.temp }}/slam-sources
+        key: slam-sources-${{ hashFiles('slam/dependencies.lock.json') }}
+    - name: Retrieve only verified pinned dependency archives
+      run: python slam/python/fetch_locked_sources.py --lock slam/dependencies.lock.json --output "${{ runner.temp }}/slam-sources"
+    - name: Build private pinned sources and run real C++ unit tests
+      run: python slam/python/build_native.py --lock slam/dependencies.lock.json --archives-dir "${{ runner.temp }}/slam-sources" --scratch-parent "${{ runner.temp }}/slam-builds" --repo-root "$GITHUB_WORKSPACE" --jobs 2
+    - name: Install separate CPU evaluator test dependencies
+      run: python -m pip install -r slam/requirements-eval.lock.txt
+    - name: Calibration, trajectory and contract fixtures
+      env:
+        TMPDIR: ${{ runner.temp }}/slam-tmp
+      run: |
+        mkdir -p "$TMPDIR"
+        python -m unittest discover -s slam/tests -p test_static_contracts.py -v
+        PYTHONPATH=. python -m pytest --capture=sys -q slam/tests/test_eval.py slam/tests/test_sim_sensor_models.py
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: slam-cpu-unit-fixtures
+        path: ${{ runner.temp }}/slam-builds

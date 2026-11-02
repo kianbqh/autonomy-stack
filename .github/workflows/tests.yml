@@ -72,3 +72,33 @@ jobs:
         with:
           name: browser-correctness-swiftshader-software
           path: viz/results/ci-software/
+  slam-python:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: .
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned evaluator test dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/slam-python-evidence"
+          python -m pip install -r slam/requirements-eval.candidate.txt
+          python -m pip freeze --all > "$RUNNER_TEMP/slam-python-evidence/dependency-freeze.txt"
+      - name: Trajectory, evo CLI, projection, replay and sensor fixtures
+        run: |
+          set -o pipefail
+          python -m pytest --capture=sys -q slam/tests --basetemp "$RUNNER_TEMP/slam-python-evidence/pytest" --junitxml "$RUNNER_TEMP/slam-python-evidence/junit.xml" 2>&1 | tee "$RUNNER_TEMP/slam-python-evidence/pytest.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: slam-python-synthetic-fixtures
+          path: ${{ runner.temp }}/slam-python-evidence/
+          retention-days: 14
+          if-no-files-found: error
