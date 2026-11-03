@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -76,11 +77,16 @@ def main():
         (out/"native.cfg").write_text("".join(f"{k}={v}\n" for k,v in sorted(flat.items())))
         seq = root/"dataset"/"sequences"/config["sequence"]
         command = [str(args.binary.resolve()),str(seq),str((out/"native.cfg").resolve()),str((out/"native").resolve())]
+        native_env=os.environ.copy()
+        loader=build.get("loader_environment")
+        if isinstance(loader,dict) and isinstance(loader.get("LD_LIBRARY_PATH"),str):
+            native_env["LD_LIBRARY_PATH"]=loader["LD_LIBRARY_PATH"]
+        record["native_loader_environment"]={"LD_LIBRARY_PATH":native_env.get("LD_LIBRARY_PATH")}
         record["native_command"] = command
         write_json(out/"run.json",record)
         native_start=time.monotonic()
         with (out/"stdout.txt").open("w") as stdout,(out/"stderr.txt").open("w") as stderr:
-            native_process=subprocess.Popen(command,stdout=stdout,stderr=stderr)
+            native_process=subprocess.Popen(command,stdout=stdout,stderr=stderr,env=native_env)
             record["native_pid"]=native_process.pid
             write_json(out/"run.json",record)
             code=native_process.wait()

@@ -44,12 +44,18 @@ def main():
         path=Path(tool).resolve();tools[name]={"path":str(path),"sha256":sha256(path)}
     run=new_run(args.scratch_parent,"native-build");prefix=run/"prefix";prefix.mkdir()
     prefix_path=";".join(str(p) for p in [prefix,*prerequisite_prefixes])
-    record={"status":"started","started_utc":utc(),"command":sys.argv,"environment":environment(),"lock_sha256":sha256(args.lock),"source_files":source_manifest(args.repo_root/"slam"),"prerequisite_prefixes":[str(p) for p in prerequisite_prefixes],"cmake_prefix_path":prefix_path,"resolved_tools":tools,**git_state(args.repo_root,args.git)}
+    child_env=os.environ.copy();loader_environment={}
+    if sys.platform.startswith("linux"):
+        library_dirs=[str((p/"lib").resolve()) for p in [prefix,*prerequisite_prefixes]]
+        inherited_loader_path=child_env.get("LD_LIBRARY_PATH")
+        child_env["LD_LIBRARY_PATH"]=os.pathsep.join(library_dirs+([inherited_loader_path] if inherited_loader_path else []))
+        loader_environment={"LD_LIBRARY_PATH":child_env["LD_LIBRARY_PATH"],"prepended_library_directories":library_dirs,"inherited_LD_LIBRARY_PATH":inherited_loader_path}
+    record={"status":"started","started_utc":utc(),"command":sys.argv,"environment":environment(),"lock_sha256":sha256(args.lock),"source_files":source_manifest(args.repo_root/"slam"),"prerequisite_prefixes":[str(p) for p in prerequisite_prefixes],"cmake_prefix_path":prefix_path,"loader_environment":loader_environment,"resolved_tools":tools,**git_state(args.repo_root,args.git)}
     commands=[];start=time.monotonic()
     def command(parts):
         commands.append(parts);write_json(run/"build.json",dict(record,commands=commands))
         with (run/"commands.log").open("a") as log:
-            log.write(json.dumps(parts)+"\n");log.flush();subprocess.run(parts,stdout=log,stderr=subprocess.STDOUT,check=True)
+            log.write(json.dumps(parts)+"\n");log.flush();subprocess.run(parts,stdout=log,stderr=subprocess.STDOUT,check=True,env=child_env)
     try:
         for name in ("eigen","nanoflann","googletest","gtsam"):
             source=next(s for s in lock["sources"] if s["name"]==name)
@@ -66,7 +72,7 @@ def main():
         build=run/"slam-build";command(["cmake","-S",str(args.repo_root/"slam"),"-B",str(build),"-G","Ninja","-DCMAKE_BUILD_TYPE=Release","-DCMAKE_PREFIX_PATH="+prefix_path,"-DNANOFLANN_INCLUDE_DIR="+str(prefix/"include")])
         command(["cmake","--build",str(build),"--parallel",str(args.jobs)])
         command(["ctest","--test-dir",str(build),"--output-on-failure"])
-        binary=build/"run_kitti_slam";record.update(status="complete",verified=True,binary=str(binary),binary_sha256=sha256(binary),dependencies=lock["sources"],compiler_version=subprocess.check_output(["c++","--version"],text=True),cmake_version=subprocess.check_output(["cmake","--version"],text=True),dynamic_libraries=subprocess.check_output(["ldd",str(binary)],text=True))
+        binary=build/"run_kitti_slam";record.update(status="complete",verified=True,binary=str(binary),binary_sha256=sha256(binary),dependencies=lock["sources"],compiler_version=subprocess.check_output(["c++","--version"],text=True,env=child_env),cmake_version=subprocess.check_output(["cmake","--version"],text=True,env=child_env),dynamic_libraries=subprocess.check_output(["ldd",str(binary)],text=True,env=child_env))
     except BaseException as e:record.update(status="failed",verified=False,failure={"type":type(e).__name__,"message":str(e)});raise
     finally:record.update(finished_utc=utc(),wall_s=time.monotonic()-start,commands=commands);write_json(run/"build.json",record)
     print(run/"build.json")
