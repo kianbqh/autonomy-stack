@@ -10,6 +10,7 @@ import sys
 import time
 import zipfile
 import numpy as np
+from scipy.spatial.transform import Rotation
 from common import environment, git_state, new_run, sha256, source_manifest, utc, write_json
 from official_parity import completion_status, run_official_crosscheck
 
@@ -23,7 +24,20 @@ def load_poses(path):
 
 def normalize(poses):return np.linalg.inv(poses[0])@poses
 
-def rotation_angle(rotation):return float(np.arccos(np.clip((np.trace(rotation)-1)/2,-1,1)))
+def rotation_angle(rotation):
+    # Rounded KITTI rotation matrices need a robust SO(3) logarithm angle.
+    # The independent SciPy API handles the accepted near-SO(3) input.
+    return float(Rotation.from_matrix(rotation).magnitude())
+
+def rigid_inverse(pose):
+    inverse=np.eye(4);inverse[:3,:3]=pose[:3,:3].T
+    inverse[:3,3]=-inverse[:3,:3]@pose[:3,3]
+    return inverse
+
+def rpe_relative_error(pred,truth,i,j):
+    gt=rigid_inverse(truth[i])@truth[j]
+    estimate=rigid_inverse(pred[i])@pred[j]
+    return rigid_inverse(gt)@estimate
 
 def align_no_scale(pred,truth):
     x,y=pred[:,:3,3],truth[:,:3,3];mx,my=x.mean(0),y.mean(0)
@@ -48,7 +62,7 @@ def relative_error(pred,truth,i,j):
 def rpe(pred,truth,pairs):
     samples=[]
     for i,j in pairs:
-        e=relative_error(pred,truth,i,j)
+        e=rpe_relative_error(pred,truth,i,j)
         samples.append({"i":i,"j":j,"translation_m":float(np.linalg.norm(e[:3,3])),"rotation_rad":rotation_angle(e[:3,:3])})
     return {"count":len(samples),"translation_rmse_m":float(np.sqrt(np.mean([s["translation_m"]**2 for s in samples]))) if samples else None,
             "rotation_rmse_deg":float(np.degrees(np.sqrt(np.mean([s["rotation_rad"]**2 for s in samples])))) if samples else None,"samples":samples}
@@ -111,10 +125,55 @@ def kitti_segments(pred,truth,cfg):
     return result
 
 
+def validate_native_generation(native,config,repo,evaluation_state):
+    """Allow evaluator revisions while pinning the completed native generation."""
+    native,config,repo=Path(native),Path(config),Path(repo)
+    if evaluation_state.get("whole_worktree_status"):
+        raise ValueError("evaluation requires a clean source checkpoint")
+    run=native.parent;record=json.loads((run/"run.json").read_text())
+    if record["status"]!="complete" or record.get("native_exit_code")!=0:
+        raise ValueError("evaluation requires a completed native generation")
+    config_hash=sha256(config)
+    if record["config_sha256"]!=config_hash or sha256(run/"config.json")!=config_hash:
+        raise ValueError("native generation runtime config differs from evaluation")
+    build_path=run/"build-receipt.json"
+    if sha256(build_path)!=record["build_receipt_sha256"]:
+        raise ValueError("copied native build receipt changed")
+    build=json.loads(build_path.read_text())
+    if build.get("verified") is not True or build["git_sha"]!=record["git_sha"]:
+        raise ValueError("native generation/build checkpoint mismatch")
+    binary=Path(build["binary"])
+    if build["binary_sha256"]!=record["binary_sha256"] or sha256(binary)!=record["binary_sha256"]:
+        raise ValueError("native generation binary changed")
+    sources=json.loads((run/"source-sha256.json").read_text())
+    if sources!=build["source_files"]:
+        raise ValueError("native run/build source inventories disagree")
+    def compiled_input(name):
+        return name.startswith(("src/","include/","apps/")) or name in {"CMakeLists.txt","dependencies.lock.json","prerequisites.lock.json"}
+    generated={k:v for k,v in sources.items() if compiled_input(k)}
+    current={k:v for k,v in source_manifest(repo/"slam").items() if compiled_input(k)}
+    required={"CMakeLists.txt","dependencies.lock.json","prerequisites.lock.json","src/cloud.cpp","src/geometry.cpp","src/pipeline.cpp","include/slam/core.hpp","apps/run_kitti_slam.cpp"}
+    if not required.issubset(generated) or current!=generated:
+        raise ValueError("compiled native source/configuration/lock inputs changed")
+    if sha256(run/"input-manifest.json")!=record["input_manifest_sha256"]:
+        raise ValueError("native generation input manifest changed")
+    runtime=json.loads(config.read_text());flat=dict(runtime["algorithm"],expected_frames=runtime["expected_frames"])
+    expected="".join(f"{key}={value}\n" for key,value in sorted(flat.items()))
+    if (run/"native.cfg").read_text()!=expected:
+        raise ValueError("native flattened runtime configuration changed")
+    summary=json.loads((native/"native_summary.json").read_text())
+    if summary["status"]!="complete" or summary["frames"]!=runtime["expected_frames"]:
+        raise ValueError("native generation completion/frame count mismatch")
+    return {"native_generation_git_sha":record["git_sha"],"evaluation_git_sha":evaluation_state["git_sha"],
+            "native_run_sha256":sha256(run/"run.json"),"build_receipt_sha256":sha256(build_path),
+            "binary_sha256":sha256(binary),"runtime_config_sha256":config_hash,
+            "input_manifest_sha256":record["input_manifest_sha256"],"compiled_source_files":generated,
+            "source_scope":"complete C++ src/include/apps, CMake, dependency/prerequisite locks; evaluator revisions are separately identified"}
+
 def metrics(pred,truth,cfg):
     if len(pred)!=len(truth):raise ValueError("pose count mismatch")
     kitti=kitti_segments(pred,truth,cfg)
-    truth=normalize(truth);pred=normalize(pred);aligned,A=align_no_scale(pred,truth)
+    aligned,A=align_no_scale(pred,truth)
     ate=np.linalg.norm(aligned[:,:3,3]-truth[:,:3,3],axis=1)
     return {"ate":{"alignment":"SE3_no_scale","rmse_m":float(np.sqrt(np.mean(ate**2))),"per_frame_m":ate.tolist(),"T_aligned_pred":A.tolist()},
             "rpe_1frame":rpe(pred,truth,[(i,i+1) for i in range(len(pred)-1)]),"rpe_100m":rpe(pred,truth,distance_pairs(truth,cfg["rpe_distance_m"])),
@@ -203,15 +262,14 @@ def plot_results(predictions,truth,results,out):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    truth=normalize(truth)
     fig,ax=plt.subplots(figsize=(8,6));ax.plot(truth[:,0,3],truth[:,2,3],label="GT")
     for name,poses in predictions.items():
-        aligned,_=align_no_scale(normalize(poses),truth)
+        aligned,_=align_no_scale(poses,truth)
         ax.plot(aligned[:,0,3],aligned[:,2,3],label=name)
     for row in results["loops"]["rows"]:
         if row["accepted"]:
             i,j=row["candidate_frame"],row["query_frame"]
-            poses,_=align_no_scale(normalize(predictions["slam"]),truth)
+            poses,_=align_no_scale(predictions["slam"],truth)
             ax.plot(poses[[i,j],0,3],poses[[i,j],2,3],color="green" if row["posthoc_true_loop"] else "red",alpha=.6,linewidth=.8)
     ax.axis("equal");ax.set(xlabel="camera0 x (m)",ylabel="camera0 z (m)",title="SE3-aligned paths; loops green=true/red=false, GT labels post hoc");ax.legend();fig.tight_layout();fig.savefig(out/"trajectory-loops.png",dpi=160);plt.close(fig)
     fig,ax=plt.subplots(figsize=(9,3))
@@ -224,7 +282,8 @@ def main():
     try:
         result.update(git_state(args.repo_root,args.git));write_json(out/"source-sha256.json",source_manifest(args.repo_root/"slam"))
         native_record=json.loads((args.native_run.parent/"run.json").read_text())
-        if native_record["status"]!="complete" or native_record["config_sha256"]!=result["config_sha256"] or native_record["git_sha"]!=result["git_sha"]:raise ValueError("evaluation must match completed native source/config checkpoint")
+        result["generation_provenance"]=validate_native_generation(args.native_run,args.config,args.repo_root,result)
+        result["native_generation_git_sha"]=native_record["git_sha"];result["evaluation_git_sha"]=result["git_sha"]
         result["native_run_sha256"]=sha256(args.native_run.parent/"run.json")
         cfg=json.loads(args.config.read_text());truth=load_poses(args.truth)
         if len(truth)!=cfg["expected_frames"]:raise ValueError("GT frame count differs from frozen config")

@@ -118,3 +118,21 @@ def test_evo_version_mismatch_rejected_before_reading_inputs(tmp_path):
     with pytest.raises(ValueError, match="evo version mismatch"):
         evo_crosscheck(tmp_path / "unused-ref", tmp_path / "unused-est",
                        tmp_path, "0.0.0", CFG, {})
+
+
+def test_rounded_near_so3_inputs_match_real_evo_without_tolerance_change(tmp_path):
+    pred,truth=synthetic_trajectories()
+    # Six decimal KITTI-style matrices are valid near-SO(3), not exact rotations.
+    pred[:,:3,:3]=np.round(pred[:,:3,:3],6)
+    truth[:,:3,:3]=np.round(truth[:,:3,:3],6)
+    ref,est=tmp_path/"rounded-reference.txt",tmp_path/"rounded-estimate.txt"
+    np.savetxt(ref,truth[:,:3,:].reshape(-1,12),fmt="%.17g")
+    np.savetxt(est,pred[:,:3,:].reshape(-1,12),fmt="%.17g")
+    out=tmp_path/"rounded-real-evo";out.mkdir()
+    own=metrics(pred,truth,CFG)
+    check=evo_crosscheck(ref,est,out,EVO_VERSION,CFG,own)
+    assert check["passed"]
+    assert all(row["passed"] and row["exit_code"]==0 for row in check["commands"])
+    from eval_traj import rotation_angle
+    # Rounded matrix scale must not create an artificial physical rotation.
+    assert rotation_angle(np.diag([1-1e-7,1,1]))==0
