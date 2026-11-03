@@ -109,11 +109,6 @@ jobs:
       run:
         shell: bash
     env:
-      SLAM_CI_ROOT: ${{ runner.temp }}/slam-native-cpu
-      TMPDIR: ${{ runner.temp }}/slam-native-cpu/tmp
-      M3_ORACLE_TEST_TMP: ${{ runner.temp }}/slam-native-cpu/oracle-mocks
-      M3_PIPELINE_TEST_TMP: ${{ runner.temp }}/slam-native-cpu/pipeline-mocks
-      PYTHONPYCACHEPREFIX: ${{ runner.temp }}/slam-native-cpu/pycache
       PYTHONPATH: .
       MPLBACKEND: Agg
       OMP_NUM_THREADS: '2'
@@ -125,7 +120,20 @@ jobs:
         with:
           python-version: '3.12'
       - name: Prepare isolated Python and compact CPU evidence
+        env:
+          SLAM_CI_ROOT: ${{ runner.temp }}/slam-native-cpu
+          TMPDIR: ${{ runner.temp }}/slam-native-cpu/tmp
+          M3_ORACLE_TEST_TMP: ${{ runner.temp }}/slam-native-cpu/oracle-mocks
+          M3_PIPELINE_TEST_TMP: ${{ runner.temp }}/slam-native-cpu/pipeline-mocks
+          PYTHONPYCACHEPREFIX: ${{ runner.temp }}/slam-native-cpu/pycache
         run: |
+          printf '%s\n' \
+            "SLAM_CI_ROOT=$SLAM_CI_ROOT" \
+            "TMPDIR=$TMPDIR" \
+            "M3_ORACLE_TEST_TMP=$M3_ORACLE_TEST_TMP" \
+            "M3_PIPELINE_TEST_TMP=$M3_PIPELINE_TEST_TMP" \
+            "PYTHONPYCACHEPREFIX=$PYTHONPYCACHEPREFIX" \
+            >> "$GITHUB_ENV"
           mkdir -p "$SLAM_CI_ROOT/evidence" "$TMPDIR"
           python -m venv "$SLAM_CI_ROOT/venv"
           echo "$SLAM_CI_ROOT/venv/bin" >> "$GITHUB_PATH"
