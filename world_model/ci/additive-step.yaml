@@ -1,0 +1,7 @@
+# Optional CPU fixture step; the full isolated job is in .github/workflows/tests.yml.
+- name: Small encoder/dynamics engineering gates (CPU)
+  env:
+    PYTHONPATH: world_model:manipulation
+    M3_WORLD_MODEL_RUNTIME_TESTS: "1"
+    M3_WORLD_MODEL_SIM_TESTS: "0"
+  run: python -m unittest discover -s world_model/tests -v

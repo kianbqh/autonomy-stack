@@ -1,0 +1,28 @@
+{
+  "mode": "formal",
+  "protocol": "m3-reduced-v2",
+  "root_review": "accepted in chat2026-11-02 before formal outcomes",
+  "model_seeds": [
+    0,
+    1,
+    2
+  ],
+  "device": "cuda",
+  "hidden": 64,
+  "latent": 8,
+  "batch_size": 256,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "gradient_clip": 10.0,
+  "max_epochs": 100,
+  "loss_weights": {
+    "reconstruction": 0.25,
+    "latent_consistency": 0.1
+  },
+  "early_stop": {
+    "minimum_epochs": 20,
+    "patience": 10,
+    "min_delta": 1e-05
+  },
+  "checkpoint_root": "/opt/codex-resume/all-modules-v2/m3/world-model/artifacts/checkpoints"
+}

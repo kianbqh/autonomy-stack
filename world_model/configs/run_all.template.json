@@ -1,0 +1,16 @@
+{
+  "mode": "formal",
+  "stages": [],
+  "planner": {
+    "horizon": 10,
+    "candidates": 128,
+    "iterations": 3,
+    "elites": 16,
+    "scheme": "deterministic_latent",
+    "initial_std": 0.5,
+    "minimum_std": 0.01,
+    "action_penalty": 0.001,
+    "sampling_seed": 1801
+  },
+  "input_status": "template: freeze configs+hashes and dependency bindings for collect/train/prediction/mpc/report/plot; no RL,SAC intake,grid or oracle stage"
+}

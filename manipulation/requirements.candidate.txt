@@ -1,0 +1,2 @@
+# Reproducible Linux CPython3.12 CPU dependency set.
+-r ../requirements-m3-ci.lock

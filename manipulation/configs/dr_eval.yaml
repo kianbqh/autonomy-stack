@@ -1,0 +1,100 @@
+{
+  "protocol": "fixed11-v2",
+  "episodes_per_policy": 100,
+  "policy_seeds": [
+    0,
+    1,
+    2
+  ],
+  "weighting": "uniform11-cell panel mean; not full Cartesian robustness",
+  "cells": [
+    {
+      "name": "nominal",
+      "mass": 1.0,
+      "friction": 1.0,
+      "noise_sigma": 0.0,
+      "latency": 0,
+      "gain": 1.0
+    },
+    {
+      "name": "mass_low",
+      "mass": 0.5,
+      "friction": 1.0,
+      "noise_sigma": 0.0,
+      "latency": 0,
+      "gain": 1.0
+    },
+    {
+      "name": "mass_high",
+      "mass": 2.0,
+      "friction": 1.0,
+      "noise_sigma": 0.0,
+      "latency": 0,
+      "gain": 1.0
+    },
+    {
+      "name": "friction_low",
+      "mass": 1.0,
+      "friction": 0.5,
+      "noise_sigma": 0.0,
+      "latency": 0,
+      "gain": 1.0
+    },
+    {
+      "name": "friction_high",
+      "mass": 1.0,
+      "friction": 1.5,
+      "noise_sigma": 0.0,
+      "latency": 0,
+      "gain": 1.0
+    },
+    {
+      "name": "noise_sigma_low",
+      "mass": 1.0,
+      "friction": 1.0,
+      "noise_sigma": 0.005,
+      "latency": 0,
+      "gain": 1.0
+    },
+    {
+      "name": "noise_sigma_high",
+      "mass": 1.0,
+      "friction": 1.0,
+      "noise_sigma": 0.01,
+      "latency": 0,
+      "gain": 1.0
+    },
+    {
+      "name": "latency_low",
+      "mass": 1.0,
+      "friction": 1.0,
+      "noise_sigma": 0.0,
+      "latency": 1,
+      "gain": 1.0
+    },
+    {
+      "name": "latency_high",
+      "mass": 1.0,
+      "friction": 1.0,
+      "noise_sigma": 0.0,
+      "latency": 2,
+      "gain": 1.0
+    },
+    {
+      "name": "gain_low",
+      "mass": 1.0,
+      "friction": 1.0,
+      "noise_sigma": 0.0,
+      "latency": 0,
+      "gain": 0.8
+    },
+    {
+      "name": "gain_high",
+      "mass": 1.0,
+      "friction": 1.0,
+      "noise_sigma": 0.0,
+      "latency": 0,
+      "gain": 1.2
+    }
+  ]
+}

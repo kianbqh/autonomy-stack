@@ -135,3 +135,35 @@ TEST(IO,ThreeFrameBinaryAndMalformedScan) {
   {std::ofstream f(files[1],std::ios::binary|std::ios::app);f.put('x');}EXPECT_THROW(slam::readScan(files[1],0,80),std::runtime_error);
   std::filesystem::remove_all(root);
 }
+
+TEST(ICP,InternalRotationRetractionPreventsLongSequenceDrift) {
+  const auto target=room();const auto cfg=fixtureConfig();
+  const auto normals=slam::estimateNormals(target,cfg);
+  // A legitimate near-SO(3) input models floating-point composition error.
+  // Exercise production align(), not a standalone normalization helper.
+  auto seed=slam::Pose::Identity();seed.linear()(0,0)+=1e-12;
+  ASSERT_TRUE(slam::validPose(seed));
+  std::vector<slam::Pose> accepted{seed};
+  slam::Vec6 motion;motion<<.002,-.003,.004,.01,-.02,.02;
+  for(size_t frame=1;frame<=128;++frame) {
+    const auto truth=slam::expSE3(double(frame)*motion);
+    slam::Cloud source;source.reserve(target.size());
+    for(const auto& point:target)source.push_back(truth.inverse()*point);
+    const slam::Pose guess=frame>1?accepted.back()*(accepted[frame-2].inverse()*accepted.back()):accepted.back();
+    const auto result=slam::align(source,normals,guess,cfg);
+    ASSERT_TRUE(result.converged)<<"frame "<<frame<<": "<<result.reason;
+    EXPECT_TRUE(slam::validPose(result.T));
+    EXPECT_LT((result.T.linear().transpose()*result.T.linear()-Eigen::Matrix3d::Identity()).norm(),1e-12);
+    EXPECT_NEAR(result.T.linear().determinant(),1.0,1e-12);
+    EXPECT_LT((result.T.inverse()*truth).translation().norm(),.001);
+    EXPECT_LT(slam::angle(result.T.inverse()*truth),.05*std::acos(-1)/180);
+    accepted.push_back(result.T);
+  }
+  // Internal retraction must never repair an explicitly invalid caller input.
+  auto invalid=slam::Pose::Identity();invalid.linear()(0,0)=1.01;
+  ASSERT_FALSE(slam::validPose(invalid));
+  const auto refused=slam::align(target,normals,invalid,cfg);
+  EXPECT_FALSE(refused.converged);
+  EXPECT_EQ(refused.reason,"invalid_or_empty_icp_input");
+  EXPECT_EQ((refused.T.matrix()-invalid.matrix()).norm(),0.0);
+}

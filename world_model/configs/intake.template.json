@@ -1,0 +1,10 @@
+{
+  "schema": "wm-intake-v2",
+  "required_sources": [
+    "expert",
+    "bc",
+    "noisy_bc"
+  ],
+  "manifests": [],
+  "input_status": "fill actual collection manifest path+sha256; actual counts are audited, never invented"
+}

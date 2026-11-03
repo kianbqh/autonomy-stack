@@ -1,0 +1,40 @@
+{
+  "mode": "formal",
+  "artifact_root": "/opt/codex-resume/all-modules-v2/m3/world-model/artifacts/episodes",
+  "policy_device": "cpu",
+  "env_config": {
+    "env_id": "FetchPush-v4",
+    "fault_stream_seed": 710,
+    "dr_stream_seed": 720,
+    "training_randomization": null
+  },
+  "episodes_per_source": 200,
+  "noisy_bc_std": 0.2,
+  "source_specs": [
+    {
+      "source_policy": "expert",
+      "model_seed": null,
+      "reset_start": 800000,
+      "controller": {
+        "behind_m": 0.055,
+        "hover_m": 0.08,
+        "position_gain": 20.0,
+        "alignment_m": 0.018,
+        "push_ahead_m": 0.05
+      }
+    },
+    {
+      "source_policy": "bc",
+      "model_seed": 0,
+      "reset_start": 801000,
+      "checkpoint": null
+    },
+    {
+      "source_policy": "noisy_bc",
+      "model_seed": 0,
+      "reset_start": 802000,
+      "checkpoint": null
+    }
+  ],
+  "input_status": "template: replace both null BC checkpoint receipts with the SAME actual nominalBC seed0 path+sha256; never select from held-out outcomes"
+}

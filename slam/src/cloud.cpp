@@ -122,6 +122,9 @@ IcpResult align(const Cloud& source,const NormalCloud& target,const Pose& initia
     if(solver.info()!=Eigen::Success || !delta.allFinite()){result.reason="nonfinite_or_failed_solve";return finish();}
     if(delta.head<3>().norm()>cfg.max_step_rotation || delta.tail<3>().norm()>cfg.max_step_translation){result.reason="step_limit";return finish();}
     result.T=expSE3(delta)*result.T;
+    // Keep internally composed rotations on SO(3). Tiny matrix roundoff must
+    // not be amplified by repeated Isometry constant-velocity products.
+    result.T.linear()=Eigen::Quaterniond(result.T.linear()).normalized().toRotationMatrix();
     if(delta.head<3>().norm()<cfg.rotation_epsilon && delta.tail<3>().norm()<cfg.translation_epsilon) {
       const auto final=linearize(source,centered,tree,result.T,cfg);result.inliers=final.n;result.rmse=final.rmse;result.inlier_ratio=final.ratio;result.condition=final.condition;
       result.reason=!final.error.empty()?final.error:(final.rmse>cfg.max_rmse?"fitness_gate":"converged");

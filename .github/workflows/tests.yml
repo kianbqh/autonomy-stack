@@ -225,12 +225,12 @@ jobs:
               ["ctest", "--test-dir", str(binary.parent), "--show-only=json-v1"], text=True)
           (evidence / "native-test-discovery.json").write_text(listing)
           discovered = [test["name"] for test in json.loads(listing)["tests"]]
-          if len(discovered) != 13:
-              raise RuntimeError("expected exactly thirteen discovered native tests")
-          executed = re.findall(r"^\d+/13 Test: (.+)$", actual, flags=re.MULTILINE)
+          if len(discovered) != 14:
+              raise RuntimeError("expected exactly fourteen discovered native tests")
+          executed = re.findall(r"^\d+/14 Test: (.+)$", actual, flags=re.MULTILINE)
           passed = len(re.findall(r"^Test Passed\.$", actual, flags=re.MULTILINE))
-          if (executed != discovered or passed != 13 or "Test Failed." in actual):
-              raise RuntimeError("actual CTest LastTest.log does not show thirteen passing tests")
+          if (executed != discovered or passed != 14 or "Test Failed." in actual):
+              raise RuntimeError("actual CTest LastTest.log does not show fourteen passing tests")
           # build_native marks complete only after this actual CTest subprocess exits zero.
           (evidence / "native-unit-test-receipt.json").write_text(json.dumps({
               "status": "passed", "executed_tests": executed, "passed": passed,
@@ -375,5 +375,77 @@ jobs:
         with:
           name: slam-native-cpu-unit-fixtures
           path: ${{ runner.temp }}/slam-native-cpu/evidence/
+          retention-days: 14
+          if-no-files-found: error
+  m3-learning-cpu-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONPATH: manipulation:world_model
+      PYTHONDONTWRITEBYTECODE: '1'
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      M3_RUN_RUNTIME_TESTS: '0'
+      M3_WORLD_MODEL_RUNTIME_TESTS: '0'
+      M3_WORLD_MODEL_SIM_TESTS: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-m3-ci.lock
+      - name: Create isolated CPU package environment
+        env:
+          M3_CI_ROOT: ${{ runner.temp }}/m3-learning-cpu
+        run: |
+          set -euo pipefail
+          mkdir -p "$M3_CI_ROOT/evidence" "$M3_CI_ROOT/tmp"
+          python -m venv "$M3_CI_ROOT/venv"
+          printf '%s\n' \
+            "M3_CI_ROOT=$M3_CI_ROOT" \
+            "M3_CI_PYTHON=$M3_CI_ROOT/venv/bin/python" \
+            "PIP_CACHE_DIR=$M3_CI_ROOT/pip-cache" \
+            "TMPDIR=$M3_CI_ROOT/tmp" \
+            "TORCH_HOME=$M3_CI_ROOT/torch-cache" \
+            "MPLCONFIGDIR=$M3_CI_ROOT/matplotlib-cache" >> "$GITHUB_ENV"
+      - name: Install actual hash-locked CPU dependencies
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" -m pip install --require-hashes --only-binary=:all: --no-input \
+            --report "$M3_CI_ROOT/evidence/pip-install-report.json" -r requirements-m3-ci.lock \
+            2>&1 | tee "$M3_CI_ROOT/evidence/install.log"
+          "$M3_CI_PYTHON" -m pip check 2>&1 | tee "$M3_CI_ROOT/evidence/pip-check.log"
+          "$M3_CI_PYTHON" -m pip freeze --all > "$M3_CI_ROOT/evidence/dependency-freeze.txt"
+      - name: Assert actual CPU-only package identity
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" scripts/check_m3_cpu_environment.py \
+            --output "$M3_CI_ROOT/evidence/package-identity.json"
+      - name: Protocol, receipt, sensor timeline and geometry unit fixtures
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" -m unittest discover -s manipulation/tests -p 'test_*.py' -v \
+            2>&1 | tee "$M3_CI_ROOT/evidence/manipulation-unit-tests.log"
+          "$M3_CI_PYTHON" -m unittest discover -s world_model/tests -p test_pure.py -v \
+            2>&1 | tee "$M3_CI_ROOT/evidence/world-model-protocol-tests.log"
+      - name: Bounded CPU numerical fixtures (synthetic gradients and toy CEM)
+        env:
+          M3_WORLD_MODEL_RUNTIME_TESTS: '1'
+          M3_WORLD_MODEL_SIM_TESTS: '0'
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" -m unittest discover -s world_model/tests -p test_runtime.py -v \
+            2>&1 | tee "$M3_CI_ROOT/evidence/world-model-cpu-fixtures.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m3-learning-cpu-unit-fixtures
+          path: ${{ runner.temp }}/m3-learning-cpu/evidence/
           retention-days: 14
           if-no-files-found: error
