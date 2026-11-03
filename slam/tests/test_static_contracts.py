@@ -56,6 +56,6 @@ class Contracts(unittest.TestCase):
         self.assertIn("verifyLoop(scan,candidate",cpp)
     def test_dependency_downloads_are_explicitly_disabled(self):
         cmake=(ROOT/"CMakeLists.txt").read_text()
-        self.assertNotIn("FetchContent",cmake);self.assertIn("find_package(GTSAM 4.2 EXACT REQUIRED)",cmake)
+        self.assertNotIn("FetchContent",cmake);self.assertIn("find_package(GTSAM 4.2.0 EXACT REQUIRED)",cmake)
 
 if __name__=="__main__":unittest.main()
