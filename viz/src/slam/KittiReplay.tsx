@@ -27,6 +27,7 @@ export function SlamScene({run,index,edgeMode}:{run:SlamReplay;index:number;edge
     const bounds=new THREE.Box3();positions.forEach(p=>bounds.expandByPoint(new THREE.Vector3(...p)));
     const center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3());
     const span=Math.max(size.x,size.y,size.z,10),camera=new THREE.PerspectiveCamera(55,1,.1,span*20);
+    const fitRadius=Math.max(bounds.getBoundingSphere(new THREE.Sphere()).radius,5);
     camera.position.copy(center).add(new THREE.Vector3(span*.6,span*.7,span*.6));
     const controls=new OrbitControls(camera,renderer.domElement);controls.target.copy(center);controls.update();
     scene.add(path(run.frames.map(f=>f.odom),0x60a5fa));
@@ -59,7 +60,16 @@ export function SlamScene({run,index,edgeMode}:{run:SlamReplay;index:number;edge
       if(i!==lastEdgeFrame || mode.current!==lastMode)rebuildEdges(i);
       controls.update();renderer.render(scene,camera);
     };
-    const resize=()=>{const w=el.clientWidth,h=el.clientHeight;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();};
+    const resize=()=>{
+      const w=el.clientWidth,h=el.clientHeight;renderer.setSize(w,h);
+      camera.aspect=Math.max(w,1)/Math.max(h,1);
+      // Fit the sphere enclosing every 3D track to the limiting viewport angle.
+      const halfV=THREE.MathUtils.degToRad(camera.fov/2),halfH=Math.atan(Math.tan(halfV)*camera.aspect);
+      const distance=1.12*fitRadius/Math.sin(Math.min(halfV,halfH));
+      const direction=camera.position.clone().sub(controls.target).normalize();
+      camera.position.copy(center).addScaledVector(direction,distance);controls.target.copy(center);
+      camera.far=Math.max(span*20,distance+2*fitRadius);camera.updateProjectionMatrix();controls.update();
+    };
     resize();window.addEventListener('resize',resize);raf=requestAnimationFrame(render);
     return()=>{cancelAnimationFrame(raf);window.removeEventListener('resize',resize);controls.dispose();scene.traverse((o:any)=>{o.geometry?.dispose();if(Array.isArray(o.material))o.material.forEach((m:THREE.Material)=>m.dispose());else o.material?.dispose();});renderer.dispose();el.removeChild(renderer.domElement);};
   },[run]);
