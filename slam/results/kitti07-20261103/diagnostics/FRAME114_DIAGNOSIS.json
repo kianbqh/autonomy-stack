@@ -1,0 +1,336 @@
+{
+  "utc": "2026-11-03T05:26:08.132159+00:00",
+  "actual_diagnosed_frame": 114,
+  "original_receipt": "/opt/codex-resume/all-modules-v2/m3/slam/diagnostics/frame114-budget200-20261103T052416Z-f2bbb9da/receipt.json",
+  "original_receipt_sha256": "2b9bcef77db28cf241a9af07fd7f0a54913f6f4ebee29e21112261dce8fbf6d9",
+  "metadata_display_error": "summary.frame remains template50 only; actual original failure114, pipeline if(frame==114), exact114 prefix and frame114 dump/trace names establish actual diagnostic scope. Original evidence is unchanged.",
+  "prefix_byte_identical": true,
+  "trace_rows": 200,
+  "tail30": {
+    "rmse": {
+      "min": 0.03528319808891909,
+      "max": 0.03533582412437899
+    },
+    "inliers": {
+      "min": 3712.0,
+      "max": 3713.0
+    },
+    "ratio": {
+      "min": 0.4507042253521127,
+      "max": 0.45082564351627
+    },
+    "condition": {
+      "min": 3005.5392961582097,
+      "max": 3007.786442840519
+    },
+    "delta_rotation": {
+      "min": 5.745492361061697e-06,
+      "max": 3.2174861966208744e-05
+    },
+    "delta_translation": {
+      "min": 7.852595062336006e-05,
+      "max": 0.00020878717891447521
+    },
+    "next_rmse": {
+      "min": 0.035283198088918895,
+      "max": 0.03533582412437899
+    },
+    "next_inliers": {
+      "min": 3712.0,
+      "max": 3713.0
+    }
+  },
+  "head12": [
+    {
+      "iteration": "0",
+      "rmse": "0.049761763706473755",
+      "inliers": "3719",
+      "ratio": "0.45155415250121417",
+      "condition": "2775.6782340520958",
+      "delta_rotation": "0.0024536638193564985",
+      "delta_translation": "0.034862320220384789",
+      "next_rmse": "0.036640626373487875",
+      "next_inliers": "3715",
+      "next_reason": ""
+    },
+    {
+      "iteration": "1",
+      "rmse": "0.036640626373488701",
+      "inliers": "3715",
+      "ratio": "0.45106847984458476",
+      "condition": "3004.0036227592541",
+      "delta_rotation": "0.00052418448208627229",
+      "delta_translation": "0.008863604386509457",
+      "next_rmse": "0.03549431869654214",
+      "next_inliers": "3715",
+      "next_reason": ""
+    },
+    {
+      "iteration": "2",
+      "rmse": "0.035494318696541856",
+      "inliers": "3715",
+      "ratio": "0.45106847984458476",
+      "condition": "3022.2202205794952",
+      "delta_rotation": "0.0002222194455744154",
+      "delta_translation": "0.0037924529339242391",
+      "next_rmse": "0.035310600862135146",
+      "next_inliers": "3715",
+      "next_reason": ""
+    },
+    {
+      "iteration": "3",
+      "rmse": "0.035310600862135146",
+      "inliers": "3715",
+      "ratio": "0.45106847984458476",
+      "condition": "3018.2772004996614",
+      "delta_rotation": "0.00026058999776376054",
+      "delta_translation": "0.0020138091857367897",
+      "next_rmse": "0.035346031552236666",
+      "next_inliers": "3713",
+      "next_reason": ""
+    },
+    {
+      "iteration": "4",
+      "rmse": "0.035346031552236715",
+      "inliers": "3713",
+      "ratio": "0.45082564351627002",
+      "condition": "3015.6096753532534",
+      "delta_rotation": "4.2386961326025224e-05",
+      "delta_translation": "0.0011928322284979816",
+      "next_rmse": "0.035324421264504503",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "5",
+      "rmse": "0.035324421264504503",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.4970433376875",
+      "delta_rotation": "4.0699381869581032e-05",
+      "delta_translation": "0.0002132075313007856",
+      "next_rmse": "0.035283276578174254",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "6",
+      "rmse": "0.035283276578174212",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.708762393821",
+      "delta_rotation": "1.6063489713748287e-05",
+      "delta_translation": "0.00013527648368973029",
+      "next_rmse": "0.035335822339559168",
+      "next_inliers": "3713",
+      "next_reason": ""
+    },
+    {
+      "iteration": "7",
+      "rmse": "0.035335822339559377",
+      "inliers": "3713",
+      "ratio": "0.45082564351627002",
+      "condition": "3005.55284576644",
+      "delta_rotation": "5.7973094455844898e-06",
+      "delta_translation": "0.00018609616751453058",
+      "next_rmse": "0.035311322729136708",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "8",
+      "rmse": "0.035311322729136722",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3007.7864428374428",
+      "delta_rotation": "3.2174901100458567e-05",
+      "delta_translation": "0.0002087874347050304",
+      "next_rmse": "0.035316473447622405",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "9",
+      "rmse": "0.035316473447622364",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.5392961582124",
+      "delta_rotation": "2.0953718343130714e-05",
+      "delta_translation": "0.00010637185263159311",
+      "next_rmse": "0.03528319808891911",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "10",
+      "rmse": "0.035283198088919117",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.6937475976688",
+      "delta_rotation": "1.6021297306929988e-05",
+      "delta_translation": "7.8525950622770549e-05",
+      "next_rmse": "0.035335824124378939",
+      "next_inliers": "3713",
+      "next_reason": ""
+    },
+    {
+      "iteration": "11",
+      "rmse": "0.035335824124378863",
+      "inliers": "3713",
+      "ratio": "0.45082564351627002",
+      "condition": "3005.5529072028271",
+      "delta_rotation": "5.7454923610816743e-06",
+      "delta_translation": "0.00018591281078555628",
+      "next_rmse": "0.035311322729048168",
+      "next_inliers": "3712",
+      "next_reason": ""
+    }
+  ],
+  "last12": [
+    {
+      "iteration": "188",
+      "rmse": "0.035311322729048161",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3007.7864428405192",
+      "delta_rotation": "3.2174861966096217e-05",
+      "delta_translation": "0.00020878717891447521",
+      "next_rmse": "0.035316473447622662",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "189",
+      "rmse": "0.035316473447622662",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.5392961582143",
+      "delta_rotation": "2.0953718366548393e-05",
+      "delta_translation": "0.00010637185272881288",
+      "next_rmse": "0.035283198088919152",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "190",
+      "rmse": "0.035283198088919152",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.6937475976629",
+      "delta_rotation": "1.6021297306838882e-05",
+      "delta_translation": "7.8525950623919722e-05",
+      "next_rmse": "0.035335824124378988",
+      "next_inliers": "3713",
+      "next_reason": ""
+    },
+    {
+      "iteration": "191",
+      "rmse": "0.035335824124378988",
+      "inliers": "3713",
+      "ratio": "0.45082564351627002",
+      "condition": "3005.5529072028303",
+      "delta_rotation": "5.7454923610775349e-06",
+      "delta_translation": "0.0001859128107873473",
+      "next_rmse": "0.035311322729048029",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "192",
+      "rmse": "0.035311322729048099",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3007.7864428405155",
+      "delta_rotation": "3.2174861966208744e-05",
+      "delta_translation": "0.00020878717891431865",
+      "next_rmse": "0.035316473447622496",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "193",
+      "rmse": "0.035316473447622516",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.5392961582097",
+      "delta_rotation": "2.0953718366507505e-05",
+      "delta_translation": "0.00010637185273330574",
+      "next_rmse": "0.035283198088918895",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "194",
+      "rmse": "0.035283198088919089",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.6937475976711",
+      "delta_rotation": "1.6021297306912814e-05",
+      "delta_translation": "7.8525950623360057e-05",
+      "next_rmse": "0.035335824124378933",
+      "next_inliers": "3713",
+      "next_reason": ""
+    },
+    {
+      "iteration": "195",
+      "rmse": "0.035335824124378863",
+      "inliers": "3713",
+      "ratio": "0.45082564351627002",
+      "condition": "3005.552907202828",
+      "delta_rotation": "5.745492361061697e-06",
+      "delta_translation": "0.00018591281078440293",
+      "next_rmse": "0.035311322729048168",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "196",
+      "rmse": "0.035311322729048161",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3007.7864428405192",
+      "delta_rotation": "3.2174861966096217e-05",
+      "delta_translation": "0.00020878717891447521",
+      "next_rmse": "0.035316473447622662",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "197",
+      "rmse": "0.035316473447622662",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.5392961582143",
+      "delta_rotation": "2.0953718366548393e-05",
+      "delta_translation": "0.00010637185272881288",
+      "next_rmse": "0.035283198088919152",
+      "next_inliers": "3712",
+      "next_reason": ""
+    },
+    {
+      "iteration": "198",
+      "rmse": "0.035283198088919152",
+      "inliers": "3712",
+      "ratio": "0.45070422535211269",
+      "condition": "3005.6937475976629",
+      "delta_rotation": "1.6021297306838882e-05",
+      "delta_translation": "7.8525950623919722e-05",
+      "next_rmse": "0.035335824124378988",
+      "next_inliers": "3713",
+      "next_reason": ""
+    },
+    {
+      "iteration": "199",
+      "rmse": "0.035335824124378988",
+      "inliers": "3713",
+      "ratio": "0.45082564351627002",
+      "condition": "3005.5529072028303",
+      "delta_rotation": "5.7454923610775349e-06",
+      "delta_translation": "0.0001859128107873473",
+      "next_rmse": "0.035311322729048029",
+      "next_inliers": "3712",
+      "next_reason": ""
+    }
+  ],
+  "trace_sha256": "d2fea7e61414658bcfc115825d09e0061916784c7e0617494ee972fc14732701"
+}

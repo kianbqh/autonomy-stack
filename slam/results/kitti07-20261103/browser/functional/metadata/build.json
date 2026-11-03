@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "utc": "2026-11-03T05:38:02.748Z",
+  "node": "v24.22.2",
+  "root": "G:/ResumeProject/platforms/autonomy-stack/viz",
+  "output": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\serve",
+  "configFile": false,
+  "bundles": [
+    {
+      "file": "index-CH8lTCLy.css",
+      "sha256": "e94e45a6042fd49f0ed37e6fb6bed43e0021b05d38554d06b0fbffcb552777a1"
+    },
+    {
+      "file": "index-JAVtQ_m5.js",
+      "sha256": "e0def8992df9beabcc40603b8010a6ed10dacc4246dd3784f17560c0f6381c82"
+    }
+  ],
+  "finished_utc": "2026-11-03T05:38:06.314Z"
+}

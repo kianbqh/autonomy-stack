@@ -1,0 +1,481 @@
+{
+  "scope": "Measured CPU simulation results; no real robot/sim-to-real claim",
+  "execution_device": "cpu",
+  "cpu_threads": 1,
+  "torch_build": "2.15.0+cu132 (CUDA-capable installed build; formal tensors used CPU with CUDA hidden)",
+  "source_git_shas": [
+    "61d485e79d8f1cd4ef5791f148c853555f4db390",
+    "c9254b250e8e645a7574c7bfa1d1137d66dd9613"
+  ],
+  "manipulation_source_bytes_identical_across_all_six_fits": true,
+  "nominal_success_table": [
+    {
+      "method": "bc",
+      "seeds": [
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 0,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "bc",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/bc-result.json",
+            "pointer": "evaluation",
+            "sha256": "7084246730409fbbcf1cd3fbdd887f91295f8badbce63a44e97af39e0ae28645"
+          },
+          "success_rate": 0.05,
+          "successes": 5
+        },
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 1,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "bc",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T051546Z-f506e121/bc-result.json",
+            "pointer": "evaluation",
+            "sha256": "077ad93f69e0975edf3af1b3b59733ab52e907a608d73eee33d079cfd22f3957"
+          },
+          "success_rate": 0.04,
+          "successes": 4
+        },
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 2,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "bc",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052054Z-56105201/bc-result.json",
+            "pointer": "evaluation",
+            "sha256": "02e9fd03688d24bffc1e887b2019897f08da6cd8f6cd5b4bafa820b4e59a24c1"
+          },
+          "success_rate": 0.07,
+          "successes": 7
+        }
+      ],
+      "success": {
+        "count": 3,
+        "mean": 0.05333333333333334,
+        "population_std": 0.012472191289246475,
+        "std_definition": "ddof=0"
+      }
+    },
+    {
+      "method": "bc_dr",
+      "seeds": [
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 0,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "bc_dr",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T052413Z-0a28a379/bc-result.json",
+            "pointer": "evaluation",
+            "sha256": "60eba09b8c18cd418bafe9d988132ac9e4a9c30111d80f861044cc7364df8fbd"
+          },
+          "success_rate": 0.04,
+          "successes": 4
+        },
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 1,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "bc_dr",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T052559Z-71c0dd0a/bc-result.json",
+            "pointer": "evaluation",
+            "sha256": "e0a6e9c20ef850cd2df684ede8d1f800912d63eed72e732e5dad77c0d345f436"
+          },
+          "success_rate": 0.09,
+          "successes": 9
+        },
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 2,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "bc_dr",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052741Z-96316431/bc-result.json",
+            "pointer": "evaluation",
+            "sha256": "5f7f00d46e780270bdc7891d7f1abda4629666e6d1aa593ab403befd75cd105a"
+          },
+          "success_rate": 0.22,
+          "successes": 22
+        }
+      ],
+      "success": {
+        "count": 3,
+        "mean": 0.11666666666666665,
+        "population_std": 0.07586537784494028,
+        "std_definition": "ddof=0"
+      }
+    },
+    {
+      "method": "learned_mpc",
+      "seeds": [
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 0,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "learned_mpc",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/nominal-seed-0.json",
+            "sha256": "4d3e28103a26a4e222e690194e01f3f56586064aefb23de77f0aa73791074483"
+          },
+          "success_rate": 0.06,
+          "successes": 6
+        },
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 1,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "learned_mpc",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/nominal-seed-1.json",
+            "sha256": "d508bf1ea709972ccc42fdc84ddee8a9e490bc621ebf09868b286b7deadef040"
+          },
+          "success_rate": 0.05,
+          "successes": 5
+        },
+        {
+          "episodes": 100,
+          "mean_length_on_success": 50.0,
+          "model_seed": 2,
+          "protocol_receipt": {
+            "condition_sha256": "0f6938783e904dee62534a347617a48f076c91f23336b29d05f21a1b02fc5bd9",
+            "env_contract_sha256": "1e3548141a046523301b7c20f2b1cc1772ccda7e9250c9f6993370af087a0118",
+            "mode": "formal",
+            "outcome": "native final-step50 is_success",
+            "reset_protocol_sha256": "8e8dbb1f9b2942ba089d6bf74545835b23979a4ef7c5b6759f11efdd68084b4e"
+          },
+          "source": {
+            "method": "learned_mpc",
+            "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/nominal-seed-2.json",
+            "sha256": "8e5d560af15037f1cc798e7ea8670c82d55339c6acc5ebf9a4db12b8d12697fa"
+          },
+          "success_rate": 0.07,
+          "successes": 7
+        }
+      ],
+      "success": {
+        "count": 3,
+        "mean": 0.06,
+        "population_std": 0.008164965809277263,
+        "std_definition": "ddof=0"
+      }
+    }
+  ],
+  "negative_results": [
+    "Learned MPC mean success (0.06) was lower than bc_dr (0.11666666666666665)."
+  ],
+  "prediction": [
+    {
+      "horizon": 1,
+      "object_mm": {
+        "count": 3,
+        "mean": 23.401472576328967,
+        "population_std": 0.6381289931631119,
+        "std_definition": "ddof=0"
+      },
+      "gripper_mm": {
+        "count": 3,
+        "mean": 26.97135087831424,
+        "population_std": 0.44122731713941954,
+        "std_definition": "ddof=0"
+      },
+      "cv_object_mm": {
+        "count": 3,
+        "mean": 3.4461887989106503,
+        "population_std": 0.0,
+        "std_definition": "ddof=0"
+      },
+      "cv_gripper_mm": {
+        "count": 3,
+        "mean": 11.635141880948398,
+        "population_std": 0.0,
+        "std_definition": "ddof=0"
+      }
+    },
+    {
+      "horizon": 5,
+      "object_mm": {
+        "count": 3,
+        "mean": 38.00358521091482,
+        "population_std": 3.2645761316253488,
+        "std_definition": "ddof=0"
+      },
+      "gripper_mm": {
+        "count": 3,
+        "mean": 37.78637763580989,
+        "population_std": 2.4646931456008634,
+        "std_definition": "ddof=0"
+      },
+      "cv_object_mm": {
+        "count": 3,
+        "mean": 38.854238557288525,
+        "population_std": 0.0,
+        "std_definition": "ddof=0"
+      },
+      "cv_gripper_mm": {
+        "count": 3,
+        "mean": 81.63481665329424,
+        "population_std": 0.0,
+        "std_definition": "ddof=0"
+      }
+    },
+    {
+      "horizon": 10,
+      "object_mm": {
+        "count": 3,
+        "mean": 57.76727784787371,
+        "population_std": 7.284915325176307,
+        "std_definition": "ddof=0"
+      },
+      "gripper_mm": {
+        "count": 3,
+        "mean": 56.70831534380469,
+        "population_std": 8.01763992433943,
+        "std_definition": "ddof=0"
+      },
+      "cv_object_mm": {
+        "count": 3,
+        "mean": 100.66661119573989,
+        "population_std": 1.4210854715202004e-14,
+        "std_definition": "ddof=0"
+      },
+      "cv_gripper_mm": {
+        "count": 3,
+        "mean": 181.20086568045875,
+        "population_std": 0.0,
+        "std_definition": "ddof=0"
+      }
+    },
+    {
+      "horizon": 20,
+      "object_mm": {
+        "count": 3,
+        "mean": 93.03082209727802,
+        "population_std": 18.641862134858638,
+        "std_definition": "ddof=0"
+      },
+      "gripper_mm": {
+        "count": 3,
+        "mean": 97.5250969037332,
+        "population_std": 21.9148905536265,
+        "std_definition": "ddof=0"
+      },
+      "cv_object_mm": {
+        "count": 3,
+        "mean": 211.7233542704415,
+        "population_std": 2.842170943040401e-14,
+        "std_definition": "ddof=0"
+      },
+      "cv_gripper_mm": {
+        "count": 3,
+        "mean": 377.14957726687607,
+        "population_std": 5.684341886080802e-14,
+        "std_definition": "ddof=0"
+      }
+    },
+    {
+      "horizon": 30,
+      "object_mm": {
+        "count": 3,
+        "mean": 126.08459687363255,
+        "population_std": 22.966507408430445,
+        "std_definition": "ddof=0"
+      },
+      "gripper_mm": {
+        "count": 3,
+        "mean": 126.89802229209026,
+        "population_std": 36.07063804400377,
+        "std_definition": "ddof=0"
+      },
+      "cv_object_mm": {
+        "count": 3,
+        "mean": 284.34767612101626,
+        "population_std": 0.0,
+        "std_definition": "ddof=0"
+      },
+      "cv_gripper_mm": {
+        "count": 3,
+        "mean": 562.9601693750093,
+        "population_std": 0.0,
+        "std_definition": "ddof=0"
+      }
+    }
+  ],
+  "world_model_source_split_counts": {
+    "bc": {
+      "test": {
+        "episodes": 24,
+        "transitions": 1200
+      },
+      "train": {
+        "episodes": 159,
+        "transitions": 7950
+      },
+      "val": {
+        "episodes": 17,
+        "transitions": 850
+      }
+    },
+    "expert": {
+      "test": {
+        "episodes": 21,
+        "transitions": 1050
+      },
+      "train": {
+        "episodes": 166,
+        "transitions": 8300
+      },
+      "val": {
+        "episodes": 13,
+        "transitions": 650
+      }
+    },
+    "noisy_bc": {
+      "test": {
+        "episodes": 16,
+        "transitions": 800
+      },
+      "train": {
+        "episodes": 168,
+        "transitions": 8400
+      },
+      "val": {
+        "episodes": 16,
+        "transitions": 800
+      }
+    }
+  },
+  "model_epochs": [
+    {
+      "model_seed": 0,
+      "epochs_completed": 100,
+      "best_epoch": 98,
+      "best_validation_total": 0.3166725622571033
+    },
+    {
+      "model_seed": 1,
+      "epochs_completed": 100,
+      "best_epoch": 94,
+      "best_validation_total": 0.312080565172693
+    },
+    {
+      "model_seed": 2,
+      "epochs_completed": 67,
+      "best_epoch": 57,
+      "best_validation_total": 0.31501624838165615
+    }
+  ],
+  "timing": {
+    "concurrency": 1,
+    "exclusions": "env reset,pre-act deepcopy,episode summarization,disk I/O",
+    "full_control_step_ms": {
+      "count": 15000,
+      "mean": 4.555765604470313,
+      "p50": 4.631354502635077,
+      "p95": 5.730770390073303,
+      "p99": 6.552856234484352,
+      "population_std": 0.8701235343992805,
+      "std_definition": "ddof=0"
+    },
+    "full_scope": "policy.act entry through env.step return; includes preprocessing,synchronized CEM,host copies,native physics and sensor wrapper",
+    "host_policy_ms": {
+      "count": 15000,
+      "mean": 3.4091480468322213,
+      "p50": 3.489590497338213,
+      "p95": 4.461116562015376,
+      "p99": 5.200384480704088,
+      "population_std": 0.8011092804004543,
+      "std_definition": "ddof=0"
+    },
+    "percentile_method": "numpy linear",
+    "planner_ms": {
+      "count": 15000,
+      "mean": 3.341671061498346,
+      "p50": 3.4241905086673796,
+      "p95": 4.375198460184038,
+      "p99": 5.095899013685994,
+      "population_std": 0.7924755223761761,
+      "std_definition": "ddof=0"
+    },
+    "policy_act_ms": {
+      "count": 15000,
+      "mean": 3.4832339639775456,
+      "p50": 3.5641804861370474,
+      "p95": 4.5472288693417795,
+      "p99": 5.294945526111405,
+      "population_std": 0.8090514629637688,
+      "std_definition": "ddof=0"
+    },
+    "raw_sample_count": 15000,
+    "repeats": "50control steps \u00d7100fixed held-out episodes/model seed",
+    "warmup_control_steps": 5,
+    "warmup_reset_seed": 910000
+  },
+  "timing_environment": "Shared host; user workload present; no exclusive latency or general hardware benchmark claim",
+  "raw_timing_samples": 15000,
+  "fixed_panel_cells": 66,
+  "fixed_panel_outcomes": 6600,
+  "paired_nominal_policy_outcomes": 900,
+  "reported_seed_std": "population ddof=0 over three separately trained seeds; CV is a shared deterministic reference, not three trained models",
+  "predeclared_seed0_producer_not_selected_from_outcomes": true,
+  "extra_rollout_suite_started": false
+}

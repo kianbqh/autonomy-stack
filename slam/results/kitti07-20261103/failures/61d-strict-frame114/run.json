@@ -1,0 +1,73 @@
+{
+  "status": "failed",
+  "started_utc": "2026-11-03T05:22:35.211034+00:00",
+  "start_monotonic": 158273.293847161,
+  "launcher_command": [
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/run_experiment.py",
+    "--config",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+    "--input-manifest",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/input-manifest.json",
+    "--binary",
+    "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build/run_kitti_slam",
+    "--build-receipt",
+    "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/build.json",
+    "--repo-root",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack",
+    "--git",
+    "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+    "--output-parent",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/outputs"
+  ],
+  "environment": {
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "executable": "/usr/bin/python3",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "logical_cpus": 20,
+    "packages": {
+      "numpy": null,
+      "scipy": null,
+      "opencv-python-headless": null,
+      "matplotlib": null,
+      "evo": null
+    },
+    "environment": "WSL2",
+    "gpu": "not used by CPU SLAM",
+    "gpu_driver": "not queried; CPU-only run"
+  },
+  "output": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/outputs/slam-20261103T052235Z-cbdfe886",
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "git_executable": "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+  "selected_source_status": "",
+  "selected_source_scope": "slam excluding derived slam/results",
+  "whole_worktree_status": "",
+  "git_version": "git version 2.43.0",
+  "input_verify_wall_s": 11.590886028017849,
+  "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+  "input_manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+  "binary_sha256": "924d68b5e27ceebf21cf562528ad7640b0e2ad75d5130c1b4b91d2e9932ccf11",
+  "build_receipt_sha256": "3c2c80793d298edc947dfe439bcf1a35ebd30e63053df59828f901e465e8f7b6",
+  "kind": "kitti_full",
+  "sequence": "07",
+  "native_loader_environment": {
+    "LD_LIBRARY_PATH": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib:/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib"
+  },
+  "native_command": [
+    "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build/run_kitti_slam",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/sequences/07",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/outputs/slam-20261103T052235Z-cbdfe886/native.cfg",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/outputs/slam-20261103T052235Z-cbdfe886/native"
+  ],
+  "native_pid": 484619,
+  "native_process_wall_s": 5.136679418996209,
+  "native_exit_code": 1,
+  "failure": {
+    "type": "RuntimeError",
+    "message": "native exit 1; retain events/stderr",
+    "utc": "2026-11-03T05:22:54.233695+00:00",
+    "monotonic": 158292.318078787
+  },
+  "finished_utc": "2026-11-03T05:22:54.233713+00:00",
+  "wall_s": 19.024235863005742
+}

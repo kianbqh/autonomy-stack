@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "utc": "2026-11-03T05:37:17.199229+00:00",
+  "cases": [
+    {
+      "name": "full07",
+      "original_replay": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/export-20261103T053256Z-3b04e6cd/outputs/replay-20261103T053257Z-22db56b2/replay.json",
+      "original_run": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c",
+      "original_truth": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/poses/07.txt",
+      "sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122",
+      "export_sha256": "9f87bae78bbe96b3a2e4dde592ee4696fc9e951dbc355f2335ffa0252df391f7",
+      "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+      "config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+      "accepted_frames": 1101,
+      "expected_frames": 1101,
+      "copied_derived_evidence_only": true
+    },
+    {
+      "name": "real-kitti-failed27",
+      "original_replay": "/opt/codex-resume/all-modules-v2/m3/slam/failure-replay-exports/ca9-failed-prefixes-20261103T043242Z-d76498b0/real07-prefix27/replay-20261103T043243Z-c1642fec/replay.json",
+      "original_run": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/outputs/slam-20261103T042508Z-2a8968af",
+      "original_truth": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/poses/07.txt",
+      "sha256": "f34560c6ec11796ff04e6f74bc756e1f3cb6ae9364d4c9b449cdfa87fd6b1b30",
+      "export_sha256": "dd67b1d3c92326a11fd7c02a7baa20bcef4f574dc3d4de3813106738b16fbb64",
+      "git_sha": "ca9cd1e7a172a080a8715a220422d56d116a5350",
+      "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+      "accepted_frames": 27,
+      "expected_frames": 1101,
+      "copied_derived_evidence_only": true
+    },
+    {
+      "name": "synthetic-negative",
+      "original_replay": "/opt/codex-resume/all-modules-v2/m3/slam/failure-replay-exports/ca9-failed-prefixes-20261103T043242Z-d76498b0/synthetic-prefix2/replay-20261103T043245Z-27eb141f/replay.json",
+      "original_run": "/opt/codex-resume/all-modules-v2/m3/slam/fixture-passes/native-engineering-20261103T031808Z-3bc94645/negative-runs/slam-20261103T031810Z-8a6fa541",
+      "original_truth": null,
+      "sha256": "c603681b444ef5140453bbd0d5c1f7d6ef9aa8537f49b6dea3501566f18ae8b3",
+      "export_sha256": "f1bb85674741086b12b941e1b5f3f316b92a774c220543b89916aed9de931151",
+      "git_sha": "ca9cd1e7a172a080a8715a220422d56d116a5350",
+      "config_sha256": "714aa25a20f91efd06d22d8743dba5ae166defc76d14eac509404564920626e1",
+      "accepted_frames": 2,
+      "expected_frames": 3,
+      "copied_derived_evidence_only": true
+    }
+  ]
+}

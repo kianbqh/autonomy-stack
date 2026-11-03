@@ -1,0 +1,24 @@
+{
+  "owned_pids": [
+    483363,
+    483551,
+    484293,
+    484776,
+    485071,
+    485285,
+    485672,
+    485673,
+    485675,
+    485795,
+    485965,
+    487478,
+    487479,
+    487480,
+    487496,
+    488217,
+    488222
+  ],
+  "all_absent": true,
+  "new_rollout_export_required_by_reduced_plan": false,
+  "reason": "Reduced main plan ends report/plot; optional traces exporter would launch another100 evaluation episodes and was not invoked"
+}

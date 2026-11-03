@@ -1,0 +1,121 @@
+{
+  "release_status": "published; all nine downloaded assets verified",
+  "contains_final_models_only": true,
+  "models": [
+    {
+      "method": "bc",
+      "seed": 0,
+      "bytes": 309589,
+      "sha256": "ba236762612836210ffbcc40cb5819eda64caacc76a43aae86cd3acf70bed203",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/final-policy.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/bc-seed-0.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "bc-seed-0.pt",
+      "release_asset_id": 704495639,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "bytes": 309589,
+      "sha256": "ff19038e1f7ab003d355d5a17143e433c6455bc018fbf909f55a300498ca53ae",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T051546Z-f506e121/final-policy.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/bc-seed-1.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "bc-seed-1.pt",
+      "release_asset_id": 704495640,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "bytes": 309589,
+      "sha256": "82543d8431be6737f21794c0295c97b2646ee72286e2131778bcf11184c779f0",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052054Z-56105201/final-policy.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/bc-seed-2.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "bc-seed-2.pt",
+      "release_asset_id": 704495636,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "bytes": 309589,
+      "sha256": "63194a89ff0c492af24559fab79aa7e30d278ebca822e05213cf70aa58c99e59",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T052413Z-0a28a379/final-policy.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/bc_dr-seed-0.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "bc_dr-seed-0.pt",
+      "release_asset_id": 704495637,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "bytes": 309589,
+      "sha256": "085ab76ee68280ebf373bfb7d3686519dfb99ffdeda01a38a3999ed4682ecb2d",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T052559Z-71c0dd0a/final-policy.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/bc_dr-seed-1.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "bc_dr-seed-1.pt",
+      "release_asset_id": 704495642,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "bytes": 309589,
+      "sha256": "b26b67e62609086e3f56ab8b48abfdc7c64cfccc3fd6e38a8ebab89bd5ed055d",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052741Z-96316431/final-policy.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/bc_dr-seed-2.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "bc_dr-seed-2.pt",
+      "release_asset_id": 704495705,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "small-latent",
+      "seed": 0,
+      "bytes": 254451,
+      "sha256": "b5466ed8a792c9e4e68a045f407d1f1b7fe2bb19958c2722d3c9cb69c6b0df09",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/checkpoints/20261103T053053.584134Z-train-86a7fcc3/seed-0/small-latent-model.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/small-latent-seed-0.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "small-latent-seed-0.pt",
+      "release_asset_id": 704495712,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "small-latent",
+      "seed": 1,
+      "bytes": 254451,
+      "sha256": "bad47523fa7e2b1f01b039406a49e6a282f1d6cd5da2662e27374fa86746005e",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/checkpoints/20261103T053053.584134Z-train-86a7fcc3/seed-1/small-latent-model.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/small-latent-seed-1.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "small-latent-seed-1.pt",
+      "release_asset_id": 704495714,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    },
+    {
+      "method": "small-latent",
+      "seed": 2,
+      "bytes": 254451,
+      "sha256": "de327f07cd1efd54ab4b384b5ccffa41620b265f52c9d73219e95930bda83f7e",
+      "native_source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/checkpoints/20261103T053053.584134Z-train-86a7fcc3/seed-2/small-latent-model.pt",
+      "release_download_url": "https://github.com/kianbqh/autonomy-stack/releases/download/m3-models-20261103/small-latent-seed-2.pt",
+      "copied_into_git_bundle": false,
+      "release_asset": "small-latent-seed-2.pt",
+      "release_asset_id": 704495723,
+      "verification_status": "downloaded SHA256 matched by publisher"
+    }
+  ],
+  "release_url": "https://github.com/kianbqh/autonomy-stack/releases/tag/m3-models-20261103",
+  "verification": {
+    "status": "pass",
+    "verified_download_assets": 9,
+    "receipt_sha256": "1a53e925b00c3a70199f945a599afa18b0fc3b48dd58a9bb2c385c464d1b6edd",
+    "finished_utc": "2026-11-03T05:56:48.864271+00:00"
+  }
+}

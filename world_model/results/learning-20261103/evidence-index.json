@@ -1,0 +1,372 @@
+{
+  "scope": "actual measured outputs; original raw JSON may be losslessly gzipped",
+  "files": [
+    {
+      "path": "raw/collect-result.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053018.519383Z-collect-f4f0eb3b/result.json",
+      "bytes": 7787,
+      "sha256": "e05c3ac6f265eeaa862a5050f03eb92523cb40ebe8dece9f6fad79f533503bb5",
+      "kind": "original bytes"
+    },
+    {
+      "path": "raw/train-result.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3/result.json",
+      "bytes": 64351,
+      "sha256": "705e692a5db74ea72d89603f1f5a779bbaf178abac701ec861fe56765e5ef06c",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 293242,
+      "uncompressed_sha256": "cb6227cd5483a610e672692dfb3e05c34f4e2066acf348a9a26235a5a61c0695"
+    },
+    {
+      "path": "raw/prediction-result.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053150.539822Z-prediction-238b5b14/result.json",
+      "bytes": 1414536,
+      "sha256": "e95ad81181cd4ea5561305ca192108c4868550a3e7306605a8622a6ccf9a895f",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 4938298,
+      "uncompressed_sha256": "1d9875224bac597fb926d9be1eea3d1f9d3ea6f3191f22b3938426657ce128bb"
+    },
+    {
+      "path": "raw/mpc-result.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/result.json",
+      "bytes": 3486964,
+      "sha256": "5fd86f27f8b7bf7210729339f92f71a8de16aee18c20e6dacd7ebe8bd4424927",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 32489362,
+      "uncompressed_sha256": "40e93427268ba401f42da598b73d1759d9dec540633e7543b4eb747996690275"
+    },
+    {
+      "path": "raw/comparison-result.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053834.069996Z-report-8ecdc4d9/result.json",
+      "bytes": 20349,
+      "sha256": "4c9319aa534336c92c33918b6ee0ddba01e43f16e556f141ebb4bf742ec0fe2e",
+      "kind": "original bytes"
+    },
+    {
+      "path": "raw/dataset-audit.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3/dataset-audit.json",
+      "bytes": 86753,
+      "sha256": "169f487201c80f543cf227734b1df945ce3181d6fdca1550a523f0ce006f94a2",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 302077,
+      "uncompressed_sha256": "4dd13e39631512dba2c5b4a9d3d52761a53ee6f4ec10fbddb64013a5e0653a79"
+    },
+    {
+      "path": "comparison.md",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053834.069996Z-report-8ecdc4d9/comparison.md",
+      "bytes": 468,
+      "sha256": "a5e2df60ff870eb43de85987dc7aee728f5d76759f5ab2b060600db5581029a7",
+      "kind": "original bytes"
+    },
+    {
+      "path": "manifests/wm-collection-manifest.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/episodes/20261103T053018.519383Z-collect-f4f0eb3b/manifest.json",
+      "bytes": 203392,
+      "sha256": "2a778283373323be1db1fb02350de9ced1727560006be82049791ab9332c0503",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 12059657,
+      "uncompressed_sha256": "177cff0dd263d03343cc583964b117f5f80bd12592972d4041005b697c6c21e6"
+    },
+    {
+      "path": "manifests/intake.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/intake.json",
+      "bytes": 375,
+      "sha256": "e99291541992ac1500617217276d8ff1e3de5c137bf9cea23dfb6ef827b2f29b",
+      "kind": "original bytes"
+    },
+    {
+      "path": "manifests/checkpoints.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3/checkpoints.json",
+      "bytes": 8130,
+      "sha256": "86beb577e65984a8417517b3702362a718a352e0ba68cd3ff9281323ac528e4b",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/original/collect.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/collect.json",
+      "bytes": 1355,
+      "sha256": "745cc13eb592cef59151930baeb2a3e3c59ca7840b23733d6da4cbc5fc534f6b",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/original/mpc.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/mpc.json",
+      "bytes": 1863,
+      "sha256": "9b2be658ac191fbd18af8685dc48dbbbd17072695b42c72342b343634e99733f",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/original/plot.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/plot.json",
+      "bytes": 52,
+      "sha256": "a24b51f9b77cbf9ff654e15cf92e275ccdbe66c99da9f0fbcdb13de3a7eceee6",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/original/prediction.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/prediction.json",
+      "bytes": 101,
+      "sha256": "0600dc6e48a26251ff7fa7da58d43fccd7cf956b2f746931d6b70edde2c26c31",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/original/report.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/report.json",
+      "bytes": 1828,
+      "sha256": "dadc784fabb324f43adfe748fcef07dba3c26fe946a81bd81ff0de475c1de8d5",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/original/run-plan.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/run-plan.json",
+      "bytes": 4397,
+      "sha256": "84d423c632a907edd47e7ec66eea2a94d9f763cf51193ffc7e62cfa2d1e1c272",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/original/train.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/train.json",
+      "bytes": 606,
+      "sha256": "ab67b921f296bd1d5a304ff2bf926b448a2e95c5854a2f773eae7cb07a886e5e",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/cpu/collect.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/collect.json",
+      "bytes": 1375,
+      "sha256": "bfc3f95c1c3246ae8af2751898b131e4f64d8fa80682088fae7d2bef6770339a",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/cpu/mpc.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/mpc.json",
+      "bytes": 1861,
+      "sha256": "095e7625198341115ca2f42bd490c0ac407e3e5158a90834cdaab62a7dfae31e",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/cpu/plot.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/plot.json",
+      "bytes": 51,
+      "sha256": "fb5f5e2b5afb17099a2e430980998534c0b883c2fb42b2b4610bc7f3c60f56a5",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/cpu/prediction.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/prediction.json",
+      "bytes": 99,
+      "sha256": "838e2d08e9c0af021a4a401078f17f1cf28fbf0acc079eec4b24fa99242b6cf4",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/cpu/report.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/report.json",
+      "bytes": 1827,
+      "sha256": "6677fc6fdd1ea283ca5f1942ba532ec638669c2ecee76297e546d2f9b28ad99c",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/cpu/run-plan.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/run-plan.json",
+      "bytes": 4366,
+      "sha256": "d588b9b09c1d9c3a0bd136d91974bd3beaac711ff76c65c3e621508a41a575e6",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/cpu/train.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/train.json",
+      "bytes": 625,
+      "sha256": "6ef8fe9a87c931103ea8e278954513a91fc445f7666f012175ea309d2e2111e7",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/effective/plot-effective.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/plot-effective.json",
+      "bytes": 278,
+      "sha256": "a552985d438bea41c1bfbc6e39c751d7bb407dce11de5e99eecdfb406576ce88",
+      "kind": "original bytes"
+    },
+    {
+      "path": "configs/effective/report-effective.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/report-effective.json",
+      "bytes": 2652,
+      "sha256": "6093932a7062b4b38a51307e48111bd2ca5c49f5acd765748df27e87d46eae41",
+      "kind": "original bytes"
+    },
+    {
+      "path": "provenance/plan-derivation.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-runtime-20261103/WM_PLAN_DERIVATION.json",
+      "bytes": 4438,
+      "sha256": "8c291bc0ecc304155dc188b15425dd564293c7ad998778dfd4930119b7835f98",
+      "kind": "original bytes"
+    },
+    {
+      "path": "figures/prediction-seed-0.png",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053835.007169Z-plot-ae4f2a3e/prediction-seed-0.png",
+      "bytes": 89078,
+      "sha256": "e73b78607dad40ad7885eda1f65b91e2ff5d7211145c010b0b810d7ca7db87c3",
+      "kind": "original bytes"
+    },
+    {
+      "path": "figures/prediction-seed-1.png",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053835.007169Z-plot-ae4f2a3e/prediction-seed-1.png",
+      "bytes": 85343,
+      "sha256": "71db0f68ba1f29c07cab5b45577e7492be306dfe7705b672f78c41fcca5e93f7",
+      "kind": "original bytes"
+    },
+    {
+      "path": "figures/prediction-seed-2.png",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053835.007169Z-plot-ae4f2a3e/prediction-seed-2.png",
+      "bytes": 84178,
+      "sha256": "d1627788d4a3cb9f76acb149328019a2a863f5e28dc312d66298ac9dafaa9556",
+      "kind": "original bytes"
+    },
+    {
+      "path": "raw/mpc-seed-0.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/nominal-seed-0.json",
+      "bytes": 642685,
+      "sha256": "e6684a2b3071b4934694397b04e1462ab14b99394700e4498ca86705078585e8",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 5557275,
+      "uncompressed_sha256": "4d3e28103a26a4e222e690194e01f3f56586064aefb23de77f0aa73791074483"
+    },
+    {
+      "path": "timing-traces/trace-seed-0-reset-1000000.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/trace-seed-0-reset-1000000.json",
+      "bytes": 56837,
+      "sha256": "211382b404d4d53d32196f7dd0bbf624ce6ad415a02309759bda33b4a836370b",
+      "kind": "original bytes"
+    },
+    {
+      "path": "raw/mpc-seed-1.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/nominal-seed-1.json",
+      "bytes": 642449,
+      "sha256": "b9237d156854177efc1f94c88ea09de0b7fee1d0808bad6027c128805d24f9c9",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 5558412,
+      "uncompressed_sha256": "d508bf1ea709972ccc42fdc84ddee8a9e490bc621ebf09868b286b7deadef040"
+    },
+    {
+      "path": "timing-traces/trace-seed-1-reset-1000000.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/trace-seed-1-reset-1000000.json",
+      "bytes": 56846,
+      "sha256": "a483a33639e5e7286d3119ad2dda597a7f88583cf2fc0f448cfe5531c918b160",
+      "kind": "original bytes"
+    },
+    {
+      "path": "raw/mpc-seed-2.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/nominal-seed-2.json",
+      "bytes": 640880,
+      "sha256": "5f4db91f2994efc09bcde52f6c2b3915f7f52945c64ac31e4a7bf504a1c569e1",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 5559105,
+      "uncompressed_sha256": "8e5d560af15037f1cc798e7ea8670c82d55339c6acc5ebf9a4db12b8d12697fa"
+    },
+    {
+      "path": "timing-traces/trace-seed-2-reset-1000000.json",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/trace-seed-2-reset-1000000.json",
+      "bytes": 56839,
+      "sha256": "6ebf51e5358251b73dd5f469184886069840148962d73a3f15e5ae6f944fcdc0",
+      "kind": "original bytes"
+    },
+    {
+      "path": "raw-timings.csv",
+      "bytes": 1426480,
+      "sha256": "cbff5dcf8f1be139b1bf4e58816e28c8c1dc3c3d3b6c613e7aec8a9bae2d02d5",
+      "kind": "actual measured rows, no new inference"
+    },
+    {
+      "path": "paired-policy-outcomes.csv",
+      "bytes": 30805,
+      "sha256": "bd56c927de19c502ecd2b36bcb13e99a9b8fe94ef2f3f0c36fc763b318a81c07",
+      "kind": "actual measured rows, no new inference"
+    },
+    {
+      "path": "checkpoint-downloads.json",
+      "bytes": 6279,
+      "sha256": "088d068b4d43337bc86ee94336d7cfe40abe1d63713c1b65a81bb2b0d7b8f58d",
+      "kind": "derived from referenced actual receipts"
+    },
+    {
+      "path": "provenance/device-selection.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-runtime-20261103/TRAINING_DEVICE_SELECTION.json",
+      "bytes": 1422,
+      "sha256": "eb6a59ddd41ce9ac22670df6dcae3add19bf6e3db567630c9795ef5aff23677e",
+      "kind": "original bytes"
+    },
+    {
+      "path": "provenance/track-a-collection-summary.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-runtime-20261103/COLLECTION_SUMMARY.json",
+      "bytes": 2616,
+      "sha256": "58a7c6551d5ba54f9192e737b551b9f199fc6605d6f8422b98c45702438c255f",
+      "kind": "original bytes"
+    },
+    {
+      "path": "provenance/bc-result-index.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-runtime-20261103/BC_PROGRESS.json",
+      "bytes": 6119,
+      "sha256": "0c3858832b6618a0eeb1f86d7f1b20d4d75d9859bdda878b5a59275150ffa17f",
+      "kind": "original bytes"
+    },
+    {
+      "path": "provenance/wm-prefix-execution.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-runtime-20261103/WM_PREFIX_PROGRESS.json",
+      "bytes": 5446,
+      "sha256": "56b6977ed61bb11620f128a7fb470ec72ac21b44d00d6e856f5cb93823c377a7",
+      "kind": "original bytes"
+    },
+    {
+      "path": "provenance/learning-tail-execution.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-runtime-20261103/LEARNING_TAIL_PROGRESS.json",
+      "bytes": 5709,
+      "sha256": "93adde224071689dc0a1a64df9d05b43cbf3b439793c712e8a3407e8f8e6a0d3",
+      "kind": "original bytes"
+    },
+    {
+      "path": "provenance/requirements-m3-ci.lock",
+      "source": "/mnt/g/ResumeProject/platforms/autonomy-stack/requirements-m3-ci.lock",
+      "bytes": 4016,
+      "sha256": "91fe89a061b6cd6aeec60ccf8e8b768b4b5955ef92f875dd2701ad9a33db17c7",
+      "kind": "original bytes"
+    },
+    {
+      "path": "provenance/local-hybrid-environment-lock.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-setup-20261103/ENVIRONMENT_LOCK.json",
+      "bytes": 71025,
+      "sha256": "be40d084b09ef8d9d7a6d32d86fa317c2dcb7de7629fac0f34eadebf7f7f2605",
+      "kind": "original bytes"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 16491,
+      "sha256": "856d7dbfc7b709ed47b6a9954c5a904c94260047f4b53828bc79cc08bdb05dd8",
+      "kind": "derived from referenced actual receipts"
+    },
+    {
+      "path": "prediction-table.md",
+      "bytes": 627,
+      "sha256": "dbd0acaa156949024cae99cf2920513c67e247b54f2f470651d12eb9d8dcf0d0",
+      "kind": "derived from referenced actual receipts"
+    },
+    {
+      "path": "provenance/process-closure.json",
+      "bytes": 447,
+      "sha256": "32e1e1a61e39dced67db6d216a65e165e27cad9c1c5b249b1d4f014e3f80fcc4",
+      "kind": "derived from referenced actual receipts"
+    },
+    {
+      "path": "measured-success-table.md",
+      "bytes": 636,
+      "sha256": "b7ffa591121e1146577fed94ff10e67e1ea314788de989dd457793d03b140c43",
+      "kind": "measured table derived from accepted raw outputs"
+    },
+    {
+      "path": "cpu-timing-table.md",
+      "bytes": 606,
+      "sha256": "f89be1feae00f3af3485592ab4e404e3833988a30bd167d264b7fe1558540c36",
+      "kind": "measured table derived from accepted raw outputs"
+    }
+  ],
+  "no_new_rollout_or_inference": true,
+  "no_checkpoint_or_npz_payload_in_git": true
+}

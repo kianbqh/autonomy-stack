@@ -1,0 +1,149 @@
+{
+  "artifact_directory": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/episodes/20261103T053018.519383Z-collect-f4f0eb3b",
+  "command_argv": [
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/collect_dataset.py",
+    "--config",
+    "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/collect.json",
+    "--output-root",
+    "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001"
+  ],
+  "command_display": "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/collect_dataset.py --config /opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/collect.json --output-root /opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001",
+  "config": {
+    "artifact_root": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/episodes",
+    "env_config": {
+      "dr_stream_seed": 720,
+      "env_id": "FetchPush-v4",
+      "fault_stream_seed": 710,
+      "training_randomization": null
+    },
+    "episodes_per_source": 200,
+    "mode": "formal",
+    "noisy_bc_std": 0.2,
+    "policy_device": "cpu",
+    "source_specs": [
+      {
+        "controller": {
+          "alignment_m": 0.018,
+          "behind_m": 0.055,
+          "hover_m": 0.08,
+          "position_gain": 20.0,
+          "push_ahead_m": 0.05
+        },
+        "model_seed": null,
+        "reset_start": 800000,
+        "source_policy": "expert"
+      },
+      {
+        "checkpoint": {
+          "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/final-policy.pt",
+          "sha256": "ba236762612836210ffbcc40cb5819eda64caacc76a43aae86cd3acf70bed203"
+        },
+        "model_seed": 0,
+        "reset_start": 801000,
+        "source_policy": "bc"
+      },
+      {
+        "checkpoint": {
+          "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/final-policy.pt",
+          "sha256": "ba236762612836210ffbcc40cb5819eda64caacc76a43aae86cd3acf70bed203"
+        },
+        "model_seed": 0,
+        "reset_start": 802000,
+        "source_policy": "noisy_bc"
+      }
+    ]
+  },
+  "config_sha256": "bfc3f95c1c3246ae8af2751898b131e4f64d8fa80682088fae7d2bef6770339a",
+  "environment": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "environment": "WSL2",
+    "environment_identity": {
+      "detected": "WSL2",
+      "evidence": {
+        "cgroup_container_marker": false,
+        "containerenv_marker": false,
+        "docker_marker": false,
+        "github_actions": false,
+        "platform_release": "6.18.54.1-microsoft-standard-WSL2",
+        "platform_system": "Linux",
+        "runner_environment": null,
+        "wsl_distro_name": "CodexResearchATTAlf01",
+        "wsl_interop_present": false
+      },
+      "label": "WSL2",
+      "label_source": "user-provided M3_ENVIRONMENT"
+    },
+    "executable": "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+    "gpu_driver": "NVIDIA GeForce RTX 3080, 621.01, 12288 MiB",
+    "os": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "packages": {
+      "gymnasium": "1.2.0",
+      "gymnasium-robotics": "1.4.1",
+      "matplotlib": "3.10.3",
+      "mujoco": "3.3.7",
+      "numpy": "2.2.6",
+      "stable-baselines3": "not installed",
+      "torch": "2.15.0"
+    },
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "thread_env": {
+      "CUDA_VISIBLE_DEVICES": "",
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    }
+  },
+  "episodes": 600,
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "identity_sha256": "fe8d24927fedbf5aa015f623687323c54e388bd2d2c17f1c69224488e0c10102",
+  "inputs": {},
+  "manifest": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/episodes/20261103T053018.519383Z-collect-f4f0eb3b/manifest.json",
+  "manifest_sha256": "177cff0dd263d03343cc583964b117f5f80bd12592972d4041005b697c6c21e6",
+  "monotonic_start": 158736.624352467,
+  "source_counts": {
+    "bc": 200,
+    "expert": 200,
+    "noisy_bc": 200
+  },
+  "source_sha256": {
+    "README.md": "b2f8bc13e86f81f39b2f9c9998e9abfb5d477d0341f26c467165095b625ea0b6",
+    "ci/additive-step.yaml": "12d94c60ff18b78ebc476565f45afc4526b16b6b353dec2f7cf5a67ef709c823",
+    "configs/collection.template.json": "97bb00053dcc37e746276c4f7d9e62e0b4203adb957f73647b03f6797295bbea",
+    "configs/intake.template.json": "8675b3bb95e23f49c8576e2096ffccd7e004ec114175b8d91bdf94493fea6dc6",
+    "configs/mpc.json": "a73488cca29391f9169c7efd2369001283751476b7837f84b7a028448d1036d4",
+    "configs/plots.template.json": "f709da5baea070d9edd25eb762dd76bf278274378b8bb9c677feb31072e80412",
+    "configs/prediction.json": "2db2f68ac4b8d71c650ced5e37212bbe9cf22029a3f10eb875c4fc1441109f00",
+    "configs/report.template.json": "2dacc3c8b3b592a4559b60608dd750551bbca5c6aba67a53ad38f8e147fc2be7",
+    "configs/run_all.template.json": "d0ddc45a68358d3ad6dcb36f32b2fd9fbbf817d51b84c1662e818a31e40ddb09",
+    "configs/small_model.json": "7b41cdadfed439625cdbda02388e6c2c98305d3f195df43fd121b550046514a4",
+    "scripts/collect_dataset.py": "016415cc6897f701c768f4d351cb6792323e86cb0bfba05b2f75dab51d33a59f",
+    "scripts/eval_mpc.py": "1ab36d4b38c2fa3b1137a809656c9cb6adc409b716bebf9464ba8c2e2e2aa901",
+    "scripts/eval_prediction.py": "5927a595b518db234888de1e81c552202bd19e833c20ca5e6e4b3dc6735d8ea7",
+    "scripts/make_run_plan.py": "42bd3990f00c52a4f09b3d8ee585079c5168266cf46958a53e6c1982b4de0e16",
+    "scripts/plot_results.py": "9d641de271ca5d1a8baa65e266864d80dc034407c1c8cb5ec190b10e6e04aa59",
+    "scripts/report.py": "c8f023f5bc9e7e398cfd2ca8909bb90b6525f1d303c8e7dbd49644bb4b30d205",
+    "scripts/run_all.py": "95e87fdcd9131ec3581ab1a80957658ffdb233dd51e8fe3f70e3c2dc4397c16f",
+    "scripts/run_all.sh": "5a728862abfabb9ee3532e6ed70d746c3f5120f336c98943afd6a56b306b65ef",
+    "scripts/train_model.py": "06788e0c81401f00adce306295e8d068b8644fac27bca465369585bf817e73bd",
+    "tests/test_pure.py": "85a37f3e3473c71e3b3b1af70da37f4d00703f3e77170328970b6526a6c1d190",
+    "tests/test_runtime.py": "f5d956c8e669ea73f7eb1702b9f284af5701ed356cbcecfa1befd7e31c888529",
+    "wm/__init__.py": "b08e048f27c15abfd9aed5c9310faa9c3a7e576a2a0ebe50286c4e9bfe049f1d",
+    "wm/adapter.py": "610eb7d1e561a00dd3be7079c692e09839459a83f5578b253dbc0f5b41e37932",
+    "wm/cem_core.py": "ffe354ff8d2e072538dae1d7814396f1633071acc9bb37e346e352a4300f3539",
+    "wm/cli.py": "7d876798100343fb483a77866f949372d2cd8ffc7b15d4463c8e818e149fec20",
+    "wm/collection.py": "273cda46a661b645eed2fe4c53cec2217f0dd16a27a32c2ad1e8c33d4b4f23e5",
+    "wm/dataset.py": "a4ee40e566c73ed89fd49c264de719f69558ec03622f401f5d865cb47c1b8a09",
+    "wm/dynamics.py": "e833f4e91290ad2b5eecfed3a5fd82afc100e3db652cf2e7793fd63f6744305e",
+    "wm/evaluation.py": "0e54ef6c449ee39b42c1419908af39926b5709ed6d847f0004448ec267143df6",
+    "wm/mpc.py": "88a9812c63062255bd15888741feeb17f2628f8cc2e480401e71bb29ff1c92ee",
+    "wm/pipeline.py": "30d2a67814c1725d28e5496c70dc58995d07d5ea42ba38458c4d19e17e729e0f",
+    "wm/prediction.py": "b1038e00915cb6b4c4821d1a6591625ec39ffb633c1115419f7a5efc2250f637",
+    "wm/protocol.py": "3a498d31cd339c4fc42cf87e4f9da00ba2e835988c5ad8c5f7fd59fd64cbb403",
+    "wm/provenance.py": "002ffa626364916ae4aeea4ffacf30f218d8c4d54ca4f35f2d07ae2820764ed0",
+    "wm/reporting.py": "76e935e78e8ed80b68761bdf6ee39df3242a9bad252f0578ad46c76ebd144b02",
+    "wm/train.py": "a9b0eb94124e6fff65b6730b7bb43f0d480323624556067b5bc30db28b229f47"
+  },
+  "status": "completed",
+  "utc_end": "2026-11-03T05:30:53.110454+00:00",
+  "utc_start": "2026-11-03T05:30:19.440583+00:00",
+  "wall_seconds": 34.59445550199598
+}

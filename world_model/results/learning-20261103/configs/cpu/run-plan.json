@@ -1,0 +1,122 @@
+{
+  "bc_inputs": [
+    {
+      "method": "bc",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "7084246730409fbbcf1cd3fbdd887f91295f8badbce63a44e97af39e0ae28645"
+    },
+    {
+      "method": "bc",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T051546Z-f506e121/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "077ad93f69e0975edf3af1b3b59733ab52e907a608d73eee33d079cfd22f3957"
+    },
+    {
+      "method": "bc",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052054Z-56105201/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "02e9fd03688d24bffc1e887b2019897f08da6cd8f6cd5b4bafa820b4e59a24c1"
+    },
+    {
+      "method": "bc_dr",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T052413Z-0a28a379/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "60eba09b8c18cd418bafe9d988132ac9e4a9c30111d80f861044cc7364df8fbd"
+    },
+    {
+      "method": "bc_dr",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T052559Z-71c0dd0a/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "e0a6e9c20ef850cd2df684ede8d1f800912d63eed72e732e5dad77c0d345f436"
+    },
+    {
+      "method": "bc_dr",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052741Z-96316431/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "5f7f00d46e780270bdc7891d7f1abda4629666e6d1aa593ab403befd75cd105a"
+    }
+  ],
+  "mode": "formal",
+  "planner": {
+    "action_penalty": 0.001,
+    "candidates": 128,
+    "elites": 16,
+    "horizon": 10,
+    "initial_std": 0.5,
+    "iterations": 3,
+    "minimum_std": 0.01,
+    "sampling_seed": 1801,
+    "scheme": "deterministic_latent"
+  },
+  "protocol": "m3-reduced-v2",
+  "scope": "one main configuration per three-seed learning comparison; no grid/oracle/RL",
+  "stages": [
+    {
+      "config": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/collect.json",
+        "sha256": "bfc3f95c1c3246ae8af2751898b131e4f64d8fa80682088fae7d2bef6770339a"
+      },
+      "name": "collect",
+      "stage": "collect"
+    },
+    {
+      "config": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/train.json",
+        "sha256": "6ef8fe9a87c931103ea8e278954513a91fc445f7666f012175ea309d2e2111e7"
+      },
+      "input_bindings": {
+        "intake": "collect.intake"
+      },
+      "name": "train",
+      "stage": "train"
+    },
+    {
+      "config": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/prediction.json",
+        "sha256": "838e2d08e9c0af021a4a401078f17f1cf28fbf0acc079eec4b24fa99242b6cf4"
+      },
+      "input_bindings": {
+        "checkpoints": "train.checkpoints",
+        "intake": "collect.intake"
+      },
+      "name": "prediction",
+      "stage": "prediction"
+    },
+    {
+      "config": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/mpc.json",
+        "sha256": "095e7625198341115ca2f42bd490c0ac407e3e5158a90834cdaab62a7dfae31e"
+      },
+      "input_bindings": {
+        "checkpoints": "train.checkpoints"
+      },
+      "name": "mpc",
+      "stage": "mpc"
+    },
+    {
+      "append_bindings": {
+        "policy_results": [
+          "mpc.policy_results"
+        ]
+      },
+      "config": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/report.json",
+        "sha256": "6677fc6fdd1ea283ca5f1942ba532ec638669c2ecee76297e546d2f9b28ad99c"
+      },
+      "name": "report",
+      "stage": "report"
+    },
+    {
+      "config": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/plot.json",
+        "sha256": "fb5f5e2b5afb17099a2e430980998534c0b883c2fb42b2b4610bc7f3c60f56a5"
+      },
+      "config_bindings": {
+        "prediction_result": "prediction.result_receipt"
+      },
+      "name": "plot",
+      "stage": "plot"
+    }
+  ]
+}

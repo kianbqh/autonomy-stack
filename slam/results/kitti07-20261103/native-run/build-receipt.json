@@ -1,0 +1,425 @@
+{
+  "status": "complete",
+  "verified": true,
+  "started_utc": "2026-11-03T05:20:30.093894+00:00",
+  "command": [
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/native15_reuse_runner.candidate.py",
+    "--source-git-sha",
+    "61d485e79d8f1cd4ef5791f148c853555f4db390",
+    "--dependency-receipt",
+    "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/build.json"
+  ],
+  "owner": "/root/m3_slam_execution",
+  "pid": 484180,
+  "ppid": 484179,
+  "process_start_ticks": "15814774",
+  "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d",
+  "commands": [
+    {
+      "argv": [
+        "cmake",
+        "-S",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/slam",
+        "-B",
+        "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_PREFIX_PATH=/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix;/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix",
+        "-DNANOFLANN_INCLUDE_DIR=/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/include"
+      ],
+      "started_utc": "2026-11-03T05:20:36.380428+00:00",
+      "pid": 484204,
+      "start_ticks": "15815446",
+      "returncode": 0,
+      "wall_s": 0.526038915006211,
+      "finished_utc": "2026-11-03T05:20:36.911553+00:00"
+    },
+    {
+      "argv": [
+        "cmake",
+        "--build",
+        "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build",
+        "--parallel",
+        "1"
+      ],
+      "started_utc": "2026-11-03T05:20:36.920198+00:00",
+      "pid": 484246,
+      "start_ticks": "15815500",
+      "returncode": 0,
+      "wall_s": 66.16627781899297,
+      "finished_utc": "2026-11-03T05:21:43.091000+00:00"
+    },
+    {
+      "argv": [
+        "ctest",
+        "--test-dir",
+        "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build",
+        "--output-on-failure"
+      ],
+      "started_utc": "2026-11-03T05:21:43.096428+00:00",
+      "pid": 484420,
+      "start_ticks": "15822118",
+      "returncode": 0,
+      "wall_s": 0.6766117450024467,
+      "finished_utc": "2026-11-03T05:21:43.784520+00:00"
+    }
+  ],
+  "dependency_reuse_scope": "Only existing completed Eigen/nanoflann/GoogleTest/GTSAM install prefix and accepted private Boost; original full build remains failed. No downloads/reinstall or dependency recompilation.",
+  "loader_environment": {
+    "LD_LIBRARY_PATH": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib:/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib"
+  },
+  "private_runner_sha256": "c1f61ce25484d2022558bedcc0bfa756cebbd7cf5ebb3684e49da4fd9f8f70d8",
+  "source_changes_from_original_dependency_build": {
+    "CMakeLists.txt": {
+      "dependency_build": "476a78b67a6fabb12328abf259e58b8f5e7f15f000ff56d6591a799b2ad9f6b9",
+      "current": "3068680ab41d4b0344e2a313f9e12d70584e9883f018c133d541dc6e0b2c418d"
+    },
+    "python/build_native.py": {
+      "dependency_build": "295e7669cb98fefb2b6677f50dd43e42d72aef3b1d82d030760448e5faf05006",
+      "current": "ae363cd5c1da494126f545d8c6187113c02edd4d68c0830084fbc874b76e0ac6"
+    },
+    "python/import_kitti.py": {
+      "dependency_build": "0b6db98b9d33173d2dda8bb9b4ee2c639768396a567ab0d69274f95434d6dc7a",
+      "current": "6e9ad25fa5df07a10968fde7a836721c5e13438ae790735f8142f920862f7669"
+    },
+    "python/run_experiment.py": {
+      "dependency_build": "5553d8d8484a33f79735fa94c45a3e31766d63aba4e5ae07ffdf92f24184d6a3",
+      "current": "95195214f10bb55ed5144e9854690497c0b5094a4bee36659a46a9e7a765fb3b"
+    },
+    "src/cloud.cpp": {
+      "dependency_build": "37d7878a5313a915f9dc0dedf81e2c718be01bbd8949947ba934ae750037bfdf",
+      "current": "98c1e28313d9b54aaa1ab3a02b19ad73349af117f0a97a0ac8aa7a25722f0a35"
+    },
+    "tests/slam_tests.cpp": {
+      "dependency_build": "4bf359b7d38dae5432e473c5e6b8b19b07b5b745731fe841a1ba304a3b392022",
+      "current": "eabfcff1db4df63f05f257eebc3ce116c426699623ddbc6fb765796c95c8d89a"
+    },
+    "tests/test_import_kitti_duplicates.py": {
+      "dependency_build": null,
+      "current": "8e4b42895590747f29675801697259ff428b403a0fff5852ad57f4785e286c06"
+    },
+    "tests/test_static_contracts.py": {
+      "dependency_build": "906b90ce6bc5b83e4cf988e180591f5e8c584a6aee87f87640510b8d12e15b9d",
+      "current": "8030f0a2f93f9aaf8b6191252d2cbf2a58e7f9c438c9b6391b49dcfa828624bc"
+    }
+  },
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "git_executable": "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+  "selected_source_status": "",
+  "selected_source_scope": "slam excluding derived slam/results",
+  "whole_worktree_status": "",
+  "git_version": "git version 2.43.0",
+  "source_files": {
+    ".gitignore": "108490ff0b5d11850b6c6edd9c75a893e94b0697c8258ae17bef5e1cc96d91e0",
+    "CMakeLists.txt": "3068680ab41d4b0344e2a313f9e12d70584e9883f018c133d541dc6e0b2c418d",
+    "README.md": "5a5b72c70b4d3b7c27fb7009c4d79b902e38b9ccca98384280cfe612d2bb6147",
+    "apps/run_kitti_slam.cpp": "060621420f6d2e47b6a4749edd40351ff7a5de5478fd5a5312493038625fa274",
+    "ci/slam-job.candidate.yml": "7890f405b0a854743f9531a0e7f272eac10fdafff487b72f478cf396842ceac9",
+    "configs/seq07.json": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+    "dependencies.candidate.json": "90c8a2f26547848bb8b8aa1b5f3a94d485f3ddd539a010592d0f62c397d95cb0",
+    "dependencies.lock.json": "81500b9c1fdcc44ca5948dc1f44a2861469819b9b008621c28ac06df43f6629c",
+    "evaluation-environment.lock.json": "0652065f7c4225167272a4526fd60e127f422c572f8642f5e369dc32c1ea149b",
+    "include/slam/core.hpp": "884821c4134b78d21d861932d4bca7649c5927b9be8dfdacde73b7b1d8b01688",
+    "prerequisites.lock.json": "4cfa02aa69af7dc8aa61d340eeed168191b595b10b27ebc10a5fbe5e4b294d42",
+    "python/build_native.py": "ae363cd5c1da494126f545d8c6187113c02edd4d68c0830084fbc874b76e0ac6",
+    "python/calib_check.py": "8a15114f645ebfa02ede4802a1980e31102261f1acc2ac83bf281ac0d5b78fbd",
+    "python/common.py": "a443041e3cc9f8973ceb1d4d629fff29940a0dbe7e10f1e5ffc647c4ff93e628",
+    "python/eval_traj.py": "23b5ab9a6008f86d83abb3d3f9140aab41babd5ae28c7dbf622ae63c36c063a7",
+    "python/export_replay.py": "dd5c3391480c1fc16b3c8bc74727d8c0d5838607f998d94020ba81665b25b192",
+    "python/fetch_locked_sources.py": "e74c53dffbfb396d54de84fa15edd3f9c20bd5ede4896495300a5c1227a59ae0",
+    "python/generate_fixture.py": "d9cf038b7629572d6ec8982b9b168f587693bd122df89986360128263483c430",
+    "python/import_kitti.py": "6e9ad25fa5df07a10968fde7a836721c5e13438ae790735f8142f920862f7669",
+    "python/official_parity.py": "4912944861d377ea1ddf62d05b354aaa5feecf94fb68aa40396d06b7f07f815f",
+    "python/project_lidar.py": "d588507056c7aa9772fc8b933cb5ed169518740db546db0fe146196f597b44ac",
+    "python/run_experiment.py": "95195214f10bb55ed5144e9854690497c0b5094a4bee36659a46a9e7a765fb3b",
+    "python/run_pipeline.py": "490af1c798a366d737f9f189e507edc443f9068fb6d89504a6f5867382363265",
+    "requirements-eval.candidate.txt": "907ce068b726f18ee830e96435ba436fc752d63911805ce000fad1ad5ce2795a",
+    "requirements-eval.lock.txt": "99c0f47bb5c986226f18967ecf5bd023bd36a762224ac2be631c0e1d8234629a",
+    "scripts/run_kitti.sh": "824fe1309bcaf6775e9dcc9088e695dcce9ae361de37bd04a0228e65d0a39525",
+    "src/cloud.cpp": "98c1e28313d9b54aaa1ab3a02b19ad73349af117f0a97a0ac8aa7a25722f0a35",
+    "src/geometry.cpp": "f3944695c55599eda56a84f7a69066680b638eb07187f57dbe7a1a6be901b605",
+    "src/io.cpp": "08687666041d9ac6200d9758a7dce5eadaefe1bc475209106fcc86bf6de33ec8",
+    "src/pipeline.cpp": "b881942dd8dde5ca9fe0263ca7eabbce25eb8df9e1a986d2e55d2358256c38d2",
+    "src/pose_graph.cpp": "85e90327f7fb0217e6da6a7a91df3d766ccb7ced29b6b089ec4deab0b3ee8a41",
+    "src/scan_context.cpp": "a994b43df08e892451123396751e32587de05bb09ce9b4c736f04285c0d13f52",
+    "tests/slam_tests.cpp": "eabfcff1db4df63f05f257eebc3ce116c426699623ddbc6fb765796c95c8d89a",
+    "tests/test_eval.py": "53c9e0bf39a42afce3b39499b23d43e89edf260ca181c92b6be558c85c57baeb",
+    "tests/test_evo_contract.py": "25e4e1e5ed31f9ee16ef28a622df02e8fa8ee7d0618fb44595d3b1001fb04b1b",
+    "tests/test_import_kitti_duplicates.py": "8e4b42895590747f29675801697259ff428b403a0fff5852ad57f4785e286c06",
+    "tests/test_kitti_contract.py": "02526d2ba396aaff8e617cf5ed815bb679a54a9b714469375ab80a0e7960fc88",
+    "tests/test_official_parity.py": "f174a55af4b03f7a1278d7326b6c55cae31acd328ada156624d15dcfcc41c985",
+    "tests/test_pipeline.py": "9fa4a4953f7341f4b7720ff68d41feffbf41814b303c4297ea670caa937bfa6c",
+    "tests/test_replay.py": "d732e6ec16b667ba68fe253268c6982b47aebff4a1c71dc8c005889abe0d9088",
+    "tests/test_sim_sensor_models.py": "ab993202f4078cdd3a97b0bb715b081f9045fbfbce8e996a6ac802cda3a01c10",
+    "tests/test_static_contracts.py": "8030f0a2f93f9aaf8b6191252d2cbf2a58e7f9c438c9b6391b49dcfa828624bc",
+    "viz/browser-smoke.candidate.mjs": "8657e05950b255256f2dba68a462aae64d22e465dc0ca2fa628ade89d6d7e408"
+  },
+  "environment": {
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "executable": "/usr/bin/python3",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "logical_cpus": 20,
+    "packages": {
+      "numpy": null,
+      "scipy": null,
+      "opencv-python-headless": null,
+      "matplotlib": null,
+      "evo": null
+    },
+    "environment": "WSL2",
+    "gpu": "not used by CPU SLAM",
+    "gpu_driver": "not queried; CPU-only run"
+  },
+  "resolved_tools": {
+    "cmake": {
+      "path": "/opt/codex-resume/portfolio-ml/venv/bin/cmake",
+      "sha256": "a0a751d238c558ba4ce9f41f8fa9f0d31938c27cfe3e395aaac4fbeafe9bdec2"
+    },
+    "ctest": {
+      "path": "/opt/codex-resume/portfolio-ml/venv/bin/ctest",
+      "sha256": "feeb754188ccb514e296d83f6ed466adc8e52d52f0b75c89105610984a59ccc8"
+    },
+    "ninja": {
+      "path": "/opt/codex-resume/portfolio-ml/venv/bin/ninja",
+      "sha256": "08639e194fffa7f08b259fc4abfa4803aff66b64de52549cee42ec527d55cea6"
+    },
+    "c++": {
+      "path": "/usr/bin/x86_64-linux-gnu-g++-13",
+      "sha256": "1353e9bdd29a7295c7226bf6c63abccce056d8cac31f112e5cdbecc3f28c2769"
+    }
+  },
+  "lock_sha256": "81500b9c1fdcc44ca5948dc1f44a2861469819b9b008621c28ac06df43f6629c",
+  "dependencies": [
+    {
+      "name": "eigen",
+      "version": "3.4.0",
+      "filename": "eigen-3.4.0.tar.gz",
+      "source": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz",
+      "sha256": "8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72",
+      "bytes": 2705005,
+      "license": "MPL-2.0",
+      "verification": {
+        "archive_root": "eigen-3.4.0",
+        "embedded_version": "3.4.0",
+        "embedded_files": {
+          "Eigen/src/Core/util/Macros.h": {
+            "bytes": 52909,
+            "sha256": "8d73259b4ba482e6dbd11b31d8887fd350dfb0836700d32793446bba6ab1ae7a"
+          },
+          "COPYING.MPL2": {
+            "bytes": 16726,
+            "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+          }
+        }
+      },
+      "license_notes": "Eigen core MPL-2.0; upstream archive also retains its bundled code license notices."
+    },
+    {
+      "name": "nanoflann",
+      "version": "1.6.3",
+      "filename": "nanoflann-1.6.3.tar.gz",
+      "source": "https://github.com/jlblancoc/nanoflann/archive/refs/tags/v1.6.3.tar.gz",
+      "sha256": "6140542c30b4abd6a6ffe52c591afaae5748f011c65682d1cae6c501e7e6710a",
+      "bytes": 522669,
+      "license": "BSD-2-Clause",
+      "verification": {
+        "archive_root": "nanoflann-1.6.3",
+        "embedded_version": "1.6.3",
+        "embedded_files": {
+          "include/nanoflann.hpp": {
+            "bytes": 92905,
+            "sha256": "e47f12ae2fc339cd2eb9ca148af837bd1025ff7e301ecf1860675ff1c73dd071"
+          },
+          "COPYING": {
+            "bytes": 1482,
+            "sha256": "f8efea042b89cc7534abf51888747f87595e1616c63f0b42a2ead81da34e0237"
+          }
+        }
+      }
+    },
+    {
+      "name": "gtsam",
+      "version": "4.2",
+      "filename": "gtsam-4.2.tar.gz",
+      "source": "https://github.com/borglab/gtsam/archive/refs/tags/4.2.tar.gz",
+      "sha256": "9ff8846d0a83a245c284cb5760ec2d74535ef9b5885183ccfefd7ff122eba60e",
+      "bytes": 29684572,
+      "license": "BSD-3-Clause",
+      "verification": {
+        "archive_root": "gtsam-4.2",
+        "embedded_version": "4.2.0; upstream 4.2 tag retains display prerelease suffix a9",
+        "embedded_files": {
+          "CMakeLists.txt": {
+            "bytes": 4690,
+            "sha256": "5d482298be2f14f9ed00e970c6b0a722ad07b42f4527cd5353e2c2769c9fe0ad"
+          },
+          "LICENSE.BSD": {
+            "bytes": 1530,
+            "sha256": "ec9746ecc24d4b36c4c8412ced73a9c7351238396d1fd17b70b3ba1e6a2e5bd0"
+          }
+        }
+      },
+      "license_notes": "GTSAM LICENSE.BSD is BSD-3-Clause; bundled third-party licenses are listed in upstream LICENSE and remain in the source archive."
+    },
+    {
+      "name": "googletest",
+      "version": "1.15.2",
+      "filename": "googletest-1.15.2.tar.gz",
+      "source": "https://github.com/google/googletest/archive/refs/tags/v1.15.2.tar.gz",
+      "sha256": "7b42b4d6ed48810c5362c265a17faebe90dc2373c885e5216439d37927f02926",
+      "bytes": 872667,
+      "license": "BSD-3-Clause",
+      "verification": {
+        "archive_root": "googletest-1.15.2",
+        "embedded_version": "1.15.2",
+        "embedded_files": {
+          "CMakeLists.txt": {
+            "bytes": 986,
+            "sha256": "3355d2159615c644fab4be6499651ea86f200112f78f06b010841307dd5b7476"
+          },
+          "LICENSE": {
+            "bytes": 1475,
+            "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+          }
+        }
+      }
+    }
+  ],
+  "dependency_provenance": {
+    "original_failed_receipt": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/build.json",
+    "original_receipt_sha256": "8a58506e3c67baa76f6524d32a745ac9db8a44a5ff99725c413445fedc370241",
+    "original_commands_log_sha256": "853e1b4fc82606e97c1c2b926826902c82fe35e475e93ed0aeb6b30ac15784a6",
+    "original_whole_build_status": "failed; never relabelled verified",
+    "completed_dependency_install_command_indices": [
+      2,
+      5,
+      8
+    ],
+    "dependency_prefix": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix",
+    "installed_versions": {
+      "eigen": {
+        "version": "3.4.0",
+        "file": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/share/eigen3/cmake/Eigen3ConfigVersion.cmake",
+        "sha256": "926c74b98008a96184e5dc28d0c2253f266e294c8dbed6c1366839dd0330e645"
+      },
+      "googletest": {
+        "version": "1.15.2",
+        "file": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/cmake/GTest/GTestConfigVersion.cmake",
+        "sha256": "58c552e3963d81957fecb8a217d59240f387d9d06fd6eab750bdae67b819caf2"
+      },
+      "gtsam": {
+        "version": "4.2.0",
+        "file": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/cmake/GTSAM/GTSAMConfigVersion.cmake",
+        "sha256": "091a451101c5a2e5e5681112cb6308f6bcf6ff99accfcc121573baedc0c2c172"
+      }
+    },
+    "actual_prefix_files": 928,
+    "actual_prefix_manifest_sha256": "022b9ecba51136b349618232f8bbc0fe4acba31dcbd092d6de78f29c31d5e2f8",
+    "boost_prefix": "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix",
+    "boost_libraries": {
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_serialization.so.1.83.0": {
+        "sha256": "19ef09d8d52e44643ba91ae767717b827283701e837184c62b73af1e00abad46",
+        "bytes": 494872
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_serialization.so": {
+        "sha256": "19ef09d8d52e44643ba91ae767717b827283701e837184c62b73af1e00abad46",
+        "bytes": 494872
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_system.so": {
+        "sha256": "2a1cb27344348317f7a317e82baabfefc1e102e582390877e0a2d4553e6c3730",
+        "bytes": 15152
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_system.so.1.83.0": {
+        "sha256": "2a1cb27344348317f7a317e82baabfefc1e102e582390877e0a2d4553e6c3730",
+        "bytes": 15152
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_filesystem.so.1.83.0": {
+        "sha256": "e043142fb0343bdfdd5dfbe501aa2d3127172e41bd460a1ff4380775a00e2a75",
+        "bytes": 193128
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_filesystem.so": {
+        "sha256": "e043142fb0343bdfdd5dfbe501aa2d3127172e41bd460a1ff4380775a00e2a75",
+        "bytes": 193128
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_thread.so.1.83.0": {
+        "sha256": "d301f0138415a4305d6eb8962364c9263c4eecaa92dcd3d87b6efee5b3c3ffec",
+        "bytes": 187456
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_thread.so": {
+        "sha256": "d301f0138415a4305d6eb8962364c9263c4eecaa92dcd3d87b6efee5b3c3ffec",
+        "bytes": 187456
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_program_options.so": {
+        "sha256": "ea55deb009a99dbd4ae7801cc7a38704cee39041784ef65d35ea86aca93cfc7b",
+        "bytes": 548088
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_program_options.so.1.83.0": {
+        "sha256": "ea55deb009a99dbd4ae7801cc7a38704cee39041784ef65d35ea86aca93cfc7b",
+        "bytes": 548088
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_date_time.so": {
+        "sha256": "4886871c7139604dd6cca1e1bea1a9fb2c9a32f8b4dfc00604a86a77ebbaebcf",
+        "bytes": 15168
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_date_time.so.1.83.0": {
+        "sha256": "4886871c7139604dd6cca1e1bea1a9fb2c9a32f8b4dfc00604a86a77ebbaebcf",
+        "bytes": 15168
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_timer.so": {
+        "sha256": "d511ef648ef13030613f48da52da67bc3f2330feba0396d2315d43dc67659c17",
+        "bytes": 28728
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_timer.so.1.83.0": {
+        "sha256": "d511ef648ef13030613f48da52da67bc3f2330feba0396d2315d43dc67659c17",
+        "bytes": 28728
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_chrono.so.1.83.0": {
+        "sha256": "0a675e60962d6189267553954c380fa0f8f454c2d9f5a6d92f9d1fa4aad85215",
+        "bytes": 49336
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_chrono.so": {
+        "sha256": "0a675e60962d6189267553954c380fa0f8f454c2d9f5a6d92f9d1fa4aad85215",
+        "bytes": 49336
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_regex.so": {
+        "sha256": "05d458a16ae20504c661e9c9efaef55af00c7d67316a0ecec135813b0b87b9d9",
+        "bytes": 397488
+      },
+      "/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_regex.so.1.83.0": {
+        "sha256": "05d458a16ae20504c661e9c9efaef55af00c7d67316a0ecec135813b0b87b9d9",
+        "bytes": 397488
+      }
+    },
+    "boost_header_sha256": "a547ee7eddf1b96695027922345b471feba8bcba79a8572399d282247c02e4ab"
+  },
+  "cmake_prefix_path": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix;/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix",
+  "actual_native_test_ids": [
+    "Geometry.LeftJacobianFiniteDifference",
+    "Geometry.NontrivialExpLogAndInverse",
+    "Geometry.HeadingReplacementAvoidsNegativeYawEulerBranch",
+    "Geometry.HeadingReplacementPreservesTiltAcrossPiBoundary",
+    "Calibration.RectifiedConjugationAndGroundTruthOrigin",
+    "ICP.KnownSE3RecoveryWithOwnNormals",
+    "ICP.NoisePartialOverlapAndOutliers",
+    "ICP.ConditioningDoesNotDependOnWorldOriginTranslation",
+    "ICP.PlaneDegeneracyAndEmptyInputsFail",
+    "ICP.InternalRotationRetractionPreventsLongSequenceDrift",
+    "ICP.SmallCorrespondenceTwoCycleUsesUnscaledConvergence",
+    "Descriptor.YawHasCurrentToCandidateSign",
+    "PoseGraph.GeometricallyVerifiedLoopReducesControlledToyDrift",
+    "Trajectory.CorrectionUsesActualTimestampAndPreservesAllFrames",
+    "IO.ThreeFrameBinaryAndMalformedScan"
+  ],
+  "binary": "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build/run_kitti_slam",
+  "binary_sha256": "924d68b5e27ceebf21cf562528ad7640b0e2ad75d5130c1b4b91d2e9932ccf11",
+  "compiler_version": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "cmake_version": "cmake version 4.4.4\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+  "dynamic_libraries": "\tlinux-vdso.so.1 (0x0000713607ebf000)\n\tlibgtsam.so.4 => /opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so.4 (0x0000713607800000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000713607400000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000713607717000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000713607e3d000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000713607000000)\n\tlibboost_serialization.so.1.83.0 => /opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_serialization.so.1.83.0 (0x00007136076cf000)\n\tlibboost_filesystem.so.1.83.0 => /opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_filesystem.so.1.83.0 (0x00007136076a8000)\n\tlibboost_timer.so.1.83.0 => /opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib/libboost_timer.so.1.83.0 (0x0000713607e34000)\n\tlibmetis-gtsam.so => /opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libmetis-gtsam.so (0x000071360738d000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000713607ec1000)\n",
+  "actual_native_tests": 15,
+  "ctest_last_log_sha256": "5bf75de1c8821a16aa6d52e79966f60cfbc827263e27259078bcaf356d6e2495",
+  "dependency_prefix_after_sha256": "022b9ecba51136b349618232f8bbc0fe4acba31dcbd092d6de78f29c31d5e2f8",
+  "finished_utc": "2026-11-03T05:21:48.955087+00:00",
+  "wall_s": 78.8642661840131
+}

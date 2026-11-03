@@ -1,0 +1,1 @@
+registration_failed:invalid_or_empty_icp_input

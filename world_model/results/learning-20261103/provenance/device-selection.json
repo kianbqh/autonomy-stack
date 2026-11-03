@@ -1,0 +1,48 @@
+{
+  "status": "complete",
+  "pid": 482979,
+  "python": "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+  "torch_version": "2.15.0+cu132",
+  "gpu_name": "NVIDIA GeForce RTX 3080",
+  "gpu_capability": [
+    8,
+    6
+  ],
+  "cpu_threads": 1,
+  "rows": [
+    {
+      "device": "cpu",
+      "warmup_update_seconds": 2.035275175992865,
+      "timed_update_seconds": [
+        0.002624373009894043,
+        0.001678236003499478,
+        0.0017017240170389414
+      ],
+      "median_timed_update_seconds": 0.0017017240170389414,
+      "batch_size": 256,
+      "optimizer": "Adam0.001",
+      "updates_total": 4
+    },
+    {
+      "device": "cuda:0",
+      "warmup_update_seconds": 3.536346640001284,
+      "timed_update_seconds": [
+        0.03289250301895663,
+        0.033042360009858385,
+        0.0327080319984816
+      ],
+      "median_timed_update_seconds": 0.03289250301895663,
+      "batch_size": 256,
+      "optimizer": "Adam0.001",
+      "updates_total": 4
+    }
+  ],
+  "selected_uniform_bc_and_panel_device": "cpu",
+  "cuda_to_cpu_median_ratio": 19.328929185703522,
+  "exclusive_host": false,
+  "scope": "Matched tiny Actor training fixture under current user GPU load; no latency or general benchmark claim",
+  "formal_data_used": false,
+  "formal_checkpoints_produced": false,
+  "additional_sweeps": false,
+  "selection_reason": "Lower observed same-shape steady update median; cold update excluded"
+}

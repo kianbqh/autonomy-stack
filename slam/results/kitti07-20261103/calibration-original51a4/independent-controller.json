@@ -1,0 +1,284 @@
+{
+  "status": "complete",
+  "scope": "one independently released calibration; original config, original verified data; no native rerun/evo",
+  "utc": "2026-11-03T05:25:32.673113+00:00",
+  "pid": 484983,
+  "ppid": 484982,
+  "start_ticks": "15844881",
+  "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17",
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+  "input_manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+  "calibration_config": {
+    "frames": [
+      0,
+      550,
+      1100
+    ],
+    "canny_low": 80,
+    "canny_high": 160,
+    "depth_min_m": 1.0,
+    "depth_max_m": 80.0,
+    "depth_jump_m": 1.0,
+    "edge_radius_pixels": 2,
+    "minimum_edge_pixels": 30,
+    "minimum_camera_edge_pixels": 100,
+    "minimum_projected_points": 300,
+    "minimum_projection_coverage": 0.01,
+    "distance_cap_pixels": 20.0,
+    "coverage_weight": 0.5,
+    "rotation_offsets_deg": [
+      -2,
+      -1.5,
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1,
+      1.5,
+      2
+    ],
+    "translation_offsets_m": [
+      -0.1,
+      -0.075,
+      -0.05,
+      -0.025,
+      0,
+      0.025,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "bootstrap_samples": 1000,
+    "bootstrap_seed": 7,
+    "perturbation": "left_in_rectified_camera0_axes"
+  },
+  "source_files": {
+    ".gitignore": "108490ff0b5d11850b6c6edd9c75a893e94b0697c8258ae17bef5e1cc96d91e0",
+    "CMakeLists.txt": "3068680ab41d4b0344e2a313f9e12d70584e9883f018c133d541dc6e0b2c418d",
+    "README.md": "5a5b72c70b4d3b7c27fb7009c4d79b902e38b9ccca98384280cfe612d2bb6147",
+    "apps/run_kitti_slam.cpp": "060621420f6d2e47b6a4749edd40351ff7a5de5478fd5a5312493038625fa274",
+    "ci/slam-job.candidate.yml": "7890f405b0a854743f9531a0e7f272eac10fdafff487b72f478cf396842ceac9",
+    "configs/seq07.json": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+    "dependencies.candidate.json": "90c8a2f26547848bb8b8aa1b5f3a94d485f3ddd539a010592d0f62c397d95cb0",
+    "dependencies.lock.json": "81500b9c1fdcc44ca5948dc1f44a2861469819b9b008621c28ac06df43f6629c",
+    "evaluation-environment.lock.json": "0652065f7c4225167272a4526fd60e127f422c572f8642f5e369dc32c1ea149b",
+    "include/slam/core.hpp": "884821c4134b78d21d861932d4bca7649c5927b9be8dfdacde73b7b1d8b01688",
+    "prerequisites.lock.json": "4cfa02aa69af7dc8aa61d340eeed168191b595b10b27ebc10a5fbe5e4b294d42",
+    "python/build_native.py": "ae363cd5c1da494126f545d8c6187113c02edd4d68c0830084fbc874b76e0ac6",
+    "python/calib_check.py": "8a15114f645ebfa02ede4802a1980e31102261f1acc2ac83bf281ac0d5b78fbd",
+    "python/common.py": "a443041e3cc9f8973ceb1d4d629fff29940a0dbe7e10f1e5ffc647c4ff93e628",
+    "python/eval_traj.py": "23b5ab9a6008f86d83abb3d3f9140aab41babd5ae28c7dbf622ae63c36c063a7",
+    "python/export_replay.py": "dd5c3391480c1fc16b3c8bc74727d8c0d5838607f998d94020ba81665b25b192",
+    "python/fetch_locked_sources.py": "e74c53dffbfb396d54de84fa15edd3f9c20bd5ede4896495300a5c1227a59ae0",
+    "python/generate_fixture.py": "d9cf038b7629572d6ec8982b9b168f587693bd122df89986360128263483c430",
+    "python/import_kitti.py": "6e9ad25fa5df07a10968fde7a836721c5e13438ae790735f8142f920862f7669",
+    "python/official_parity.py": "4912944861d377ea1ddf62d05b354aaa5feecf94fb68aa40396d06b7f07f815f",
+    "python/project_lidar.py": "d588507056c7aa9772fc8b933cb5ed169518740db546db0fe146196f597b44ac",
+    "python/run_experiment.py": "95195214f10bb55ed5144e9854690497c0b5094a4bee36659a46a9e7a765fb3b",
+    "python/run_pipeline.py": "490af1c798a366d737f9f189e507edc443f9068fb6d89504a6f5867382363265",
+    "requirements-eval.candidate.txt": "907ce068b726f18ee830e96435ba436fc752d63911805ce000fad1ad5ce2795a",
+    "requirements-eval.lock.txt": "99c0f47bb5c986226f18967ecf5bd023bd36a762224ac2be631c0e1d8234629a",
+    "scripts/run_kitti.sh": "824fe1309bcaf6775e9dcc9088e695dcce9ae361de37bd04a0228e65d0a39525",
+    "src/cloud.cpp": "98c1e28313d9b54aaa1ab3a02b19ad73349af117f0a97a0ac8aa7a25722f0a35",
+    "src/geometry.cpp": "f3944695c55599eda56a84f7a69066680b638eb07187f57dbe7a1a6be901b605",
+    "src/io.cpp": "08687666041d9ac6200d9758a7dce5eadaefe1bc475209106fcc86bf6de33ec8",
+    "src/pipeline.cpp": "b881942dd8dde5ca9fe0263ca7eabbce25eb8df9e1a986d2e55d2358256c38d2",
+    "src/pose_graph.cpp": "85e90327f7fb0217e6da6a7a91df3d766ccb7ced29b6b089ec4deab0b3ee8a41",
+    "src/scan_context.cpp": "a994b43df08e892451123396751e32587de05bb09ce9b4c736f04285c0d13f52",
+    "tests/slam_tests.cpp": "eabfcff1db4df63f05f257eebc3ce116c426699623ddbc6fb765796c95c8d89a",
+    "tests/test_eval.py": "53c9e0bf39a42afce3b39499b23d43e89edf260ca181c92b6be558c85c57baeb",
+    "tests/test_evo_contract.py": "25e4e1e5ed31f9ee16ef28a622df02e8fa8ee7d0618fb44595d3b1001fb04b1b",
+    "tests/test_import_kitti_duplicates.py": "8e4b42895590747f29675801697259ff428b403a0fff5852ad57f4785e286c06",
+    "tests/test_kitti_contract.py": "02526d2ba396aaff8e617cf5ed815bb679a54a9b714469375ab80a0e7960fc88",
+    "tests/test_official_parity.py": "f174a55af4b03f7a1278d7326b6c55cae31acd328ada156624d15dcfcc41c985",
+    "tests/test_pipeline.py": "9fa4a4953f7341f4b7720ff68d41feffbf41814b303c4297ea670caa937bfa6c",
+    "tests/test_replay.py": "d732e6ec16b667ba68fe253268c6982b47aebff4a1c71dc8c005889abe0d9088",
+    "tests/test_sim_sensor_models.py": "ab993202f4078cdd3a97b0bb715b081f9045fbfbce8e996a6ac802cda3a01c10",
+    "tests/test_static_contracts.py": "8030f0a2f93f9aaf8b6191252d2cbf2a58e7f9c438c9b6391b49dcfa828624bc",
+    "viz/browser-smoke.candidate.mjs": "8657e05950b255256f2dba68a462aae64d22e465dc0ca2fa628ade89d6d7e408"
+  },
+  "child": {
+    "pid": 485006,
+    "start_ticks": "15845188",
+    "argv": [
+      "/opt/codex-resume/all-modules-v2/m3/slam/eval-venv/bin/python",
+      "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/calib_check.py",
+      "--config",
+      "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+      "--input-manifest",
+      "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/input-manifest.json",
+      "--repo-root",
+      "/mnt/g/ResumeProject/platforms/autonomy-stack",
+      "--git",
+      "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+      "--output-parent",
+      "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs"
+    ]
+  },
+  "returncode": 0,
+  "returned_path": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32",
+  "result_receipt_sha256": "a4ad6763c06dc476a961e8a69f388fa905c2c5c1bb5698d800e8c6b5c6db8ffe",
+  "provided_calibration": {
+    "frames": [
+      {
+        "frame": 0,
+        "input_points": 122626,
+        "positive_depth_range_points": 53286,
+        "in_image_points": 19987,
+        "in_image_fraction_of_input": 0.16299153523722537,
+        "zbuffer_pixels": 19949,
+        "projection_coverage": 0.04397733785988272,
+        "occluded_or_same_pixel_points": 38,
+        "projection": "P2*Tr*p_L; rectified camera0; no R0_rect",
+        "zbuffer": "nearest rectified camera0 depth, floor pixel",
+        "lidar_edge_pixels": 736,
+        "camera_edge_pixels": 34092,
+        "valid": true,
+        "score": 0.6362994909286499,
+        "normalized_edge_distance_mean": 0.2177952527999878,
+        "edge_distance_pixels_mean": 4.762285232543945,
+        "edge_distance_pixels_p95": 21.48992156982422,
+        "coverage_penalty": 0.41850423238138734,
+        "edge_support_fraction_of_zbuffer": 0.036894079903754574
+      },
+      {
+        "frame": 550,
+        "input_points": 126343,
+        "positive_depth_range_points": 54752,
+        "in_image_points": 20280,
+        "in_image_fraction_of_input": 0.16051542230277893,
+        "zbuffer_pixels": 20253,
+        "projection_coverage": 0.044647502314712754,
+        "occluded_or_same_pixel_points": 27,
+        "projection": "P2*Tr*p_L; rectified camera0; no R0_rect",
+        "zbuffer": "nearest rectified camera0 depth, floor pixel",
+        "lidar_edge_pixels": 740,
+        "camera_edge_pixels": 55982,
+        "valid": true,
+        "score": 0.5325073003768921,
+        "normalized_edge_distance_mean": 0.11276503652334213,
+        "edge_distance_pixels_mean": 2.255300760269165,
+        "edge_distance_pixels_p95": 7.590699672698975,
+        "coverage_penalty": 0.41974228884861053,
+        "edge_support_fraction_of_zbuffer": 0.03653779686959956
+      },
+      {
+        "frame": 1100,
+        "input_points": 115982,
+        "positive_depth_range_points": 53011,
+        "in_image_points": 17311,
+        "in_image_fraction_of_input": 0.1492559190219172,
+        "zbuffer_pixels": 17238,
+        "projection_coverage": 0.038000969974868834,
+        "occluded_or_same_pixel_points": 73,
+        "projection": "P2*Tr*p_L; rectified camera0; no R0_rect",
+        "zbuffer": "nearest rectified camera0 depth, floor pixel",
+        "lidar_edge_pixels": 1133,
+        "camera_edge_pixels": 53096,
+        "valid": true,
+        "score": 0.5512723326683044,
+        "normalized_edge_distance_mean": 0.1259002983570099,
+        "edge_distance_pixels_mean": 2.776412010192871,
+        "edge_distance_pixels_p95": 11.630093574523926,
+        "coverage_penalty": 0.4253720404890414,
+        "edge_support_fraction_of_zbuffer": 0.06572688246896392
+      }
+    ],
+    "mean": 0.5733597079912821,
+    "ci95": [
+      0.5325073003768921,
+      0.6362994909286499
+    ],
+    "valid_frames": 3,
+    "resampling_unit": "frame"
+  },
+  "axes": {
+    "rx": {
+      "best": {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      "boundary_optimum": false,
+      "provided_is_best": true
+    },
+    "ry": {
+      "best": {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      "boundary_optimum": false,
+      "provided_is_best": true
+    },
+    "rz": {
+      "best": {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      "boundary_optimum": false,
+      "provided_is_best": true
+    },
+    "tx": {
+      "best": {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      "boundary_optimum": false,
+      "provided_is_best": true
+    },
+    "ty": {
+      "best": {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      "boundary_optimum": false,
+      "provided_is_best": true
+    },
+    "tz": {
+      "best": {
+        "offset": 0.025,
+        "mean": 0.57168581088384,
+        "ci95": [
+          0.531694769859314,
+          0.6327430605888367
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      "boundary_optimum": false,
+      "provided_is_best": false
+    }
+  },
+  "finished_utc": "2026-11-03T05:25:44.450740+00:00",
+  "wall_s": 11.777659526997013
+}

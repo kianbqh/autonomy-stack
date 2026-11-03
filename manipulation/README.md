@@ -4,11 +4,30 @@ I use a scripted pushing controller to study how behavior cloning changes when
 demonstrations include randomized physics and sensing. The task uses the official
 MuJoCo FetchPush environment with state observations and the native sparse reward.
 
-The implementation includes simulator contract checks and a fixed BC comparison.
-Expert collection, BC training, robustness and timings have not been measured in
-this version. Engineering fixtures are separate from experimental outcomes.
+## Measured results
 
-The main comparison has one budget of 100 successful demonstrations, nominal BC and DR-BC,
+Each trained policy was evaluated on the same 100 held-out resets. Both methods
+used three training seeds and completed 200 epochs per seed.
+
+| Method | Successes by seed, each /100 | Mean success | Population std, percentage points |
+|---|---|---:|---:|
+| BC | 5 / 4 / 7 | 5.33% | 1.25 |
+| DR-BC | 4 / 9 / 22 | 11.67% | 7.59 |
+
+DR-BC had higher mean nominal success, with substantial variation between seeds.
+The [measured BC table](results/learning-20261103/comparison.md),
+[six raw policy results](results/learning-20261103/raw/),
+[collection counts and splits](results/learning-20261103/collection-summary.json),
+and [fixed robustness panel](results/learning-20261103/panel-manifest.json)
+retain the underlying measurements. The world-model module contains the paired
+learned-MPC comparison.
+
+All fits and evaluations used one CPU numerical thread. The environment receipt
+records the installed CUDA-capable PyTorch build; these models were trained on CPU.
+
+## Experiment
+
+The comparison uses 100 successful demonstrations, nominal BC and DR-BC,
 and three independent learning seeds 0/1/2. Both conditions attempt reset seeds
 0..9999 in the same fixed order, independently retaining their first 100 native
 step 50 successes and all failed attempts. Their successful pools can differ;
@@ -21,7 +40,7 @@ No held-out success outcome selects epochs, randomization settings or cells.
 
 Final nominal outcomes use 100 fixed held-out resets 1000000..1000099 per trained
 seed. Mean ± population std (`ddof=0`) is over the 3 policy rates, with per-policy
-counts/Wilson95 intervals. Success is native `is_success` at control step50;
+counts/Wilson95 intervals. Success is native `is_success` at control step 50;
 ever-success and first-success remain separate diagnostics.
 
 `configs/dr_eval.yaml` declares an 11-cell robustness panel: nominal and one-axis
@@ -44,7 +63,7 @@ and physical audit support remain. A full fault/shield matrix is outside the mai
 experiment. FetchPush locks its gripper, so gripper failure is inert/N/A here.
 
 From the repository root, create an isolated environment with the measured
-Linux CPython3.12 CPU dependency lock, then choose an explicit output directory:
+Linux CPython 3.12 CPU dependency lock, then choose an explicit output directory:
 
 ```bash
 python3.12 -m venv .venv
@@ -70,35 +89,25 @@ Each attempt records command/config/source/checkpoint hashes, environment, seeds
 timestamps, wall times and failures without overwriting old results.
 Environment receipts detect the actual platform, WSL, runner and container
 evidence. Optional `M3_ENVIRONMENT` is recorded as a user label alongside the
-detected environment. An existing CUDA-enabled Torch2.15 environment can be
+detected environment. An existing CUDA-enabled Torch 2.15 environment can be
 selected with `M3_PYTHON`; its actual package/hardware identities are recorded.
 
-The runtime gates check the actual installed 25-field observation/timebase/XML
-contract, native reward/timeout, scripted expert floor on training-domain seeds,
-real BC updates, consistent noise/latency, parameter restoration and physical
-Cartesian gain. A same-state regression must prove exact native batched versus
-per-substep stepping and independent complete clone restore for nominal and
-changed mass/friction/gain/latency. The fast path calls the captured native bound
-method when physical auditing is inactive. No equivalence or speedup is claimed
-from static checks.
-
-The sensor gates also send a fixed complete action sequence through
-the real delay 1/2 wrapper, including queue drain and reset with pending commands.
-An independent same-state native clone receives the literal expected applied
-actions. A 50-step known-offset/dropout fixture checks every visible position,
-relative position and achieved_goal against clean native truth, including a
-trigger during a hold and reset mid-hold. These are engineering checks of model
-application and timing; Gaussian noise calibration and runtime success remain
-unmeasured.
+Engineering checks cover the installed observation/timebase/XML contract,
+native reward and timeout, scripted-controller floor, actual BC gradients,
+complete clone restoration, parameter restoration, noise consistency, FIFO
+delay/reset behavior and physical Cartesian gain. Gaussian noise distribution
+calibration was not estimated.
 
 ## Limitations
 
-This is state-based simulation, with a scripted expert; there is no robot or
-sim-to-real result. Sensor noise/delay causes partial observability. The shield
-has no unconditional physical safety guarantee. Results can be negative.
-Diffusion, SAC/BC→SAC/PPO, demo-scaling sweeps, exhaustive grids and full simulator
-oracle studies were cut from this experiment's scope. Existing 2-D, safety,
+This is state-based simulation, with a scripted demonstration source. It does not
+measure real-robot or sim-to-real transfer. Sensor noise/delay causes partial observability. The shield
+has no unconditional physical safety guarantee. Existing 2-D, safety,
 perception and viewer measurements remain separate and frozen.
 
 Environment definitions follow the official [FetchPush documentation](https://robotics.farama.org/v1.4.1/envs/fetch/push/)
 and [MuJoCo bindings](https://mujoco.readthedocs.io/en/3.3.7/python.html).
+
+## Evidence files
+
+[Evidence index and hashes](results/learning-20261103/evidence-index.json) list the actual raw artifacts. Large repeated raw JSON is stored losslessly as `.json.gz`; `gzip -dc file.json.gz` recovers the exact source bytes. Derived tables are labelled and link to their raw inputs. Checkpoints and NPZ episodes stay outside Git. [Download the final models](https://github.com/kianbqh/autonomy-stack/releases/tag/m3-models-20261103); verify their [checkpoint hashes](../world_model/results/learning-20261103/checkpoint-downloads.json).

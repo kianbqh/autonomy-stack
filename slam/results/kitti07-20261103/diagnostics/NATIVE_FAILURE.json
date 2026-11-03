@@ -1,0 +1,85 @@
+{
+  "status": "actual failure retained; one-line source candidate only, NOT APPLIED",
+  "utc": "2026-11-03T02:59:54.892109+00:00",
+  "git_sha": "3226c437ad6967b66984779177ff10b9101d9754",
+  "source_file": "slam/CMakeLists.txt",
+  "source_sha256": "476a78b67a6fabb12328abf259e58b8f5e7f15f000ff56d6591a799b2ad9f6b9",
+  "command": [
+    "cmake",
+    "-S",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam",
+    "-B",
+    "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/slam-build",
+    "-G",
+    "Ninja",
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DCMAKE_PREFIX_PATH=/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix;/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix",
+    "-DNANOFLANN_INCLUDE_DIR=/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/include"
+  ],
+  "build_receipt": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/build.json",
+  "build_receipt_sha256": "8a58506e3c67baa76f6524d32a745ac9db8a44a5ff99725c413445fedc370241",
+  "commands_log": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/commands.log",
+  "commands_log_sha256": "853e1b4fc82606e97c1c2b926826902c82fe35e475e93ed0aeb6b30ac15784a6",
+  "actual_failure": {
+    "type": "CalledProcessError",
+    "message": "Command '['cmake', '-S', '/mnt/g/ResumeProject/platforms/autonomy-stack/slam', '-B', '/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/slam-build', '-G', 'Ninja', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_PREFIX_PATH=/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix;/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix', '-DNANOFLANN_INCLUDE_DIR=/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/include']' returned non-zero exit status 1."
+  },
+  "error_excerpt": "CMake Error at CMakeLists.txt:7 (find_package):\n  Could not find a configuration file for package \"GTSAM\" that exactly\n  matches requested version \"4.2\".\n\n  The following configuration files were considered but not accepted:\n\n    /opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/cmake/GTSAM/GTSAMConfig.cmake, version: 4.2.0\n      The version found is not compatible with the version requested.\n\n\n\n-- Configuring incomplete, errors occurred!\n",
+  "proposed_change": "GTSAM exact config version 4.2 -> 4.2.0; official source archive tag remains4.2 and all hashes/config/algorithm thresholds unchanged",
+  "candidate_patch_sha256": "e4b8f7a8acbcbdba2c086092a8c0e5614582c85f2cf243250710e503d635b576",
+  "installed_config_version_evidence": {
+    "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/cmake/GTSAM/GTSAMConfigVersion.cmake": {
+      "sha256": "091a451101c5a2e5e5681112cb6308f6bcf6ff99accfcc121573baedc0c2c172",
+      "bytes": 2762,
+      "text": "# This is a basic version file for the Config-mode of find_package().\n# It is used by write_basic_package_version_file() as input file for configure_file()\n# to create a version-file which can be installed along a config.cmake file.\n#\n# The created file sets PACKAGE_VERSION_EXACT if the current version string and\n# the requested version string are exactly the same and it sets\n# PACKAGE_VERSION_COMPATIBLE if the current version is >= requested version,\n# but only if the requested major version is the same as the current one.\n# The variable CVF_VERSION must be set before calling configure_file().\n\n\nset(PACKAGE_VERSION \"4.2.0\")\n\nif(PACKAGE_VERSION VERSION_LESS PACKAGE_FIND_VERSION)\n  set(PACKAGE_VERSION_COMPATIBLE FALSE)\nelse()\n\n  if(\"4.2.0\" MATCHES \"^([0-9]+)\\\\.\")\n    set(CVF_VERSION_MAJOR \"${CMAKE_MATCH_1}\")\n    if(NOT CVF_VERSION_MAJOR VERSION_EQUAL 0)\n      string(REGEX REPLACE \"^0+\" \"\" CVF_VERSION_MAJOR \"${CVF_VERSION_MAJOR}\")\n    endif()\n  else()\n    set(CVF_VERSION_MAJOR \"4.2.0\")\n  endif()\n\n  if(PACKAGE_FIND_VERSION_RANGE)\n    # both endpoints of the range must have the expected major version\n    math (EXPR CVF_VERSION_MAJOR_NEXT \"${CVF_VERSION_MAJOR} + 1\")\n    if (NOT PACKAGE_FIND_VERSION_MIN_MAJOR STREQUAL CVF_VERSION_MAJOR\n        OR ((PACKAGE_FIND_VERSION_RANGE_MAX STREQUAL \"INCLUDE\" AND NOT PACKAGE_FIND_VERSION_MAX_MAJOR STREQUAL CVF_VERSION_MAJOR)\n          OR (PACKAGE_FIND_VERSION_RANGE_MAX STREQUAL \"EXCLUDE\" AND NOT PACKAGE_FIND_VERSION_MAX VERSION_LESS_EQUAL CVF_VERSION_MAJOR_NEXT)))\n      set(PACKAGE_VERSION_COMPATIBLE FALSE)\n    elseif(PACKAGE_FIND_VERSION_MIN_MAJOR STREQUAL CVF_VERSION_MAJOR\n        AND ((PACKAGE_FIND_VERSION_RANGE_MAX STREQUAL \"INCLUDE\" AND PACKAGE_VERSION VERSION_LESS_EQUAL PACKAGE_FIND_VERSION_MAX)\n        OR (PACKAGE_FIND_VERSION_RANGE_MAX STREQUAL \"EXCLUDE\" AND PACKAGE_VERSION VERSION_LESS PACKAGE_FIND_VERSION_MAX)))\n      set(PACKAGE_VERSION_COMPATIBLE TRUE)\n    else()\n      set(PACKAGE_VERSION_COMPATIBLE FALSE)\n    endif()\n  else()\n    if(PACKAGE_FIND_VERSION_MAJOR STREQUAL CVF_VERSION_MAJOR)\n      set(PACKAGE_VERSION_COMPATIBLE TRUE)\n    else()\n      set(PACKAGE_VERSION_COMPATIBLE FALSE)\n    endif()\n\n    if(PACKAGE_FIND_VERSION STREQUAL PACKAGE_VERSION)\n      set(PACKAGE_VERSION_EXACT TRUE)\n    endif()\n  endif()\nendif()\n\n\n# if the installed or the using project don't have CMAKE_SIZEOF_VOID_P set, ignore it:\nif(\"${CMAKE_SIZEOF_VOID_P}\" STREQUAL \"\" OR \"8\" STREQUAL \"\")\n  return()\nendif()\n\n# check that the installed version has the same 32/64bit-ness as the one which is currently searching:\nif(NOT CMAKE_SIZEOF_VOID_P STREQUAL \"8\")\n  math(EXPR installedBits \"8 * 8\")\n  set(PACKAGE_VERSION \"${PACKAGE_VERSION} (${installedBits}bit)\")\n  set(PACKAGE_VERSION_UNSUITABLE TRUE)\nendif()\n"
+    }
+  },
+  "gtsam_libraries": {
+    "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so": {
+      "resolved": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so.4.2.0",
+      "bytes": 7716824,
+      "sha256": "8eedfcfe97688f4eced0a49d4118436ebe5ed34f7e2d2f9d884ed1142b8312a4"
+    },
+    "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so.4": {
+      "resolved": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so.4.2.0",
+      "bytes": 7716824,
+      "sha256": "8eedfcfe97688f4eced0a49d4118436ebe5ed34f7e2d2f9d884ed1142b8312a4"
+    },
+    "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so.4.2.0": {
+      "resolved": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so.4.2.0",
+      "bytes": 7716824,
+      "sha256": "8eedfcfe97688f4eced0a49d4118436ebe5ed34f7e2d2f9d884ed1142b8312a4"
+    }
+  },
+  "retained_dependency_prefix": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix",
+  "native_tests_run": false,
+  "engineering_fixtures_run": false,
+  "restart_performed": false,
+  "repo_modified": false,
+  "active_import": {
+    "status": "started",
+    "owner": "/root/m3_slam_execution",
+    "utc": "2026-11-03T02:51:44.098342+00:00",
+    "pid": 466792,
+    "ppid": 466791,
+    "process_start_ticks": "14922152",
+    "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce",
+    "data": "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce/verified-data",
+    "command": [
+      "/usr/bin/python3",
+      "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/import_kitti.py",
+      "--archives",
+      "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/completed-archives.json",
+      "--config",
+      "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+      "--output",
+      "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce/verified-data"
+    ],
+    "archives_manifest_sha256": "08fc97e3549f21bb45f0f1da708ce54a4e0ad44241259fe2112e278cf39edc2a",
+    "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+    "git_checkpoint": "3226c437ad6967b66984779177ff10b9101d9754",
+    "scope": "one selective import plus archive/extracted hash/CRC checks; setup I/O only, native07 not released",
+    "import_pid": 466793,
+    "import_start_ticks": "14922169"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "pid": 485673,
+  "ppid": 485672,
+  "plan": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/run-plan.json",
+  "plan_sha256": "d588b9b09c1d9c3a0bd136d91974bd3beaac711ff76c65c3e621508a41a575e6",
+  "uniform_device": "cpu",
+  "actual_source_checkpoint_expected": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "stages": [
+    {
+      "stage": "collect",
+      "command": [
+        "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+        "-B",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/collect_dataset.py",
+        "--config",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/collect.json",
+        "--output-root",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001"
+      ],
+      "status": "complete",
+      "config_sha256": "bfc3f95c1c3246ae8af2751898b131e4f64d8fa80682088fae7d2bef6770339a",
+      "pid": 485675,
+      "returncode": 0,
+      "wall_seconds": 35.205241971998475,
+      "stdout": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/collect.stdout.log",
+      "stderr": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/collect.stderr.log",
+      "attempt": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053018.519383Z-collect-f4f0eb3b",
+      "result": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053018.519383Z-collect-f4f0eb3b/result.json",
+      "result_sha256": "e05c3ac6f265eeaa862a5050f03eb92523cb40ebe8dece9f6fad79f533503bb5"
+    },
+    {
+      "stage": "train",
+      "command": [
+        "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+        "-B",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/train_model.py",
+        "--config",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/train.json",
+        "--output-root",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001",
+        "--intake",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/intake.json"
+      ],
+      "status": "complete",
+      "config_sha256": "6ef8fe9a87c931103ea8e278954513a91fc445f7666f012175ea309d2e2111e7",
+      "pid": 485795,
+      "returncode": 0,
+      "wall_seconds": 56.94393416400999,
+      "stdout": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/train.stdout.log",
+      "stderr": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/train.stderr.log",
+      "attempt": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3",
+      "result": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3/result.json",
+      "result_sha256": "cb6227cd5483a610e672692dfb3e05c34f4e2066acf348a9a26235a5a61c0695"
+    },
+    {
+      "stage": "prediction",
+      "command": [
+        "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+        "-B",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/eval_prediction.py",
+        "--config",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/prediction.json",
+        "--output-root",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001",
+        "--intake",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/intake.json",
+        "--checkpoints",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3/checkpoints.json"
+      ],
+      "status": "complete",
+      "config_sha256": "838e2d08e9c0af021a4a401078f17f1cf28fbf0acc079eec4b24fa99242b6cf4",
+      "pid": 485965,
+      "returncode": 0,
+      "wall_seconds": 4.917968246998498,
+      "stdout": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/prediction.stdout.log",
+      "stderr": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/prediction.stderr.log",
+      "attempt": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053150.539822Z-prediction-238b5b14",
+      "result": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053150.539822Z-prediction-238b5b14/result.json",
+      "result_sha256": "1d9875224bac597fb926d9be1eea3d1f9d3ea6f3191f22b3938426657ce128bb"
+    }
+  ],
+  "automatic_retry": false,
+  "formal_mpc_started": false,
+  "exclusive_host": false,
+  "intake": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-prefix-001/intake.json",
+  "intake_sha256": "e99291541992ac1500617217276d8ff1e3de5c137bf9cea23dfb6ef827b2f29b",
+  "checkpoints": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3/checkpoints.json",
+  "checkpoints_sha256": "86beb577e65984a8417517b3702362a718a352e0ba68cd3ff9281323ac528e4b",
+  "prediction_result": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053150.539822Z-prediction-238b5b14/result.json",
+  "prediction_result_sha256": "1d9875224bac597fb926d9be1eea3d1f9d3ea6f3191f22b3938426657ce128bb",
+  "mpc_waits_for_panel": true
+}

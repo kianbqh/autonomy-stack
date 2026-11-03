@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "utc": "2026-11-03T05:51:16.911Z",
+  "viewer_git_sha": "a5139856c457eb61cdc8359d2432f12268336ccb",
+  "native_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "replay_sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122",
+  "ui_scene_sha256": "a7fbb68010adce5de8a471d66a4bde7de62d4cecd4ead75b41fcced0753577aa",
+  "scope": "Focused full07 framing/fidelity only; one headless SwiftShader context; no FPS/performance result",
+  "views": [],
+  "failure": {
+    "type": "AssertionError",
+    "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'eefed75454bb3af31b429f133a64741189292c2b4612524e66028cfd036af0e6'\n- '22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122'\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'eefed75454bb3af31b429f133a64741189292c2b4612524e66028cfd036af0e6'\n- '22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122'\n\n    at file:///G:/ResumeProject/.runtime/all-modules-v2/m3/replay-acceptance-20261103/camera-fit-regression.mjs:38:130"
+  },
+  "finished_utc": "2026-11-03T05:51:27.742Z"
+}

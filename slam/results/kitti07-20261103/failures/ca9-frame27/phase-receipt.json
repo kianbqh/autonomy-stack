@@ -1,0 +1,134 @@
+{
+  "status": "failed",
+  "owner": "/root/m3_slam_execution",
+  "phase": "run",
+  "release_note": "root accepted native49/import1101; one full07 functional run on shared Windows host; raw timing is shared-host observation, not isolated benchmark",
+  "utc": "2026-11-03T04:24:59.878226+00:00",
+  "pid": 477438,
+  "ppid": 477437,
+  "process_start_ticks": "15481734",
+  "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f",
+  "repo_root": "/mnt/g/ResumeProject/platforms/autonomy-stack",
+  "git_sha": "ca9cd1e7a172a080a8715a220422d56d116a5350",
+  "git_executable": "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+  "selected_source_status": "",
+  "selected_source_scope": "slam excluding derived slam/results",
+  "whole_worktree_status": "",
+  "git_version": "git version 2.43.0",
+  "build_receipt": "/opt/codex-resume/all-modules-v2/m3/slam/build-completions/post-run-validation-20261103T031709Z-526140a5/build.json",
+  "build_receipt_sha256": "eeb75f9f1efc0702ab086022665ce37f3d8f71a11b0ff5aeaf46df130f92f6c6",
+  "binary_sha256": "14137e96f5a9a0c57c8e05fc22b9955f6fd858492e890f36bdcf417aa54b548b",
+  "input_manifest": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/input-manifest.json",
+  "input_manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+  "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+  "loader_environment": {
+    "LD_LIBRARY_PATH": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib:/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib"
+  },
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "command": [
+    "/usr/bin/python3",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/run_experiment.py",
+    "--config",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+    "--input-manifest",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/input-manifest.json",
+    "--binary",
+    "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T031236Z-b3ada9b3/slam-build/run_kitti_slam",
+    "--build-receipt",
+    "/opt/codex-resume/all-modules-v2/m3/slam/build-completions/post-run-validation-20261103T031709Z-526140a5/build.json",
+    "--repo-root",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack",
+    "--git",
+    "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+    "--output-parent",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/outputs"
+  ],
+  "pre_resource_snapshot": {
+    "utc": "2026-11-03T04:25:07.392270+00:00",
+    "scope": "WSL only; root separately owns Windows host/resource-lease evidence",
+    "proc": {
+      "uptime": "154825.29 2941903.65\n",
+      "loadavg": "0.85 0.75 0.97 3/579 477460\n",
+      "meminfo": "MemTotal:       16279428 kB\nMemFree:          455200 kB\nMemAvailable:   14963252 kB\nBuffers:          314724 kB\nCached:         13766020 kB\nSwapCached:         6124 kB\nActive:          5768828 kB\nInactive:        8742064 kB\nActive(anon):      47104 kB\nInactive(anon):   387508 kB\nActive(file):    5721724 kB\nInactive(file):  8354556 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:       4194304 kB\nSwapFree:        4089580 kB\nDirty:               128 kB\nWriteback:             0 kB\nAnonPages:        426248 kB\nMapped:           376596 kB\nShmem:              4500 kB\nKReclaimable:     680236 kB\nSlab:             861500 kB\nSReclaimable:     680236 kB\nSUnreclaim:       181264 kB\nKernelStack:        9568 kB\nPageTables:        10680 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12334016 kB\nCommitted_AS:    3325504 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       41264 kB\nVmallocChunk:          0 kB\nPercpu:            11616 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:   1331200 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      152576 kB\nDirectMap2M:    16527360 kB\nDirectMap1G:     9437184 kB\n",
+      "stat": "cpu  8076884 0 751881 294190367 6433700 0 416146 0 0 0\ncpu0 287675 0 54490 14640518 468589 0 341488 0 0 0\ncpu1 381861 0 22573 14324009 745901 0 36961 0 0 0\ncpu2 742265 0 91609 14045587 590474 0 12510 0 0 0\ncpu3 783202 0 85305 13911514 695492 0 5956 0 0 0\ncpu4 506785 0 53446 14257667 652707 0 2815 0 0 0\ncpu5 437248 0 37427 14700974 301027 0 3385 0 0 0\ncpu6 380086 0 37084 14547762 505788 0 1202 0 0 0\ncpu7 367495 0 24052 14835626 249954 0 1248 0 0 0\ncpu8 380627 0 36628 14698947 355157 0 1076 0 0 0\ncpu9 358330 0 24927 14918421 175738 0 894 0 0 0\ncpu10 369125 0 34578 14814620 252512 0 1152 0 0 0\ncpu11 317080 0 22744 15001165 135219 0 1208 0 0 0\ncpu12 372330 0 36224 14849167 213547 0 871 0 0 0\ncpu13 339986 0 24023 15003037 110525 0 787 0 0 0\ncpu14 371055 0 34936 14846266 217708 0 922 0 0 0\ncpu15 309073 0 20956 15056211 91019 0 531 0 0 0\ncpu16 325992 0 33434 14895444 215200 0 982 0 0 0\ncpu17 359486 0 20209 15002411 95373 0 563 0 0 0\ncpu18 342364 0 34234 14877809 216196 0 893 0 0 0\ncpu19 344809 0 22993 14963203 145564 0 692 0 0 0\nintr 290059451 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 10710 0 4 40 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\nctxt 395327115\nbtime 1793525082\nprocesses 574285\nprocs_running 3\nprocs_blocked 0\nsoftirq 150583470 0 11405637 813 12697569 12679 0 33360173 68331812 1199 24773588\n"
+    },
+    "commands": [
+      {
+        "argv": [
+          "ps",
+          "-eo",
+          "pid,ppid,stat,pcpu,pmem,args"
+        ],
+        "returncode": 0,
+        "stdout": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-before-0.stdout.txt",
+        "stdout_sha256": "a69a7eb52e26f2b85cb4adef82c311d42fe8f3753eacdded1571f365f415adb7",
+        "stderr": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-before-0.stderr.txt",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,process_name,used_memory",
+          "--format=csv,noheader"
+        ],
+        "returncode": 0,
+        "stdout": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-before-1.stdout.txt",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-before-1.stderr.txt",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "child_pid": 477464,
+  "child_start_ticks": "15482573",
+  "returncode": 1,
+  "retained_attempt_directories": [
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/outputs/slam-20261103T042508Z-2a8968af"
+  ],
+  "failure": {
+    "type": "RuntimeError",
+    "message": "phase child exit 1; preserve all outputs, no auto-resume"
+  },
+  "post_resource_snapshot": {
+    "utc": "2026-11-03T04:25:14.521761+00:00",
+    "scope": "WSL only; root separately owns Windows host/resource-lease evidence",
+    "proc": {
+      "uptime": "154832.42 2942036.34\n",
+      "loadavg": "0.86 0.76 0.97 2/579 477470\n",
+      "meminfo": "MemTotal:       16279428 kB\nMemFree:          463400 kB\nMemAvailable:   14971780 kB\nBuffers:          314748 kB\nCached:         13766308 kB\nSwapCached:         6124 kB\nActive:          7858308 kB\nInactive:        6653316 kB\nActive(anon):      47116 kB\nInactive(anon):   387924 kB\nActive(file):    7811192 kB\nInactive(file):  6265392 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:       4194304 kB\nSwapFree:        4089580 kB\nDirty:               276 kB\nWriteback:             0 kB\nAnonPages:        426752 kB\nMapped:           376880 kB\nShmem:              4500 kB\nKReclaimable:     680260 kB\nSlab:             861532 kB\nSReclaimable:     680260 kB\nSUnreclaim:       181272 kB\nKernelStack:        9600 kB\nPageTables:        10872 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12334016 kB\nCommitted_AS:    3325504 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       41280 kB\nVmallocChunk:          0 kB\nPercpu:            11616 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:   1331200 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      152576 kB\nDirectMap2M:    16527360 kB\nDirectMap1G:     9437184 kB\n",
+      "stat": "cpu  8077495 0 752131 294203634 6433708 0 416215 0 0 0\ncpu0 287675 0 54504 14641212 468589 0 341554 0 0 0\ncpu1 381861 0 22574 14324722 745901 0 36964 0 0 0\ncpu2 742332 0 91612 14046209 590474 0 12510 0 0 0\ncpu3 783246 0 85309 13912136 695492 0 5956 0 0 0\ncpu4 506785 0 53446 14258380 652707 0 2815 0 0 0\ncpu5 437248 0 37427 14701687 301027 0 3385 0 0 0\ncpu6 380090 0 37087 14548459 505795 0 1202 0 0 0\ncpu7 367502 0 24055 14836325 249954 0 1248 0 0 0\ncpu8 380628 0 36629 14699656 355157 0 1076 0 0 0\ncpu9 358330 0 24927 14919134 175738 0 894 0 0 0\ncpu10 369300 0 34579 14815150 252512 0 1152 0 0 0\ncpu11 317080 0 22744 15001877 135219 0 1208 0 0 0\ncpu12 372330 0 36230 14849869 213547 0 871 0 0 0\ncpu13 339986 0 24025 15003743 110525 0 787 0 0 0\ncpu14 371055 0 34936 14846979 217708 0 922 0 0 0\ncpu15 309258 0 20958 15056738 91019 0 531 0 0 0\ncpu16 325992 0 33434 14896156 215200 0 982 0 0 0\ncpu17 359496 0 20214 15003095 95373 0 563 0 0 0\ncpu18 342472 0 34420 14878225 216196 0 893 0 0 0\ncpu19 344820 0 23014 14963875 145564 0 692 0 0 0\nintr 290086615 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 10725 0 4 40 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\nctxt 395374673\nbtime 1793525082\nprocesses 574295\nprocs_running 2\nprocs_blocked 0\nsoftirq 150602778 0 11406624 813 12697581 12679 0 33368450 68337727 1199 24777705\n"
+    },
+    "commands": [
+      {
+        "argv": [
+          "ps",
+          "-eo",
+          "pid,ppid,stat,pcpu,pmem,args"
+        ],
+        "returncode": 0,
+        "stdout": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-after-0.stdout.txt",
+        "stdout_sha256": "d59c1707af370777b4981b0f40eb83fa4faeae9e39dc4ebef7743cfd2971048c",
+        "stderr": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-after-0.stderr.txt",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,process_name,used_memory",
+          "--format=csv,noheader"
+        ],
+        "returncode": 0,
+        "stdout": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-after-1.stdout.txt",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/resources-after-1.stderr.txt",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "finished_utc": "2026-11-03T04:25:14.628271+00:00",
+  "wall_s": 14.750072563998401
+}

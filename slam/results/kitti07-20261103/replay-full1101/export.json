@@ -1,0 +1,46 @@
+{
+  "status": "complete",
+  "utc": "2026-11-03T05:32:57.678501+00:00",
+  "command": [
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/export_replay.py",
+    "--run",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c",
+    "--truth",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/poses/07.txt",
+    "--repo-root",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack",
+    "--git",
+    "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+    "--output-parent",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/export-20261103T053256Z-3b04e6cd/outputs"
+  ],
+  "environment": {
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "executable": "/opt/codex-resume/all-modules-v2/m3/slam/eval-venv/bin/python",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "logical_cpus": 20,
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "opencv-python-headless": "4.11.0.86",
+      "matplotlib": "3.10.3",
+      "evo": "1.31.0"
+    },
+    "environment": "WSL2",
+    "gpu": "not used by CPU SLAM",
+    "gpu_driver": "not queried; CPU-only run"
+  },
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "git_executable": "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+  "selected_source_status": "",
+  "selected_source_scope": "slam excluding derived slam/results",
+  "whole_worktree_status": "",
+  "git_version": "git version 2.43.0",
+  "exported_replay_sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122",
+  "native_status": "complete",
+  "accepted_frames": 1101,
+  "expected_frames": 1101,
+  "finished_utc": "2026-11-03T05:32:58.717821+00:00",
+  "wall_s": 1.0393327100027818
+}

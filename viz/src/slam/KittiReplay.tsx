@@ -1,4 +1,4 @@
-/** Candidate integration component; native-browser/typecheck acceptance is not run. */
+/** Recorded camera0 SLAM replay with full 3D tracks and retained failure prefixes. */
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';

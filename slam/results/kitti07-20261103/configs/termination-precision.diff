@@ -1,0 +1,11 @@
+--- original-seq07-51a4.json
++++ seq07-stop-1mm-100urad.json
+@@ -10,7 +10,7 @@
+     "normal_radius": 2.0, "normal_planarity": 0.2,
+     "max_correspondence": 1.5, "huber": 0.15, "trim_fraction": 0.9,
+     "max_rmse": 0.3, "min_inlier_ratio": 0.15, "max_condition": 100000000,
+-    "min_eigenvalue": 0.000001, "translation_epsilon": 0.0001, "rotation_epsilon": 0.00001,
++    "min_eigenvalue": 0.000001, "translation_epsilon": 0.001, "rotation_epsilon": 0.0001,
+     "max_step_translation": 1.0, "max_step_rotation": 0.2, "max_iterations": 40,
+     "keyframe_distance": 1.5, "keyframe_yaw": 0.17453292519943295,
+     "descriptor_rings": 20, "descriptor_sectors": 60, "temporal_exclusion": 30,

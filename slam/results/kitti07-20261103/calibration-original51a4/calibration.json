@@ -1,0 +1,763 @@
+{
+  "status": "complete",
+  "utc": "2026-11-03T05:25:34.792880+00:00",
+  "command": [
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/calib_check.py",
+    "--config",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+    "--input-manifest",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/input-manifest.json",
+    "--repo-root",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack",
+    "--git",
+    "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+    "--output-parent",
+    "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs"
+  ],
+  "environment": {
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "executable": "/opt/codex-resume/all-modules-v2/m3/slam/eval-venv/bin/python",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "logical_cpus": 20,
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "opencv-python-headless": "4.11.0.86",
+      "matplotlib": "3.10.3",
+      "evo": "1.31.0"
+    },
+    "environment": "WSL2",
+    "gpu": "not used by CPU SLAM",
+    "gpu_driver": "not queried; CPU-only run"
+  },
+  "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+  "manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+  "claim": "offline sensor consistency only, not targetless calibration recovery",
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "git_executable": "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+  "selected_source_status": "",
+  "selected_source_scope": "slam excluding derived slam/results",
+  "whole_worktree_status": "",
+  "git_version": "git version 2.43.0",
+  "provided_calibration": {
+    "frames": [
+      {
+        "frame": 0,
+        "input_points": 122626,
+        "positive_depth_range_points": 53286,
+        "in_image_points": 19987,
+        "in_image_fraction_of_input": 0.16299153523722537,
+        "zbuffer_pixels": 19949,
+        "projection_coverage": 0.04397733785988272,
+        "occluded_or_same_pixel_points": 38,
+        "projection": "P2*Tr*p_L; rectified camera0; no R0_rect",
+        "zbuffer": "nearest rectified camera0 depth, floor pixel",
+        "lidar_edge_pixels": 736,
+        "camera_edge_pixels": 34092,
+        "valid": true,
+        "score": 0.6362994909286499,
+        "normalized_edge_distance_mean": 0.2177952527999878,
+        "edge_distance_pixels_mean": 4.762285232543945,
+        "edge_distance_pixels_p95": 21.48992156982422,
+        "coverage_penalty": 0.41850423238138734,
+        "edge_support_fraction_of_zbuffer": 0.036894079903754574
+      },
+      {
+        "frame": 550,
+        "input_points": 126343,
+        "positive_depth_range_points": 54752,
+        "in_image_points": 20280,
+        "in_image_fraction_of_input": 0.16051542230277893,
+        "zbuffer_pixels": 20253,
+        "projection_coverage": 0.044647502314712754,
+        "occluded_or_same_pixel_points": 27,
+        "projection": "P2*Tr*p_L; rectified camera0; no R0_rect",
+        "zbuffer": "nearest rectified camera0 depth, floor pixel",
+        "lidar_edge_pixels": 740,
+        "camera_edge_pixels": 55982,
+        "valid": true,
+        "score": 0.5325073003768921,
+        "normalized_edge_distance_mean": 0.11276503652334213,
+        "edge_distance_pixels_mean": 2.255300760269165,
+        "edge_distance_pixels_p95": 7.590699672698975,
+        "coverage_penalty": 0.41974228884861053,
+        "edge_support_fraction_of_zbuffer": 0.03653779686959956
+      },
+      {
+        "frame": 1100,
+        "input_points": 115982,
+        "positive_depth_range_points": 53011,
+        "in_image_points": 17311,
+        "in_image_fraction_of_input": 0.1492559190219172,
+        "zbuffer_pixels": 17238,
+        "projection_coverage": 0.038000969974868834,
+        "occluded_or_same_pixel_points": 73,
+        "projection": "P2*Tr*p_L; rectified camera0; no R0_rect",
+        "zbuffer": "nearest rectified camera0 depth, floor pixel",
+        "lidar_edge_pixels": 1133,
+        "camera_edge_pixels": 53096,
+        "valid": true,
+        "score": 0.5512723326683044,
+        "normalized_edge_distance_mean": 0.1259002983570099,
+        "edge_distance_pixels_mean": 2.776412010192871,
+        "edge_distance_pixels_p95": 11.630093574523926,
+        "coverage_penalty": 0.4253720404890414,
+        "edge_support_fraction_of_zbuffer": 0.06572688246896392
+      }
+    ],
+    "mean": 0.5733597079912821,
+    "ci95": [
+      0.5325073003768921,
+      0.6362994909286499
+    ],
+    "valid_frames": 3,
+    "resampling_unit": "frame"
+  },
+  "rx": {
+    "unit": "degrees",
+    "scores": [
+      {
+        "offset": -2,
+        "mean": 0.6459217667579651,
+        "ci95": [
+          0.5819228291511536,
+          0.720632791519165
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -1.5,
+        "mean": 0.6325903733571371,
+        "ci95": [
+          0.5453936457633972,
+          0.7234222888946533
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -1,
+        "mean": 0.6118778785069784,
+        "ci95": [
+          0.5450478792190552,
+          0.7037599086761475
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.5,
+        "mean": 0.5968117515246073,
+        "ci95": [
+          0.5558862090110779,
+          0.6638392210006714
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.5,
+        "mean": 0.6006189783414205,
+        "ci95": [
+          0.5427343249320984,
+          0.6794848442077637
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 1,
+        "mean": 0.6169130603472391,
+        "ci95": [
+          0.527317225933075,
+          0.6826620101928711
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 1.5,
+        "mean": 0.6416284839312235,
+        "ci95": [
+          0.5278705358505249,
+          0.7118254899978638
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 2,
+        "mean": 0.654262900352478,
+        "ci95": [
+          0.5146786570549011,
+          0.7414392828941345
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      }
+    ],
+    "best": {
+      "offset": 0,
+      "mean": 0.5733597079912821,
+      "ci95": [
+        0.5325073003768921,
+        0.6362994909286499
+      ],
+      "valid_frames": 3,
+      "resampling_unit": "frame"
+    },
+    "boundary_optimum": false,
+    "provided_is_best": true
+  },
+  "ry": {
+    "unit": "degrees",
+    "scores": [
+      {
+        "offset": -2,
+        "mean": 0.6262816190719604,
+        "ci95": [
+          0.5600659847259521,
+          0.7165273427963257
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -1.5,
+        "mean": 0.607886532942454,
+        "ci95": [
+          0.5499438047409058,
+          0.6799023151397705
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -1,
+        "mean": 0.5970134139060974,
+        "ci95": [
+          0.547369658946991,
+          0.6612454652786255
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.5,
+        "mean": 0.5858584841092428,
+        "ci95": [
+          0.5402852296829224,
+          0.642162024974823
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.5,
+        "mean": 0.5902392069498698,
+        "ci95": [
+          0.5369413495063782,
+          0.6679986119270325
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 1,
+        "mean": 0.5990237792332967,
+        "ci95": [
+          0.5393680930137634,
+          0.6894205212593079
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 1.5,
+        "mean": 0.6069088180859884,
+        "ci95": [
+          0.539173424243927,
+          0.694007396697998
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 2,
+        "mean": 0.6106681823730469,
+        "ci95": [
+          0.5426687002182007,
+          0.702177882194519
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      }
+    ],
+    "best": {
+      "offset": 0,
+      "mean": 0.5733597079912821,
+      "ci95": [
+        0.5325073003768921,
+        0.6362994909286499
+      ],
+      "valid_frames": 3,
+      "resampling_unit": "frame"
+    },
+    "boundary_optimum": false,
+    "provided_is_best": true
+  },
+  "rz": {
+    "unit": "degrees",
+    "scores": [
+      {
+        "offset": -2,
+        "mean": 0.6166233817736307,
+        "ci95": [
+          0.5396294593811035,
+          0.6925005316734314
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -1.5,
+        "mean": 0.6149121522903442,
+        "ci95": [
+          0.5374671220779419,
+          0.7084817290306091
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -1,
+        "mean": 0.5899097720781962,
+        "ci95": [
+          0.5426694750785828,
+          0.6541881561279297
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.5,
+        "mean": 0.5851561824480692,
+        "ci95": [
+          0.5392091274261475,
+          0.6564531326293945
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.5,
+        "mean": 0.5846346815427145,
+        "ci95": [
+          0.535720705986023,
+          0.6470591425895691
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 1,
+        "mean": 0.5970558126767477,
+        "ci95": [
+          0.5416496396064758,
+          0.6734066009521484
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 1.5,
+        "mean": 0.6090805729230245,
+        "ci95": [
+          0.5465357303619385,
+          0.6738392114639282
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 2,
+        "mean": 0.6238775849342346,
+        "ci95": [
+          0.5528305768966675,
+          0.7060538530349731
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      }
+    ],
+    "best": {
+      "offset": 0,
+      "mean": 0.5733597079912821,
+      "ci95": [
+        0.5325073003768921,
+        0.6362994909286499
+      ],
+      "valid_frames": 3,
+      "resampling_unit": "frame"
+    },
+    "boundary_optimum": false,
+    "provided_is_best": true
+  },
+  "tx": {
+    "unit": "meters",
+    "scores": [
+      {
+        "offset": -0.1,
+        "mean": 0.5761465430259705,
+        "ci95": [
+          0.5421329140663147,
+          0.6354172229766846
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.075,
+        "mean": 0.5787295897801717,
+        "ci95": [
+          0.5310229659080505,
+          0.6484714150428772
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.05,
+        "mean": 0.5781602064768473,
+        "ci95": [
+          0.5330494046211243,
+          0.6452842354774475
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.025,
+        "mean": 0.5763264298439026,
+        "ci95": [
+          0.5376619696617126,
+          0.6382358074188232
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.025,
+        "mean": 0.5843203862508138,
+        "ci95": [
+          0.5376183986663818,
+          0.657936692237854
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.05,
+        "mean": 0.5783531864484152,
+        "ci95": [
+          0.5303555130958557,
+          0.6465420722961426
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.075,
+        "mean": 0.5938959320386251,
+        "ci95": [
+          0.5360260605812073,
+          0.6758615970611572
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.1,
+        "mean": 0.5937947432200114,
+        "ci95": [
+          0.543120265007019,
+          0.6730396747589111
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      }
+    ],
+    "best": {
+      "offset": 0,
+      "mean": 0.5733597079912821,
+      "ci95": [
+        0.5325073003768921,
+        0.6362994909286499
+      ],
+      "valid_frames": 3,
+      "resampling_unit": "frame"
+    },
+    "boundary_optimum": false,
+    "provided_is_best": true
+  },
+  "ty": {
+    "unit": "meters",
+    "scores": [
+      {
+        "offset": -0.1,
+        "mean": 0.6198567946751913,
+        "ci95": [
+          0.5394470691680908,
+          0.7112547159194946
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.075,
+        "mean": 0.6045644680658976,
+        "ci95": [
+          0.536368727684021,
+          0.6951287984848022
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.05,
+        "mean": 0.5943599541982015,
+        "ci95": [
+          0.5269994139671326,
+          0.6680814027786255
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.025,
+        "mean": 0.5816954572995504,
+        "ci95": [
+          0.5278245806694031,
+          0.6517170667648315
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.025,
+        "mean": 0.5906664530436198,
+        "ci95": [
+          0.5540879964828491,
+          0.6546812057495117
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.05,
+        "mean": 0.5902199546496073,
+        "ci95": [
+          0.5557785034179688,
+          0.6502774357795715
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.075,
+        "mean": 0.5929209589958191,
+        "ci95": [
+          0.5506360530853271,
+          0.6617979407310486
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.1,
+        "mean": 0.5926001667976379,
+        "ci95": [
+          0.5510789752006531,
+          0.6482788324356079
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      }
+    ],
+    "best": {
+      "offset": 0,
+      "mean": 0.5733597079912821,
+      "ci95": [
+        0.5325073003768921,
+        0.6362994909286499
+      ],
+      "valid_frames": 3,
+      "resampling_unit": "frame"
+    },
+    "boundary_optimum": false,
+    "provided_is_best": true
+  },
+  "tz": {
+    "unit": "meters",
+    "scores": [
+      {
+        "offset": -0.1,
+        "mean": 0.5851940313975016,
+        "ci95": [
+          0.5305894613265991,
+          0.6492157578468323
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.075,
+        "mean": 0.5836009383201599,
+        "ci95": [
+          0.528999388217926,
+          0.6495765447616577
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.05,
+        "mean": 0.5869914889335632,
+        "ci95": [
+          0.5290701985359192,
+          0.6533539295196533
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": -0.025,
+        "mean": 0.5802465081214905,
+        "ci95": [
+          0.5340908765792847,
+          0.6472620368003845
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0,
+        "mean": 0.5733597079912821,
+        "ci95": [
+          0.5325073003768921,
+          0.6362994909286499
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.025,
+        "mean": 0.57168581088384,
+        "ci95": [
+          0.531694769859314,
+          0.6327430605888367
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.05,
+        "mean": 0.5751081705093384,
+        "ci95": [
+          0.5476104617118835,
+          0.6280259490013123
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.075,
+        "mean": 0.5785419742266337,
+        "ci95": [
+          0.5417622327804565,
+          0.647009551525116
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      },
+      {
+        "offset": 0.1,
+        "mean": 0.5843442678451538,
+        "ci95": [
+          0.5482702255249023,
+          0.6557998657226562
+        ],
+        "valid_frames": 3,
+        "resampling_unit": "frame"
+      }
+    ],
+    "best": {
+      "offset": 0.025,
+      "mean": 0.57168581088384,
+      "ci95": [
+        0.531694769859314,
+        0.6327430605888367
+      ],
+      "valid_frames": 3,
+      "resampling_unit": "frame"
+    },
+    "boundary_optimum": false,
+    "provided_is_best": false
+  },
+  "attribution": "KITTI odometry, A. Geiger et al.; CC BY-NC-SA 3.0; overlays derived from the named official frames",
+  "limitations": "Only three selected recorded frames; sweeps alter one extrinsic axis at a time; frame bootstrap has low support; image/scan synchronization, sparse depth and scene edges confound scores. Metric/thresholds are frozen before scores. Supplied calibration need not win.",
+  "wall_s": 8.78995809602202,
+  "finished_utc": "2026-11-03T05:25:43.582834+00:00"
+}

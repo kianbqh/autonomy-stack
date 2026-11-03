@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-03T05:32:56.310516+00:00",
+  "status": "export complete; evo parity still not accepted",
+  "pid": 486230,
+  "start_ticks": "15889417",
+  "native_run": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c",
+  "native_run_sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+  "evaluation_phase_receipt": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/receipt.json",
+  "evaluation_phase_receipt_sha256": "bdcb7352d29ee0ea8d8f6b8b5b71bca861d31d193514c994e66b9ca5fefaadc8",
+  "claim": "complete1101 valid geometry replay only; metrics own+official computed, evo parity under diagnosis",
+  "returncode": 0,
+  "finished_utc": "2026-11-03T05:32:58.773907+00:00",
+  "wall_s": 2.4607306709804107
+}

@@ -1,0 +1,715 @@
+{
+  "scope": "actual measured outputs; original raw JSON may be losslessly gzipped",
+  "files": [
+    {
+      "path": "raw/bc-seed-0.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/bc-result.json",
+      "bytes": 16390,
+      "sha256": "c544d48c601a9d15e036e329a2102036e478a76fd657da452385170f0afabfad",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 341080,
+      "uncompressed_sha256": "7084246730409fbbcf1cd3fbdd887f91295f8badbce63a44e97af39e0ae28645"
+    },
+    {
+      "path": "raw/bc-seed-1.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T051546Z-f506e121/bc-result.json",
+      "bytes": 16348,
+      "sha256": "861569779a12b9bd2e91c73ae35cd52cd0c675d7dc7afccb8d5d25bb65eeed26",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 341076,
+      "uncompressed_sha256": "077ad93f69e0975edf3af1b3b59733ab52e907a608d73eee33d079cfd22f3957"
+    },
+    {
+      "path": "raw/bc-seed-2.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052054Z-56105201/bc-result.json",
+      "bytes": 16449,
+      "sha256": "1f14aec09ed0fedd70f96b90c9a82a5087dbe04976319ed806396db0eeff5a77",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 341027,
+      "uncompressed_sha256": "02e9fd03688d24bffc1e887b2019897f08da6cd8f6cd5b4bafa820b4e59a24c1"
+    },
+    {
+      "path": "raw/bc_dr-seed-0.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T052413Z-0a28a379/bc-result.json",
+      "bytes": 16412,
+      "sha256": "03a687b6f7dce7a539034b0105488f6742106591a36016cccd0950dcf36e1eee",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 341218,
+      "uncompressed_sha256": "60eba09b8c18cd418bafe9d988132ac9e4a9c30111d80f861044cc7364df8fbd"
+    },
+    {
+      "path": "raw/bc_dr-seed-1.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T052559Z-71c0dd0a/bc-result.json",
+      "bytes": 16531,
+      "sha256": "8794224a37deff623e07f3c347c674a2672cfb93421867dc9a493cc60c8ce86e",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 341108,
+      "uncompressed_sha256": "e0a6e9c20ef850cd2df684ede8d1f800912d63eed72e732e5dad77c0d345f436"
+    },
+    {
+      "path": "raw/bc_dr-seed-2.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052741Z-96316431/bc-result.json",
+      "bytes": 16537,
+      "sha256": "62ef14dbec83b1e4ee685b004ca0ebb9cdf653b61c6afacefcc5fd6fc1bab680",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 341124,
+      "uncompressed_sha256": "5f7f00d46e780270bdc7891d7f1abda4629666e6d1aa593ab403befd75cd105a"
+    },
+    {
+      "path": "collection-summary.json",
+      "source": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/learning-runtime-20261103/COLLECTION_SUMMARY.json",
+      "bytes": 2616,
+      "sha256": "58a7c6551d5ba54f9192e737b551b9f199fc6605d6f8422b98c45702438c255f",
+      "kind": "original bytes"
+    },
+    {
+      "path": "manifests/nominal-demo-manifest.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-collection-001/collect-s0-20261103T050442Z-a7483f41/manifest.json",
+      "bytes": 129125,
+      "sha256": "54081043bb0f486fc4085ae1d8f1bbfe6a6e3682061860586dd7dca4b8f9f338",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 6589050,
+      "uncompressed_sha256": "93b6669a6a1b62147150dab14327d9ddd7c774cea9a838523e47f70ba3afeaf3"
+    },
+    {
+      "path": "manifests/dr-demo-manifest.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-collection-001/collect-s0-20261103T050521Z-a863cc63/manifest.json",
+      "bytes": 124108,
+      "sha256": "7c6cd66a6f60fcefcb282d32ff4a2bb162bc4d5ead6e902fc01a86ef303e9c66",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 6070863,
+      "uncompressed_sha256": "f58e984748b96639a6c26affa3222ac680b5e1fa86c9fd2ff823fcd9128624eb"
+    },
+    {
+      "path": "robustness-panel.csv",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/robustness_panel.csv",
+      "bytes": 8196,
+      "sha256": "779b82a552927235bbf33851bafbe63a5723cca2755d67a09ad842ebff1ed867",
+      "kind": "original bytes"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-00.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-00.json",
+      "bytes": 10450,
+      "sha256": "c241827894388ee21fd66ed36dfed0c170d9d85a8758003066cd28f97898e77f",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316083,
+      "uncompressed_sha256": "dae5e211da99945db41a951d1c1d6eca03da68c19d7063f6c940f52217d9c2a2"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-01.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-01.json",
+      "bytes": 10448,
+      "sha256": "4f853e56cba4403b03e6a9ea2ee15a34e3a13a6f132ae214dc0a6c272a386f37",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316080,
+      "uncompressed_sha256": "0b12e6411a2a55f30303015775a4183619b279d2c902cb93032c2806b3674712"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-02.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-02.json",
+      "bytes": 10416,
+      "sha256": "5b5651e9f6ad94dfb19b13f1fba981d4a4214952845add7eefbf07a5817e3b03",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316099,
+      "uncompressed_sha256": "8d22aef9459c68c8b0085000916d27cc8779b53a5904f44cc534f871428cd1ac"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-03.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-03.json",
+      "bytes": 10384,
+      "sha256": "564f488272ae2d6c0f27b10d2dda526ffbc86306b9aa04526215c7d58b52d7b6",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316116,
+      "uncompressed_sha256": "71fa2ab5528718ce0b09e7aaaae8d451cd637e7867dad626095c8f00c4c36f1a"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-04.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-04.json",
+      "bytes": 10456,
+      "sha256": "9cab54804b21829ec72443e6680c6825af903d98fdb1d906073143dd84230334",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316094,
+      "uncompressed_sha256": "bda847a202073d300ef8e883be2ffeb0afd86b7d823275830e2c8e8b2b685b93"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-05.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-05.json",
+      "bytes": 10402,
+      "sha256": "fcabe312af055d4220155366e0b10ea10e1a73776d06ad76432eb4edb6b0ae6c",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316310,
+      "uncompressed_sha256": "6af78a28266373b2eaa74d60c13b28eea5d1e26c104994f2c9da6182bd1b7017"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-06.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-06.json",
+      "bytes": 10430,
+      "sha256": "acaf1bd58ef2c20ab708ff1c0b2e4999b925a6661435d947e9721443de2a0bed",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316202,
+      "uncompressed_sha256": "7481f4f9bca3d72889cef57a75565335de97a43070f39df847d983fea85549ed"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-07.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-07.json",
+      "bytes": 10465,
+      "sha256": "0bd564a97631f7ab9d3a6a5d01d4d8590ed8479ccd7ccc68ba19cb55ce981760",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316081,
+      "uncompressed_sha256": "34086bb8f269945813e910ebfd0765f54a9cdf4216264ad1d3e5b8510b7c30c2"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-08.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-08.json",
+      "bytes": 10413,
+      "sha256": "72cdd56278597823219dc86f36b823b5acb1cfd08a0fc3b8bf54099520d4d0c6",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316105,
+      "uncompressed_sha256": "fdc8186ccd79ab38ce8bca4bb9cad2225d018651b8815c3b5a1ce25686d8b39a"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-09.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-09.json",
+      "bytes": 10341,
+      "sha256": "297e595629e74c6fd8c9af8ca89842e9410fda1c40719844b4fe7b3892adb48b",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316129,
+      "uncompressed_sha256": "0bcabfaf0ecafc218180657287842757c7f69f690146561dbd6b68aa8d097f51"
+    },
+    {
+      "path": "panel-raw/panel-bc-s0-10.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s0-10.json",
+      "bytes": 10437,
+      "sha256": "298e90f276c57608440aa087bebeb8bcf500d1ea0d732baeffb616d849cca5c6",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316089,
+      "uncompressed_sha256": "bc2dbb769e515f7f92dd5a7141c2db27d1902536963b3c31257bd03ec9a81417"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-00.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-00.json",
+      "bytes": 10399,
+      "sha256": "ef2d0868e03a2dfee3fbf44ffb459899d945e06ce56a9a851966d8adef572d8d",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316101,
+      "uncompressed_sha256": "082b5912c652d609e128b8e5c514abb4b5b772737e2f7bcab2eb25c2096690f8"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-01.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-01.json",
+      "bytes": 10426,
+      "sha256": "7275e3915f3ae4fb78b441d0f4807dde7ae90464a567377a1e46f3e4e53df89a",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316092,
+      "uncompressed_sha256": "6b857589ebc083077d3b20044570d9eb448447fbeaf4e438886994b7b6e7285c"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-02.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-02.json",
+      "bytes": 10406,
+      "sha256": "256235699cb6d9dfa99d7a5d6cb02db99aeecca27c79d78916452106f70a784d",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316102,
+      "uncompressed_sha256": "dd09371db06471f2e8a133a7b80b3ecf5e426b856aaf7182485fad4aa10cb239"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-03.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-03.json",
+      "bytes": 10432,
+      "sha256": "53436c33d9a03cbd4e07a963e4546a0db9d1d0484bf275c6a64e21219119f5a0",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316103,
+      "uncompressed_sha256": "df21c0a33e4d4aa5e3def443f1cbe112b6b46c69dd40da2b1fab52035707bb9e"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-04.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-04.json",
+      "bytes": 10431,
+      "sha256": "e4a1b6efd1e9617bc7ee1522fee979a00289d974fdd035cad3fd38d12fc19797",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316104,
+      "uncompressed_sha256": "8b155b82786287b1337ced6d1d88b3b87665c977f42a3a55f34af5b76db3d598"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-05.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-05.json",
+      "bytes": 10409,
+      "sha256": "9d54a30b56c15e47dad17c363b78a78677a345cd4aff8ca0f9393e69efea94f5",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316305,
+      "uncompressed_sha256": "35c650d1a484d0ae01f321dbc730db53c8b93899890541f95447e28040227cd2"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-06.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-06.json",
+      "bytes": 10385,
+      "sha256": "59754b018130f6fa5e830f7932c95f10be590ed46fea330f62bd594bc8689d71",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316217,
+      "uncompressed_sha256": "3862f0f4cf81baa9ef0741b549bdd1f26bf59d13bfd80d223541b8f84bc3b94d"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-07.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-07.json",
+      "bytes": 10501,
+      "sha256": "86d13492f3ceb573f0e5c5974bf0ca07142644a9714901b5df12b6eb6cf99081",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316067,
+      "uncompressed_sha256": "25ff7bd0deae11498e653840372ecffcaf1208dd394fe5068d7d03511bb687d9"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-08.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-08.json",
+      "bytes": 10380,
+      "sha256": "0db63ca03ceb26b63f9b4f5322c82cb8ab299bbd9aac2784e72864ac7896ca04",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316119,
+      "uncompressed_sha256": "a5db3d76d5f5e143c6c587f59c8174ed7e3f111ad3a2bc3527b3fb4fd6fd83c2"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-09.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-09.json",
+      "bytes": 10359,
+      "sha256": "e75ee3432457cc20062d326cd044946eb5f9fcc8167b22b71d24b31a49da929a",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316125,
+      "uncompressed_sha256": "7c502643916736d54ed2cfb51d4c9b4c12c8138318dfd39a7cc3fa50fc348325"
+    },
+    {
+      "path": "panel-raw/panel-bc-s1-10.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s1-10.json",
+      "bytes": 10455,
+      "sha256": "05761a861010db03fb147b2d0d19ef5360e092659302047402ab146ae2019d91",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316080,
+      "uncompressed_sha256": "860e86785fdd213ff65b1a0c373eee15a705b55849d45a11d5c3e550ae44bf02"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-00.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-00.json",
+      "bytes": 10510,
+      "sha256": "a7eeb2ed2c892d52c88229edbfddb926a20d7a88bf2b66ea49817778b7c3ce12",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316050,
+      "uncompressed_sha256": "4c454523f566c834e5675098be229b9890afacd9dc053595cbffe37b614fae23"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-01.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-01.json",
+      "bytes": 10546,
+      "sha256": "ae76151b6d6caec4ecd4536f346619282c4a71fb3bb732c037ff62bd8b3fa8d3",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316040,
+      "uncompressed_sha256": "8851461610991aa22c1a8f051a406353b5efc578b3bd01c037f6745bf75551be"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-02.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-02.json",
+      "bytes": 10573,
+      "sha256": "3d4fb60501e12622f4a190134f6806942bfbec723b9b5f146004a9ef6a040ad3",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316032,
+      "uncompressed_sha256": "23c83f03a0559b6b7cc1794f572f1b9d0505e453f2d8c605b8b12c689739e671"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-03.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-03.json",
+      "bytes": 10509,
+      "sha256": "5ab5c94cc641d72a10d4440d3805e2ad0ff09a0983c95817654003e5872b2004",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316058,
+      "uncompressed_sha256": "efedbac98786b423fa0faf954c96f73c68a2bc33dcfee20decb2c3d1878949ae"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-04.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-04.json",
+      "bytes": 10519,
+      "sha256": "eedc280312c650dd64e0a1c0bf730f43d928f587bb03754d2055393f92c10101",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316048,
+      "uncompressed_sha256": "6fab23b7400d0655d46cde191cefd43ec17308996c14e487eb9abfdc3f9172fe"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-05.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-05.json",
+      "bytes": 10531,
+      "sha256": "aa632d96cd662d18c44e0a79c857a9ad805821adab146dd70ca2c3c6255515b6",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316253,
+      "uncompressed_sha256": "ff4441abedb92721a657126f6f8e4da6729be091a40d967825b6186a9dec48e4"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-06.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-06.json",
+      "bytes": 10480,
+      "sha256": "f0ef6bf36bac6b371d5687407117923244c47d7554b011540e6f3bca13c72154",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316179,
+      "uncompressed_sha256": "05e3d8ea1e398b12d5532349db925f09737869994e81878b96ccca37e825b27a"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-07.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-07.json",
+      "bytes": 10531,
+      "sha256": "655c0d0b793e7f4168ef407ce6b58a73598bbc6be1583f324b135151164d1314",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316049,
+      "uncompressed_sha256": "1491e29e37e3a72c9ff74d181132e5b15308d166c7ac5058cd84aea9c74c785d"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-08.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-08.json",
+      "bytes": 10397,
+      "sha256": "fb3a0ae00327ec249e5a0bedb448c1698327fce358bbc7be58f69897cff7624e",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316110,
+      "uncompressed_sha256": "f22b037ca3503b0daaa2cdf19f2fc4226b93906f8df2a47e967c8a13747b4430"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-09.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-09.json",
+      "bytes": 10466,
+      "sha256": "83d8fdc60c3c2f02ca338f54cce8389f64f848dabd9c8e18295c88ae0d99fa5d",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316084,
+      "uncompressed_sha256": "7c0af6f84c8fd1310ad0748c9071fb0d4eb8ce0a3e269841325a205c3ab0a449"
+    },
+    {
+      "path": "panel-raw/panel-bc-s2-10.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc-s2-10.json",
+      "bytes": 10544,
+      "sha256": "49c30b7510185a986cd6d13218c2928eb5fde98811210ca07040f960eada7d0c",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316032,
+      "uncompressed_sha256": "238a789dd550acab2694f7199a736dd4e1a1dc157270bbe6f89dd4087e533dfe"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-00.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-00.json",
+      "bytes": 10511,
+      "sha256": "0e5fe12409d8424a1d6ee8cf295a00200aa6c07111414f1f9ff0c0f0a8f512e5",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316357,
+      "uncompressed_sha256": "50b50dc734957abc0eb85aa9f7c549fa83ba92bc40656b750e64c10fef8995b4"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-01.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-01.json",
+      "bytes": 10517,
+      "sha256": "6d940ba66ef90e7ff2d1864baf70a3269e893abca2cc412a327cc72ef19e816e",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316349,
+      "uncompressed_sha256": "82a4450178fd9dd091cf0daf43c34aa9330149894217724f83d4bdf417375ec5"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-02.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-02.json",
+      "bytes": 10528,
+      "sha256": "d879838bbf0f2e64a46744e1550178654475f465232f464cb2b98e92d8014595",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316351,
+      "uncompressed_sha256": "872bdd49479baef8095a171a3ea9c83b512b12ccc8a7146b4e17f86074a59a4f"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-03.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-03.json",
+      "bytes": 10622,
+      "sha256": "54a2910ae6eac4cf28c55f1d0165b967eb05b5c33fe09bc7f28e15214c65529e",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316324,
+      "uncompressed_sha256": "8def2074bcfabc71064281104f86977c761c278c8f46d92ec7a5a8553e7c68c5"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-04.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-04.json",
+      "bytes": 10554,
+      "sha256": "7f61398fbd930a5b370d74456051984b2e5fa6431e04d67609c93d738920231c",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316370,
+      "uncompressed_sha256": "c780f27eb23dae465bb07996e353b1e5d17a2507370ba8ee070edf658be531b6"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-05.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-05.json",
+      "bytes": 10534,
+      "sha256": "cd2668a9d38f93cf46ca623c9bf5f6ff213a7c841a6f8bb7419264b67e77f918",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316563,
+      "uncompressed_sha256": "4b9507fd37b6947f0637e2f2fa729e572f9f148fe877a3a88d612526f7ba114f"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-06.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-06.json",
+      "bytes": 10561,
+      "sha256": "6dc02ee571d9158097213a72e18ccbf218f379b53749a3490ad7ce97f3531bb1",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316448,
+      "uncompressed_sha256": "5de7882364d842db5ae142d6b1e159af85d2a8377acbdbac5bf2efb38e2e9f1b"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-07.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-07.json",
+      "bytes": 10607,
+      "sha256": "6e135441b45855b6884e71426ba4b11ac981dbe5fed1fc20f4834f0dde86dc25",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316315,
+      "uncompressed_sha256": "135233769fbb0ac5fe3ae715216ea7b9035badec9ac835bf6737938847ae446a"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-08.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-08.json",
+      "bytes": 10564,
+      "sha256": "478fb8544828b4a47e9a736f85c3a783f18be6c1838491612dd2e17a2d9add8a",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316339,
+      "uncompressed_sha256": "6a10f7feccace6a90520d046af1f80e98a7a18cfbdae227a8a2fea5d2cba119c"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-09.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-09.json",
+      "bytes": 10482,
+      "sha256": "d6e97795a6dde2c28352a9cfc51ca2a05d174e2df9ff85f7d4474e6be176098e",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316381,
+      "uncompressed_sha256": "33cca10c63fe0ee5762ce54aaebfe1f1e9c1dde734db7110099c11bd1481416a"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s0-10.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s0-10.json",
+      "bytes": 10577,
+      "sha256": "252c1a8abb712bef64f65c181cae80a63fa300a3b39f63029b409ccf4331e609",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316318,
+      "uncompressed_sha256": "a97cb1bee2248fb7f3dcf1d6a8187e84dced46b6b557454e5a0ccb63e29512e7"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-00.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-00.json",
+      "bytes": 10669,
+      "sha256": "4d9820931fcbffd5ed3d775e56193c668ddefa1f75b31fb497cd018613854aff",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316247,
+      "uncompressed_sha256": "93e02dbee0f7549106ce30d824e0c628e9f5cf045abc891b1936d755ad2fee89"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-01.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-01.json",
+      "bytes": 10627,
+      "sha256": "dbc0cc8656fb089a8b6aabc2ac7caf30cb02e246957cab40737bc7c9b6a5f8d5",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316254,
+      "uncompressed_sha256": "cc44816ccc0da09f2e0b14537e0fdd8dec037fae6ef60748be019b8836ccf90e"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-02.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-02.json",
+      "bytes": 10680,
+      "sha256": "ba51ea3733c0e61c428770f40ca30f8c6ee5b8cc6c06c5ccfc136c699af215e7",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316245,
+      "uncompressed_sha256": "572dc31cee9d77efa90bfb5756206225d2528dbc1d192f71f253ded2b75d5914"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-03.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-03.json",
+      "bytes": 10719,
+      "sha256": "401ced7f929683f96e8a38ab9e78606b3381bec6986e370063d963ee62b9aa01",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316219,
+      "uncompressed_sha256": "214e7287765473ff159bb5129e6006f75e48d79f8fd453ba0be652e9678a94d9"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-04.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-04.json",
+      "bytes": 10648,
+      "sha256": "bc07ff808e87665ad7aded6d8be6222ba047daf77d5a7f3d069af27760906f44",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316264,
+      "uncompressed_sha256": "1e04bbfa431f87d540792c540e6691d4545f5baeb97a7eda5ba78af154ab92ce"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-05.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-05.json",
+      "bytes": 10623,
+      "sha256": "f028f10448bf608b85b702f50128736d307c7a88dfdf32de25e53a5d7186c4a5",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316473,
+      "uncompressed_sha256": "d81afbfeac12b8c3b3edcf102f2e6409b406e98fa48b82b587c86d3e6e7af25f"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-06.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-06.json",
+      "bytes": 10645,
+      "sha256": "5cc39e631797cec5685b3249abce1980178db540e8152bfb8fe6e3262ac67fe4",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316385,
+      "uncompressed_sha256": "500714727db25b025dcdd26e0761b36e9b54ed2468764b48f426ab8a84e6ee51"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-07.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-07.json",
+      "bytes": 10702,
+      "sha256": "5d4c5cf03bfcb55656b87e6831ae11e027681ef39d3619a62ff067f223b2a5e9",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316236,
+      "uncompressed_sha256": "680d75f281c82fc798beef1494245a64f18f2639950ede54431720a376d152d5"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-08.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-08.json",
+      "bytes": 10593,
+      "sha256": "f38108ae2aabbde06671b5dc1c2b8893eecac505e3938fd5d73992ae5a1c9572",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316308,
+      "uncompressed_sha256": "f33d84f6a7518f91eaace201d751b6c983a99b77a8d5219d4eb3458a155a2d3b"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-09.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-09.json",
+      "bytes": 10646,
+      "sha256": "3fb9858bd2b76de7aa5c6f7c930b4829d66dd93ac14da1e193bf43e2433946b6",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316284,
+      "uncompressed_sha256": "39526053e58d8b72dac2a69ed5116de8bdeffc6f4b94ee21d6c04d2a27b5e42a"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s1-10.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s1-10.json",
+      "bytes": 10633,
+      "sha256": "1a4be7cac7a42c78c5efc3ca0a0f28ae06ae4098f473e18532fb3132bbee1244",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316234,
+      "uncompressed_sha256": "34932e2d9c393d9488b5f91e2b0b58f42c84bdc6c7b7c8fbf2ce1573d7d6cac7"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-00.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-00.json",
+      "bytes": 10669,
+      "sha256": "eb6c2d8a2504952f1eeffb107dd8b18f98afe4abed618a7ae5d9bb24cbc45087",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316266,
+      "uncompressed_sha256": "c1463ec32098e9d90165ab59a993fd516c99c21fe9a14776fefd2ef7d0ea9a50"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-01.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-01.json",
+      "bytes": 10667,
+      "sha256": "57541db26c269d29d0ce6803d9e3015a5178a92a4247002ce866f0b199831e0f",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316287,
+      "uncompressed_sha256": "ae84b8e84b0321b82e77b7ad2f4cc33d016dbcf582eb62d63951c79a8edf12e3"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-02.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-02.json",
+      "bytes": 10663,
+      "sha256": "b79b08043c79efe4622b8494b86e1d2d1f9881e710bd00e895ab4896cc3018b0",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316285,
+      "uncompressed_sha256": "725d9371b1d8679dbeb04e314e0f696eb336969eb245686553ed24786d0b7076"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-03.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-03.json",
+      "bytes": 10711,
+      "sha256": "f0160080022fd1d3d5254b5c2d583d456c907c5ce6d358de697bf85dfe82b0e8",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316253,
+      "uncompressed_sha256": "9fa3d68c2ca4e5448a36c575f0aac806488c85fb0a6257e07391d7703e170c0d"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-04.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-04.json",
+      "bytes": 10731,
+      "sha256": "1297f6dea242c08fd8d7075e70ab16cab0c7b5ca499a39491adfdf76bf475010",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316262,
+      "uncompressed_sha256": "db2f0eb584b1641e2eca8718faf130b16c92de471012d868fa159910390accc8"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-05.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-05.json",
+      "bytes": 10633,
+      "sha256": "7c13a2f21340c71657e8c5a7f80481876345dbee46877fef74ebdf774ddace2c",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316501,
+      "uncompressed_sha256": "c35293eeaf0baa22d801c18de3ae776526d00341c7b12d93905de5b065cecde4"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-06.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-06.json",
+      "bytes": 10717,
+      "sha256": "fd435ff9e79080ddd5f52ff746c7e37c330e6b1725d6dd7463c3074972b793c8",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316358,
+      "uncompressed_sha256": "ad99a03e4643af86e037b65955916ed88e07bf112de0a75380c0fe5a0bbd4e4d"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-07.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-07.json",
+      "bytes": 10702,
+      "sha256": "e6aea2799d28057282115e04470fe076d7e416e6fc7d1e3b1de40066bd29064f",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316260,
+      "uncompressed_sha256": "01029c22299e9bd54b07c517c8232e41554d5d58e51e390c215c0c068c72efe0"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-08.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-08.json",
+      "bytes": 10580,
+      "sha256": "b255cff9328f00a285a05480c4d556210e84f1ebeb6abd38384309f666164ddf",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316333,
+      "uncompressed_sha256": "6f41a220c8a89c838a6eaeb6a7f2d35f0d2688630e6300f98070551402f70e9d"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-09.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-09.json",
+      "bytes": 10599,
+      "sha256": "9a398457caa131c616c531a0df397fb7ac74adfe622309e9866a1d3ff9d9a04d",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316322,
+      "uncompressed_sha256": "d9d6cb693b79f4c23d2b19f4955396b0af51baab64ced2fdfd5f917cea02ea12"
+    },
+    {
+      "path": "panel-raw/panel-bc_dr-s2-10.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-bc_dr-s2-10.json",
+      "bytes": 10686,
+      "sha256": "ef45847bb3a10e1b219a4cdc83c9847d19811a6946b22aa0b311a68ec736ad52",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 316261,
+      "uncompressed_sha256": "06954f600dbb839bb37a123ea00025f7e471f4315a107ee9e2f73978c99d8d41"
+    },
+    {
+      "path": "panel-manifest.json",
+      "bytes": 16346,
+      "sha256": "fefd75728d27bb4fca4384cdb17bee62ba32232b8e3abb6d16b42166eb4a4317",
+      "kind": "derived from referenced actual receipts"
+    },
+    {
+      "path": "table-data.json.gz",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/report-s0-20261103T053716Z-41580560/table-data.json",
+      "bytes": 40513,
+      "sha256": "e0d1ef9b99c994d8a56f6a20970c6c231344c0f94f2dfa5708d7717ebfa3892a",
+      "kind": "lossless gzip of original JSON bytes",
+      "uncompressed_bytes": 2266773,
+      "uncompressed_sha256": "f640b4d744a18164174f3812c7a4afccbace5603bbfdd7e2ff590c37d5e7951b"
+    },
+    {
+      "path": "comparison.md",
+      "source": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/report-s0-20261103T053716Z-41580560/table.md",
+      "bytes": 613,
+      "sha256": "895683578c1ad73eaa3c9712d504f9af0c5ee15e0fe288cff1744ca5731fd37a",
+      "kind": "original bytes"
+    },
+    {
+      "path": "bc-training-history.csv",
+      "bytes": 68211,
+      "sha256": "0b0ee8e2dddff665ad175c2e06a3d02c85d34ae6fdb0b49cbf2ea68822a2cf82",
+      "kind": "actual measured rows, no new inference"
+    }
+  ],
+  "no_new_rollout_or_inference": true,
+  "no_checkpoint_or_npz_payload_in_git": true
+}

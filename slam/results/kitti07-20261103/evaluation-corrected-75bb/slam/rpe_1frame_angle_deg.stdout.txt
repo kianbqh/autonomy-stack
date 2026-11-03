@@ -1,0 +1,12 @@
+RPE w.r.t. rotation angle in degrees (deg)
+for delta = 1 (frames) using all pairs
+(not aligned)
+
+       max	0.422809
+      mean	0.043998
+    median	0.031510
+       min	0.001701
+      rmse	0.060927
+       sse	4.083319
+       std	0.042146
+

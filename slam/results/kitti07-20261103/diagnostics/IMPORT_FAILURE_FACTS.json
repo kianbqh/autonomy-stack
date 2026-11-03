@@ -1,0 +1,168 @@
+{
+  "status": "facts only; no rerun/full archive hash/source modification",
+  "utc": "2026-11-03T04:12:49.796118+00:00",
+  "original_failure": {
+    "status": "failed",
+    "owner": "/root/m3_slam_execution",
+    "utc": "2026-11-03T02:51:44.098342+00:00",
+    "pid": 466792,
+    "ppid": 466791,
+    "process_start_ticks": "14922152",
+    "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce",
+    "data": "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce/verified-data",
+    "command": [
+      "/usr/bin/python3",
+      "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/import_kitti.py",
+      "--archives",
+      "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/completed-archives.json",
+      "--config",
+      "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+      "--output",
+      "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce/verified-data"
+    ],
+    "archives_manifest_sha256": "08fc97e3549f21bb45f0f1da708ce54a4e0ad44241259fe2112e278cf39edc2a",
+    "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+    "git_checkpoint": "3226c437ad6967b66984779177ff10b9101d9754",
+    "scope": "one selective import plus archive/extracted hash/CRC checks; setup I/O only, native07 not released",
+    "import_pid": 466793,
+    "import_start_ticks": "14922169",
+    "returncode": 1,
+    "failure": {
+      "type": "RuntimeError",
+      "message": "selective importer failed; preserve original logs and partial extraction"
+    },
+    "finished_utc": "2026-11-03T04:09:52.112654+00:00",
+    "wall_s": 4688.274725838011
+  },
+  "journal": {
+    "status": "failed",
+    "utc": "2026-11-03T04:08:15.640095+00:00",
+    "archives_sha256": {
+      "data_odometry_calib.zip": "fa45d2bbff828776e6df689b161415fb7cd719345454b6d3567c2ff81fa4d075",
+      "data_odometry_poses.zip": "a969190799bb3fc4a15f5f0675b1ee6b7067292599b3269bdafc1e5ba883b9e1",
+      "data_odometry_velodyne.zip": "062a45667bec6874ac27f733bd6809919f077265e7ac0bb25ac885798fa85ab5",
+      "data_odometry_color.zip": "f4f6f7223f6e7b181b3b554eb73b98ba38179d1e421dd35922edcc6ee7e6e400"
+    },
+    "sequence": "07",
+    "error": {
+      "type": "ValueError",
+      "message": "duplicate selected path across archives"
+    },
+    "finished_utc": "2026-11-03T04:09:51.107239+00:00"
+  },
+  "journal_sha256": "02fb3a8ddbbecd1591f97b817441fae13d2bf0c363e127f3014a4d19f039cc8e",
+  "first_duplicate_in_original_order": {
+    "duplicate_member": "dataset/sequences/07/times.txt",
+    "encountered_in": "data_odometry_color.zip",
+    "already_selected_files": 1104,
+    "existing_origin": "data_odometry_calib.zip"
+  },
+  "unique_selected_names": 1107,
+  "duplicate_paths": {
+    "dataset/sequences/07/calib.txt": [
+      {
+        "archive": "data_odometry_calib.zip",
+        "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_calib.zip",
+        "member": "dataset/sequences/07/calib.txt",
+        "bytes": 1172,
+        "crc32": "1d18b554",
+        "compressed_bytes": 1172,
+        "header_offset": 8813,
+        "actual_sha256": "5e7b3136edf2799be47e472ca9c5362fcacbee5d21c6ab8038506b8691b8b9ec",
+        "actual_bytes": 1172,
+        "actual_crc32": "1d18b554",
+        "identical_to_first": true
+      },
+      {
+        "archive": "data_odometry_color.zip",
+        "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_color.zip",
+        "member": "dataset/sequences/07/calib.txt",
+        "bytes": 930,
+        "crc32": "5fa03203",
+        "compressed_bytes": 930,
+        "header_offset": 68978757099,
+        "actual_sha256": "4abedb688d60249c36353b9893570f993ebfdc5ef7938f52f3a7b9e1edbfffb1",
+        "actual_bytes": 930,
+        "actual_crc32": "5fa03203",
+        "identical_to_first": false
+      }
+    ],
+    "dataset/sequences/07/times.txt": [
+      {
+        "archive": "data_odometry_calib.zip",
+        "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_calib.zip",
+        "member": "dataset/sequences/07/times.txt",
+        "bytes": 14313,
+        "crc32": "f32d881e",
+        "compressed_bytes": 14313,
+        "header_offset": 226401,
+        "actual_sha256": "13aa9c27223088b6cf646197767a842f0527e3770f5f8a436a8357bd7fff70a1",
+        "actual_bytes": 14313,
+        "actual_crc32": "f32d881e",
+        "identical_to_first": true
+      },
+      {
+        "archive": "data_odometry_color.zip",
+        "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_color.zip",
+        "member": "dataset/sequences/07/times.txt",
+        "bytes": 14313,
+        "crc32": "f32d881e",
+        "compressed_bytes": 14313,
+        "header_offset": 67284259171,
+        "actual_sha256": "13aa9c27223088b6cf646197767a842f0527e3770f5f8a436a8357bd7fff70a1",
+        "actual_bytes": 14313,
+        "actual_crc32": "f32d881e",
+        "identical_to_first": true
+      }
+    ]
+  },
+  "current_archive_identities": [
+    {
+      "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_calib.zip",
+      "bytes": 600238,
+      "sha256": "fa45d2bbff828776e6df689b161415fb7cd719345454b6d3567c2ff81fa4d075",
+      "mtime_ns": 1793596617914446900,
+      "device": 73,
+      "inode": 562949954292094
+    },
+    {
+      "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_poses.zip",
+      "bytes": 1309620,
+      "sha256": "a969190799bb3fc4a15f5f0675b1ee6b7067292599b3269bdafc1e5ba883b9e1",
+      "mtime_ns": 1793596619381336400,
+      "device": 73,
+      "inode": 562949954292176
+    },
+    {
+      "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_velodyne.zip",
+      "bytes": 84786535790,
+      "sha256": "062a45667bec6874ac27f733bd6809919f077265e7ac0bb25ac885798fa85ab5",
+      "mtime_ns": 1793611969483837700,
+      "device": 73,
+      "inode": 562949954292180
+    },
+    {
+      "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_color.zip",
+      "bytes": 68989244961,
+      "sha256": "f4f6f7223f6e7b181b3b554eb73b98ba38179d1e421dd35922edcc6ee7e6e400",
+      "mtime_ns": 1793610817383442800,
+      "device": 73,
+      "inode": 562949954292179
+    }
+  ],
+  "partial_inventory": {
+    "files": 1104,
+    "scans": 1101,
+    "scan_min": 0,
+    "scan_max": 1100,
+    "scan_ids_contiguous": true,
+    "images": [],
+    "missing": [
+      "dataset/sequences/07/image_2/000000.png",
+      "dataset/sequences/07/image_2/000550.png",
+      "dataset/sequences/07/image_2/001100.png"
+    ],
+    "unexpected": [],
+    "bytes": 2137555577
+  }
+}

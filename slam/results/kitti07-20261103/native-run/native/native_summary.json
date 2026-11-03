@@ -1,0 +1,1 @@
+{"status":"complete","frames":1101,"keyframes":381,"accepted_loops":2,"graph_ms":9.2186640000000004,"native_total_ms":36747.785125000002,"process_cpu_ms":36743.934000000001,"pose_frame":"camera0_initial_relative","internal_frame":"lidar_initial_relative","graph_optimizer":"end_LM","timestamp_interpolation":"correction_SE3_actual_times"}

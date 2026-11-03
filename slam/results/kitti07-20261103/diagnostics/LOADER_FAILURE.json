@@ -1,0 +1,59 @@
+{
+  "status": "read-only loader diagnosis; no native tests/fixtures restarted",
+  "utc": "2026-11-03T03:10:04.122866+00:00",
+  "failed_receipt": "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T030708Z-53407860/build.json",
+  "failed_receipt_sha256": "954e20d14e6e24c041a2327f7a0bcfe4c7da019bb9efaeb222de219de2f178f3",
+  "commands_log_sha256": "15cc82c1b8a1a9d50f9f46346d01fa28316c9a36b85ee548ff485c4b25bae3e8",
+  "binary_sha256": "c061b46826810f1f62384fe330f69ff122b58973283cee4afbc9f110acc10809",
+  "commands": [
+    {
+      "label": "gtsam-readelf",
+      "argv": [
+        "readelf",
+        "-d",
+        "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib/libgtsam.so.4.2.0"
+      ],
+      "environment_override": {},
+      "returncode": 0,
+      "stdout_sha256": "20aa7294d7fe574241eee8685609fe8454d60d02baa3aa1e197357371971c9eb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "tests-readelf",
+      "argv": [
+        "readelf",
+        "-d",
+        "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T030708Z-53407860/slam-build/slam_tests"
+      ],
+      "environment_override": {},
+      "returncode": 0,
+      "stdout_sha256": "f486e3ad8e30ebb3f3adac490903be2a0f98d415bdd35619b0f5b014f2366568",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "tests-ldd-default",
+      "argv": [
+        "ldd",
+        "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T030708Z-53407860/slam-build/slam_tests"
+      ],
+      "environment_override": {},
+      "returncode": 0,
+      "stdout_sha256": "95d1da30af0476a735dac01a8d9279b1a1027be5faa91c9ea60fb529f42ad4e9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "tests-ldd-private",
+      "argv": [
+        "ldd",
+        "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T030708Z-53407860/slam-build/slam_tests"
+      ],
+      "environment_override": {
+        "LD_LIBRARY_PATH": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib:/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib"
+      },
+      "returncode": 0,
+      "stdout_sha256": "f879d7b223cd562d96b93fe800a969d6c71b2b5468e7cd6b9e8f0c526b2c51d9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "proposal": "Explicit child-only LD_LIBRARY_PATH of immutable dependency prefix/lib plus accepted Boost prefix/lib in the private recovery runner and every native/fixture launcher; record exact value. No code/algorithm/source-freeze change, dependency reinstall or threshold change."
+}

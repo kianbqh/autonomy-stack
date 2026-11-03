@@ -1,0 +1,240 @@
+{
+  "status": "raw-prefix/input numerical diagnosis only",
+  "utc": "2026-11-03T04:32:43.355259+00:00",
+  "native_run": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/outputs/slam-20261103T042508Z-2a8968af",
+  "failure": {
+    "status": "failed",
+    "frame": 27,
+    "timestamp_s": 2.80089,
+    "accepted_prefix_frames": 27,
+    "expected_frames": 1101,
+    "message": "registration_failed:invalid_or_empty_icp_input",
+    "failed_frame_pose": null,
+    "optimized_trajectory": null
+  },
+  "prefix_sha256": "9bc72ab8ba20c567adb4063c6501646cd77fb7a8ee3aa0a29bc2c5382d62e5a7",
+  "calibration_sha256": "5e7b3136edf2799be47e472ca9c5362fcacbee5d21c6ab8038506b8691b8b9ec",
+  "calibration_rotation_orthogonality_frobenius": 1.0132919995597478e-07,
+  "internal_pose_reconstruction": "RX=inv(RTr)*RY*inv(RTr.T); tX=inv(RTr)*(tY-tTr+RY*tTr), matching cameraRelative with Eigen Isometry inverse",
+  "prefix_rotation_errors": [
+    {
+      "frame": 0,
+      "internal_orthogonality_frobenius": 4.441083737584143e-16,
+      "internal_determinant_minus_one": 2.220446049250313e-16,
+      "camera_orthogonality_frobenius": 2.0265840698769024e-07
+    },
+    {
+      "frame": 1,
+      "internal_orthogonality_frobenius": 7.042151524640714e-16,
+      "internal_determinant_minus_one": 2.220446049250313e-16,
+      "camera_orthogonality_frobenius": 2.0265692855308688e-07
+    },
+    {
+      "frame": 2,
+      "internal_orthogonality_frobenius": 7.585813364331534e-16,
+      "internal_determinant_minus_one": -1.1102230246251565e-16,
+      "camera_orthogonality_frobenius": 2.0265200251557756e-07
+    },
+    {
+      "frame": 3,
+      "internal_orthogonality_frobenius": 1.4998030754620777e-15,
+      "internal_determinant_minus_one": -9.992007221626409e-16,
+      "camera_orthogonality_frobenius": 2.026425930132283e-07
+    },
+    {
+      "frame": 4,
+      "internal_orthogonality_frobenius": 2.8192274268939516e-15,
+      "internal_determinant_minus_one": -1.7763568394002505e-15,
+      "camera_orthogonality_frobenius": 2.0262613279097716e-07
+    },
+    {
+      "frame": 5,
+      "internal_orthogonality_frobenius": 7.084315520991277e-15,
+      "internal_determinant_minus_one": -4.884981308350689e-15,
+      "camera_orthogonality_frobenius": 2.0259769759345464e-07
+    },
+    {
+      "frame": 6,
+      "internal_orthogonality_frobenius": 1.6625392824082747e-14,
+      "internal_determinant_minus_one": -1.1435297153639112e-14,
+      "camera_orthogonality_frobenius": 2.0255056943909264e-07
+    },
+    {
+      "frame": 7,
+      "internal_orthogonality_frobenius": 3.917152816186811e-14,
+      "internal_determinant_minus_one": -2.6756374893466273e-14,
+      "camera_orthogonality_frobenius": 2.024788458192194e-07
+    },
+    {
+      "frame": 8,
+      "internal_orthogonality_frobenius": 9.556057189757938e-14,
+      "internal_determinant_minus_one": -6.561418075534675e-14,
+      "camera_orthogonality_frobenius": 2.023740369215395e-07
+    },
+    {
+      "frame": 9,
+      "internal_orthogonality_frobenius": 2.3025728367785635e-13,
+      "internal_determinant_minus_one": -1.582067810090848e-13,
+      "camera_orthogonality_frobenius": 2.02233261367899e-07
+    },
+    {
+      "frame": 10,
+      "internal_orthogonality_frobenius": 5.559379202217395e-13,
+      "internal_determinant_minus_one": -3.822497873784414e-13,
+      "camera_orthogonality_frobenius": 2.020432915795579e-07
+    },
+    {
+      "frame": 11,
+      "internal_orthogonality_frobenius": 1.342396701771624e-12,
+      "internal_determinant_minus_one": -9.230394226733551e-13,
+      "camera_orthogonality_frobenius": 2.0179752197928184e-07
+    },
+    {
+      "frame": 12,
+      "internal_orthogonality_frobenius": 3.240681996368881e-12,
+      "internal_determinant_minus_one": -2.2285506773300767e-12,
+      "camera_orthogonality_frobenius": 2.0149545138822653e-07
+    },
+    {
+      "frame": 13,
+      "internal_orthogonality_frobenius": 7.824973425242397e-12,
+      "internal_determinant_minus_one": -5.381806111870446e-12,
+      "camera_orthogonality_frobenius": 2.011200270315824e-07
+    },
+    {
+      "frame": 14,
+      "internal_orthogonality_frobenius": 1.8889862382804683e-11,
+      "internal_determinant_minus_one": -1.2992940057188207e-11,
+      "camera_orthogonality_frobenius": 2.0065231911583346e-07
+    },
+    {
+      "frame": 15,
+      "internal_orthogonality_frobenius": 4.560074375192069e-11,
+      "internal_determinant_minus_one": -3.136813031545671e-11,
+      "camera_orthogonality_frobenius": 2.0008825969116888e-07
+    },
+    {
+      "frame": 16,
+      "internal_orthogonality_frobenius": 1.1008045038703684e-10,
+      "internal_determinant_minus_one": -7.572953375500902e-11,
+      "camera_orthogonality_frobenius": 1.9942917477616715e-07
+    },
+    {
+      "frame": 17,
+      "internal_orthogonality_frobenius": 2.657344975157293e-10,
+      "internal_determinant_minus_one": -1.828267537362649e-10,
+      "camera_orthogonality_frobenius": 1.9861079710095723e-07
+    },
+    {
+      "frame": 18,
+      "internal_orthogonality_frobenius": 6.414698957706052e-10,
+      "internal_determinant_minus_one": -4.4138281918293387e-10,
+      "camera_orthogonality_frobenius": 1.9764341924654604e-07
+    },
+    {
+      "frame": 19,
+      "internal_orthogonality_frobenius": 1.548482430424055e-09,
+      "internal_determinant_minus_one": -1.0655922810798302e-09,
+      "camera_orthogonality_frobenius": 1.9642545016292309e-07
+    },
+    {
+      "frame": 20,
+      "internal_orthogonality_frobenius": 3.737974389550638e-09,
+      "internal_determinant_minus_one": -2.572568269521014e-09,
+      "camera_orthogonality_frobenius": 1.9464106719612233e-07
+    },
+    {
+      "frame": 21,
+      "internal_orthogonality_frobenius": 9.023169440100616e-09,
+      "internal_determinant_minus_one": -6.210728153988043e-09,
+      "camera_orthogonality_frobenius": 1.917400278466453e-07
+    },
+    {
+      "frame": 22,
+      "internal_orthogonality_frobenius": 2.178098680280634e-08,
+      "internal_determinant_minus_one": -1.499402502158631e-08,
+      "camera_orthogonality_frobenius": 1.8671493986980932e-07
+    },
+    {
+      "frame": 23,
+      "internal_orthogonality_frobenius": 5.257620969186756e-08,
+      "internal_determinant_minus_one": -3.6198778641249874e-08,
+      "camera_orthogonality_frobenius": 1.793507896239482e-07
+    },
+    {
+      "frame": 24,
+      "internal_orthogonality_frobenius": 1.2690610272441327e-07,
+      "internal_determinant_minus_one": -8.739158030568461e-08,
+      "camera_orthogonality_frobenius": 1.8435293747319212e-07
+    },
+    {
+      "frame": 25,
+      "internal_orthogonality_frobenius": 3.063115100329506e-07,
+      "internal_determinant_minus_one": -2.1098192493074208e-07,
+      "camera_orthogonality_frobenius": 2.9005441917240225e-07
+    },
+    {
+      "frame": 26,
+      "internal_orthogonality_frobenius": 7.393320028761237e-07,
+      "internal_determinant_minus_one": -5.093553488988434e-07,
+      "camera_orthogonality_frobenius": 6.85267806456236e-07
+    }
+  ],
+  "frame27_constant_velocity_guess": {
+    "all_finite": true,
+    "orthogonality_frobenius": 1.7844784208590747e-06,
+    "determinant_minus_one": -1.2296921481080858e-06,
+    "last_row_error": 0.0,
+    "current_orthogonality_gate": 1e-06,
+    "current_determinant_gate": 1e-06,
+    "validPose_result": false,
+    "guess": [
+      [
+        0.7024885176210839,
+        -0.7113960025406154,
+        -0.02061616856895015,
+        4.376698224629316
+      ],
+      [
+        0.7116937163329623,
+        0.7022377573964921,
+        0.018780275961921073,
+        2.1703647754081534
+      ],
+      [
+        0.0011174866390352394,
+        -0.02786511573575977,
+        0.9996108734860011,
+        0.05460852208184193
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "frame27_scan": {
+    "path": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/sequences/07/velodyne/000027.bin",
+    "sha256": "60bbe8679b29611f21e399112c9882fdf80fbb70313c4b98ca83717b47c4a69c",
+    "bytes": 1957488,
+    "raw_points": 122343,
+    "all_xyzi_finite": true,
+    "range_filtered_points": 122320,
+    "occupied_voxels": 12121,
+    "capped_scan_points": 12121
+  },
+  "target_map_invariant": {
+    "keyframes_observed": 4,
+    "last_keyframe": {
+      "keyframe": "3",
+      "frame": "23",
+      "timestamp_s": "2.386504"
+    },
+    "source_fact": "Every nonempty finite keyframe cloud is retained in positive-sized local deque; voxelFilter cannot empty it with positive cap/leaf; estimateNormals constructs same-sized points/normals. This is a construction invariant, not an instrumented map-size counter."
+  },
+  "gt_loaded": false,
+  "source_or_thresholds_changed": false,
+  "native_rerun": false
+}

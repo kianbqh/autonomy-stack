@@ -1,0 +1,49 @@
+{
+  "status": "passed full1101 valid-SE3/time/source gate; shared-host raw timing only",
+  "utc": "2026-11-03T05:30:35.250410+00:00",
+  "native_run": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c",
+  "native_run_sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+  "phase_receipt_sha256": "1806bb40fd7effa518b4477f1a2da1460b466adf764bf3488377c12e633e596c",
+  "tracks": {
+    "poses_odom.txt": {
+      "rows": 1101,
+      "sha256": "4230ccc6ad380cc5c374317ff4f7ed635222ae23b857e83bef504aafe3111c87",
+      "valid_se3": true
+    },
+    "poses_slam.txt": {
+      "rows": 1101,
+      "sha256": "a1f5849e66349d8535118d94853a94305059453cc2316d6a61082a95fef24284",
+      "valid_se3": true
+    }
+  },
+  "timestamps": {
+    "rows": 1101,
+    "strictly_increasing": true,
+    "matches_verified_input": true,
+    "sha256": "bd6d2a29176213de75ecae61dc3ca13d1ac036c3a037ece60e3bfdc2c8530592"
+  },
+  "frame_ids": {
+    "count": 1101,
+    "contiguous": true,
+    "first": 0,
+    "last": 1100
+  },
+  "native_summary": {
+    "status": "complete",
+    "frames": 1101,
+    "keyframes": 381,
+    "accepted_loops": 2,
+    "graph_ms": 9.218664,
+    "native_total_ms": 36747.785125,
+    "process_cpu_ms": 36743.934,
+    "pose_frame": "camera0_initial_relative",
+    "internal_frame": "lidar_initial_relative",
+    "graph_optimizer": "end_LM",
+    "timestamp_interpolation": "correction_SE3_actual_times"
+  },
+  "resource_scope": "root accepted 61d native15/import1101 and explicit 1mm/100urad runtime stopping precision ee689925; calibration original51a4 reused; one full07 functional and accuracy chain from frame0 on shared Windows host; raw timing is shared-host observation, not isolated benchmark",
+  "config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+  "input_manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+  "binary_sha256": "924d68b5e27ceebf21cf562528ad7640b0e2ad75d5130c1b4b91d2e9932ccf11",
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390"
+}

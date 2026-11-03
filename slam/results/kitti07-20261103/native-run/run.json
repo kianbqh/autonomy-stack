@@ -1,0 +1,125 @@
+{
+  "status": "complete",
+  "started_utc": "2026-11-03T05:29:37.149961+00:00",
+  "start_monotonic": 158695.253723281,
+  "launcher_command": [
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/run_experiment.py",
+    "--config",
+    "/opt/codex-resume/all-modules-v2/m3/slam/runtime-configs/seq07-stop-1mm-100urad.json",
+    "--input-manifest",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/input-manifest.json",
+    "--binary",
+    "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build/run_kitti_slam",
+    "--build-receipt",
+    "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/build.json",
+    "--repo-root",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack",
+    "--git",
+    "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+    "--output-parent",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs"
+  ],
+  "environment": {
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "executable": "/usr/bin/python3",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "logical_cpus": 20,
+    "packages": {
+      "numpy": null,
+      "scipy": null,
+      "opencv-python-headless": null,
+      "matplotlib": null,
+      "evo": null
+    },
+    "environment": "WSL2",
+    "gpu": "not used by CPU SLAM",
+    "gpu_driver": "not queried; CPU-only run"
+  },
+  "output": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c",
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "git_executable": "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+  "selected_source_status": "",
+  "selected_source_scope": "slam excluding derived slam/results",
+  "whole_worktree_status": "",
+  "git_version": "git version 2.43.0",
+  "input_verify_wall_s": 2.9644870340125635,
+  "config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+  "input_manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+  "binary_sha256": "924d68b5e27ceebf21cf562528ad7640b0e2ad75d5130c1b4b91d2e9932ccf11",
+  "build_receipt_sha256": "3c2c80793d298edc947dfe439bcf1a35ebd30e63053df59828f901e465e8f7b6",
+  "kind": "kitti_full",
+  "sequence": "07",
+  "native_loader_environment": {
+    "LD_LIBRARY_PATH": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib:/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib"
+  },
+  "native_command": [
+    "/opt/codex-resume/all-modules-v2/m3/slam/slam-only-builds/native-recovery-20261103T052030Z-0ea3a18d/slam-build/run_kitti_slam",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/sequences/07",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native.cfg",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native"
+  ],
+  "native_pid": 485601,
+  "native_process_wall_s": 36.75623135801288,
+  "native_exit_code": 0,
+  "timing": {
+    "io_ms": {
+      "count": 1100,
+      "mean_ms": 3.524413186363636,
+      "p95_ms": 4.40760785,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "preprocess_ms": {
+      "count": 1100,
+      "mean_ms": 4.172274058181818,
+      "p95_ms": 5.037271999999999,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "map_normals_ms": {
+      "count": 1100,
+      "mean_ms": 13.855952353636363,
+      "p95_ms": 50.76979735,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "registration_ms": {
+      "count": 1100,
+      "mean_ms": 10.68975913909091,
+      "p95_ms": 20.074814149999998,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "loop_ms": {
+      "count": 1100,
+      "mean_ms": 1.009790410909091,
+      "p95_ms": 0.23799069999999997,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "frame_inclusive_ms": {
+      "count": 1100,
+      "mean_ms": 33.353458372727275,
+      "p95_ms": 77.51549384999998,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "frame_cpu_ms": {
+      "count": 1100,
+      "mean_ms": 33.35223727272727,
+      "p95_ms": 77.51209999999999,
+      "percentile_method": "linear (n-1)*q"
+    }
+  },
+  "timing_scope": "all scans except origin; no warmup/repeats; raw CSV includes origin; wall frame includes scan I/O, preprocessing, registration/map/loops and accepted-prefix pose/timestamp checkpoint flush; excludes final timing/candidate/journal flush; frame_cpu_ms uses process std::clock; end graph timing separate; native process includes I/O and output; preflight hashes excluded",
+  "native_summary": {
+    "status": "complete",
+    "frames": 1101,
+    "keyframes": 381,
+    "accepted_loops": 2,
+    "graph_ms": 9.218664,
+    "native_total_ms": 36747.785125,
+    "process_cpu_ms": 36743.934,
+    "pose_frame": "camera0_initial_relative",
+    "internal_frame": "lidar_initial_relative",
+    "graph_optimizer": "end_LM",
+    "timestamp_interpolation": "correction_SE3_actual_times"
+  },
+  "finished_utc": "2026-11-03T05:30:18.141218+00:00",
+  "wall_s": 40.99251866299892
+}

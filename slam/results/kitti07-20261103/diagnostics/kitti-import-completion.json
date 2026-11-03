@@ -1,0 +1,161 @@
+{
+  "status": "complete",
+  "utc": "2026-11-03T04:21:02.745738+00:00",
+  "owner": "/root/m3_slam_execution",
+  "pid": 477069,
+  "ppid": 477068,
+  "process_start_ticks": "15458018",
+  "import_pid": 477069,
+  "import_start_ticks": "15458018",
+  "process_model": "single completion importer process; pid equals import_pid",
+  "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe",
+  "data": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data",
+  "config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+  "archives_manifest_sha256": "08fc97e3549f21bb45f0f1da708ce54a4e0ad44241259fe2112e278cf39edc2a",
+  "private_importer_sha256": "b165d175b8cfc31100c90915b4373a8ba005b1ee10f1f6cabbaf16b768a79e86",
+  "completion_scope": "new selective completion, original whole-archive SHA measurements reused; no whole-archive SHA recomputed",
+  "original_failure": {
+    "live_receipt": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/kitti-import-live.json",
+    "live_receipt_sha256": "4ee80673125cb5f6b4c3dce1486126c9637edb34e14c1ad35c1ca06420fe85c7",
+    "journal": "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce/verified-data/import-journal.json",
+    "journal_sha256": "02fb3a8ddbbecd1591f97b817441fae13d2bf0c363e127f3014a4d19f039cc8e",
+    "original_attempt": "/opt/codex-resume/all-modules-v2/m3/slam/data-imports/kitti-seq07-20261103T025144Z-c28598ce",
+    "returncode": 1,
+    "wall_s": 4688.274725838011
+  },
+  "archive_hash_evidence": {
+    "measured_utc": "2026-11-03T04:08:15.640095+00:00",
+    "archives_sha256": {
+      "data_odometry_calib.zip": "fa45d2bbff828776e6df689b161415fb7cd719345454b6d3567c2ff81fa4d075",
+      "data_odometry_poses.zip": "a969190799bb3fc4a15f5f0675b1ee6b7067292599b3269bdafc1e5ba883b9e1",
+      "data_odometry_velodyne.zip": "062a45667bec6874ac27f733bd6809919f077265e7ac0bb25ac885798fa85ab5",
+      "data_odometry_color.zip": "f4f6f7223f6e7b181b3b554eb73b98ba38179d1e421dd35922edcc6ee7e6e400"
+    },
+    "source": "original82031 actual full SHA loop passed before original selection failure",
+    "historical_stat_available": false,
+    "identity_policy": "current stat before/after; ordinary mtime must predate the actual original passed SHA phase, not a fabricated old stat comparison"
+  },
+  "archive_identities_before": {
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_calib.zip": {
+      "bytes": 600238,
+      "mtime_ns": 1793596617914446900,
+      "ctime_ns": 1793596617920957500,
+      "device": 73,
+      "inode": 562949954292094
+    },
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_poses.zip": {
+      "bytes": 1309620,
+      "mtime_ns": 1793596619381336400,
+      "ctime_ns": 1793596619393421600,
+      "device": 73,
+      "inode": 562949954292176
+    },
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_velodyne.zip": {
+      "bytes": 84786535790,
+      "mtime_ns": 1793611969483837700,
+      "ctime_ns": 1793674005610365900,
+      "device": 73,
+      "inode": 562949954292180
+    },
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_color.zip": {
+      "bytes": 68989244961,
+      "mtime_ns": 1793610817383442800,
+      "ctime_ns": 1793672870845947200,
+      "device": 73,
+      "inode": 562949954292179
+    }
+  },
+  "duplicates": {
+    "dataset/sequences/07/calib.txt": {
+      "members": [
+        {
+          "archive": "data_odometry_calib.zip",
+          "bytes": 1172,
+          "crc32": "1d18b554",
+          "sha256": "5e7b3136edf2799be47e472ca9c5362fcacbee5d21c6ab8038506b8691b8b9ec"
+        },
+        {
+          "archive": "data_odometry_color.zip",
+          "bytes": 930,
+          "crc32": "5fa03203",
+          "sha256": "4abedb688d60249c36353b9893570f993ebfdc5ef7938f52f3a7b9e1edbfffb1"
+        }
+      ],
+      "canonical_archive": "data_odometry_calib.zip",
+      "reason": "official complete calibration retains Tr; Color has only numerically identical P0..P3 camera subset"
+    },
+    "dataset/sequences/07/times.txt": {
+      "members": [
+        {
+          "archive": "data_odometry_calib.zip",
+          "bytes": 14313,
+          "crc32": "f32d881e",
+          "sha256": "13aa9c27223088b6cf646197767a842f0527e3770f5f8a436a8357bd7fff70a1"
+        },
+        {
+          "archive": "data_odometry_color.zip",
+          "bytes": 14313,
+          "crc32": "f32d881e",
+          "sha256": "13aa9c27223088b6cf646197767a842f0527e3770f5f8a436a8357bd7fff70a1"
+        }
+      ],
+      "canonical_archive": "data_odometry_calib.zip",
+      "reason": "byte-identical duplicate timestamps; retain official calibration-archive member"
+    }
+  },
+  "files_copied_from_old": 1104,
+  "files_extracted_fresh": 3,
+  "verified_files": 1107,
+  "archive_identities_after": {
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_calib.zip": {
+      "bytes": 600238,
+      "mtime_ns": 1793596617914446900,
+      "ctime_ns": 1793596617920957500,
+      "device": 73,
+      "inode": 562949954292094
+    },
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_poses.zip": {
+      "bytes": 1309620,
+      "mtime_ns": 1793596619381336400,
+      "ctime_ns": 1793596619393421600,
+      "device": 73,
+      "inode": 562949954292176
+    },
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_velodyne.zip": {
+      "bytes": 84786535790,
+      "mtime_ns": 1793611969483837700,
+      "ctime_ns": 1793674005610365900,
+      "device": 73,
+      "inode": 562949954292180
+    },
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/datasets/kitti/archives/data_odometry_color.zip": {
+      "bytes": 68989244961,
+      "mtime_ns": 1793610817383442800,
+      "ctime_ns": 1793672870845947200,
+      "device": 73,
+      "inode": 562949954292179
+    }
+  },
+  "returncode": 0,
+  "input_manifest": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/input-manifest.json",
+  "input_manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+  "scans": 1101,
+  "images": [
+    0,
+    550,
+    1100
+  ],
+  "ground_truth_rows": 1101,
+  "files": 1107,
+  "crc_entries": 1107,
+  "archive_sha256": {
+    "data_odometry_calib.zip": "fa45d2bbff828776e6df689b161415fb7cd719345454b6d3567c2ff81fa4d075",
+    "data_odometry_poses.zip": "a969190799bb3fc4a15f5f0675b1ee6b7067292599b3269bdafc1e5ba883b9e1",
+    "data_odometry_velodyne.zip": "062a45667bec6874ac27f733bd6809919f077265e7ac0bb25ac885798fa85ab5",
+    "data_odometry_color.zip": "f4f6f7223f6e7b181b3b554eb73b98ba38179d1e421dd35922edcc6ee7e6e400"
+  },
+  "member_provenance": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/member-provenance.json",
+  "member_provenance_sha256": "b2c66a85f89127a01d7bfc10e48da26ac1bb129910bc4dc54a28536778842d39",
+  "finished_utc": "2026-11-03T04:21:15.185094+00:00",
+  "wall_s": 12.494585519016255
+}

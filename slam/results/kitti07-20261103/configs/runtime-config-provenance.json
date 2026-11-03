@@ -1,0 +1,25 @@
+{
+  "status": "PROPOSAL ONLY, no formal retry started",
+  "utc": "2026-11-03T05:27:19.543096+00:00",
+  "original_config": "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+  "original_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+  "runtime_config": "/opt/codex-resume/all-modules-v2/m3/slam/runtime-configs/seq07-stop-1mm-100urad.json",
+  "runtime_config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+  "changes": [
+    {
+      "field": "algorithm.translation_epsilon",
+      "old": 0.0001,
+      "new": 0.001
+    },
+    {
+      "field": "algorithm.rotation_epsilon",
+      "old": 1e-05,
+      "new": 0.0001
+    }
+  ],
+  "all_other_fields_equal": true,
+  "data_selection_equal": true,
+  "calibration_and_evaluation_equal": true,
+  "rationale": "diagnosed discrete NN/trim submillimeter four-cycle at frame114; one uniform numerical stopping precision relative to fixed0.4m voxel, no GT selection; quality/degeneracy gates and40 iteration budget unchanged",
+  "calibration_reuse": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/independent-calibration-61d-live.json"
+}

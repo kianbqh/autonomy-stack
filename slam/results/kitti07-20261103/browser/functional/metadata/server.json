@@ -1,0 +1,10 @@
+{
+  "status": "closed",
+  "pid": 2972,
+  "host": "127.0.0.1",
+  "port": 2816,
+  "directory": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\serve",
+  "utc": "2026-11-03T05:38:34.294479+00:00",
+  "stop_reason": "owned session Ctrl-C",
+  "finished_utc": "2026-11-03T05:41:12.355152+00:00"
+}

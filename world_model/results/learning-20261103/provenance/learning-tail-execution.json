@@ -1,0 +1,105 @@
+{
+  "status": "complete",
+  "pid": 487479,
+  "ppid": 487478,
+  "uniform_device": "cpu",
+  "exclusive_host": false,
+  "panel_summary": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-summary.json",
+  "panel_summary_sha256": "be190033d89375620ad5688b0e5bf6f5702a6b16062d0c653f6ab23877efe63a",
+  "prefix_plan_sha256": "d588b9b09c1d9c3a0bd136d91974bd3beaac711ff76c65c3e621508a41a575e6",
+  "stage_runs": [
+    {
+      "stage": "track-a-report",
+      "command": [
+        "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+        "-B",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/manipulation/scripts/build_report.py",
+        "--config",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/manipulation/configs/push_bc_mlp.yaml",
+        "--repo",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack",
+        "--run-root",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001",
+        "--device",
+        "cpu",
+        "--plan",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/track-a-report-inputs.json"
+      ],
+      "status": "complete",
+      "pid": 487480,
+      "returncode": 0,
+      "wall_seconds": 3.685981490998529,
+      "stdout": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/track-a-report.stdout.log",
+      "stderr": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/track-a-report.stderr.log",
+      "attempt": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/report-s0-20261103T053716Z-41580560"
+    },
+    {
+      "stage": "mpc",
+      "command": [
+        "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+        "-B",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/eval_mpc.py",
+        "--config",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/mpc.json",
+        "--output-root",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001",
+        "--checkpoints",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053053.584134Z-train-86a7fcc3/checkpoints.json"
+      ],
+      "status": "complete",
+      "pid": 487496,
+      "returncode": 0,
+      "wall_seconds": 73.4623553819838,
+      "stdout": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/mpc.stdout.log",
+      "stderr": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/mpc.stderr.log",
+      "attempt": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac"
+    },
+    {
+      "stage": "comparison",
+      "command": [
+        "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+        "-B",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/report.py",
+        "--config",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/report-effective.json",
+        "--output-root",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001"
+      ],
+      "status": "complete",
+      "pid": 488217,
+      "returncode": 0,
+      "wall_seconds": 1.0601866569777485,
+      "stdout": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/comparison.stdout.log",
+      "stderr": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/comparison.stderr.log",
+      "attempt": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053834.069996Z-report-8ecdc4d9"
+    },
+    {
+      "stage": "plot",
+      "command": [
+        "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+        "-B",
+        "/mnt/g/ResumeProject/platforms/autonomy-stack/world_model/scripts/plot_results.py",
+        "--config",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/plot-effective.json",
+        "--output-root",
+        "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001"
+      ],
+      "status": "complete",
+      "pid": 488222,
+      "returncode": 0,
+      "wall_seconds": 2.8827942069910932,
+      "stdout": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/plot.stdout.log",
+      "stderr": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/learning-tail-001/plot.stderr.log",
+      "attempt": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053835.007169Z-plot-ae4f2a3e"
+    }
+  ],
+  "automatic_retry": false,
+  "mpc_started_only_after_panel_complete": true,
+  "track_a_report": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/report-s0-20261103T053716Z-41580560/table-data.json",
+  "mpc_result": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053720.240120Z-mpc-b8414cac/result.json",
+  "mpc_result_sha256": "40e93427268ba401f42da598b73d1759d9dec540633e7543b4eb747996690275",
+  "comparison_result": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053834.069996Z-report-8ecdc4d9/result.json",
+  "plot_result": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-runs-001/20261103T053835.007169Z-plot-ae4f2a3e/result.json",
+  "actual_report_config_sha256": "6093932a7062b4b38a51307e48111bd2ca5c49f5acd765748df27e87d46eae41",
+  "actual_plot_config_sha256": "a552985d438bea41c1bfbc6e39c751d7bb407dce11de5e99eecdfb406576ce88"
+}

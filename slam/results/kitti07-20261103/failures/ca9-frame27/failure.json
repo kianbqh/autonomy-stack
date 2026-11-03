@@ -1,0 +1,1 @@
+{"status":"failed","frame":27,"timestamp_s":2.8008899999999999,"accepted_prefix_frames":27,"expected_frames":1101,"message":"registration_failed:invalid_or_empty_icp_input","failed_frame_pose":null,"optimized_trajectory":null}

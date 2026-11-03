@@ -1,0 +1,143 @@
+{
+  "status": "complete, evo and official independently passed",
+  "utc": "2026-11-03T05:46:21.710116+00:00",
+  "native_generation_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "evaluation_git_sha": "75bb06e7b114a2f004d0d8c44348864e728095f8",
+  "runtime_config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+  "native_run_sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+  "corrected_metrics_sha256": "748a8f95f9908c5ed6a65f7649c5259877fc4002bd8fb688185f6b750bb4aa2c",
+  "before_after": [
+    {
+      "metric": "ATE (SE3, no scale)",
+      "unit": "m",
+      "odom": 0.5630644298531414,
+      "slam": 0.370272684080678,
+      "slam_minus_odom": -0.19279174577246344
+    },
+    {
+      "metric": "RPE one frame, translation",
+      "unit": "m",
+      "odom": 0.017406744210859974,
+      "slam": 0.017402571911432536,
+      "slam_minus_odom": -4.172299427437909e-06
+    },
+    {
+      "metric": "RPE one frame, rotation",
+      "unit": "deg",
+      "odom": 0.06093751678146186,
+      "slam": 0.06092707636065464,
+      "slam_minus_odom": -1.0440420807215911e-05
+    },
+    {
+      "metric": "RPE 100m, translation",
+      "unit": "m",
+      "odom": 0.7657957862712936,
+      "slam": 0.7903507992059837,
+      "slam_minus_odom": 0.02455501293469009
+    },
+    {
+      "metric": "RPE 100m, rotation",
+      "unit": "deg",
+      "odom": 0.7564551961131829,
+      "slam": 0.7487282283936924,
+      "slam_minus_odom": -0.007726967719490552
+    },
+    {
+      "metric": "Official KITTI translation",
+      "unit": "%",
+      "odom": 0.6881891284137964,
+      "slam": 0.6811798550188541,
+      "slam_minus_odom": -0.007009273394942284
+    },
+    {
+      "metric": "Official KITTI rotation",
+      "unit": "deg / 100m",
+      "odom": 0.5102498572424977,
+      "slam": 0.508066856413105,
+      "slam_minus_odom": -0.0021830008293927117
+    }
+  ],
+  "loop_diagnostics": {
+    "proposed": 1854,
+    "accepted": 2,
+    "true_positives": 2,
+    "false_positives": 0,
+    "rejected_true_candidates": 18,
+    "truth_rule": "GT distance strictly < 4 m; evaluation only",
+    "recall": "not defined over all possible revisits; candidate diagnostics only"
+  },
+  "native_summary": {
+    "status": "complete",
+    "frames": 1101,
+    "keyframes": 381,
+    "accepted_loops": 2,
+    "graph_ms": 9.218664,
+    "native_total_ms": 36747.785125,
+    "process_cpu_ms": 36743.934,
+    "pose_frame": "camera0_initial_relative",
+    "internal_frame": "lidar_initial_relative",
+    "graph_optimizer": "end_LM",
+    "timestamp_interpolation": "correction_SE3_actual_times"
+  },
+  "shared_host_timing": {
+    "io_ms": {
+      "count": 1100,
+      "mean_ms": 3.524413186363636,
+      "p95_ms": 4.40760785,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "preprocess_ms": {
+      "count": 1100,
+      "mean_ms": 4.172274058181818,
+      "p95_ms": 5.037271999999999,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "map_normals_ms": {
+      "count": 1100,
+      "mean_ms": 13.855952353636363,
+      "p95_ms": 50.76979735,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "registration_ms": {
+      "count": 1100,
+      "mean_ms": 10.68975913909091,
+      "p95_ms": 20.074814149999998,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "loop_ms": {
+      "count": 1100,
+      "mean_ms": 1.009790410909091,
+      "p95_ms": 0.23799069999999997,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "frame_inclusive_ms": {
+      "count": 1100,
+      "mean_ms": 33.353458372727275,
+      "p95_ms": 77.51549384999998,
+      "percentile_method": "linear (n-1)*q"
+    },
+    "frame_cpu_ms": {
+      "count": 1100,
+      "mean_ms": 33.35223727272727,
+      "p95_ms": 77.51209999999999,
+      "percentile_method": "linear (n-1)*q"
+    }
+  },
+  "native_process_wall_s": 36.75623135801288,
+  "timing_scope": "all scans except origin; no warmup/repeats; raw CSV includes origin; wall frame includes scan I/O, preprocessing, registration/map/loops and accepted-prefix pose/timestamp checkpoint flush; excludes final timing/candidate/journal flush; frame_cpu_ms uses process std::clock; end graph timing separate; native process includes I/O and output; preflight hashes excluded",
+  "performance_limitation": "single shared Windows/WSL host run; no isolated benchmark or repeated latency claim",
+  "calibration": {
+    "source_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+    "actual_config_sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+    "returned_path": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32",
+    "result_receipt_sha256": "a4ad6763c06dc476a961e8a69f388fa905c2c5c1bb5698d800e8c6b5c6db8ffe",
+    "nominal_score_mean": 0.5733597079912821,
+    "frames": [
+      0,
+      550,
+      1100
+    ],
+    "tz_best_offset_m": 0.025,
+    "claim": "offline three-frame consistency; not recovered calibration; input unchanged"
+  }
+}

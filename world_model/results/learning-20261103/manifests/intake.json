@@ -1,0 +1,14 @@
+{
+  "schema": "wm-intake-v1",
+  "required_sources": [
+    "expert",
+    "bc",
+    "noisy_bc"
+  ],
+  "manifests": [
+    {
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/episodes/20261103T053018.519383Z-collect-f4f0eb3b/manifest.json",
+      "sha256": "177cff0dd263d03343cc583964b117f5f80bd12592972d4041005b697c6c21e6"
+    }
+  ]
+}
