@@ -112,8 +112,10 @@ IcpResult align(const Cloud& source,const NormalCloud& target,const Pose& initia
   NormalCloud centered=target;for(auto& p:centered.points)p-=center;
   Pose from_center=Pose::Identity();from_center.translation()=center;
   result.T=from_center.inverse()*initial;
+  result.T.linear()=Eigen::Quaterniond(result.T.linear()).normalized().toRotationMatrix();
   auto finish=[&](){IcpResult out=result;out.T=from_center*result.T;return out;};
   Adapter data{centered.points};Tree tree(3,data,{16});
+  Pose previous=Pose::Identity();bool have_previous=false;
   for(size_t iter=0;iter<cfg.max_iterations;++iter) {
     const auto s=linearize(source,centered,tree,result.T,cfg);result.iterations=iter+1;
     result.inliers=s.n;result.rmse=s.rmse;result.inlier_ratio=s.ratio;result.condition=s.condition;
@@ -121,15 +123,26 @@ IcpResult align(const Cloud& source,const NormalCloud& target,const Pose& initia
     Eigen::LDLT<Eigen::Matrix<double,6,6>> solver(s.H);const Vec6 delta=solver.solve(-s.b);
     if(solver.info()!=Eigen::Success || !delta.allFinite()){result.reason="nonfinite_or_failed_solve";return finish();}
     if(delta.head<3>().norm()>cfg.max_step_rotation || delta.tail<3>().norm()>cfg.max_step_translation){result.reason="step_limit";return finish();}
-    result.T=expSE3(delta)*result.T;
+    if(delta.head<3>().norm()<cfg.rotation_epsilon && delta.tail<3>().norm()<cfg.translation_epsilon) {
+      result.reason=s.rmse>cfg.max_rmse?"fitness_gate":"converged";
+      result.converged=result.reason=="converged";return finish();
+    }
+    Pose candidate=expSE3(delta)*result.T;
+    candidate.linear()=Eigen::Quaterniond(candidate.linear()).normalized().toRotationMatrix();
+    // A repeated two-pose correspondence cycle close to the existing
+    // convergence neighborhood can be escaped with a bounded half step.
+    // The convergence decision above uses the unscaled solve delta.
+    bool cycle=false;
+    if(have_previous && delta.head<3>().norm()<4*cfg.rotation_epsilon && delta.tail<3>().norm()<4*cfg.translation_epsilon) {
+      const Vec6 returned=logSE3(previous.inverse()*candidate);
+      cycle=returned.head<3>().norm()<.1*cfg.rotation_epsilon && returned.tail<3>().norm()<.1*cfg.translation_epsilon;
+    }
+    previous=result.T;have_previous=true;
+    result.T=cycle?expSE3(.5*delta)*result.T:candidate;
+
     // Keep internally composed rotations on SO(3). Tiny matrix roundoff must
     // not be amplified by repeated Isometry constant-velocity products.
     result.T.linear()=Eigen::Quaterniond(result.T.linear()).normalized().toRotationMatrix();
-    if(delta.head<3>().norm()<cfg.rotation_epsilon && delta.tail<3>().norm()<cfg.translation_epsilon) {
-      const auto final=linearize(source,centered,tree,result.T,cfg);result.inliers=final.n;result.rmse=final.rmse;result.inlier_ratio=final.ratio;result.condition=final.condition;
-      result.reason=!final.error.empty()?final.error:(final.rmse>cfg.max_rmse?"fitness_gate":"converged");
-      result.converged=result.reason=="converged";return finish();
-    }
   }
   result.reason="max_iterations";return finish();
 }

@@ -199,7 +199,7 @@ jobs:
             --scratch-parent "$SLAM_CI_ROOT/builds" --repo-root "$GITHUB_WORKSPACE" \
             --jobs 2 --cmake-policy-version-minimum 3.5 \
             2>&1 | tee "$SLAM_CI_ROOT/evidence/build-launcher.log"
-      - name: Verify thirteen native tests and positive and negative CPU fixtures
+      - name: Verify fifteen native tests and positive and negative CPU fixtures
         run: |
           python - <<'PY'
           import hashlib, json, os, pathlib, re, subprocess, sys, time
@@ -225,12 +225,12 @@ jobs:
               ["ctest", "--test-dir", str(binary.parent), "--show-only=json-v1"], text=True)
           (evidence / "native-test-discovery.json").write_text(listing)
           discovered = [test["name"] for test in json.loads(listing)["tests"]]
-          if len(discovered) != 14:
-              raise RuntimeError("expected exactly fourteen discovered native tests")
-          executed = re.findall(r"^\d+/14 Test: (.+)$", actual, flags=re.MULTILINE)
+          if len(discovered) != 15:
+              raise RuntimeError("expected exactly fifteen discovered native tests")
+          executed = re.findall(r"^\d+/15 Test: (.+)$", actual, flags=re.MULTILINE)
           passed = len(re.findall(r"^Test Passed\.$", actual, flags=re.MULTILINE))
-          if (executed != discovered or passed != 14 or "Test Failed." in actual):
-              raise RuntimeError("actual CTest LastTest.log does not show fourteen passing tests")
+          if (executed != discovered or passed != 15 or "Test Failed." in actual):
+              raise RuntimeError("actual CTest LastTest.log does not show fifteen passing tests")
           # build_native marks complete only after this actual CTest subprocess exits zero.
           (evidence / "native-unit-test-receipt.json").write_text(json.dumps({
               "status": "passed", "executed_tests": executed, "passed": passed,

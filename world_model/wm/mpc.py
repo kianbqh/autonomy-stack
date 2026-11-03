@@ -1,4 +1,4 @@
-"""One root-accepted GPU-batched latent CEM configuration; no ensemble sampling."""
+"""One fixed device-batched latent CEM configuration; no ensemble sampling."""
 import time
 import numpy as np
 import torch
@@ -41,4 +41,4 @@ class Planner:
         return action,{'planner_ms':planner_ms,'host_policy_ms':1000*(time.perf_counter()-whole),'effective_horizon':h,
             'candidates':n,'iterations':c['iterations'],'elites':c['elites'],'predicted_latent_transitions':n*h*c['iterations'],
             'best_cost':best_cost,'iteration_best_costs':iterations,'seed':int(seed),'scheme':'deterministic latent rollout; one model per seed',
-            'timer':'CUDA synchronized before/after; planner includes encoder,NumPy candidate generation/H2D,latent rollout,decode,cost,selection; excludes observation H2D/action D2H;host_policy includes both'}
+            'timer':('CUDA synchronized before/after; planner includes encoder,NumPy candidate generation/H2D,latent rollout,decode,cost,selection; excludes observation H2D/action D2H;host_policy includes both' if self.device.type=='cuda' else 'CPU perf_counter wall-clock; no CUDA synchronization; planner includes encoder,NumPy candidate generation/tensor conversion,latent rollout,decode,cost,selection; excludes initial observation tensor conversion and final action conversion;host_policy includes both')}

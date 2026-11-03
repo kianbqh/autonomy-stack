@@ -167,3 +167,38 @@ TEST(ICP,InternalRotationRetractionPreventsLongSequenceDrift) {
   EXPECT_EQ(refused.reason,"invalid_or_empty_icp_input");
   EXPECT_EQ((refused.T.matrix()-invalid.matrix()).norm(),0.0);
 }
+
+TEST(ICP,SmallCorrespondenceTwoCycleUsesUnscaledConvergence) {
+  // Analytic nearest-neighbor switching: at negative x each tilted target
+  // plane asks for positive x, and vice versa. The unmodified full updates
+  // repeat +/-75 micrometers and never satisfy the 100 micrometer tolerance.
+  slam::Cloud source;slam::NormalCloud target;
+  const double a=.001,b=.001,c=.000075,k=(a+c)/b;
+  for(int axis=1;axis<=2;++axis)for(int sign:{-1,1})
+    for(int x=-2;x<=2;++x)for(int y=-2;y<=2;++y)for(int z=-2;z<=2;++z) {
+      const Eigen::Vector3d p(10*x+axis,10*y+3*sign,10*z);source.push_back(p);
+      for(int side:{-1,1}) {
+        Eigen::Vector3d q=p,n(1,0,0);q[0]+=side*a;q[axis]+=sign*b;
+        n[axis]=-side*sign*k;target.points.push_back(q);target.normals.push_back(n.normalized());
+      }
+    }
+  auto cfg=fixtureConfig();cfg.translation_epsilon=1e-4;cfg.rotation_epsilon=1e-5;cfg.max_iterations=40;
+  auto initial=slam::Pose::Identity();initial.translation().x()=-c;
+  auto short_cfg=cfg;short_cfg.max_iterations=2;
+  const auto unfinished=slam::align(source,target,initial,short_cfg);
+  // Merely taking the half step cannot report convergence. A subsequent
+  // independent, unscaled normal-equation solve must satisfy the tolerances.
+  EXPECT_FALSE(unfinished.converged);EXPECT_EQ(unfinished.reason,"max_iterations");
+  const auto result=slam::align(source,target,initial,cfg);
+  ASSERT_TRUE(result.converged)<<result.reason;
+  EXPECT_LE(result.iterations,4u);EXPECT_LT(std::abs(result.T.translation().x()),c);
+  EXPECT_LT(result.rmse,unfinished.rmse);EXPECT_TRUE(slam::validPose(result.T));
+  auto strict_quality=cfg;strict_quality.max_rmse=1e-8;
+  const auto refused_quality=slam::align(source,target,initial,strict_quality);
+  EXPECT_FALSE(refused_quality.converged);EXPECT_EQ(refused_quality.reason,"fitness_gate");
+  // This larger cycle is outside the bounded neighborhood of these stricter
+  // convergence tolerances; damping must not manufacture a successful solve.
+  auto strict_delta=cfg;strict_delta.translation_epsilon=1e-7;
+  const auto refused_delta=slam::align(source,target,initial,strict_delta);
+  EXPECT_FALSE(refused_delta.converged);EXPECT_EQ(refused_delta.reason,"max_iterations");
+}
