@@ -28,19 +28,28 @@ All scan poses are retained. Between keyframes a,b, interpolate graph correction
 
 Use an isolated WSL build root on the G-backed Linux disk, for example `/opt/codex-resume/all-modules-v2/m3/slam`. Keep the shared Python environment read-only. Prerequisites are a C++17 compiler, CMake >=3.22, Ninja, and compatible Boost headers/libraries. Do not install them or start a build during another module's reserved timing window.
 
-`dependencies.candidate.json` declares Eigen 3.4.0, nanoflann 1.6.3, GTSAM 4.2 and GoogleTest 1.15.2. It deliberately has unresolved source hashes: no archive bytes were downloaded during preparation. Before building, retrieve the official source archives in the authorized setup window, verify SHA-256, and commit a `dependencies.lock.json` with `status: "verified source lock"`, exact `filename` and actual `sha256` for each entry. The build helper refuses a candidate lock. CMake never fetches dependencies automatically.
+[`dependencies.lock.json`](dependencies.lock.json) now records the actual official archive bytes/SHA-256 and inspected version/license files for Eigen 3.4.0, nanoflann 1.6.3, GTSAM 4.2 and GoogleTest 1.15.2. The original candidate remains preparation history. GTSAM's exact upstream `4.2` tag declares numeric version 4.2.0 and retains a display suffix `a9`; the source archive is unchanged. The build helper refuses unresolved candidate locks. CMake never fetches dependencies automatically.
+
+The local prerequisite setup uses GCC 13.3.0, CMake 4.4.4, Ninja 1.13.2 and a private Boost 1.83.0 prefix. All nine Boost components were actually discovered, linked and loaded: serialization, system, filesystem, thread, program_options, date_time, timer, chrono and regex. [`prerequisites.lock.json`](prerequisites.lock.json) pins the official Boost archive and isolated build recipe. A default GTSAM configure failed on CMake 4's removed pre-3.5 compatibility; `--cmake-policy-version-minimum 3.5` explicitly supplies that compatibility policy to GTSAM without editing its source. This prerequisite evidence is separate from the still-pending GTSAM/SLAM build and native tests.
 
 ```bash
-# Run only after the source lock and setup window are released.
-python slam/python/fetch_locked_sources.py --lock slam/dependencies.lock.json \
-  --output /opt/codex-resume/all-modules-v2/m3/slam/archives
-python slam/python/build_native.py --lock slam/dependencies.lock.json \
-  --archives-dir /opt/codex-resume/all-modules-v2/m3/slam/archives \
-  --scratch-parent /opt/codex-resume/all-modules-v2/m3/slam/builds \
-  --repo-root "$PWD" --jobs 2
+# From the repository root, after committing the clean source/locks.
+# Put CMake/Ninja in this child PATH; do not install into a shared environment.
+SLAM_ROOT=/opt/codex-resume/all-modules-v2/m3/slam
+python3 slam/python/fetch_locked_sources.py --lock slam/dependencies.lock.json \
+  --output "$SLAM_ROOT/archives"
+python3 slam/python/build_native.py --lock slam/dependencies.lock.json \
+  --archives-dir "$SLAM_ROOT/archives" --scratch-parent "$SLAM_ROOT/builds" \
+  --repo-root "$PWD" --jobs 1 \
+  --prerequisite-prefix "$SLAM_ROOT/boost-1.83.0-prefix" \
+  --cmake-policy-version-minimum 3.5
 ```
 
-The helper installs only under its unique private prefix, compiles the library/CLI, executes real GoogleTests and writes a build receipt containing source, compiler, dependency and binary hashes. `ci/slam-job.candidate.yml` is an unapplied additive CPU job; it also requires a real locked evaluator requirements file. Existing workflow jobs remain unchanged. Its source cache saves downloaded verified archives; a compiled-dependency cache can be added after measuring an actual build and freezing toolchain/ABI keys.
+Use `--git /explicit/native/git` if necessary. `--prerequisite-prefix` is repeatable; the new build's own prefix comes first, so GTSAM and SLAM use the same private Eigen. The helper installs only under its unique private prefix, compiles the library/CLI, executes real GoogleTests and writes source/compiler/dependency/binary/tool identities and resolved dynamic libraries. Its formal execution is still pending.
+
+The isolated CPython 3.12/Linux x86_64 evaluator has installed/imported NumPy 2.2.6, SciPy 1.15.3, OpenCV-headless 4.11.0.86, matplotlib 3.10.3, evo 1.31.0 and pytest 8.3.5; `pip check` passes. [`evaluation-environment.lock.json`](evaluation-environment.lock.json) and [`requirements-eval.lock.txt`](requirements-eval.lock.txt) freeze all 30 actual direct/transitive runtime packages and their artifact hashes. To reproduce in a new isolated environment on that target, install with `python -m pip install --require-hashes -r slam/requirements-eval.lock.txt`. The shared tool environment remains read-only.
+
+The unified [tests workflow](../.github/workflows/tests.yml) adds `slam-native-cpu`: the four locked sources, 13 native tests, positive/negative synthetic fixtures and hash-locked evaluator checks, retaining small receipt artifacts. Its remote Ubuntu apt Boost installation is a separate environment from the local private Boost prefix above. Existing job bodies are preserved; `ci/slam-job.candidate.yml` remains preparation history. The new job's actual CI results are still pending.
 
 ## Official data and selective import
 
@@ -54,6 +63,25 @@ python slam/python/import_kitti.py --archives /path/on/G/completed-archives.json
 ```
 
 The archive receipt schema is `{"archives":[{"path":"...zip","bytes":123,"sha256":"actual..."}, ...]}` with exactly the four official names. `123` describes the schema only; use actual completed receipts, never an example number. The importer fails on incomplete `.part` files. Sequence 00 additionally requires `--allow-sequence-00` and its own declared frame/image selections.
+
+## One-command offline run
+
+Inside WSL/Linux, from the repository root, provide the verified local archive manifest, the actual frozen build receipt/binary, isolated evaluator interpreter and a G-backed output parent:
+
+```bash
+bash slam/scripts/run_kitti.sh 07 \
+  --archives-manifest "$SLAM_ROOT/completed-archives.json" \
+  --build-receipt /private/build/build.json \
+  --binary /private/build/slam-build/run_kitti_slam \
+  --eval-python "$SLAM_ROOT/eval-venv/bin/python" \
+  --output-parent "$SLAM_ROOT/pipelines" \
+  --git /explicit/native/git \
+  --official-oracle /private/accepted/official_oracle
+```
+
+The thin entrypoint calls the existing import → native run → evo evaluation (plus the supplied official oracle) → calibration diagnostic → replay export CLIs. Each pipeline attempt is new; downstream steps use only the exact paths returned by that invocation. It never searches for a latest run, overwrites an old result, downloads/installs dependencies, or changes algorithm settings from GT. `--data-root /private/verified-extraction` optionally revalidates/reuses an existing extraction. Failures exit nonzero and retain `pipeline.json`, per-stage logs and the original runner's attempt evidence. No formal run or browser acceptance has been performed through this entrypoint yet.
+
+Every required path also has an environment fallback: `M3_SLAM_ARCHIVES_MANIFEST`, `M3_SLAM_BUILD_RECEIPT`, `M3_SLAM_BINARY`, `M3_SLAM_EVAL_PYTHON`, `M3_SLAM_OUTPUT_PARENT`; optional `M3_SLAM_GIT` and `M3_SLAM_OFFICIAL_ORACLE` cover the two tool paths. `bash slam/scripts/run_kitti.sh --help` lists the options. Sequence defaults to 07. Stretch00 needs both `--allow-sequence-00` and an explicit full00 config; no00 config or run is supplied here. The accepted official adapter is full07 only. Omitting the optional oracle keeps the pipeline receipt explicitly **partial**, even when all other stages succeed; it cannot establish official parity or complete acceptance.
 
 ## Runs and evidence
 

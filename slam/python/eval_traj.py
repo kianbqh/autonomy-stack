@@ -11,6 +11,7 @@ import time
 import zipfile
 import numpy as np
 from common import environment, git_state, new_run, sha256, source_manifest, utc, write_json
+from official_parity import completion_status, run_official_crosscheck
 
 def load_poses(path):
     a=np.loadtxt(path,ndmin=2)
@@ -119,6 +120,19 @@ def metrics(pred,truth,cfg):
             "rpe_1frame":rpe(pred,truth,[(i,i+1) for i in range(len(pred)-1)]),"rpe_100m":rpe(pred,truth,distance_pairs(truth,cfg["rpe_distance_m"])),
             "kitti_segments":kitti}
 
+def official_snapshot(truth,cfg,segments):
+    # The accepted official binary has these fixed KITTI lengths and stride.
+    lengths=cfg["segment_lengths_m"];stride=cfg["segment_start_stride_frames"]
+    if lengths!=[100,200,300,400,500,600,700,800] or stride!=10:
+        raise ValueError("official oracle requires the frozen KITTI length/stride contract")
+    d=kitti_distances(truth);endpoints=[]
+    for i in range(0,len(d),stride):
+        for length in lengths:
+            j=bisect.bisect_right(d,np.float32(d[i]+np.float32(length)))
+            endpoints.append({"start":i,"length_m":length,"end":j if j<len(d) else -1})
+    return {"frame_count":len(truth),"distance_bits":[int(v) for v in d.view(np.uint32)],
+            "endpoints":endpoints,"segments":segments}
+
 def eval_loops(log,truth,threshold):
     truth=normalize(truth);rows=[]
     for line in Path(log).read_text().splitlines():
@@ -205,8 +219,8 @@ def plot_results(predictions,truth,results,out):
     ax.set(xlabel="original frame ID",ylabel="aligned position error (m)");ax.legend();fig.tight_layout();fig.savefig(out/"position-error.png",dpi=160);plt.close(fig)
 
 def main():
-    a=argparse.ArgumentParser();a.add_argument("--config",required=True,type=Path);a.add_argument("--native-run",required=True,type=Path);a.add_argument("--truth",required=True,type=Path);a.add_argument("--output-parent",required=True,type=Path);a.add_argument("--repo-root",required=True,type=Path);a.add_argument("--git",default="git");a.add_argument("--evo",action="store_true");args=a.parse_args()
-    out=new_run(args.output_parent,"evaluation");started=time.monotonic();result={"status":"started","utc":utc(),"command":sys.argv,"environment":environment(),"config_sha256":sha256(args.config),"truth_sha256":sha256(args.truth)}
+    a=argparse.ArgumentParser();a.add_argument("--config",required=True,type=Path);a.add_argument("--native-run",required=True,type=Path);a.add_argument("--truth",required=True,type=Path);a.add_argument("--output-parent",required=True,type=Path);a.add_argument("--repo-root",required=True,type=Path);a.add_argument("--git",default="git");a.add_argument("--evo",action="store_true");a.add_argument("--official-oracle",type=Path);a.add_argument("--official-timeout-s",type=float,default=60.0);args=a.parse_args()
+    out=new_run(args.output_parent,"evaluation");started=time.monotonic();result={"status":"started","official_devkit_status":"not_run","utc":utc(),"command":sys.argv,"environment":environment(),"config_sha256":sha256(args.config),"truth_sha256":sha256(args.truth)}
     try:
         result.update(git_state(args.repo_root,args.git));write_json(out/"source-sha256.json",source_manifest(args.repo_root/"slam"))
         native_record=json.loads((args.native_run.parent/"run.json").read_text())
@@ -214,22 +228,32 @@ def main():
         result["native_run_sha256"]=sha256(args.native_run.parent/"run.json")
         cfg=json.loads(args.config.read_text());truth=load_poses(args.truth)
         if len(truth)!=cfg["expected_frames"]:raise ValueError("GT frame count differs from frozen config")
+        if args.official_oracle and (cfg.get("kind")!="kitti_full" or cfg.get("sequence")!="07" or cfg["expected_frames"]!=1101):
+            raise ValueError("the real official gate requires complete KITTI07, not a synthetic fixture")
         predictions={}
         for name in ("odom","slam"):
             p=args.native_run/f"poses_{name}.txt";predictions[name]=load_poses(p);result[name]=metrics(predictions[name],truth,cfg["evaluation"]);result[name]["input_sha256"]=sha256(p)
             if args.evo:
                 e=out/name;e.mkdir();result[name]["evo"]=evo_crosscheck(args.truth,p,e,cfg["evaluation"]["evo_version"],cfg["evaluation"],result[name])
             else:result[name]["evo"]={"status":"not run"}
+            if args.official_oracle:
+                context={"kind":cfg["kind"],"sequence":cfg["sequence"],"expected_frames":cfg["expected_frames"],
+                         "git_sha":result["git_sha"],"config_sha256":result["config_sha256"],
+                         "native_run_sha256":result["native_run_sha256"],"evaluation_source_sha256":sha256(Path(__file__))}
+                result[name]["official_devkit"]=run_official_crosscheck(args.official_oracle,args.truth,p,
+                    out/"official"/name,official_snapshot(truth,cfg["evaluation"],result[name]["kitti_segments"]),
+                    context,args.official_timeout_s)
+                result[name]["kitti_segments"]["official_devkit_parity"]=result[name]["official_devkit"]["status"]
         result["loops"]=eval_loops(args.native_run/"loops.jsonl",truth,cfg["evaluation"]["loop_truth_threshold_m"])
         plot_results(predictions,truth,result,out)
         evo_passed=bool(args.evo and all(result[n]["evo"]["passed"] for n in ("odom","slam")))
         result["own_metrics_status"]="complete"
         result["evo_status"]="passed" if evo_passed else ("failed" if args.evo else "not_run")
-        # Official devkit verification is not implemented here; do not imply it ran.
-        result["official_devkit_status"]="not_run"
-        result["status"]="partial_official_devkit_parity_not_run" if evo_passed else "partial_independent_crosscheck_not_passed"
+        result.update(completion_status(evo_passed,bool(args.official_oracle),
+            [result[n]["official_devkit"] for n in ("odom","slam")] if args.official_oracle else []))
     except BaseException as e:result.update(status="failed",failure={"type":type(e).__name__,"message":str(e)});raise
     finally:result["wall_s"]=time.monotonic()-started;result["finished_utc"]=utc();write_json(out/"metrics.json",result)
     print(out)
+    if args.official_oracle and result["official_devkit_status"]!="passed":raise SystemExit(1)
 
 if __name__=="__main__":main()

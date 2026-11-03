@@ -1,0 +1,37 @@
+{
+  "status": "verified prerequisite source lock",
+  "name": "boost",
+  "version": "1.83.0",
+  "filename": "boost_1_83_0.tar.bz2",
+  "source": "https://archives.boost.io/release/1.83.0/source/boost_1_83_0.tar.bz2",
+  "sha256": "6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e",
+  "bytes": 122892751,
+  "license": "BSL-1.0",
+  "components": [
+    "serialization",
+    "system",
+    "filesystem",
+    "thread",
+    "program_options",
+    "date_time",
+    "timer",
+    "chrono",
+    "regex"
+  ],
+  "build": {
+    "toolset": "gcc",
+    "jobs": 1,
+    "variant": "release",
+    "link": "shared",
+    "threading": "multi",
+    "runtime-link": "shared",
+    "cxxflags": "-fPIC",
+    "layout": "system"
+  },
+  "verification": {
+    "embedded_version_macro": "BOOST_VERSION 108300",
+    "license_file": "LICENSE_1_0.txt",
+    "license_sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+  },
+  "scope": "Prerequisite archive/build recipe only. Actual installed-library identities and discovery/link/load evidence are retained separately in the private setup receipt."
+}
