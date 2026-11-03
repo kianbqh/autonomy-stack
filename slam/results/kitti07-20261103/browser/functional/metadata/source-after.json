@@ -1,0 +1,12 @@
+{
+  "execution_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "after_git_sha": "75bb06e7b114a2f004d0d8c44348864e728095f8",
+  "after_porcelain": "",
+  "after_changed_paths": [
+    "slam/python/eval_traj.py",
+    "slam/tests/test_eval_generation_provenance.py",
+    "slam/tests/test_evo_contract.py"
+  ],
+  "selected_ui_package_bytes_unchanged": true,
+  "source_advance_note": "Root reports evaluator-only75bb after browser execution; UI identities independently match before/after."
+}

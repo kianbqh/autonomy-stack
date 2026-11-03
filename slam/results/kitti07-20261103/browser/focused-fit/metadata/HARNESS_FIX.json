@@ -1,0 +1,7 @@
+{
+  "cause": "Suffix predicate also matched main HTML document query URL; failed before GL/screenshot gate",
+  "change": "Exact same-origin JSON URL predicate; fresh immutable attempt2 output/profile",
+  "preimage_sha256": "f9edbc95560ab24b9a5f332796b3b566fc719df4d0a5d32bf8c3a5368e625ec6",
+  "postimage_sha256": "0f64e60e940d150c9376856c48cfd20ad4c3e02c5337d608976bbb9eab7b4402",
+  "source_data_build_server_unchanged": true
+}

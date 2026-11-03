@@ -1,0 +1,52 @@
+{
+  "utc": "2026-11-03T05:18:52.053548+00:00",
+  "owner": "/root/m3_slam_execution",
+  "status": "final private v4 candidate verified; actual source NOT applied; formal retry NOT started",
+  "frozen_actual_git": "c9254b250e8e645a7574c7bfa1d1137d66dd9613",
+  "original_formal_failure": {
+    "frame": 50,
+    "accepted_prefix_frames": 50,
+    "reason": "registration_failed:max_iterations",
+    "live": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\slam-execution-20261103\\real07-c925-run-live.json"
+  },
+  "diagnosis": {
+    "budget200": "same exact 50 prefix bytes, 200 iterations still deterministic two-cycle, no GT",
+    "original_exact_delta_translation_m": 0.0001922217298622705,
+    "original_exact_delta_rotation_rad": 1.3477903505403295e-06,
+    "candidate_exact_iterations": 11,
+    "candidate_return_pose_raw_delta_translation_m": 9.611114674594137e-05,
+    "candidate_return_pose_raw_delta_rotation_rad": 6.73924415847427e-07,
+    "candidate_rmse_m": 0.030315836740329654,
+    "candidate_matches": 2874,
+    "candidate_condition": 4626.727553551455
+  },
+  "candidate": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\slam-execution-20261103\\native-cycle-candidate-v4",
+  "candidate_files": {
+    "src/cloud.cpp": "98c1e28313d9b54aaa1ab3a02b19ad73349af117f0a97a0ac8aa7a25722f0a35",
+    "tests/slam_tests.cpp": "eabfcff1db4df63f05f257eebc3ce116c426699623ddbc6fb765796c95c8d89a"
+  },
+  "private_test_evidence": {
+    "session": 11649,
+    "closed_exit": 0,
+    "pid": 483683,
+    "start_ticks": 15792090,
+    "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/diagnostics/cycle-candidate-v4-tests-20261103T051643Z-92719dfd",
+    "actual_passed": 15,
+    "scope": "private candidate only, not root-frozen final build"
+  },
+  "private_runner": {
+    "path": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\slam-execution-20261103\\native15_reuse_runner.candidate.py",
+    "sha256": "c1f61ce25484d2022558bedcc0bfa756cebbd7cf5ebb3684e49da4fd9f8f70d8",
+    "fixture_sha256": "cee33de6a536795cd115ab6b8830167f4716da3d5579562f050f7e88138f2af8",
+    "status": "prepared, NOT RUN"
+  },
+  "preserved_attempts": [
+    "frame50-budget200-20261103T050308Z-3242f0d5",
+    "frame50-cycle-probe-20261103T050826Z-73d61a47 (rejected post-update raw-delta evidence)",
+    "frame50-cycle-probe-v2-20261103T051049Z-1eaa16b1 (superseded private special-case design)",
+    "frame50-cycle-probe-v3-20261103T051156Z-bd545fff",
+    "cycle-candidate-tests-20261103T051312Z-939b7da6 (14/15; SO3 early-return regression failed)",
+    "frame50-cycle-probe-v4-20261103T051536Z-16f09e8f"
+  ],
+  "next": "Root reviews final v4, owns actual apply/commit/new clean checkpoint; then one fresh SLAM-only build15+fixtures before new full07 lease. No dependency recompile/archive rehash/import."
+}

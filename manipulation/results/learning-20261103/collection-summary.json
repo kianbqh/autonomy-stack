@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "condition": "nominal",
+      "manifest": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-collection-001/collect-s0-20261103T050442Z-a7483f41/manifest.json",
+      "manifest_sha256": "93b6669a6a1b62147150dab14327d9ddd7c774cea9a838523e47f70ba3afeaf3",
+      "attempts": 362,
+      "successes": 100,
+      "failures_retained": 262,
+      "success_rate": 0.27624309392265195,
+      "successful_pool_split_episodes": {
+        "train": 78,
+        "val": 14,
+        "test": 8
+      },
+      "successful_pool_split_transitions": {
+        "train": 3900,
+        "val": 700,
+        "test": 400
+      },
+      "all_attempts_transitions": 18100,
+      "attempt_wall_seconds": 37.40728249400854,
+      "nominal_expert_heldout_extra_episodes": 100,
+      "source_git_sha": "c9254b250e8e645a7574c7bfa1d1137d66dd9613",
+      "source_config_sha256": "effedb43aae9ba41bffbf1a5f35909875585c23dd4f00a4c06190afcd36c176a",
+      "pid": 481912,
+      "process_absent": true,
+      "all_npz_and_sidecar_byte_hashes_verified": true
+    },
+    {
+      "condition": "dr",
+      "manifest": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-collection-001/collect-s0-20261103T050521Z-a863cc63/manifest.json",
+      "manifest_sha256": "f58e984748b96639a6c26affa3222ac680b5e1fa86c9fd2ff823fcd9128624eb",
+      "attempts": 325,
+      "successes": 100,
+      "failures_retained": 225,
+      "success_rate": 0.3076923076923077,
+      "successful_pool_split_episodes": {
+        "train": 81,
+        "val": 10,
+        "test": 9
+      },
+      "successful_pool_split_transitions": {
+        "train": 4050,
+        "val": 500,
+        "test": 450
+      },
+      "all_attempts_transitions": 16250,
+      "attempt_wall_seconds": 28.387073896999937,
+      "nominal_expert_heldout_extra_episodes": 0,
+      "source_git_sha": "c9254b250e8e645a7574c7bfa1d1137d66dd9613",
+      "source_config_sha256": "625ba766de1b3edcff560aaf45e4a55310131ce03559a14168726c599b4ea306",
+      "pid": 481996,
+      "process_absent": true,
+      "all_npz_and_sidecar_byte_hashes_verified": true
+    }
+  ],
+  "collection_invocation_count": 1,
+  "exec_session": 28427,
+  "exec_returncode": 0,
+  "summed_source_attempt_wall_seconds": 65.79435639100848,
+  "nonexclusive_host": true,
+  "timing_is_stage_accounting_not_physics_or_latency_benchmark": true,
+  "engineering_samples_reused": false,
+  "all_failed_attempts_retained": true,
+  "fixed_attempt_order_verified": true,
+  "gpu_used": false,
+  "six_bc_not_started_by_this_audit": true,
+  "utc": "2026-11-03T05:09:24.439222+00:00"
+}

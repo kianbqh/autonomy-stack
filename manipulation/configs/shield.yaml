@@ -1,0 +1,1 @@
+{"workspace_low":[1.0,0.4,0.39],"workspace_high":[1.6,1.1,0.9],"max_speed_m_s":0.75,"native_cartesian_scale_m":0.05,"end_effector_radius":0.02,"k_sigma":3.0,"keepout_spheres":[{"center":[1.48,0.96,0.48],"radius":0.045}],"semantics":"final delayed/gained command projection; physical substeps independently audited; not an unconditional safety guarantee"}

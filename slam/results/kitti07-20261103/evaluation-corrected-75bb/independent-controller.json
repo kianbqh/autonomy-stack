@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "utc": "2026-11-03T05:44:20.983054+00:00",
+  "owner": "/root/m3_slam_execution",
+  "pid": 491937,
+  "ppid": 491936,
+  "start_ticks": "15957649",
+  "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7",
+  "evaluation_git_sha": "75bb06e7b114a2f004d0d8c44348864e728095f8",
+  "native_generation_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "native_run": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c",
+  "native_run_sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+  "config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+  "original_partial_evaluation": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/MM_EVALUATION_OBSERVED.json",
+  "scope": "ONE corrected public eval only; no native/calibration/replay rerun; source and generation identities separate; original tolerance and official raw branch unchanged",
+  "command": [
+    "/opt/codex-resume/all-modules-v2/m3/slam/eval-venv/bin/python",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/python/eval_traj.py",
+    "--config",
+    "/opt/codex-resume/all-modules-v2/m3/slam/runtime-configs/seq07-stop-1mm-100urad.json",
+    "--native-run",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native",
+    "--truth",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/poses/07.txt",
+    "--repo-root",
+    "/mnt/g/ResumeProject/platforms/autonomy-stack",
+    "--git",
+    "/opt/codex-resume/all-modules-v2/m1a/tools/git-native/usr/bin/git",
+    "--output-parent",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs",
+    "--evo",
+    "--official-oracle",
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam/metric-review/official-oracle/official_oracle",
+    "--official-timeout-s",
+    "60"
+  ],
+  "loader_environment": {
+    "LD_LIBRARY_PATH": "/opt/codex-resume/all-modules-v2/m3/slam/build-launches/frozen-3226c437-20261103T024843Z-14c8697a/native-builds/native-build-20261103T024848Z-7ca473f8/prefix/lib:/opt/codex-resume/all-modules-v2/m3/slam/boost-1.83.0-prefix/lib"
+  },
+  "child_pid": 491944,
+  "child_start_ticks": "15957973",
+  "returncode": 0,
+  "returned_path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025",
+  "metrics_sha256": "748a8f95f9908c5ed6a65f7649c5259877fc4002bd8fb688185f6b750bb4aa2c",
+  "evo_status": "passed",
+  "official_status": "passed",
+  "evo_assets": {
+    "assets": "/root/.evo",
+    "before_snapshot": "/opt/codex-resume/all-modules-v2/m3/slam/evo-assets-snapshots/before-corrected-eval75bb-20261103T054421Z-00253aba",
+    "files_after_cli": {
+      "assets_version": {
+        "bytes": 7,
+        "sha256": "696ff09feaa5f95ebc56206a2be17ab6627a26f327977b9b108cf63e1ae33c66"
+      },
+      "settings.json": {
+        "bytes": 1849,
+        "sha256": "ec5bad4263a4e6529791682e4bfa258062b192b273eb86e35be9c4d0575aef4c"
+      }
+    },
+    "restored_existing": [],
+    "new_files": [],
+    "utc": "2026-11-03T05:44:27.321674+00:00"
+  },
+  "finished_utc": "2026-11-03T05:44:27.321858+00:00",
+  "wall_s": 6.340126418013824
+}

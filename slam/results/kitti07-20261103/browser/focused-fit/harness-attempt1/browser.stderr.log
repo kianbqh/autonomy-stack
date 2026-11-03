@@ -1,0 +1,23 @@
+(node:46812) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'eefed75454bb3af31b429f133a64741189292c2b4612524e66028cfd036af0e6'
+- '22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122'
+
+    at file:///G:/ResumeProject/.runtime/all-modules-v2/m3/replay-acceptance-20261103/camera-fit-regression.mjs:38:130 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'eefed75454bb3af31b429f133a64741189292c2b4612524e66028cfd036af0e6',
+  expected: '22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

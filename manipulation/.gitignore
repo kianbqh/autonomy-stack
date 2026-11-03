@@ -1,0 +1,10 @@
+.venv
+__pycache__/
+.pytest_cache/
+*.npz
+*.pt
+*.pth
+*.zip
+artifacts/
+runs/
+cache/

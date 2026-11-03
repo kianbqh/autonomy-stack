@@ -1,0 +1,41 @@
+{
+  "mode": "formal",
+  "policy_results": [
+    {
+      "method": "bc",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "7084246730409fbbcf1cd3fbdd887f91295f8badbce63a44e97af39e0ae28645"
+    },
+    {
+      "method": "bc",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T051546Z-f506e121/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "077ad93f69e0975edf3af1b3b59733ab52e907a608d73eee33d079cfd22f3957"
+    },
+    {
+      "method": "bc",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052054Z-56105201/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "02e9fd03688d24bffc1e887b2019897f08da6cd8f6cd5b4bafa820b4e59a24c1"
+    },
+    {
+      "method": "bc_dr",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T052413Z-0a28a379/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "60eba09b8c18cd418bafe9d988132ac9e4a9c30111d80f861044cc7364df8fbd"
+    },
+    {
+      "method": "bc_dr",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s1-20261103T052559Z-71c0dd0a/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "e0a6e9c20ef850cd2df684ede8d1f800912d63eed72e732e5dad77c0d345f436"
+    },
+    {
+      "method": "bc_dr",
+      "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s2-20261103T052741Z-96316431/bc-result.json",
+      "pointer": "evaluation",
+      "sha256": "5f7f00d46e780270bdc7891d7f1abda4629666e6d1aa593ab403befd75cd105a"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "status": "verified source lock",
+  "automatic_downloads": false,
+  "sources": [
+    {
+      "name": "eigen",
+      "version": "3.4.0",
+      "filename": "eigen-3.4.0.tar.gz",
+      "source": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz",
+      "sha256": "8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72",
+      "bytes": 2705005,
+      "license": "MPL-2.0",
+      "verification": {
+        "archive_root": "eigen-3.4.0",
+        "embedded_version": "3.4.0",
+        "embedded_files": {
+          "Eigen/src/Core/util/Macros.h": {
+            "bytes": 52909,
+            "sha256": "8d73259b4ba482e6dbd11b31d8887fd350dfb0836700d32793446bba6ab1ae7a"
+          },
+          "COPYING.MPL2": {
+            "bytes": 16726,
+            "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+          }
+        }
+      },
+      "license_notes": "Eigen core MPL-2.0; upstream archive also retains its bundled code license notices."
+    },
+    {
+      "name": "nanoflann",
+      "version": "1.6.3",
+      "filename": "nanoflann-1.6.3.tar.gz",
+      "source": "https://github.com/jlblancoc/nanoflann/archive/refs/tags/v1.6.3.tar.gz",
+      "sha256": "6140542c30b4abd6a6ffe52c591afaae5748f011c65682d1cae6c501e7e6710a",
+      "bytes": 522669,
+      "license": "BSD-2-Clause",
+      "verification": {
+        "archive_root": "nanoflann-1.6.3",
+        "embedded_version": "1.6.3",
+        "embedded_files": {
+          "include/nanoflann.hpp": {
+            "bytes": 92905,
+            "sha256": "e47f12ae2fc339cd2eb9ca148af837bd1025ff7e301ecf1860675ff1c73dd071"
+          },
+          "COPYING": {
+            "bytes": 1482,
+            "sha256": "f8efea042b89cc7534abf51888747f87595e1616c63f0b42a2ead81da34e0237"
+          }
+        }
+      }
+    },
+    {
+      "name": "gtsam",
+      "version": "4.2",
+      "filename": "gtsam-4.2.tar.gz",
+      "source": "https://github.com/borglab/gtsam/archive/refs/tags/4.2.tar.gz",
+      "sha256": "9ff8846d0a83a245c284cb5760ec2d74535ef9b5885183ccfefd7ff122eba60e",
+      "bytes": 29684572,
+      "license": "BSD-3-Clause",
+      "verification": {
+        "archive_root": "gtsam-4.2",
+        "embedded_version": "4.2.0; upstream 4.2 tag retains display prerelease suffix a9",
+        "embedded_files": {
+          "CMakeLists.txt": {
+            "bytes": 4690,
+            "sha256": "5d482298be2f14f9ed00e970c6b0a722ad07b42f4527cd5353e2c2769c9fe0ad"
+          },
+          "LICENSE.BSD": {
+            "bytes": 1530,
+            "sha256": "ec9746ecc24d4b36c4c8412ced73a9c7351238396d1fd17b70b3ba1e6a2e5bd0"
+          }
+        }
+      },
+      "license_notes": "GTSAM LICENSE.BSD is BSD-3-Clause; bundled third-party licenses are listed in upstream LICENSE and remain in the source archive."
+    },
+    {
+      "name": "googletest",
+      "version": "1.15.2",
+      "filename": "googletest-1.15.2.tar.gz",
+      "source": "https://github.com/google/googletest/archive/refs/tags/v1.15.2.tar.gz",
+      "sha256": "7b42b4d6ed48810c5362c265a17faebe90dc2373c885e5216439d37927f02926",
+      "bytes": 872667,
+      "license": "BSD-3-Clause",
+      "verification": {
+        "archive_root": "googletest-1.15.2",
+        "embedded_version": "1.15.2",
+        "embedded_files": {
+          "CMakeLists.txt": {
+            "bytes": 986,
+            "sha256": "3355d2159615c644fab4be6499651ea86f200112f78f06b010841307dd5b7476"
+          },
+          "LICENSE": {
+            "bytes": 1475,
+            "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+          }
+        }
+      }
+    }
+  ],
+  "verification": "All four official archives acquired locally, actual bytes/SHA256 computed, embedded version and license files inspected. Archive files remain private."
+}

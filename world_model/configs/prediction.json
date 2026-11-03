@@ -1,0 +1,11 @@
+{
+  "mode": "formal",
+  "device": "cuda",
+  "horizons": [
+    1,
+    5,
+    10,
+    20,
+    30
+  ]
+}

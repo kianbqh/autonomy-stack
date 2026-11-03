@@ -1,0 +1,30 @@
+{
+  "mode": "formal",
+  "protocol": "m3-reduced-v2",
+  "env_id": "FetchPush-v4",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "horizon": 50,
+  "demo_budget": 100,
+  "fault_stream_seed": 710,
+  "dr_stream_seed": 720,
+  "training_randomization": null,
+  "condition": "nominal",
+  "method": "bc",
+  "root_review": "accepted in chat 2026-11-02 before formal outcomes",
+  "bc": {
+    "epochs": 200,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "features": "observation25,desired_goal3",
+    "normalizer": "identity",
+    "hidden": [
+      256,
+      256
+    ],
+    "selection": "grouped training-domain validation action MSE"
+  }
+}

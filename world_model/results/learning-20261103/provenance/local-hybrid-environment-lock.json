@@ -1,0 +1,1312 @@
+{
+  "schema": "m3-installed-hybrid-environment-lock-v1",
+  "created_utc": "2026-11-03T03:24:15.871848+00:00",
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "executable": "/opt/codex-resume/all-modules-v2/m3/learning-venv/bin/python",
+  "prefix": "/opt/codex-resume/all-modules-v2/m3/learning-venv",
+  "local_runtime_scope": "CPython 3.12 WSL2 x86_64 package imports only",
+  "private_wheels": {
+    "schema": "m3-actual-wheel-hashes-v1",
+    "wheels": [
+      {
+        "filename": "PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "bytes": 767542,
+        "sha256": "80bab7bfc629882493af4aa31a4cfa43a4c57c83813253626916b8c7ada83476",
+        "name": "pyyaml",
+        "version": "6.0.2"
+      },
+      {
+        "filename": "absl_py-2.5.1-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/absl_py-2.5.1-py3-none-any.whl",
+        "bytes": 137673,
+        "sha256": "721200f2f0e9960f2ca9dc3a2a706b201f5f75d812c158f059cbbe29eeafbdb8",
+        "name": "absl-py",
+        "version": "2.5.1"
+      },
+      {
+        "filename": "cloudpickle-3.1.2-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/cloudpickle-3.1.2-py3-none-any.whl",
+        "bytes": 22228,
+        "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a",
+        "name": "cloudpickle",
+        "version": "3.1.2"
+      },
+      {
+        "filename": "contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 383243,
+        "sha256": "875f42444c9cf48d56f724f2637e60d0f73b3b12c9041e1484580a233edf9591",
+        "name": "contourpy",
+        "version": "1.4.0"
+      },
+      {
+        "filename": "cycler-0.12.1-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/cycler-0.12.1-py3-none-any.whl",
+        "bytes": 8321,
+        "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+        "name": "cycler",
+        "version": "0.12.1"
+      },
+      {
+        "filename": "etils-1.15.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/etils-1.15.0-py3-none-any.whl",
+        "bytes": 177402,
+        "sha256": "b9e7f3d7ab980c564245cd54e2b928e6abcb0521d6042ad3fdb13eea725309f0",
+        "name": "etils",
+        "version": "1.15.0"
+      },
+      {
+        "filename": "farama_notifications-0.0.6-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/farama_notifications-0.0.6-py3-none-any.whl",
+        "bytes": 2897,
+        "sha256": "f84839188efa1ce5bb361c2a84881b2dc2c0d0d7fb661ff00421820170930935",
+        "name": "farama-notifications",
+        "version": "0.0.6"
+      },
+      {
+        "filename": "fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "bytes": 5443448,
+        "sha256": "3edce69ecdefa73ab1041901ca22eefed6ebb93a77bc77e889d940479f25bf7d",
+        "name": "fonttools",
+        "version": "4.68.0"
+      },
+      {
+        "filename": "glfw-2.11.0-py2.py3-none-manylinux_2_28_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/glfw-2.11.0-py2.py3-none-manylinux_2_28_x86_64.whl",
+        "bytes": 248539,
+        "sha256": "76484fae4a4ef0f778a05e02422ecbe6960ae23039087fe2e0ad9742ab8c7bbe",
+        "name": "glfw",
+        "version": "2.11.0"
+      },
+      {
+        "filename": "gymnasium-1.2.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/gymnasium-1.2.0-py3-none-any.whl",
+        "bytes": 944301,
+        "sha256": "fc4a1e4121a9464c29b4d7dc6ade3fbeaa36dea448682f5f71a6d2c17489ea76",
+        "name": "gymnasium",
+        "version": "1.2.0"
+      },
+      {
+        "filename": "gymnasium_robotics-1.4.1-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/gymnasium_robotics-1.4.1-py3-none-any.whl",
+        "bytes": 26174472,
+        "sha256": "b525ed3582a87795688b189210d3c7709512eaeb4faa546ad402558e143ebbd4",
+        "name": "gymnasium-robotics",
+        "version": "1.4.1"
+      },
+      {
+        "filename": "imageio-2.38.1-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/imageio-2.38.1-py3-none-any.whl",
+        "bytes": 328389,
+        "sha256": "36d23eb7423d2fb63f637098758edb3d2df3687f7125e0a5ce8596572022dcf9",
+        "name": "imageio",
+        "version": "2.38.1"
+      },
+      {
+        "filename": "iniconfig-2.3.1-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/iniconfig-2.3.1-py3-none-any.whl",
+        "bytes": 7552,
+        "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+        "name": "iniconfig",
+        "version": "2.3.1"
+      },
+      {
+        "filename": "kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "bytes": 1477929,
+        "sha256": "34633ecf50d16187ab8e5528b7a2530f2feb4e23f300db4672538b51cfc5cd38",
+        "name": "kiwisolver",
+        "version": "1.5.1"
+      },
+      {
+        "filename": "matplotlib-3.10.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/matplotlib-3.10.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "bytes": 8601321,
+        "sha256": "ed70453fd99733293ace1aec568255bc51c6361cb0da94fa5ebf0649fdb2150a",
+        "name": "matplotlib",
+        "version": "3.10.3"
+      },
+      {
+        "filename": "mujoco-3.3.7-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/mujoco-3.3.7-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 6853281,
+        "sha256": "1afdf8880badccc6fdbef33e09967b6d8feeed3b951da881c4cc41addd1ecde9",
+        "name": "mujoco",
+        "version": "3.3.7"
+      },
+      {
+        "filename": "numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "bytes": 16527618,
+        "sha256": "fd83c01228a688733f1ded5201c678f0c53ecc1006ffbc404db9f7a899ac6249",
+        "name": "numpy",
+        "version": "2.2.6"
+      },
+      {
+        "filename": "packaging-25.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/packaging-25.0-py3-none-any.whl",
+        "bytes": 66469,
+        "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+        "name": "packaging",
+        "version": "25.0"
+      },
+      {
+        "filename": "pettingzoo-1.27.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pettingzoo-1.27.0-py3-none-any.whl",
+        "bytes": 668492,
+        "sha256": "075a6ab7c32d32d9a674f1af395010198bf09c172341aa38fa5415461601ac61",
+        "name": "pettingzoo",
+        "version": "1.27.0"
+      },
+      {
+        "filename": "pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 7144542,
+        "sha256": "42d63be3af4f9b951b199b0a9d23365d37ab14687e6d77b74940432c8515c4ca",
+        "name": "pillow",
+        "version": "13.0.0"
+      },
+      {
+        "filename": "pip-24.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pip-24.0-py3-none-any.whl",
+        "bytes": 2110226,
+        "sha256": "ba0d021a166865d2265246961bec0152ff124de910c5cc39f1156ce3fa7c69dc",
+        "name": "pip",
+        "version": "24.0"
+      },
+      {
+        "filename": "pluggy-1.7.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pluggy-1.7.0-py3-none-any.whl",
+        "bytes": 27082,
+        "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+        "name": "pluggy",
+        "version": "1.7.0"
+      },
+      {
+        "filename": "pygments-2.21.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pygments-2.21.0-py3-none-any.whl",
+        "bytes": 1250147,
+        "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+        "name": "pygments",
+        "version": "2.21.0"
+      },
+      {
+        "filename": "pyopengl-3.1.10-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pyopengl-3.1.10-py3-none-any.whl",
+        "bytes": 3194996,
+        "sha256": "794a943daced39300879e4e47bd94525280685f42dbb5a998d336cfff151d74f",
+        "name": "pyopengl",
+        "version": "3.1.10"
+      },
+      {
+        "filename": "pyparsing-3.3.3-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pyparsing-3.3.3-py3-none-any.whl",
+        "bytes": 126420,
+        "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4",
+        "name": "pyparsing",
+        "version": "3.3.3"
+      },
+      {
+        "filename": "pytest-8.4.1-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/pytest-8.4.1-py3-none-any.whl",
+        "bytes": 365474,
+        "sha256": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+        "name": "pytest",
+        "version": "8.4.1"
+      },
+      {
+        "filename": "python_dateutil-4.0.0-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/python_dateutil-4.0.0-py3-none-any.whl",
+        "bytes": 92853,
+        "sha256": "a5e246f79eb80475e691bf93862cead98decd8a498cf53ba0516fcdc0f50dc1c",
+        "name": "python-dateutil",
+        "version": "4.0.0"
+      },
+      {
+        "filename": "tzdata-2026.6-py2.py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/tzdata-2026.6-py2.py3-none-any.whl",
+        "bytes": 348210,
+        "sha256": "0a10eec6e13ef16b627fabed9a5f2ba61a62b1c67f327305f4e7e412a70b4aec",
+        "name": "tzdata",
+        "version": "2026.6"
+      },
+      {
+        "filename": "zipp-4.1.2-py3-none-any.whl",
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-cache/wheelhouse/zipp-4.1.2-py3-none-any.whl",
+        "bytes": 10581,
+        "sha256": "b30cb6cd253122169c47de245ca24a86bac2a5d3802ba15bf7ba6414eb9e144d",
+        "name": "zipp",
+        "version": "4.1.2"
+      }
+    ],
+    "total_bytes": 83511648
+  },
+  "readonly_torch_fallback": {
+    "schema": "m3-selective-readonly-torch-fallback-v1",
+    "shared_site": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+    "private_site": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages",
+    "whole_shared_site_added_to_sys_path": false,
+    "shared_dependency_payload_copied": false,
+    "shared_packages_mutated": false,
+    "shared_large_payload_rehash": false,
+    "write_policy": "private .pth forces sys.dont_write_bytecode=True; Torch/Trition/MPL cache paths private",
+    "distribution_count": 29,
+    "symlinks": [
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/_distutils_hack",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/_distutils_hack"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cuda",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cuda_bindings-13.4.4.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_bindings-13.4.4.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cuda_pathfinder-1.8.5.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_pathfinder-1.8.5.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cuda_toolkit-13.2.2.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_toolkit-13.2.2.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/distutils-precedence.pth",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/distutils-precedence.pth"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/filelock",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/filelock"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/filelock-4.2.6.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/filelock-4.2.6.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/fsspec",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/fsspec"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/fsspec-2026.9.0.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/fsspec-2026.9.0.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/functorch",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/functorch"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/isympy.py",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/isympy.py"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/jinja2",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/jinja2"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/jinja2-3.1.6.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/jinja2-3.1.6.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/markupsafe",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/markupsafe"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/mpmath",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/mpmath"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/mpmath-1.3.0.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/mpmath-1.3.0.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/networkx",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/networkx"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/networkx-3.7.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/networkx-3.7.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cublas-13.4.1.3.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cublas-13.4.1.3.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_cccl-13.3.4.3.1.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_cccl-13.3.4.3.1.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_cupti-13.2.86.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_cupti-13.2.86.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_nvrtc-13.2.86.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_nvrtc-13.2.86.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_runtime-13.2.86.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_runtime-13.2.86.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cudnn_cu13-9.26.0.51.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cudnn_cu13-9.26.0.51.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cufft-12.2.0.57.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cufft-12.2.0.57.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cufile-1.17.1.22.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cufile-1.17.1.22.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cusolver-12.2.0.11.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusolver-12.2.0.11.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cusparse-12.7.10.12.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusparse-12.7.10.12.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cusparselt_cu13-0.8.1.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusparselt_cu13-0.8.1.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nccl_cu13-2.30.7.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nccl_cu13-2.30.7.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nvjitlink-13.4.92.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvjitlink-13.4.92.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nvshmem_cu13-3.7.2.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvshmem_cu13-3.7.2.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nvtx-13.2.86.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvtx-13.2.86.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/setuptools",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/setuptools"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/setuptools-84.2.1.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/setuptools-84.2.1.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/sympy",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/sympy"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/sympy-1.14.0.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/sympy-1.14.0.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/torch",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/torch"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/torch-2.15.0.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/torch-2.15.0.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/torchgen",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/torchgen"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/triton",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/triton"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/triton-3.9.0.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/triton-3.9.0.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info"
+      },
+      {
+        "private_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/typing_extensions.py",
+        "shared_target": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/typing_extensions.py"
+      }
+    ],
+    "distributions": [
+      {
+        "name": "cuda-bindings",
+        "canonical_name": "cuda-bindings",
+        "version": "13.4.4",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_bindings-13.4.4.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "c00c6148e2fc711e1a0c2ac14665ed28e3966eb609241ba65ece5c7e3a767acb",
+        "record_sha256": "e958ceb35e87f83565c9fa8d4e35cf3d7280c54d30b0f66250da1e36171f889d",
+        "top_level_roots": [
+          "cuda",
+          "cuda_bindings-13.4.4.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "cuda-pathfinder",
+        "canonical_name": "cuda-pathfinder",
+        "version": "1.8.5",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_pathfinder-1.8.5.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "ec8cfde70d67ae3838b6f04ec1ca7804278243d13758aa8843f673c5e8393f3c",
+        "record_sha256": "5973060efe768edab86d4d0af3862ad9b9db1a08b8c7b706b26bb6033e472eef",
+        "top_level_roots": [
+          "cuda",
+          "cuda_pathfinder-1.8.5.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "cuda-toolkit",
+        "canonical_name": "cuda-toolkit",
+        "version": "13.2.2",
+        "requested_extras": [
+          "cublas",
+          "cudart",
+          "cufft",
+          "cufile",
+          "cupti",
+          "cusolver",
+          "cusparse",
+          "nvjitlink",
+          "nvrtc",
+          "nvtx"
+        ],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_toolkit-13.2.2.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "5a0810583790fbc181c5e6f39c45b62050ccd7ab51df6cbebb1795cb848f7dfb",
+        "record_sha256": "b37d108bd3fa67010ccc41f6289a2c1eecc04db922e0a64a5069bff2379a09a2",
+        "top_level_roots": [
+          "cuda_toolkit-13.2.2.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "filelock",
+        "canonical_name": "filelock",
+        "version": "4.2.6",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/filelock-4.2.6.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "036ae23e85e49ab4e72485ecd5b5647faa92194dce0867b4207eeb813fe0f4f5",
+        "record_sha256": "5f91064ba9c4a15266e38542d445de1603f1f7dd213a42602ebd2a0cbbf9eb21",
+        "top_level_roots": [
+          "filelock",
+          "filelock-4.2.6.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "fsspec",
+        "canonical_name": "fsspec",
+        "version": "2026.9.0",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/fsspec-2026.9.0.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "68f5a262767510638e9b1933b1493f2baadc9616fe1e696f62aedd59c8c0a37c",
+        "record_sha256": "ad06cc55ee7a2f52c7799fbd41788af9edbc1eba223e1df398998d44874924db",
+        "top_level_roots": [
+          "fsspec",
+          "fsspec-2026.9.0.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "Jinja2",
+        "canonical_name": "jinja2",
+        "version": "3.1.6",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/jinja2-3.1.6.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "68c5548fb67c4132a13898d9b31ec50c6bea2abdd915d921f214355c3a6499c8",
+        "record_sha256": "1bb3b46d00f55f63d24c3a34a7f955ef6692d4691217a53b15261769607f9f7c",
+        "top_level_roots": [
+          "jinja2",
+          "jinja2-3.1.6.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "MarkupSafe",
+        "canonical_name": "markupsafe",
+        "version": "3.0.4",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "66767d76388ece15d49d50dafb655891ef5d868715e7128e7f7d737a70b353c4",
+        "record_sha256": "f1c1ebcc3629b6371b96ab97205f93935cd971b2cceb082f1dd7a9a20fe6f22d",
+        "top_level_roots": [
+          "markupsafe",
+          "markupsafe-3.0.4.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "mpmath",
+        "canonical_name": "mpmath",
+        "version": "1.3.0",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/mpmath-1.3.0.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "44b66ea444b9c0d19ae94815d356bf047ae6b680c19268b5c265687cd6a81406",
+        "record_sha256": "89869bb99d259b6078aa20ebadb44d921aa20595ffa58ab929e3082d7f3f5529",
+        "top_level_roots": [
+          "mpmath",
+          "mpmath-1.3.0.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "networkx",
+        "canonical_name": "networkx",
+        "version": "3.7",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/networkx-3.7.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "ffcf42a343af6ffc54ff9cc4c09cf9638cd73b131370f395abd11b630186c90c",
+        "record_sha256": "4bb484fd2163c6b74594a75cd0cf0092354e64218ca63b6ac4cab3a51399a22a",
+        "top_level_roots": [
+          "networkx",
+          "networkx-3.7.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cublas",
+        "canonical_name": "nvidia-cublas",
+        "version": "13.4.1.3",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cublas-13.4.1.3.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "1f6bd11a1f6e3d24324e70fa6178f3c0f0d464be62fb7b78d167a49ca8750eee",
+        "record_sha256": "1da6fccea71a8a2c9aafc3eb1168bfe521cf42cf10c011a463caf65f04b33d13",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cublas-13.4.1.3.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cuda-cccl",
+        "canonical_name": "nvidia-cuda-cccl",
+        "version": "13.3.4.3.1",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_cccl-13.3.4.3.1.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "50a74195e2d533c4475dd129ffda9b8f678d21eb527f8c1176139bbc88b344e3",
+        "record_sha256": "3701ad2122ff1291937b4e03abeaf6e5985701b5c65b4cd9003ac37f841e4e50",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cuda_cccl-13.3.4.3.1.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cuda-cupti",
+        "canonical_name": "nvidia-cuda-cupti",
+        "version": "13.2.86",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_cupti-13.2.86.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "6f4ca81d32fdaa71682cf1c48b3f588e2fa99e8704c061785aed4220fda4ba8a",
+        "record_sha256": "6da484225663a9fa9f52f458c737db325f37dad01967eba072396dab7a30d1ea",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cuda_cupti-13.2.86.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cuda-nvrtc",
+        "canonical_name": "nvidia-cuda-nvrtc",
+        "version": "13.2.86",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_nvrtc-13.2.86.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "6a65bb3689ab835ca5732673d79c652cf70ddc476f19c74986b6908a9120b214",
+        "record_sha256": "71afa8bbb45d24c54c1260318a086b61c97cd66e2bfb937f5520438be99b1a85",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cuda_nvrtc-13.2.86.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cuda-runtime",
+        "canonical_name": "nvidia-cuda-runtime",
+        "version": "13.2.86",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_runtime-13.2.86.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "6d64e21069df8bea572dc7e0233a1a0ea6cb5e6b8546f65c48cfe92bc70abdb7",
+        "record_sha256": "452520bcf1806ab2af1a3e2f8b04b4de8c45e37be1342e10a4dd1549bf3dfe74",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cuda_runtime-13.2.86.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cudnn-cu13",
+        "canonical_name": "nvidia-cudnn-cu13",
+        "version": "9.26.0.51",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cudnn_cu13-9.26.0.51.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "3c18a94cb2c9eb8d10327bc07fa1d26dc252e4a749cb7952fc6ef1e5fb66762c",
+        "record_sha256": "de4729c8d317d3ba392ccd60e4899a18a4b232c2a7bcff2f12d3bced8abd4638",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cudnn_cu13-9.26.0.51.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cufft",
+        "canonical_name": "nvidia-cufft",
+        "version": "12.2.0.57",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cufft-12.2.0.57.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "05c105b43d5356e78966fa391d9f8b6291bddc62d147c824d9d481e02c8cf33b",
+        "record_sha256": "fb1d0baf0620fe2e384ee251e4c6d50ff2c078522872850e41c2e8c7597ef726",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cufft-12.2.0.57.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cufile",
+        "canonical_name": "nvidia-cufile",
+        "version": "1.17.1.22",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cufile-1.17.1.22.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "0973fd2e79769e2ec2af0eeaa0ce79e7cfdbf854b1a9765c80e6acbc46db2593",
+        "record_sha256": "ca8208ee9cd36b6baf6a85fa69dfb51c201607fe8a3f36e040fc6f0f7199b201",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cufile-1.17.1.22.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cusolver",
+        "canonical_name": "nvidia-cusolver",
+        "version": "12.2.0.11",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusolver-12.2.0.11.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "ad3b2d01e2cfedcbf9d828414c1a1c13d75004d187a84b1daa2608f7d4f23c70",
+        "record_sha256": "ca6e589b158a63bd7bdf02c9f7893dc68f78b0a057423b510d3d0984653a8e87",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cusolver-12.2.0.11.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cusparse",
+        "canonical_name": "nvidia-cusparse",
+        "version": "12.7.10.12",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusparse-12.7.10.12.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "5b6397d74fb8c8dd0dd612b1b3117da0529ce432042636615e5dd02dbeea56b7",
+        "record_sha256": "03a09cb690aacdf43ed2c7d04d2a4406d99b2cafb53eabaa8085fb06ea0b6f3d",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cusparse-12.7.10.12.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-cusparselt-cu13",
+        "canonical_name": "nvidia-cusparselt-cu13",
+        "version": "0.8.1",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusparselt_cu13-0.8.1.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "353669bafb80cbf22f1324121ac05049d36a6b0fb44b1fed3fab00b513231171",
+        "record_sha256": "018aaeffbbdc374a4a5d0227ba11692c4ee1a0444444d841e6f89c991bfbdeb3",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_cusparselt_cu13-0.8.1.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-nccl-cu13",
+        "canonical_name": "nvidia-nccl-cu13",
+        "version": "2.30.7",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nccl_cu13-2.30.7.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "14be4a2df0684114f9c7fb568ae42a4098268a0d35c9747c3a1c8c6f248305a6",
+        "record_sha256": "c833eb4ef46c89b2219d6477bbe5e70208eb4deb687eaad0de5ead0608ea7e3c",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_nccl_cu13-2.30.7.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-nvjitlink",
+        "canonical_name": "nvidia-nvjitlink",
+        "version": "13.4.92",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvjitlink-13.4.92.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "01600042bf5d720d60c812b6eac495b4aef127622b684745748ebf5f42d51475",
+        "record_sha256": "cb2db194967a11825cb4900a12537c0b50d2b19fdf67cfc4344248704ee2bd9b",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_nvjitlink-13.4.92.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-nvshmem-cu13",
+        "canonical_name": "nvidia-nvshmem-cu13",
+        "version": "3.7.2",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvshmem_cu13-3.7.2.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "a9dd31ab1b9c908f82d5be6c69b451390919c23e9c89f7fe00e1ca4f9ed29ccf",
+        "record_sha256": "6be3f6ba5ce3055a52c67fb90158eef87c8d57d54ff33490319e9816cf2b3086",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_nvshmem_cu13-3.7.2.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "nvidia-nvtx",
+        "canonical_name": "nvidia-nvtx",
+        "version": "13.2.86",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvtx-13.2.86.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "1f402e8c5b3a7a3f4ae06a41ccb4ff0b25969fc5738e2f53b9d27d8f2182be18",
+        "record_sha256": "69aa9dfcc906a2d87cee0dcef047f03cd34e742386b35a66a1fb26f53840e1ed",
+        "top_level_roots": [
+          "nvidia",
+          "nvidia_nvtx-13.2.86.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "setuptools",
+        "canonical_name": "setuptools",
+        "version": "84.2.1",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/setuptools-84.2.1.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "24939b84ead30ff4581918c8d5a95aafd377f6a8afc61f30ea18358a8786bfa4",
+        "record_sha256": "f1e6ca44c82ea5cc815ac9b8be452e30a24ba5f713fce248f649fde1caf9eb2f",
+        "top_level_roots": [
+          "_distutils_hack",
+          "distutils-precedence.pth",
+          "setuptools",
+          "setuptools-84.2.1.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "sympy",
+        "canonical_name": "sympy",
+        "version": "1.14.0",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/sympy-1.14.0.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "b756c2fbfd5be05ac5bdb0ebca61f55618f30f633ed92d88a5687429313a7595",
+        "record_sha256": "f6f60191133899b1b33d35181b4669cd5c95dd282029a642ff6c45580bdd7f82",
+        "top_level_roots": [
+          "isympy.py",
+          "sympy",
+          "sympy-1.14.0.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "torch",
+        "canonical_name": "torch",
+        "version": "2.15.0",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/torch-2.15.0.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "d62a4b24197d91c72e2ced62213f5dd9356f008e8c454f969c70ac11cb82417e",
+        "record_sha256": "91a0d416171e2488147398ac9d603c2f569dce864c155b605754ad7ba8e0fadb",
+        "top_level_roots": [
+          "functorch",
+          "torch",
+          "torch-2.15.0.dist-info",
+          "torchgen"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "triton",
+        "canonical_name": "triton",
+        "version": "3.9.0",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/triton-3.9.0.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "5dfdd39550d7c33bb319d2427993a7cd259ea1d9209213938e5cab6dfc7373ae",
+        "record_sha256": "0af1490d0305bc3d199f3e741cb1352a3b1d24722513f74a17b1768fda06704d",
+        "top_level_roots": [
+          "triton",
+          "triton-3.9.0.dist-info"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      },
+      {
+        "name": "typing_extensions",
+        "canonical_name": "typing-extensions",
+        "version": "4.16.0",
+        "requested_extras": [],
+        "distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info",
+        "site_root": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages",
+        "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+        "record_sha256": "78f74ed46a377d6e1debed78b3e994ff9cfe02a529d393d7c8ab80989bd25079",
+        "top_level_roots": [
+          "typing_extensions-4.16.0.dist-info",
+          "typing_extensions.py"
+        ],
+        "payload_hash_scope": "installed RECORD identity only; large payload files not rehashed"
+      }
+    ]
+  },
+  "all_installed_distributions": [
+    {
+      "name": "absl-py",
+      "version": "2.5.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/absl_py-2.5.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/absl_py-2.5.1.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cloudpickle-3.1.2.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cloudpickle-3.1.2.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "contourpy",
+      "version": "1.4.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/contourpy-1.4.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/contourpy-1.4.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "cuda-bindings",
+      "version": "13.4.4",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cuda_bindings-13.4.4.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_bindings-13.4.4.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "cuda-pathfinder",
+      "version": "1.8.5",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cuda_pathfinder-1.8.5.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_pathfinder-1.8.5.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "cuda-toolkit",
+      "version": "13.2.2",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cuda_toolkit-13.2.2.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/cuda_toolkit-13.2.2.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cycler-0.12.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/cycler-0.12.1.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "etils",
+      "version": "1.15.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/etils-1.15.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/etils-1.15.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "Farama-Notifications",
+      "version": "0.0.6",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/farama_notifications-0.0.6.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/farama_notifications-0.0.6.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "filelock",
+      "version": "4.2.6",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/filelock-4.2.6.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/filelock-4.2.6.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "fonttools",
+      "version": "4.68.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/fonttools-4.68.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/fonttools-4.68.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.9.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/fsspec-2026.9.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/fsspec-2026.9.0.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "glfw",
+      "version": "2.11.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/glfw-2.11.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/glfw-2.11.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "gymnasium",
+      "version": "1.2.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/gymnasium-1.2.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/gymnasium-1.2.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "gymnasium-robotics",
+      "version": "1.4.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/gymnasium_robotics-1.4.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/gymnasium_robotics-1.4.1.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "ImageIO",
+      "version": "2.38.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/imageio-2.38.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/imageio-2.38.1.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/iniconfig-2.3.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/iniconfig-2.3.1.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/jinja2-3.1.6.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/jinja2-3.1.6.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/kiwisolver-1.5.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/kiwisolver-1.5.1.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.10.3",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/matplotlib-3.10.3.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/matplotlib-3.10.3.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/mpmath-1.3.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/mpmath-1.3.0.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "mujoco",
+      "version": "3.3.7",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/mujoco-3.3.7.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/mujoco-3.3.7.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "networkx",
+      "version": "3.7",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/networkx-3.7.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/networkx-3.7.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "numpy",
+      "version": "2.2.6",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/numpy-2.2.6.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/numpy-2.2.6.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "nvidia-cublas",
+      "version": "13.4.1.3",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cublas-13.4.1.3.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cublas-13.4.1.3.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cuda-cccl",
+      "version": "13.3.4.3.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_cccl-13.3.4.3.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_cccl-13.3.4.3.1.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cuda-cupti",
+      "version": "13.2.86",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_cupti-13.2.86.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_cupti-13.2.86.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cuda-nvrtc",
+      "version": "13.2.86",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_nvrtc-13.2.86.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_nvrtc-13.2.86.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cuda-runtime",
+      "version": "13.2.86",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cuda_runtime-13.2.86.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cuda_runtime-13.2.86.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cudnn-cu13",
+      "version": "9.26.0.51",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cudnn_cu13-9.26.0.51.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cudnn_cu13-9.26.0.51.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cufft",
+      "version": "12.2.0.57",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cufft-12.2.0.57.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cufft-12.2.0.57.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cufile",
+      "version": "1.17.1.22",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cufile-1.17.1.22.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cufile-1.17.1.22.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cusolver",
+      "version": "12.2.0.11",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cusolver-12.2.0.11.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusolver-12.2.0.11.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cusparse",
+      "version": "12.7.10.12",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cusparse-12.7.10.12.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusparse-12.7.10.12.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-cusparselt-cu13",
+      "version": "0.8.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_cusparselt_cu13-0.8.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_cusparselt_cu13-0.8.1.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-nccl-cu13",
+      "version": "2.30.7",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nccl_cu13-2.30.7.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nccl_cu13-2.30.7.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-nvjitlink",
+      "version": "13.4.92",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nvjitlink-13.4.92.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvjitlink-13.4.92.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-nvshmem-cu13",
+      "version": "3.7.2",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nvshmem_cu13-3.7.2.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvshmem_cu13-3.7.2.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "nvidia-nvtx",
+      "version": "13.2.86",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/nvidia_nvtx-13.2.86.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/nvidia_nvtx-13.2.86.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "packaging",
+      "version": "25.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/packaging-25.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/packaging-25.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "pettingzoo",
+      "version": "1.27.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pettingzoo-1.27.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pettingzoo-1.27.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pillow-13.0.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pillow-13.0.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "pip",
+      "version": "24.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pip-24.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pip-24.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pluggy-1.7.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pluggy-1.7.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pygments-2.21.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pygments-2.21.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "PyOpenGL",
+      "version": "3.1.10",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pyopengl-3.1.10.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pyopengl-3.1.10.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pyparsing-3.3.3.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pyparsing-3.3.3.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "pytest",
+      "version": "8.4.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pytest-8.4.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/pytest-8.4.1.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "python-dateutil",
+      "version": "4.0.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/python_dateutil-4.0.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/python_dateutil-4.0.0.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.2",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/PyYAML-6.0.2.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/PyYAML-6.0.2.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "setuptools",
+      "version": "84.2.1",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/setuptools-84.2.1.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/setuptools-84.2.1.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/sympy-1.14.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/sympy-1.14.0.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "torch",
+      "version": "2.15.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/torch-2.15.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/torch-2.15.0.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "triton",
+      "version": "3.9.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/triton-3.9.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/triton-3.9.0.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/portfolio-ml/venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info",
+      "readonly_shared_fallback": true
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.6",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/tzdata-2026.6.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/tzdata-2026.6.dist-info",
+      "readonly_shared_fallback": false
+    },
+    {
+      "name": "zipp",
+      "version": "4.1.2",
+      "distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/zipp-4.1.2.dist-info",
+      "resolved_distribution_path": "/opt/codex-resume/all-modules-v2/m3/learning-venv/lib/python3.12/site-packages/zipp-4.1.2.dist-info",
+      "readonly_shared_fallback": false
+    }
+  ],
+  "hash_crosscheck_install_report_vs_retained_wheels": true,
+  "shared_metadata_and_record_identity_preserved": true,
+  "portable_github_cpu_ci_complete": false,
+  "portable_cpu_ci_missing": "Independent torch CPU wheel (and its exact compatible dependency artifact closure) not downloaded, reinstalled, or byte-verified under the no-large-Torch-download setup boundary.",
+  "payload_hash_scope": "All retained private wheel bytes SHA256; reused shared distributions METADATA+RECORD SHA256, selected imported module files SHA256. Large shared payloads were not independently rehashed."
+}

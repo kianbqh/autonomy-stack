@@ -1,0 +1,87 @@
+{
+  "status": "frozen CPU derived plan",
+  "original_plan": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/run-plan.json",
+  "original_plan_sha256": "84d423c632a907edd47e7ec66eea2a94d9f763cf51193ffc7e62cfa2d1e1c272",
+  "derived_plan": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/run-plan.json",
+  "derived_plan_sha256": "d588b9b09c1d9c3a0bd136d91974bd3beaac711ff76c65c3e621508a41a575e6",
+  "differences": [
+    {
+      "stage": "collect",
+      "changes": {
+        "artifact_root": {
+          "before": "/opt/codex-resume/all-modules-v2/m3/world-model/artifacts/episodes",
+          "after": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/episodes"
+        }
+      },
+      "original": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/collect.json",
+      "original_sha256": "745cc13eb592cef59151930baeb2a3e3c59ca7840b23733d6da4cbc5fc534f6b",
+      "derived": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/collect.json",
+      "derived_sha256": "bfc3f95c1c3246ae8af2751898b131e4f64d8fa80682088fae7d2bef6770339a"
+    },
+    {
+      "stage": "train",
+      "changes": {
+        "device": {
+          "before": "cuda",
+          "after": "cpu"
+        },
+        "checkpoint_root": {
+          "before": "/opt/codex-resume/all-modules-v2/m3/world-model/artifacts/checkpoints",
+          "after": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/wm-artifacts-001/checkpoints"
+        }
+      },
+      "original": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/train.json",
+      "original_sha256": "ab67b921f296bd1d5a304ff2bf926b448a2e95c5854a2f773eae7cb07a886e5e",
+      "derived": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/train.json",
+      "derived_sha256": "6ef8fe9a87c931103ea8e278954513a91fc445f7666f012175ea309d2e2111e7"
+    },
+    {
+      "stage": "prediction",
+      "changes": {
+        "device": {
+          "before": "cuda",
+          "after": "cpu"
+        }
+      },
+      "original": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/prediction.json",
+      "original_sha256": "0600dc6e48a26251ff7fa7da58d43fccd7cf956b2f746931d6b70edde2c26c31",
+      "derived": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/prediction.json",
+      "derived_sha256": "838e2d08e9c0af021a4a401078f17f1cf28fbf0acc079eec4b24fa99242b6cf4"
+    },
+    {
+      "stage": "mpc",
+      "changes": {
+        "device": {
+          "before": "cuda",
+          "after": "cpu"
+        }
+      },
+      "original": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/mpc.json",
+      "original_sha256": "9b2be658ac191fbd18af8685dc48dbbbd17072695b42c72342b343634e99733f",
+      "derived": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/mpc.json",
+      "derived_sha256": "095e7625198341115ca2f42bd490c0ac407e3e5158a90834cdaab62a7dfae31e"
+    },
+    {
+      "stage": "report",
+      "changes": {},
+      "original": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/report.json",
+      "original_sha256": "dadc784fabb324f43adfe748fcef07dba3c26fe946a81bd81ff0de475c1de8d5",
+      "derived": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/report.json",
+      "derived_sha256": "6677fc6fdd1ea283ca5f1942ba532ec638669c2ecee76297e546d2f9b28ad99c"
+    },
+    {
+      "stage": "plot",
+      "changes": {},
+      "original": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-original-001/plot.json",
+      "original_sha256": "a24b51f9b77cbf9ff654e15cf92e275ccdbe66c99da9f0fbcdb13de3a7eceee6",
+      "derived": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/frozen-wm-cpu-001/plot.json",
+      "derived_sha256": "fb5f5e2b5afb17099a2e430980998534c0b883c2fb42b2b4610bc7f3c60f56a5"
+    }
+  ],
+  "only_device_and_external_artifact_paths_changed": true,
+  "algorithms_seeds_splits_budgets_unchanged": true,
+  "nominal_bc_producer_seed": 0,
+  "producer_selected_from_results": false,
+  "source_repo_written": false,
+  "execution_order": "WM collect/train/prediction may overlap BC panel; MPC only after panel completes; report/plot bind actual outputs"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "kind": "kitti_full",
+  "sequence": "07",
+  "expected_frames": 1101,
+  "algorithm": {
+    "voxel": 0.4, "map_voxel": 0.5, "min_range": 2.0, "max_range": 80.0,
+    "max_scan_points": 35000, "max_map_points": 100000, "local_keyframes": 15,
+    "max_keyframes": 4000, "normal_k": 20, "min_correspondences": 100,
+    "normal_radius": 2.0, "normal_planarity": 0.2,
+    "max_correspondence": 1.5, "huber": 0.15, "trim_fraction": 0.9,
+    "max_rmse": 0.3, "min_inlier_ratio": 0.15, "max_condition": 100000000,
+    "min_eigenvalue": 0.000001, "translation_epsilon": 0.0001, "rotation_epsilon": 0.00001,
+    "max_step_translation": 1.0, "max_step_rotation": 0.2, "max_iterations": 40,
+    "keyframe_distance": 1.5, "keyframe_yaw": 0.17453292519943295,
+    "descriptor_rings": 20, "descriptor_sectors": 60, "temporal_exclusion": 30,
+    "loop_candidates": 5, "descriptor_radius": 80.0, "sensor_height": 1.73,
+    "descriptor_threshold": 0.2, "descriptor_yaw_margin": 0.01, "loop_correspondence": 1.0, "loop_rmse": 0.2,
+    "loop_inlier_ratio": 0.3, "loop_min_correspondences": 150,
+    "loop_reciprocal_translation": 0.15, "loop_reciprocal_rotation": 0.03490658503988659,
+    "odometry_rotation_sigma": 0.03, "odometry_translation_sigma": 0.15,
+    "loop_rotation_sigma": 0.02, "loop_translation_sigma": 0.08,
+    "loop_huber": 1.345, "graph_iterations": 100
+  },
+  "evaluation": {
+    "alignment": "SE3_no_scale",
+    "rpe_frame_delta": 1,
+    "rpe_distance_m": 100,
+    "rpe_distance_selection": "all_start_frames_first_gt_distance_strictly_greater",
+    "segment_lengths_m": [100,200,300,400,500,600,700,800],
+    "segment_start_stride_frames": 10,
+    "segment_end": "first_gt_distance_strictly_greater",
+    "loop_truth_threshold_m": 4,
+    "evo_version": "1.31.0"
+  },
+  "calibration": {
+    "frames": [0,550,1100], "canny_low": 80, "canny_high": 160,
+    "depth_min_m": 1.0, "depth_max_m": 80.0, "depth_jump_m": 1.0,
+    "edge_radius_pixels": 2, "minimum_edge_pixels": 30, "minimum_camera_edge_pixels": 100,
+    "minimum_projected_points": 300, "minimum_projection_coverage": 0.01,
+    "distance_cap_pixels": 20.0, "coverage_weight": 0.5,
+    "rotation_offsets_deg": [-2,-1.5,-1,-0.5,0,0.5,1,1.5,2],
+    "translation_offsets_m": [-0.1,-0.075,-0.05,-0.025,0,0.025,0.05,0.075,0.1],
+    "bootstrap_samples": 1000, "bootstrap_seed": 7,
+    "perturbation": "left_in_rectified_camera0_axes"
+  }
+}

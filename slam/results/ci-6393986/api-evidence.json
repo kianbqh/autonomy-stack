@@ -1,0 +1,342 @@
+{
+  "observed_utc": "2026-11-02T12:56:25Z",
+  "repository": "kianbqh/autonomy-stack",
+  "pr_url": "https://github.com/kianbqh/autonomy-stack/pull/1",
+  "pr_head": "6393986dae300d9fad4ea87bac21597401b1bd7c",
+  "pr_base": "39889ab511b91e35107abb7fe9eb0e7735360c1c",
+  "ci_checkout_merge": "70a76737d1ca59e4174c86e25a493b7f250b8569",
+  "run": {
+    "id": 41448451512,
+    "url": "https://github.com/kianbqh/autonomy-stack/actions/runs/41448451512",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "jobs": [
+    {
+      "id": 125287354221,
+      "name": "slam-python",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41448451512,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install pinned evaluator test dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Trajectory, evo CLI, projection, replay and sensor fixtures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 125287354278,
+      "name": "ros2",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41448451512,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actual ROS 2 nodes for 30 seconds",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "id": 125287354391,
+      "name": "viewer",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41448451512,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm ci",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run npm run typecheck",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run npm test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run npm run build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Install managed Chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Browser correctness using CPU software WebGL",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 125287354645,
+      "name": "simulation",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41448451512,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install CPU test dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Fusion, policy, safety and perception unit tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Regenerate actual normal and failure safety traces",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13144535033,
+      "name": "slam-python-synthetic-fixtures",
+      "size_in_bytes": 50026,
+      "url": "https://api.github.com/repos/kianbqh/autonomy-stack/actions/artifacts/13144535033",
+      "archive_download_url": "https://api.github.com/repos/kianbqh/autonomy-stack/actions/artifacts/13144535033/zip",
+      "expired": false,
+      "created_at": "2026-11-02T12:54:44Z",
+      "expires_at": "2026-11-16T12:54:43Z",
+      "updated_at": "2026-11-02T12:54:44Z",
+      "digest": "sha256:609100acd9be465c40d687ab47a815bde906a4af69a90492fafe7e18cab10187",
+      "workflow_run": {
+        "id": 41448451512,
+        "repository_id": 1441383620,
+        "head_repository_id": 1441383620,
+        "head_branch": "m3-autonomy-v2",
+        "head_sha": "6393986dae300d9fad4ea87bac21597401b1bd7c"
+      }
+    },
+    {
+      "id": 13143281799,
+      "name": "browser-correctness-swiftshader-software",
+      "size_in_bytes": 734884,
+      "url": "https://api.github.com/repos/kianbqh/autonomy-stack/actions/artifacts/13143281799",
+      "archive_download_url": "https://api.github.com/repos/kianbqh/autonomy-stack/actions/artifacts/13143281799/zip",
+      "expired": false,
+      "created_at": "2026-11-02T12:55:19Z",
+      "expires_at": "2027-01-31T12:54:11Z",
+      "updated_at": "2026-11-02T12:55:19Z",
+      "digest": "sha256:f3e67dab07f41a0e65ad580d3454d1f69d6783dd1a1145f7544966d1a537bd61",
+      "workflow_run": {
+        "id": 41448451512,
+        "repository_id": 1441383620,
+        "head_repository_id": 1441383620,
+        "head_branch": "m3-autonomy-v2",
+        "head_sha": "6393986dae300d9fad4ea87bac21597401b1bd7c"
+      }
+    }
+  ],
+  "real_results": {
+    "slam_python": {
+      "passed": 28,
+      "duration_seconds": 2.29,
+      "scope": "Remote synthetic numerical, actual evo CLI, projection, replay, sensor and source contracts; no official KITTI devkit or native/real KITTI measurements"
+    },
+    "viewer": {
+      "vitest_passed": 16,
+      "vitest_files": 3,
+      "types": "success",
+      "build": "success",
+      "browser": "success; existing ci-software SwiftShader bench",
+      "new_slam_tests_executed": false
+    }
+  },
+  "artifact_zip_downloaded": false,
+  "local_execution": false
+}
+

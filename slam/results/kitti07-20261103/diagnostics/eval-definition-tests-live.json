@@ -1,0 +1,162 @@
+{
+  "status": "passed private regressions and all10 saved real evo arrays; official raw results identical",
+  "scope": "private candidate regressions; synthetic evo CLI only, stored real zip parity; no native or formal evaluator rerun",
+  "utc": "2026-11-03T05:40:58.207927+00:00",
+  "pid": 491489,
+  "start_ticks": "15937601",
+  "attempt": "/opt/codex-resume/all-modules-v2/m3/slam/evaluation-diagnostics/definition-regression-20261103T054058Z-c16b9b93",
+  "candidate_manifest_sha256": "5e8a89bf9acf6b5a47f60c3e0893cd9e34526c249390b96f8d70e720fadbdb64",
+  "child": {
+    "pid": 491509,
+    "start_ticks": "15937653",
+    "argv": [
+      "/opt/codex-resume/all-modules-v2/m3/slam/eval-venv/bin/python",
+      "-m",
+      "pytest",
+      "--capture=sys",
+      "-q",
+      "/opt/codex-resume/all-modules-v2/m3/slam/evaluation-diagnostics/definition-regression-20261103T054058Z-c16b9b93/candidate/tests"
+    ]
+  },
+  "pytest_returncode": 0,
+  "actual_generation_provenance": {
+    "native_generation_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+    "evaluation_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+    "native_run_sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+    "build_receipt_sha256": "3c2c80793d298edc947dfe439bcf1a35ebd30e63053df59828f901e465e8f7b6",
+    "binary_sha256": "924d68b5e27ceebf21cf562528ad7640b0e2ad75d5130c1b4b91d2e9932ccf11",
+    "runtime_config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+    "input_manifest_sha256": "aa66897564bdb8a5ffc04b808c4dc8c6cde81b188aedc2ab2ab91a58baf1a38d",
+    "compiled_source_files": {
+      "CMakeLists.txt": "3068680ab41d4b0344e2a313f9e12d70584e9883f018c133d541dc6e0b2c418d",
+      "apps/run_kitti_slam.cpp": "060621420f6d2e47b6a4749edd40351ff7a5de5478fd5a5312493038625fa274",
+      "dependencies.lock.json": "81500b9c1fdcc44ca5948dc1f44a2861469819b9b008621c28ac06df43f6629c",
+      "include/slam/core.hpp": "884821c4134b78d21d861932d4bca7649c5927b9be8dfdacde73b7b1d8b01688",
+      "prerequisites.lock.json": "4cfa02aa69af7dc8aa61d340eeed168191b595b10b27ebc10a5fbe5e4b294d42",
+      "src/cloud.cpp": "98c1e28313d9b54aaa1ab3a02b19ad73349af117f0a97a0ac8aa7a25722f0a35",
+      "src/geometry.cpp": "f3944695c55599eda56a84f7a69066680b638eb07187f57dbe7a1a6be901b605",
+      "src/io.cpp": "08687666041d9ac6200d9758a7dce5eadaefe1bc475209106fcc86bf6de33ec8",
+      "src/pipeline.cpp": "b881942dd8dde5ca9fe0263ca7eabbce25eb8df9e1a986d2e55d2358256c38d2",
+      "src/pose_graph.cpp": "85e90327f7fb0217e6da6a7a91df3d766ccb7ced29b6b089ec4deab0b3ee8a41",
+      "src/scan_context.cpp": "a994b43df08e892451123396751e32587de05bb09ce9b4c736f04285c0d13f52"
+    },
+    "source_scope": "complete C++ src/include/apps, CMake, dependency/prerequisite locks; evaluator revisions are separately identified"
+  },
+  "tracks": {
+    "odom": {
+      "metrics": {
+        "ate": {
+          "alignment": "SE3_no_scale",
+          "rmse_m": 0.5630644298531414
+        },
+        "rpe_1frame": {
+          "count": 1100,
+          "translation_rmse_m": 0.017406744210859974,
+          "rotation_rmse_deg": 0.06093751678146186
+        },
+        "rpe_100m": {
+          "count": 881,
+          "translation_rmse_m": 0.7657957862712936,
+          "rotation_rmse_deg": 0.7564551961131829
+        },
+        "kitti_segments": {
+          "count": 317,
+          "translation_ratio_mean": 0.006881891284137964,
+          "rotation_rad_per_m_mean": 8.905540016712621e-05,
+          "translation_percent_mean": 0.6881891284137964,
+          "rotation_deg_per_100m_mean": 0.5102498572424977,
+          "pair_order": "start_frame_then_length",
+          "scalar_precision": "float32_components_distances_and_serial_sums;float64_pose_matrices",
+          "official_devkit_parity": "not yet run; must cross-check exact pair/aggregation before final acceptance"
+        }
+      },
+      "saved_real_evo_parity": {
+        "ape": {
+          "passed_original_tolerance": true,
+          "count": 1101,
+          "max_abs_difference": 1.1168843627729075e-13
+        },
+        "rpe_1frame_trans_part": {
+          "passed_original_tolerance": true,
+          "count": 1100,
+          "max_abs_difference": 0.0
+        },
+        "rpe_100m_exact_trans_part": {
+          "passed_original_tolerance": true,
+          "count": 881,
+          "max_abs_difference": 0.0
+        },
+        "rpe_1frame_angle_deg": {
+          "passed_original_tolerance": true,
+          "count": 1100,
+          "max_abs_difference": 1.1102230246251565e-16
+        },
+        "rpe_100m_exact_angle_deg": {
+          "passed_original_tolerance": true,
+          "count": 881,
+          "max_abs_difference": 4.440892098500626e-16
+        }
+      },
+      "official_raw_results_exactly_unchanged": true
+    },
+    "slam": {
+      "metrics": {
+        "ate": {
+          "alignment": "SE3_no_scale",
+          "rmse_m": 0.370272684080678
+        },
+        "rpe_1frame": {
+          "count": 1100,
+          "translation_rmse_m": 0.017402571911432536,
+          "rotation_rmse_deg": 0.06092707636065464
+        },
+        "rpe_100m": {
+          "count": 881,
+          "translation_rmse_m": 0.7903507992059837,
+          "rotation_rmse_deg": 0.7487282283936924
+        },
+        "kitti_segments": {
+          "count": 317,
+          "translation_ratio_mean": 0.006811798550188541,
+          "rotation_rad_per_m_mean": 8.86743946466595e-05,
+          "translation_percent_mean": 0.6811798550188541,
+          "rotation_deg_per_100m_mean": 0.508066856413105,
+          "pair_order": "start_frame_then_length",
+          "scalar_precision": "float32_components_distances_and_serial_sums;float64_pose_matrices",
+          "official_devkit_parity": "not yet run; must cross-check exact pair/aggregation before final acceptance"
+        }
+      },
+      "saved_real_evo_parity": {
+        "ape": {
+          "passed_original_tolerance": true,
+          "count": 1101,
+          "max_abs_difference": 8.554268404736831e-14
+        },
+        "rpe_1frame_trans_part": {
+          "passed_original_tolerance": true,
+          "count": 1100,
+          "max_abs_difference": 0.0
+        },
+        "rpe_100m_exact_trans_part": {
+          "passed_original_tolerance": true,
+          "count": 881,
+          "max_abs_difference": 0.0
+        },
+        "rpe_1frame_angle_deg": {
+          "passed_original_tolerance": true,
+          "count": 1100,
+          "max_abs_difference": 5.551115123125783e-17
+        },
+        "rpe_100m_exact_angle_deg": {
+          "passed_original_tolerance": true,
+          "count": 881,
+          "max_abs_difference": 3.3306690738754696e-16
+        }
+      },
+      "official_raw_results_exactly_unchanged": true
+    }
+  },
+  "pytest_stdout_sha256": "c8bf55b56c51a1a5dbb34aed09535099dbc13f9dcdbf586589ab75f470600f15",
+  "finished_utc": "2026-11-03T05:41:05.837611+00:00",
+  "wall_s": 7.62042722501792
+}

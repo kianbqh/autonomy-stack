@@ -1,0 +1,1034 @@
+{
+  "status": "private staging only; final evaluator acceptance pending",
+  "utc": "2026-11-03T05:42:58.847990+00:00",
+  "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/publication-staging-61d",
+  "native_generation_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "runtime_config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+  "native_run_sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+  "files": {
+    "ATTRIBUTION_AND_SCOPE.md": {
+      "bytes": 1465,
+      "sha256": "3548546457c3f1bf87233641bd89fe34b441983d951f7ddf1b1978628260c17a"
+    },
+    "calibration-original51a4/calibration.json": {
+      "bytes": 19496,
+      "sha256": "a4ad6763c06dc476a961e8a69f388fa905c2c5c1bb5698d800e8c6b5c6db8ffe"
+    },
+    "calibration-original51a4/independent-controller.json": {
+      "bytes": 11700,
+      "sha256": "bfb50874fb00ea50897d09c51c511eb7a06bdaebfc58f53fdf8afd8bcaa48baa"
+    },
+    "calibration-original51a4/overlay-000000.png": {
+      "bytes": 809493,
+      "sha256": "46731d7c86abd8d813616b8c6e0b79688ebd3b2eef09b73ed3cb35ef199f2fd5"
+    },
+    "calibration-original51a4/overlay-000550.png": {
+      "bytes": 898150,
+      "sha256": "1288302b655078af4ebd8e40ca9927e1c38a87c693dd9d2d4bd4e35c2720768b"
+    },
+    "calibration-original51a4/overlay-001100.png": {
+      "bytes": 850139,
+      "sha256": "7bd778ad05007244378dc82ad523579d9298cc338c2e2db1d4842abf2f431ed4"
+    },
+    "calibration-original51a4/raw-scores.json": {
+      "bytes": 136074,
+      "sha256": "43406755a29a5057d8b2998282e99b447c3060f439c8fba82344bba72b7a15d4"
+    },
+    "calibration-original51a4/score-shape.png": {
+      "bytes": 181035,
+      "sha256": "693af0675c1f21f9bbb248bc8d887e72ca844a03f9576a011b7885138ae38063"
+    },
+    "calibration-original51a4/source-sha256.json": {
+      "bytes": 4144,
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1"
+    },
+    "configs/runtime-config-provenance.json": {
+      "bytes": 1180,
+      "sha256": "28ea870fae03f25442c76068b21b2f5b4a0ac4d63f50700679737067d7fb5be0"
+    },
+    "configs/seq07-actual-ee689925.json": {
+      "bytes": 2413,
+      "sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da"
+    },
+    "configs/seq07-original-51a4.json": {
+      "bytes": 2415,
+      "sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292"
+    },
+    "configs/termination-precision.diff": {
+      "bytes": 691,
+      "sha256": "f4b10880336c738e5459c80e670eba85938b6018857ed8891fb0a379784b8a2b"
+    },
+    "diagnostics/CALIBRATION_DUPLICATE_FACTS.json": {
+      "bytes": 3522,
+      "sha256": "160e5831631b6ca5ae4c55530eb6a1d56b51378a4685d4174ba52b17fe507a09"
+    },
+    "diagnostics/CYCLE_DELIVERY.json": {
+      "bytes": 2780,
+      "sha256": "19962a7bfd57d323d3a7a2fcc7e38a83bc81cf11c01cdc5b526ce172c972f6cf"
+    },
+    "diagnostics/EVO_DEFINITION_DIAGNOSIS.json": {
+      "bytes": 6680,
+      "sha256": "c375162cb46f0c7648b08b2e991c48c724a244dda78f5a82e5b8bfa37247797e"
+    },
+    "diagnostics/FRAME114_DIAGNOSIS.json": {
+      "bytes": 10547,
+      "sha256": "877ad3cb0b47e92f0c6bd1556f56b7dcf7b85da3fc003a30a29bc61579c09b3b"
+    },
+    "diagnostics/FRAME27_DIAGNOSIS.json": {
+      "bytes": 8798,
+      "sha256": "b4a6582de4eaa2907c5ebdea0613ce7b7a8f3242107b56ba7e25d3c6ea0133dd"
+    },
+    "diagnostics/IMPORT_FAILURE_FACTS.json": {
+      "bytes": 6796,
+      "sha256": "39998bcb1cad74b22e6d79a1de2013601a7c6089ce8c5148e3336d26089b70e6"
+    },
+    "diagnostics/LOADER_FAILURE.json": {
+      "bytes": 3027,
+      "sha256": "ea7a4e97abe6334e7069885f6ed6c978c2e4847430d3bbb22a7704c34a05687f"
+    },
+    "diagnostics/NATIVE_FAILURE.json": {
+      "bytes": 9778,
+      "sha256": "a2b35ab5b3b9e5c4739c330c55cbd4eb6e9499c981b19fff51e8a0aa25bc5181"
+    },
+    "diagnostics/eval-definition-tests-live.json": {
+      "bytes": 6898,
+      "sha256": "ceae7ed2efb063cb8bdf1c53229548d88e01efb24fe843a1cc7bd65a6d7f636f"
+    },
+    "diagnostics/kitti-import-completion.json": {
+      "bytes": 7262,
+      "sha256": "ffbb19f45cb342814847fd931eae96a6e0f876b911d7de2346a7db5ff04f14c1"
+    },
+    "evaluation-original-partial/metrics.json": {
+      "bytes": 2657173,
+      "sha256": "a6a9f9b1f219aeaffa969fad9ca395c288f5d2afee5116bfdf70a3b96d9794c2"
+    },
+    "evaluation-original-partial/odom/100m-estimate-pairs.txt": {
+      "bytes": 434035,
+      "sha256": "6377839df9e20708ba950f84c136fd3e1f2d931229962d315bb2816cc5f68e0c"
+    },
+    "evaluation-original-partial/odom/100m-pair-selection.json": {
+      "bytes": 46578,
+      "sha256": "e96589ce134473c8db3cc47e79ba0a792de3602f95e3192e0c856943b257aef6"
+    },
+    "evaluation-original-partial/odom/100m-reference-pairs.txt": {
+      "bytes": 399298,
+      "sha256": "36d77ae5a3e067e049bb8f599b0bc2802ede22817a7c699388fcfd1487224f37"
+    },
+    "evaluation-original-partial/odom/ape.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/odom/ape.stdout.txt": {
+      "bytes": 258,
+      "sha256": "e2c2bb071de4c10aea17be68787b45190c89b712b27957116fef102ff1a675e7"
+    },
+    "evaluation-original-partial/odom/ape.zip": {
+      "bytes": 10262,
+      "sha256": "dba1277002dbc02bae69aa703c2a13e15e90efcfc566356282cb5fd4bc1769cd"
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_angle_deg.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_angle_deg.stdout.txt": {
+      "bytes": 241,
+      "sha256": "2f76022930964ec849e5c154d6f647998f37276169072818fe537555e01470f2"
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_angle_deg.zip": {
+      "bytes": 15217,
+      "sha256": "3d768d7a46aab7f3b84e842930db1b413fdf7ad74fd2b9989f70561e8d00eb6b"
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_trans_part.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_trans_part.stdout.txt": {
+      "bytes": 230,
+      "sha256": "0ff15d2b36bb1b2edc272694fd3336fce98fbba0e111fef67213bb56a33874d5"
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_trans_part.zip": {
+      "bytes": 15205,
+      "sha256": "dbbd90fae309941e5ab9d533235cb1c8f5ec6b201e1f3c3d75452fc91ea70e01"
+    },
+    "evaluation-original-partial/odom/rpe_1frame_angle_deg.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/odom/rpe_1frame_angle_deg.stdout.txt": {
+      "bytes": 238,
+      "sha256": "a68eddd09275567b6601cbd45ec9899f24b53d0cd3f664c86e1004910aa03718"
+    },
+    "evaluation-original-partial/odom/rpe_1frame_angle_deg.zip": {
+      "bytes": 9897,
+      "sha256": "b52308bf4a06aef6ef53debc6a05a954ad029b0d53f8cca637e1582fc61e5fce"
+    },
+    "evaluation-original-partial/odom/rpe_1frame_trans_part.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/odom/rpe_1frame_trans_part.stdout.txt": {
+      "bytes": 227,
+      "sha256": "eb5eaad63cae8fc501e6089b4d35f53b5b6deb41344d04279a5983ac6d0bdf1e"
+    },
+    "evaluation-original-partial/odom/rpe_1frame_trans_part.zip": {
+      "bytes": 9891,
+      "sha256": "8b180ae443e53cd729de81a591feb82d26dbfe9a3aa75f45e212d9224bcad147"
+    },
+    "evaluation-original-partial/official/odom/distances.tsv": {
+      "bytes": 28502,
+      "sha256": "2b51a8f5c275a9305ca46579a3002d36784180b9e6c71139a94ef1e140d00caa"
+    },
+    "evaluation-original-partial/official/odom/endpoints.tsv": {
+      "bytes": 10124,
+      "sha256": "eec3b6e378007214d157c246fa9a2a680edd5cadf16e82f75967c30828543b00"
+    },
+    "evaluation-original-partial/official/odom/errors.tsv": {
+      "bytes": 22911,
+      "sha256": "98f135690f6673d66824aa79c157bc4d8d995563d9fbf610a0093c20b9cba84d"
+    },
+    "evaluation-original-partial/official/odom/own-comparison.json": {
+      "bytes": 192298,
+      "sha256": "1a793474f8be6053589a2fc0110155a29ae7e5a3e9f43b629b9a3e16f4eb76c1"
+    },
+    "evaluation-original-partial/official/odom/receipt.json": {
+      "bytes": 6943,
+      "sha256": "6cd158c744a50acecc445b1f21f313364ac07c2f156ffdf0968ccee0c5d646ad"
+    },
+    "evaluation-original-partial/official/odom/stats-exact.tsv": {
+      "bytes": 154,
+      "sha256": "4d8f3985e4932ff41e8945c434260c1896578b509c9abdc1a4c1459852c496a5"
+    },
+    "evaluation-original-partial/official/odom/stats.txt": {
+      "bytes": 18,
+      "sha256": "f72d09c465908216ae6a2a5226530cd06fbfe517175d84c45e8d5431957f5c05"
+    },
+    "evaluation-original-partial/official/odom/stderr.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/official/odom/stdout.bin": {
+      "bytes": 25,
+      "sha256": "a79b583b5c8fe10825c5c80c0c7ee5c0230849133025180c368994aade0b3e53"
+    },
+    "evaluation-original-partial/official/slam/distances.tsv": {
+      "bytes": 28502,
+      "sha256": "2b51a8f5c275a9305ca46579a3002d36784180b9e6c71139a94ef1e140d00caa"
+    },
+    "evaluation-original-partial/official/slam/endpoints.tsv": {
+      "bytes": 10124,
+      "sha256": "eec3b6e378007214d157c246fa9a2a680edd5cadf16e82f75967c30828543b00"
+    },
+    "evaluation-original-partial/official/slam/errors.tsv": {
+      "bytes": 22889,
+      "sha256": "4e2a90e89279b07b57d9b5de9a11c8031673717ea60afe3c56ea61df78dab5da"
+    },
+    "evaluation-original-partial/official/slam/own-comparison.json": {
+      "bytes": 192274,
+      "sha256": "989aa92dcb68100540ba14beb7668fac1a2c9cd012d763b852ae463b0ae2ddc8"
+    },
+    "evaluation-original-partial/official/slam/receipt.json": {
+      "bytes": 6942,
+      "sha256": "d3faf9ff1246b2634dd1abf4841c60c17a9f86674e9941344e0202d55a38168f"
+    },
+    "evaluation-original-partial/official/slam/stats-exact.tsv": {
+      "bytes": 154,
+      "sha256": "878fdbe471a01368d9c51dcd1a0e354c1b95db28110a9d5bc1f6cbb140e79eb8"
+    },
+    "evaluation-original-partial/official/slam/stats.txt": {
+      "bytes": 18,
+      "sha256": "19d93fdb9e79a98893cb2b1221176c90029ed4ff3581b1cb10852c158f507a4d"
+    },
+    "evaluation-original-partial/official/slam/stderr.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/official/slam/stdout.bin": {
+      "bytes": 25,
+      "sha256": "a79b583b5c8fe10825c5c80c0c7ee5c0230849133025180c368994aade0b3e53"
+    },
+    "evaluation-original-partial/position-error.png": {
+      "bytes": 84439,
+      "sha256": "fee3628bcf6390ba1e89e65db4a0b05ab6cd5bc2a2666e8ae71fe63f0dad9f0f"
+    },
+    "evaluation-original-partial/slam/100m-estimate-pairs.txt": {
+      "bytes": 434301,
+      "sha256": "77ce0483fcb9a8fcd6d14c187b0efa2a3b89ab75a79667e49d5c77f3f816796f"
+    },
+    "evaluation-original-partial/slam/100m-pair-selection.json": {
+      "bytes": 46578,
+      "sha256": "e96589ce134473c8db3cc47e79ba0a792de3602f95e3192e0c856943b257aef6"
+    },
+    "evaluation-original-partial/slam/100m-reference-pairs.txt": {
+      "bytes": 399298,
+      "sha256": "36d77ae5a3e067e049bb8f599b0bc2802ede22817a7c699388fcfd1487224f37"
+    },
+    "evaluation-original-partial/slam/ape.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/slam/ape.stdout.txt": {
+      "bytes": 207,
+      "sha256": "4fe9a8cbb054c3cd8ab660be43271fd018b6980153b709a77383d7d523a74e08"
+    },
+    "evaluation-original-partial/slam/ape.zip": {
+      "bytes": 10266,
+      "sha256": "a76c7578eaf7b3911991274a1f5feb19cb2179c886b1aaf88543623a6677168d"
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_angle_deg.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_angle_deg.stdout.txt": {
+      "bytes": 240,
+      "sha256": "8bff55f411c3895b7fd17329a1d980bb9d9434f4b3306321f03c74a1e694e6d1"
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_angle_deg.zip": {
+      "bytes": 15216,
+      "sha256": "1d52ec7feafd72f9a66cfca4b7e04033eb0d684ab2200b63a48a9a224f6a1f1b"
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_trans_part.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_trans_part.stdout.txt": {
+      "bytes": 230,
+      "sha256": "4b4e1756f90906eec7c74e674247511ae2a5fb390658c64d6caa61e1e668024d"
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_trans_part.zip": {
+      "bytes": 15206,
+      "sha256": "453d732013f647a2cde76d05517002941e348e5297fcafcb8fe1da0596331fdb"
+    },
+    "evaluation-original-partial/slam/rpe_1frame_angle_deg.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/slam/rpe_1frame_angle_deg.stdout.txt": {
+      "bytes": 238,
+      "sha256": "19c5ee45866016f59ca5540bfe5efebf4fb0e1081bbd849038bb73aedc6d772b"
+    },
+    "evaluation-original-partial/slam/rpe_1frame_angle_deg.zip": {
+      "bytes": 9899,
+      "sha256": "b05b7b130fc7bcfed3bb994bebf472a245d9a6dc263f741a3d67443196bb49aa"
+    },
+    "evaluation-original-partial/slam/rpe_1frame_trans_part.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evaluation-original-partial/slam/rpe_1frame_trans_part.stdout.txt": {
+      "bytes": 227,
+      "sha256": "2820b63b73b34898eb27b6c7037ede2b5e115cab7f0f8688b29aeb2ddc733ef6"
+    },
+    "evaluation-original-partial/slam/rpe_1frame_trans_part.zip": {
+      "bytes": 9892,
+      "sha256": "27aef6e22b0e007e307b8cc11fb209946b6d61ff986539efb2eed5258a45cade"
+    },
+    "evaluation-original-partial/source-sha256.json": {
+      "bytes": 4144,
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1"
+    },
+    "evaluation-original-partial/trajectory-loops.png": {
+      "bytes": 75258,
+      "sha256": "9a822d4a85ada729d362e47dbf87781e96149524cfc914e39af2146521c9fae0"
+    },
+    "failures/61d-strict-frame114/failure.json": {
+      "bytes": 207,
+      "sha256": "1fa3e43234bc5b236661aacb82725116a2fd83a323658d09b9ca2caba9ce1936"
+    },
+    "failures/61d-strict-frame114/phase-receipt.json": {
+      "bytes": 14463,
+      "sha256": "17524ccdb9408479d255e12423335a3e0dd769293d2168100b46092d353abc96"
+    },
+    "failures/61d-strict-frame114/run.json": {
+      "bytes": 3760,
+      "sha256": "55affa893de4d7ff50872b1610cfd475d29141e7d45c45a083a19c7d7d33c29f"
+    },
+    "failures/61d-strict-frame114/stderr.txt": {
+      "bytes": 35,
+      "sha256": "30015669bf8bde7f35d042a8527d9c8d276882e16daa99c02e43f8ad542c06eb"
+    },
+    "failures/c925-frame50/failure.json": {
+      "bytes": 215,
+      "sha256": "983d0ea70a11aef98d0a69619a1d56d0f5503011dd258a8bf9d87d5fa622b433"
+    },
+    "failures/c925-frame50/phase-receipt.json": {
+      "bytes": 14463,
+      "sha256": "12a99281d99a1b2997fbdef7d5cedecab711b99481f4f7addd5f5a0dc1be6072"
+    },
+    "failures/c925-frame50/run.json": {
+      "bytes": 3760,
+      "sha256": "da8681b989ff079919d589b79dc50446cd67bfb53cf018927a366599a35d9b7e"
+    },
+    "failures/c925-frame50/stderr.txt": {
+      "bytes": 35,
+      "sha256": "30015669bf8bde7f35d042a8527d9c8d276882e16daa99c02e43f8ad542c06eb"
+    },
+    "failures/ca9-frame27/failure.json": {
+      "bytes": 227,
+      "sha256": "af29b097b346f5ff732e5d3e067435a8dbf0a8165a04c3c4878f0c34d4f93b4f"
+    },
+    "failures/ca9-frame27/phase-receipt.json": {
+      "bytes": 14442,
+      "sha256": "28b5537f6695d0a2ac6c6e7206dfaa94aca345ea141077ebe4a8ba1185104fc7"
+    },
+    "failures/ca9-frame27/run.json": {
+      "bytes": 3475,
+      "sha256": "7f92ba726d5c9652e8b1851c997706916b7f3436136dfa57d8fb4f0beb6e3920"
+    },
+    "failures/ca9-frame27/stderr.txt": {
+      "bytes": 47,
+      "sha256": "e8bf4bb35fb0df5861931615e75fe9f9347e2c610ae69ded728c4a194d7bc4b0"
+    },
+    "native-run/FULL1101_VALIDATION.json": {
+      "bytes": 2113,
+      "sha256": "aaf1b8e4c3c6c2bc313e6d1e08c912cecbe5f817e4859c060822c0ac5a000ea6"
+    },
+    "native-run/build-receipt.json": {
+      "bytes": 23945,
+      "sha256": "3c2c80793d298edc947dfe439bcf1a35ebd30e63053df59828f901e465e8f7b6"
+    },
+    "native-run/config.json": {
+      "bytes": 2413,
+      "sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da"
+    },
+    "native-run/native/events.jsonl": {
+      "bytes": 87458,
+      "sha256": "06f8740f4d2861d01a95fa46f36c5ce8f68e94f0663ad790f84fd322309dd3f0"
+    },
+    "native-run/native/frame_times.csv": {
+      "bytes": 182883,
+      "sha256": "85d19103b62129a23efb2e36feef0cfa59c539f7fec37eb1f0815a2e823aab36"
+    },
+    "native-run/native/keyframes.csv": {
+      "bytes": 9415,
+      "sha256": "708875a7b18476ffff151ab61678101496a55d3a42024f67ed64f5c3d9ffe51f"
+    },
+    "native-run/native/loops.jsonl": {
+      "bytes": 1729764,
+      "sha256": "ba2d9389cc38127a5fdcf8007d8523b8ae270836ac59a6611db51dea466d2826"
+    },
+    "native-run/native/native_summary.json": {
+      "bytes": 339,
+      "sha256": "0299b8d6c151941d793bd0245572a6e6135b72ec9cbb29f96e8090bbbb55d16f"
+    },
+    "native-run/native/poses_odom.txt": {
+      "bytes": 271681,
+      "sha256": "4230ccc6ad380cc5c374317ff4f7ed635222ae23b857e83bef504aafe3111c87"
+    },
+    "native-run/native/poses_slam.txt": {
+      "bytes": 271709,
+      "sha256": "a1f5849e66349d8535118d94853a94305059453cc2316d6a61082a95fef24284"
+    },
+    "native-run/native/timestamps.txt": {
+      "bytes": 18389,
+      "sha256": "bd6d2a29176213de75ecae61dc3ca13d1ac036c3a037ece60e3bfdc2c8530592"
+    },
+    "native-run/native.cfg": {
+      "bytes": 1028,
+      "sha256": "0db69a8387a0d536b1dc676d12306beef5909b66c103726c2b4a90de06de215f"
+    },
+    "native-run/run.json": {
+      "bytes": 5551,
+      "sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209"
+    },
+    "native-run/source-sha256.json": {
+      "bytes": 4144,
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1"
+    },
+    "native-run/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native-run/stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "replay-full1101/evaluation-status-at-export.json": {
+      "bytes": 849,
+      "sha256": "f60a2dec7aab759e8718cf2aa85dd5f89e8badb107623e982a6486297f063bae"
+    },
+    "replay-full1101/export.json": {
+      "bytes": 1959,
+      "sha256": "9f87bae78bbe96b3a2e4dde592ee4696fc9e951dbc355f2335ffa0252df391f7"
+    },
+    "replay-full1101/replay.json": {
+      "bytes": 5447473,
+      "sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122"
+    },
+    "replay-full1101/source-sha256.json": {
+      "bytes": 4144,
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1"
+    }
+  },
+  "original_file_provenance": {
+    "native-run/run.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/run.json",
+      "sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+      "bytes": 5551
+    },
+    "native-run/config.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/config.json",
+      "sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+      "bytes": 2413
+    },
+    "native-run/build-receipt.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/build-receipt.json",
+      "sha256": "3c2c80793d298edc947dfe439bcf1a35ebd30e63053df59828f901e465e8f7b6",
+      "bytes": 23945
+    },
+    "native-run/source-sha256.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/source-sha256.json",
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1",
+      "bytes": 4144
+    },
+    "native-run/native.cfg": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native.cfg",
+      "sha256": "0db69a8387a0d536b1dc676d12306beef5909b66c103726c2b4a90de06de215f",
+      "bytes": 1028
+    },
+    "native-run/stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "native-run/stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "native-run/native/native_summary.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/native_summary.json",
+      "sha256": "0299b8d6c151941d793bd0245572a6e6135b72ec9cbb29f96e8090bbbb55d16f",
+      "bytes": 339
+    },
+    "native-run/native/poses_odom.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/poses_odom.txt",
+      "sha256": "4230ccc6ad380cc5c374317ff4f7ed635222ae23b857e83bef504aafe3111c87",
+      "bytes": 271681
+    },
+    "native-run/native/poses_slam.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/poses_slam.txt",
+      "sha256": "a1f5849e66349d8535118d94853a94305059453cc2316d6a61082a95fef24284",
+      "bytes": 271709
+    },
+    "native-run/native/timestamps.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/timestamps.txt",
+      "sha256": "bd6d2a29176213de75ecae61dc3ca13d1ac036c3a037ece60e3bfdc2c8530592",
+      "bytes": 18389
+    },
+    "native-run/native/frame_times.csv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/frame_times.csv",
+      "sha256": "85d19103b62129a23efb2e36feef0cfa59c539f7fec37eb1f0815a2e823aab36",
+      "bytes": 182883
+    },
+    "native-run/native/events.jsonl": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/events.jsonl",
+      "sha256": "06f8740f4d2861d01a95fa46f36c5ce8f68e94f0663ad790f84fd322309dd3f0",
+      "bytes": 87458
+    },
+    "native-run/native/keyframes.csv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/keyframes.csv",
+      "sha256": "708875a7b18476ffff151ab61678101496a55d3a42024f67ed64f5c3d9ffe51f",
+      "bytes": 9415
+    },
+    "native-run/native/loops.jsonl": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/loops.jsonl",
+      "sha256": "ba2d9389cc38127a5fdcf8007d8523b8ae270836ac59a6611db51dea466d2826",
+      "bytes": 1729764
+    },
+    "native-run/FULL1101_VALIDATION.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/FULL07_61D_MM_RUN_VALIDATION.json",
+      "sha256": "aaf1b8e4c3c6c2bc313e6d1e08c912cecbe5f817e4859c060822c0ac5a000ea6",
+      "bytes": 2113
+    },
+    "configs/seq07-actual-ee689925.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/seq07-stop-1mm-100urad.json",
+      "sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+      "bytes": 2413
+    },
+    "configs/seq07-original-51a4.json": {
+      "original": "/mnt/g/ResumeProject/platforms/autonomy-stack/slam/configs/seq07.json",
+      "sha256": "51a4f2fa286f351b720bb3436054873a53edbfbe1a607664306694b43c458292",
+      "bytes": 2415
+    },
+    "configs/termination-precision.diff": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/mm-runtime-config.diff",
+      "sha256": "f4b10880336c738e5459c80e670eba85938b6018857ed8891fb0a379784b8a2b",
+      "bytes": 691
+    },
+    "configs/runtime-config-provenance.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/MM_RUNTIME_CONFIG_CANDIDATE.json",
+      "sha256": "28ea870fae03f25442c76068b21b2f5b4a0ac4d63f50700679737067d7fb5be0",
+      "bytes": 1180
+    },
+    "evaluation-original-partial/metrics.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/metrics.json",
+      "sha256": "a6a9f9b1f219aeaffa969fad9ca395c288f5d2afee5116bfdf70a3b96d9794c2",
+      "bytes": 2657173
+    },
+    "evaluation-original-partial/odom/100m-estimate-pairs.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/100m-estimate-pairs.txt",
+      "sha256": "6377839df9e20708ba950f84c136fd3e1f2d931229962d315bb2816cc5f68e0c",
+      "bytes": 434035
+    },
+    "evaluation-original-partial/odom/100m-pair-selection.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/100m-pair-selection.json",
+      "sha256": "e96589ce134473c8db3cc47e79ba0a792de3602f95e3192e0c856943b257aef6",
+      "bytes": 46578
+    },
+    "evaluation-original-partial/odom/100m-reference-pairs.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/100m-reference-pairs.txt",
+      "sha256": "36d77ae5a3e067e049bb8f599b0bc2802ede22817a7c699388fcfd1487224f37",
+      "bytes": 399298
+    },
+    "evaluation-original-partial/odom/ape.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/ape.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/odom/ape.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/ape.stdout.txt",
+      "sha256": "e2c2bb071de4c10aea17be68787b45190c89b712b27957116fef102ff1a675e7",
+      "bytes": 258
+    },
+    "evaluation-original-partial/odom/ape.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/ape.zip",
+      "sha256": "dba1277002dbc02bae69aa703c2a13e15e90efcfc566356282cb5fd4bc1769cd",
+      "bytes": 10262
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_angle_deg.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_100m_exact_angle_deg.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_angle_deg.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_100m_exact_angle_deg.stdout.txt",
+      "sha256": "2f76022930964ec849e5c154d6f647998f37276169072818fe537555e01470f2",
+      "bytes": 241
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_angle_deg.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_100m_exact_angle_deg.zip",
+      "sha256": "3d768d7a46aab7f3b84e842930db1b413fdf7ad74fd2b9989f70561e8d00eb6b",
+      "bytes": 15217
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_trans_part.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_100m_exact_trans_part.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_trans_part.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_100m_exact_trans_part.stdout.txt",
+      "sha256": "0ff15d2b36bb1b2edc272694fd3336fce98fbba0e111fef67213bb56a33874d5",
+      "bytes": 230
+    },
+    "evaluation-original-partial/odom/rpe_100m_exact_trans_part.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_100m_exact_trans_part.zip",
+      "sha256": "dbbd90fae309941e5ab9d533235cb1c8f5ec6b201e1f3c3d75452fc91ea70e01",
+      "bytes": 15205
+    },
+    "evaluation-original-partial/odom/rpe_1frame_angle_deg.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_1frame_angle_deg.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/odom/rpe_1frame_angle_deg.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_1frame_angle_deg.stdout.txt",
+      "sha256": "a68eddd09275567b6601cbd45ec9899f24b53d0cd3f664c86e1004910aa03718",
+      "bytes": 238
+    },
+    "evaluation-original-partial/odom/rpe_1frame_angle_deg.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_1frame_angle_deg.zip",
+      "sha256": "b52308bf4a06aef6ef53debc6a05a954ad029b0d53f8cca637e1582fc61e5fce",
+      "bytes": 9897
+    },
+    "evaluation-original-partial/odom/rpe_1frame_trans_part.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_1frame_trans_part.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/odom/rpe_1frame_trans_part.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_1frame_trans_part.stdout.txt",
+      "sha256": "eb5eaad63cae8fc501e6089b4d35f53b5b6deb41344d04279a5983ac6d0bdf1e",
+      "bytes": 227
+    },
+    "evaluation-original-partial/odom/rpe_1frame_trans_part.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/odom/rpe_1frame_trans_part.zip",
+      "sha256": "8b180ae443e53cd729de81a591feb82d26dbfe9a3aa75f45e212d9224bcad147",
+      "bytes": 9891
+    },
+    "evaluation-original-partial/official/odom/distances.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/distances.tsv",
+      "sha256": "2b51a8f5c275a9305ca46579a3002d36784180b9e6c71139a94ef1e140d00caa",
+      "bytes": 28502
+    },
+    "evaluation-original-partial/official/odom/endpoints.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/endpoints.tsv",
+      "sha256": "eec3b6e378007214d157c246fa9a2a680edd5cadf16e82f75967c30828543b00",
+      "bytes": 10124
+    },
+    "evaluation-original-partial/official/odom/errors.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/errors.tsv",
+      "sha256": "98f135690f6673d66824aa79c157bc4d8d995563d9fbf610a0093c20b9cba84d",
+      "bytes": 22911
+    },
+    "evaluation-original-partial/official/odom/own-comparison.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/own-comparison.json",
+      "sha256": "1a793474f8be6053589a2fc0110155a29ae7e5a3e9f43b629b9a3e16f4eb76c1",
+      "bytes": 192298
+    },
+    "evaluation-original-partial/official/odom/receipt.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/receipt.json",
+      "sha256": "6cd158c744a50acecc445b1f21f313364ac07c2f156ffdf0968ccee0c5d646ad",
+      "bytes": 6943
+    },
+    "evaluation-original-partial/official/odom/stats-exact.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/stats-exact.tsv",
+      "sha256": "4d8f3985e4932ff41e8945c434260c1896578b509c9abdc1a4c1459852c496a5",
+      "bytes": 154
+    },
+    "evaluation-original-partial/official/odom/stats.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/stats.txt",
+      "sha256": "f72d09c465908216ae6a2a5226530cd06fbfe517175d84c45e8d5431957f5c05",
+      "bytes": 18
+    },
+    "evaluation-original-partial/official/odom/stderr.bin": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/stderr.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/official/odom/stdout.bin": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/odom/stdout.bin",
+      "sha256": "a79b583b5c8fe10825c5c80c0c7ee5c0230849133025180c368994aade0b3e53",
+      "bytes": 25
+    },
+    "evaluation-original-partial/official/slam/distances.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/distances.tsv",
+      "sha256": "2b51a8f5c275a9305ca46579a3002d36784180b9e6c71139a94ef1e140d00caa",
+      "bytes": 28502
+    },
+    "evaluation-original-partial/official/slam/endpoints.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/endpoints.tsv",
+      "sha256": "eec3b6e378007214d157c246fa9a2a680edd5cadf16e82f75967c30828543b00",
+      "bytes": 10124
+    },
+    "evaluation-original-partial/official/slam/errors.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/errors.tsv",
+      "sha256": "4e2a90e89279b07b57d9b5de9a11c8031673717ea60afe3c56ea61df78dab5da",
+      "bytes": 22889
+    },
+    "evaluation-original-partial/official/slam/own-comparison.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/own-comparison.json",
+      "sha256": "989aa92dcb68100540ba14beb7668fac1a2c9cd012d763b852ae463b0ae2ddc8",
+      "bytes": 192274
+    },
+    "evaluation-original-partial/official/slam/receipt.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/receipt.json",
+      "sha256": "d3faf9ff1246b2634dd1abf4841c60c17a9f86674e9941344e0202d55a38168f",
+      "bytes": 6942
+    },
+    "evaluation-original-partial/official/slam/stats-exact.tsv": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/stats-exact.tsv",
+      "sha256": "878fdbe471a01368d9c51dcd1a0e354c1b95db28110a9d5bc1f6cbb140e79eb8",
+      "bytes": 154
+    },
+    "evaluation-original-partial/official/slam/stats.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/stats.txt",
+      "sha256": "19d93fdb9e79a98893cb2b1221176c90029ed4ff3581b1cb10852c158f507a4d",
+      "bytes": 18
+    },
+    "evaluation-original-partial/official/slam/stderr.bin": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/stderr.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/official/slam/stdout.bin": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/official/slam/stdout.bin",
+      "sha256": "a79b583b5c8fe10825c5c80c0c7ee5c0230849133025180c368994aade0b3e53",
+      "bytes": 25
+    },
+    "evaluation-original-partial/position-error.png": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/position-error.png",
+      "sha256": "fee3628bcf6390ba1e89e65db4a0b05ab6cd5bc2a2666e8ae71fe63f0dad9f0f",
+      "bytes": 84439
+    },
+    "evaluation-original-partial/slam/100m-estimate-pairs.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/100m-estimate-pairs.txt",
+      "sha256": "77ce0483fcb9a8fcd6d14c187b0efa2a3b89ab75a79667e49d5c77f3f816796f",
+      "bytes": 434301
+    },
+    "evaluation-original-partial/slam/100m-pair-selection.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/100m-pair-selection.json",
+      "sha256": "e96589ce134473c8db3cc47e79ba0a792de3602f95e3192e0c856943b257aef6",
+      "bytes": 46578
+    },
+    "evaluation-original-partial/slam/100m-reference-pairs.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/100m-reference-pairs.txt",
+      "sha256": "36d77ae5a3e067e049bb8f599b0bc2802ede22817a7c699388fcfd1487224f37",
+      "bytes": 399298
+    },
+    "evaluation-original-partial/slam/ape.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/ape.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/slam/ape.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/ape.stdout.txt",
+      "sha256": "4fe9a8cbb054c3cd8ab660be43271fd018b6980153b709a77383d7d523a74e08",
+      "bytes": 207
+    },
+    "evaluation-original-partial/slam/ape.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/ape.zip",
+      "sha256": "a76c7578eaf7b3911991274a1f5feb19cb2179c886b1aaf88543623a6677168d",
+      "bytes": 10266
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_angle_deg.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_100m_exact_angle_deg.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_angle_deg.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_100m_exact_angle_deg.stdout.txt",
+      "sha256": "8bff55f411c3895b7fd17329a1d980bb9d9434f4b3306321f03c74a1e694e6d1",
+      "bytes": 240
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_angle_deg.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_100m_exact_angle_deg.zip",
+      "sha256": "1d52ec7feafd72f9a66cfca4b7e04033eb0d684ab2200b63a48a9a224f6a1f1b",
+      "bytes": 15216
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_trans_part.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_100m_exact_trans_part.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_trans_part.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_100m_exact_trans_part.stdout.txt",
+      "sha256": "4b4e1756f90906eec7c74e674247511ae2a5fb390658c64d6caa61e1e668024d",
+      "bytes": 230
+    },
+    "evaluation-original-partial/slam/rpe_100m_exact_trans_part.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_100m_exact_trans_part.zip",
+      "sha256": "453d732013f647a2cde76d05517002941e348e5297fcafcb8fe1da0596331fdb",
+      "bytes": 15206
+    },
+    "evaluation-original-partial/slam/rpe_1frame_angle_deg.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_1frame_angle_deg.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/slam/rpe_1frame_angle_deg.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_1frame_angle_deg.stdout.txt",
+      "sha256": "19c5ee45866016f59ca5540bfe5efebf4fb0e1081bbd849038bb73aedc6d772b",
+      "bytes": 238
+    },
+    "evaluation-original-partial/slam/rpe_1frame_angle_deg.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_1frame_angle_deg.zip",
+      "sha256": "b05b7b130fc7bcfed3bb994bebf472a245d9a6dc263f741a3d67443196bb49aa",
+      "bytes": 9899
+    },
+    "evaluation-original-partial/slam/rpe_1frame_trans_part.stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_1frame_trans_part.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evaluation-original-partial/slam/rpe_1frame_trans_part.stdout.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_1frame_trans_part.stdout.txt",
+      "sha256": "2820b63b73b34898eb27b6c7037ede2b5e115cab7f0f8688b29aeb2ddc733ef6",
+      "bytes": 227
+    },
+    "evaluation-original-partial/slam/rpe_1frame_trans_part.zip": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/slam/rpe_1frame_trans_part.zip",
+      "sha256": "27aef6e22b0e007e307b8cc11fb209946b6d61ff986539efb2eed5258a45cade",
+      "bytes": 9892
+    },
+    "evaluation-original-partial/source-sha256.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/source-sha256.json",
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1",
+      "bytes": 4144
+    },
+    "evaluation-original-partial/trajectory-loops.png": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/evaluate-20261103T053040Z-e0b99238/outputs/evaluation-20261103T053042Z-d7d03de5/trajectory-loops.png",
+      "sha256": "9a822d4a85ada729d362e47dbf87781e96149524cfc914e39af2146521c9fae0",
+      "bytes": 75258
+    },
+    "calibration-original51a4/calibration.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32/calibration.json",
+      "sha256": "a4ad6763c06dc476a961e8a69f388fa905c2c5c1bb5698d800e8c6b5c6db8ffe",
+      "bytes": 19496
+    },
+    "calibration-original51a4/overlay-000000.png": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32/overlay-000000.png",
+      "sha256": "46731d7c86abd8d813616b8c6e0b79688ebd3b2eef09b73ed3cb35ef199f2fd5",
+      "bytes": 809493
+    },
+    "calibration-original51a4/overlay-000550.png": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32/overlay-000550.png",
+      "sha256": "1288302b655078af4ebd8e40ca9927e1c38a87c693dd9d2d4bd4e35c2720768b",
+      "bytes": 898150
+    },
+    "calibration-original51a4/overlay-001100.png": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32/overlay-001100.png",
+      "sha256": "7bd778ad05007244378dc82ad523579d9298cc338c2e2db1d4842abf2f431ed4",
+      "bytes": 850139
+    },
+    "calibration-original51a4/raw-scores.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32/raw-scores.json",
+      "sha256": "43406755a29a5057d8b2998282e99b447c3060f439c8fba82344bba72b7a15d4",
+      "bytes": 136074
+    },
+    "calibration-original51a4/score-shape.png": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32/score-shape.png",
+      "sha256": "693af0675c1f21f9bbb248bc8d887e72ca844a03f9576a011b7885138ae38063",
+      "bytes": 181035
+    },
+    "calibration-original51a4/source-sha256.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/outputs/calibration-20261103T052534Z-5ce8db32/source-sha256.json",
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1",
+      "bytes": 4144
+    },
+    "calibration-original51a4/independent-controller.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/independent-calibration/original-config-61d-20261103T052532Z-cb006e17/receipt.json",
+      "sha256": "bfb50874fb00ea50897d09c51c511eb7a06bdaebfc58f53fdf8afd8bcaa48baa",
+      "bytes": 11700
+    },
+    "replay-full1101/export.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/export-20261103T053256Z-3b04e6cd/outputs/replay-20261103T053257Z-22db56b2/export.json",
+      "sha256": "9f87bae78bbe96b3a2e4dde592ee4696fc9e951dbc355f2335ffa0252df391f7",
+      "bytes": 1959
+    },
+    "replay-full1101/replay.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/export-20261103T053256Z-3b04e6cd/outputs/replay-20261103T053257Z-22db56b2/replay.json",
+      "sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122",
+      "bytes": 5447473
+    },
+    "replay-full1101/source-sha256.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/export-20261103T053256Z-3b04e6cd/outputs/replay-20261103T053257Z-22db56b2/source-sha256.json",
+      "sha256": "fee229d3d80d2c99b007701bbeffdfe3ca96cc1fd9970bcc9ed5a7971faab8c1",
+      "bytes": 4144
+    },
+    "replay-full1101/evaluation-status-at-export.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/MM_EXPORT_WITH_PENDING_EVO.json",
+      "sha256": "f60a2dec7aab759e8718cf2aa85dd5f89e8badb107623e982a6486297f063bae",
+      "bytes": 849
+    },
+    "failures/ca9-frame27/run.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/outputs/slam-20261103T042508Z-2a8968af/run.json",
+      "sha256": "7f92ba726d5c9652e8b1851c997706916b7f3436136dfa57d8fb4f0beb6e3920",
+      "bytes": 3475
+    },
+    "failures/ca9-frame27/failure.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/outputs/slam-20261103T042508Z-2a8968af/native/failure.json",
+      "sha256": "af29b097b346f5ff732e5d3e067435a8dbf0a8165a04c3c4878f0c34d4f93b4f",
+      "bytes": 227
+    },
+    "failures/ca9-frame27/stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/outputs/slam-20261103T042508Z-2a8968af/stderr.txt",
+      "sha256": "e8bf4bb35fb0df5861931615e75fe9f9347e2c610ae69ded728c4a194d7bc4b0",
+      "bytes": 47
+    },
+    "failures/ca9-frame27/phase-receipt.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T042459Z-828a029f/receipt.json",
+      "sha256": "28b5537f6695d0a2ac6c6e7206dfaa94aca345ea141077ebe4a8ba1185104fc7",
+      "bytes": 14442
+    },
+    "failures/c925-frame50/run.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T045537Z-7135e6e0/outputs/slam-20261103T045541Z-d03e8d09/run.json",
+      "sha256": "da8681b989ff079919d589b79dc50446cd67bfb53cf018927a366599a35d9b7e",
+      "bytes": 3760
+    },
+    "failures/c925-frame50/failure.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T045537Z-7135e6e0/outputs/slam-20261103T045541Z-d03e8d09/native/failure.json",
+      "sha256": "983d0ea70a11aef98d0a69619a1d56d0f5503011dd258a8bf9d87d5fa622b433",
+      "bytes": 215
+    },
+    "failures/c925-frame50/stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T045537Z-7135e6e0/outputs/slam-20261103T045541Z-d03e8d09/stderr.txt",
+      "sha256": "30015669bf8bde7f35d042a8527d9c8d276882e16daa99c02e43f8ad542c06eb",
+      "bytes": 35
+    },
+    "failures/c925-frame50/phase-receipt.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T045537Z-7135e6e0/receipt.json",
+      "sha256": "12a99281d99a1b2997fbdef7d5cedecab711b99481f4f7addd5f5a0dc1be6072",
+      "bytes": 14463
+    },
+    "failures/61d-strict-frame114/run.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/outputs/slam-20261103T052235Z-cbdfe886/run.json",
+      "sha256": "55affa893de4d7ff50872b1610cfd475d29141e7d45c45a083a19c7d7d33c29f",
+      "bytes": 3760
+    },
+    "failures/61d-strict-frame114/failure.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/outputs/slam-20261103T052235Z-cbdfe886/native/failure.json",
+      "sha256": "1fa3e43234bc5b236661aacb82725116a2fd83a323658d09b9ca2caba9ce1936",
+      "bytes": 207
+    },
+    "failures/61d-strict-frame114/stderr.txt": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/outputs/slam-20261103T052235Z-cbdfe886/stderr.txt",
+      "sha256": "30015669bf8bde7f35d042a8527d9c8d276882e16daa99c02e43f8ad542c06eb",
+      "bytes": 35
+    },
+    "failures/61d-strict-frame114/phase-receipt.json": {
+      "original": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052232Z-3dd3fe97/receipt.json",
+      "sha256": "17524ccdb9408479d255e12423335a3e0dd769293d2168100b46092d353abc96",
+      "bytes": 14463
+    },
+    "diagnostics/FRAME27_DIAGNOSIS.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/FRAME27_DIAGNOSIS.json",
+      "sha256": "b4a6582de4eaa2907c5ebdea0613ce7b7a8f3242107b56ba7e25d3c6ea0133dd",
+      "bytes": 8798
+    },
+    "diagnostics/FRAME114_DIAGNOSIS.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/FRAME114_DIAGNOSIS.json",
+      "sha256": "877ad3cb0b47e92f0c6bd1556f56b7dcf7b85da3fc003a30a29bc61579c09b3b",
+      "bytes": 10547
+    },
+    "diagnostics/CYCLE_DELIVERY.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/CYCLE_DELIVERY.json",
+      "sha256": "19962a7bfd57d323d3a7a2fcc7e38a83bc81cf11c01cdc5b526ce172c972f6cf",
+      "bytes": 2780
+    },
+    "diagnostics/EVO_DEFINITION_DIAGNOSIS.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/EVO_DEFINITION_DIAGNOSIS.json",
+      "sha256": "c375162cb46f0c7648b08b2e991c48c724a244dda78f5a82e5b8bfa37247797e",
+      "bytes": 6680
+    },
+    "diagnostics/eval-definition-tests-live.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/eval-definition-tests-live.json",
+      "sha256": "ceae7ed2efb063cb8bdf1c53229548d88e01efb24fe843a1cc7bd65a6d7f636f",
+      "bytes": 6898
+    },
+    "diagnostics/kitti-import-completion.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/kitti-import-completion.json",
+      "sha256": "ffbb19f45cb342814847fd931eae96a6e0f876b911d7de2346a7db5ff04f14c1",
+      "bytes": 7262
+    },
+    "diagnostics/IMPORT_FAILURE_FACTS.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/IMPORT_FAILURE_FACTS.json",
+      "sha256": "39998bcb1cad74b22e6d79a1de2013601a7c6089ce8c5148e3336d26089b70e6",
+      "bytes": 6796
+    },
+    "diagnostics/CALIBRATION_DUPLICATE_FACTS.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/CALIBRATION_DUPLICATE_FACTS.json",
+      "sha256": "160e5831631b6ca5ae4c55530eb6a1d56b51378a4685d4174ba52b17fe507a09",
+      "bytes": 3522
+    },
+    "diagnostics/NATIVE_FAILURE.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/NATIVE_FAILURE.json",
+      "sha256": "a2b35ab5b3b9e5c4739c330c55cbd4eb6e9499c981b19fff51e8a0aa25bc5181",
+      "bytes": 9778
+    },
+    "diagnostics/LOADER_FAILURE.json": {
+      "original": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam-execution-20261103/LOADER_FAILURE.json",
+      "sha256": "ea7a4e97abe6334e7069885f6ed6c978c2e4847430d3bbb22a7704c34a05687f",
+      "bytes": 3027
+    }
+  },
+  "total_bytes": 16331161,
+  "file_count": 113,
+  "excluded": [
+    "raw KITTI archives/scans/full images",
+    "private GPL oracle ELF/vendor source",
+    "dependency installs/build scratch",
+    "model checkpoints",
+    "host process command-line dumps"
+  ],
+  "preserved_originals": true
+}

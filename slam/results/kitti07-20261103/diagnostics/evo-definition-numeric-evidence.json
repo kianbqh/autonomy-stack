@@ -1,0 +1,95 @@
+{
+  "utc": "2026-11-03T05:34:24.100178+00:00",
+  "scope": "stored-array/zip numerical definition diagnosis only, no CLI/native run",
+  "original_metrics_sha256": "a6a9f9b1f219aeaffa969fad9ca395c288f5d2afee5116bfdf70a3b96d9794c2",
+  "tracks": {
+    "odom": {
+      "old_vs_raw_distance_pairs_identical": true,
+      "comparison": {
+        "ape": {
+          "count": 1101,
+          "new_max_abs_difference": 1.1168843627729075e-13,
+          "old_max_abs_difference": 5.7226453681891165e-06,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.5630644298531414
+        },
+        "rpe_1frame_trans_part": {
+          "count": 1100,
+          "new_max_abs_difference": 1.0909738383524381e-08,
+          "old_max_abs_difference": 2.401586849821308e-07,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.017406745912960635
+        },
+        "rpe_100m_exact_trans_part": {
+          "count": 881,
+          "new_max_abs_difference": 2.2752085981903036e-07,
+          "old_max_abs_difference": 1.3637452132952976e-05,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.7657958884769807
+        },
+        "rpe_1frame_angle_deg": {
+          "count": 1100,
+          "new_max_abs_difference": 5.685313331227348e-13,
+          "old_max_abs_difference": 0.02248257097010607,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.06093751678146057
+        },
+        "rpe_100m_exact_angle_deg": {
+          "count": 881,
+          "new_max_abs_difference": 5.595524044110789e-13,
+          "old_max_abs_difference": 0.00046134213737786256,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.7564551961131878
+        }
+      }
+    },
+    "slam": {
+      "old_vs_raw_distance_pairs_identical": true,
+      "comparison": {
+        "ape": {
+          "count": 1101,
+          "new_max_abs_difference": 8.554268404736831e-14,
+          "old_max_abs_difference": 5.616244778711144e-06,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.370272684080678
+        },
+        "rpe_1frame_trans_part": {
+          "count": 1100,
+          "new_max_abs_difference": 1.0944362513476413e-08,
+          "old_max_abs_difference": 2.401059977473474e-07,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.01740257361509521
+        },
+        "rpe_100m_exact_trans_part": {
+          "count": 881,
+          "new_max_abs_difference": 2.3668645199315108e-07,
+          "old_max_abs_difference": 1.4016245553805096e-05,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.7903508997728439
+        },
+        "rpe_1frame_angle_deg": {
+          "count": 1100,
+          "new_max_abs_difference": 5.363071098329897e-13,
+          "old_max_abs_difference": 0.022507910339853894,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.06092707636065354
+        },
+        "rpe_100m_exact_angle_deg": {
+          "count": 881,
+          "new_max_abs_difference": 4.5152770411505116e-13,
+          "old_max_abs_difference": 0.00045889168281210146,
+          "new_passed_original_tolerance": true,
+          "candidate_rmse": 0.7487282283936991
+        }
+      }
+    }
+  },
+  "truth_rotation_orthogonality_max": 2.446439260224789e-07,
+  "export": {
+    "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/export-20261103T053256Z-3b04e6cd/outputs/replay-20261103T053257Z-22db56b2",
+    "replay_sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122",
+    "export_sha256": "9f87bae78bbe96b3a2e4dde592ee4696fc9e951dbc355f2335ffa0252df391f7",
+    "status": "complete"
+  },
+  "external_source_review": "actual installed evo source inspected privately; no third-party implementation excerpt included"
+}

@@ -1,0 +1,709 @@
+{
+  "source_summary_sha256": "be190033d89375620ad5688b0e5bf6f5702a6b16062d0c653f6ab23877efe63a",
+  "source_summary_native_path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/matrix-s0-20261103T052939Z-1d615989/panel-summary.json",
+  "cells": 66,
+  "episodes": 6600,
+  "panel_means": {
+    "bc": {
+      "mean": 0.052727272727272734,
+      "policies": [
+        {
+          "model_seed": 0,
+          "success_rate": 0.04272727272727273
+        },
+        {
+          "model_seed": 1,
+          "success_rate": 0.04272727272727273
+        },
+        {
+          "model_seed": 2,
+          "success_rate": 0.07272727272727274
+        }
+      ],
+      "population_std": 0.014142135623730954,
+      "std_definition": "population ddof=0"
+    },
+    "bc_dr": {
+      "mean": 0.12181818181818183,
+      "policies": [
+        {
+          "model_seed": 0,
+          "success_rate": 0.06181818181818182
+        },
+        {
+          "model_seed": 1,
+          "success_rate": 0.1
+        },
+        {
+          "model_seed": 2,
+          "success_rate": 0.20363636363636364
+        }
+      ],
+      "population_std": 0.05991729837557848,
+      "std_definition": "population ddof=0"
+    }
+  },
+  "rows": [
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 0,
+      "cell_name": "nominal",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc-s0-00.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 1,
+      "cell_name": "mass_low",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc-s0-01.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 2,
+      "cell_name": "mass_high",
+      "successes": 3,
+      "episodes": 100,
+      "success_rate": 0.03,
+      "raw": "panel-raw/panel-bc-s0-02.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 3,
+      "cell_name": "friction_low",
+      "successes": 1,
+      "episodes": 100,
+      "success_rate": 0.01,
+      "raw": "panel-raw/panel-bc-s0-03.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 4,
+      "cell_name": "friction_high",
+      "successes": 6,
+      "episodes": 100,
+      "success_rate": 0.06,
+      "raw": "panel-raw/panel-bc-s0-04.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 5,
+      "cell_name": "noise_sigma_low",
+      "successes": 3,
+      "episodes": 100,
+      "success_rate": 0.03,
+      "raw": "panel-raw/panel-bc-s0-05.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 6,
+      "cell_name": "noise_sigma_high",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc-s0-06.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 7,
+      "cell_name": "latency_low",
+      "successes": 8,
+      "episodes": 100,
+      "success_rate": 0.08,
+      "raw": "panel-raw/panel-bc-s0-07.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 8,
+      "cell_name": "latency_high",
+      "successes": 7,
+      "episodes": 100,
+      "success_rate": 0.07,
+      "raw": "panel-raw/panel-bc-s0-08.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 9,
+      "cell_name": "gain_low",
+      "successes": 2,
+      "episodes": 100,
+      "success_rate": 0.02,
+      "raw": "panel-raw/panel-bc-s0-09.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 0,
+      "cell": 10,
+      "cell_name": "gain_high",
+      "successes": 3,
+      "episodes": 100,
+      "success_rate": 0.03,
+      "raw": "panel-raw/panel-bc-s0-10.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 0,
+      "cell_name": "nominal",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc-s1-00.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 1,
+      "cell_name": "mass_low",
+      "successes": 6,
+      "episodes": 100,
+      "success_rate": 0.06,
+      "raw": "panel-raw/panel-bc-s1-01.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 2,
+      "cell_name": "mass_high",
+      "successes": 3,
+      "episodes": 100,
+      "success_rate": 0.03,
+      "raw": "panel-raw/panel-bc-s1-02.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 3,
+      "cell_name": "friction_low",
+      "successes": 6,
+      "episodes": 100,
+      "success_rate": 0.06,
+      "raw": "panel-raw/panel-bc-s1-03.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 4,
+      "cell_name": "friction_high",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc-s1-04.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 5,
+      "cell_name": "noise_sigma_low",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc-s1-05.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 6,
+      "cell_name": "noise_sigma_high",
+      "successes": 2,
+      "episodes": 100,
+      "success_rate": 0.02,
+      "raw": "panel-raw/panel-bc-s1-06.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 7,
+      "cell_name": "latency_low",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc-s1-07.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 8,
+      "cell_name": "latency_high",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc-s1-08.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 9,
+      "cell_name": "gain_low",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc-s1-09.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 1,
+      "cell": 10,
+      "cell_name": "gain_high",
+      "successes": 3,
+      "episodes": 100,
+      "success_rate": 0.03,
+      "raw": "panel-raw/panel-bc-s1-10.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 0,
+      "cell_name": "nominal",
+      "successes": 7,
+      "episodes": 100,
+      "success_rate": 0.07,
+      "raw": "panel-raw/panel-bc-s2-00.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 1,
+      "cell_name": "mass_low",
+      "successes": 9,
+      "episodes": 100,
+      "success_rate": 0.09,
+      "raw": "panel-raw/panel-bc-s2-01.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 2,
+      "cell_name": "mass_high",
+      "successes": 12,
+      "episodes": 100,
+      "success_rate": 0.12,
+      "raw": "panel-raw/panel-bc-s2-02.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 3,
+      "cell_name": "friction_low",
+      "successes": 7,
+      "episodes": 100,
+      "success_rate": 0.07,
+      "raw": "panel-raw/panel-bc-s2-03.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 4,
+      "cell_name": "friction_high",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc-s2-04.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 5,
+      "cell_name": "noise_sigma_low",
+      "successes": 7,
+      "episodes": 100,
+      "success_rate": 0.07,
+      "raw": "panel-raw/panel-bc-s2-05.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 6,
+      "cell_name": "noise_sigma_high",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc-s2-06.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 7,
+      "cell_name": "latency_low",
+      "successes": 12,
+      "episodes": 100,
+      "success_rate": 0.12,
+      "raw": "panel-raw/panel-bc-s2-07.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 8,
+      "cell_name": "latency_high",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc-s2-08.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 9,
+      "cell_name": "gain_low",
+      "successes": 10,
+      "episodes": 100,
+      "success_rate": 0.1,
+      "raw": "panel-raw/panel-bc-s2-09.json.gz"
+    },
+    {
+      "method": "bc",
+      "seed": 2,
+      "cell": 10,
+      "cell_name": "gain_high",
+      "successes": 3,
+      "episodes": 100,
+      "success_rate": 0.03,
+      "raw": "panel-raw/panel-bc-s2-10.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 0,
+      "cell_name": "nominal",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc_dr-s0-00.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 1,
+      "cell_name": "mass_low",
+      "successes": 4,
+      "episodes": 100,
+      "success_rate": 0.04,
+      "raw": "panel-raw/panel-bc_dr-s0-01.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 2,
+      "cell_name": "mass_high",
+      "successes": 6,
+      "episodes": 100,
+      "success_rate": 0.06,
+      "raw": "panel-raw/panel-bc_dr-s0-02.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 3,
+      "cell_name": "friction_low",
+      "successes": 8,
+      "episodes": 100,
+      "success_rate": 0.08,
+      "raw": "panel-raw/panel-bc_dr-s0-03.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 4,
+      "cell_name": "friction_high",
+      "successes": 8,
+      "episodes": 100,
+      "success_rate": 0.08,
+      "raw": "panel-raw/panel-bc_dr-s0-04.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 5,
+      "cell_name": "noise_sigma_low",
+      "successes": 6,
+      "episodes": 100,
+      "success_rate": 0.06,
+      "raw": "panel-raw/panel-bc_dr-s0-05.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 6,
+      "cell_name": "noise_sigma_high",
+      "successes": 7,
+      "episodes": 100,
+      "success_rate": 0.07,
+      "raw": "panel-raw/panel-bc_dr-s0-06.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 7,
+      "cell_name": "latency_low",
+      "successes": 6,
+      "episodes": 100,
+      "success_rate": 0.06,
+      "raw": "panel-raw/panel-bc_dr-s0-07.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 8,
+      "cell_name": "latency_high",
+      "successes": 9,
+      "episodes": 100,
+      "success_rate": 0.09,
+      "raw": "panel-raw/panel-bc_dr-s0-08.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 9,
+      "cell_name": "gain_low",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc_dr-s0-09.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 0,
+      "cell": 10,
+      "cell_name": "gain_high",
+      "successes": 5,
+      "episodes": 100,
+      "success_rate": 0.05,
+      "raw": "panel-raw/panel-bc_dr-s0-10.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 0,
+      "cell_name": "nominal",
+      "successes": 9,
+      "episodes": 100,
+      "success_rate": 0.09,
+      "raw": "panel-raw/panel-bc_dr-s1-00.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 1,
+      "cell_name": "mass_low",
+      "successes": 3,
+      "episodes": 100,
+      "success_rate": 0.03,
+      "raw": "panel-raw/panel-bc_dr-s1-01.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 2,
+      "cell_name": "mass_high",
+      "successes": 10,
+      "episodes": 100,
+      "success_rate": 0.1,
+      "raw": "panel-raw/panel-bc_dr-s1-02.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 3,
+      "cell_name": "friction_low",
+      "successes": 16,
+      "episodes": 100,
+      "success_rate": 0.16,
+      "raw": "panel-raw/panel-bc_dr-s1-03.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 4,
+      "cell_name": "friction_high",
+      "successes": 9,
+      "episodes": 100,
+      "success_rate": 0.09,
+      "raw": "panel-raw/panel-bc_dr-s1-04.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 5,
+      "cell_name": "noise_sigma_low",
+      "successes": 6,
+      "episodes": 100,
+      "success_rate": 0.06,
+      "raw": "panel-raw/panel-bc_dr-s1-05.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 6,
+      "cell_name": "noise_sigma_high",
+      "successes": 10,
+      "episodes": 100,
+      "success_rate": 0.1,
+      "raw": "panel-raw/panel-bc_dr-s1-06.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 7,
+      "cell_name": "latency_low",
+      "successes": 15,
+      "episodes": 100,
+      "success_rate": 0.15,
+      "raw": "panel-raw/panel-bc_dr-s1-07.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 8,
+      "cell_name": "latency_high",
+      "successes": 11,
+      "episodes": 100,
+      "success_rate": 0.11,
+      "raw": "panel-raw/panel-bc_dr-s1-08.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 9,
+      "cell_name": "gain_low",
+      "successes": 14,
+      "episodes": 100,
+      "success_rate": 0.14,
+      "raw": "panel-raw/panel-bc_dr-s1-09.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 1,
+      "cell": 10,
+      "cell_name": "gain_high",
+      "successes": 7,
+      "episodes": 100,
+      "success_rate": 0.07,
+      "raw": "panel-raw/panel-bc_dr-s1-10.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 0,
+      "cell_name": "nominal",
+      "successes": 22,
+      "episodes": 100,
+      "success_rate": 0.22,
+      "raw": "panel-raw/panel-bc_dr-s2-00.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 1,
+      "cell_name": "mass_low",
+      "successes": 16,
+      "episodes": 100,
+      "success_rate": 0.16,
+      "raw": "panel-raw/panel-bc_dr-s2-01.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 2,
+      "cell_name": "mass_high",
+      "successes": 19,
+      "episodes": 100,
+      "success_rate": 0.19,
+      "raw": "panel-raw/panel-bc_dr-s2-02.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 3,
+      "cell_name": "friction_low",
+      "successes": 21,
+      "episodes": 100,
+      "success_rate": 0.21,
+      "raw": "panel-raw/panel-bc_dr-s2-03.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 4,
+      "cell_name": "friction_high",
+      "successes": 23,
+      "episodes": 100,
+      "success_rate": 0.23,
+      "raw": "panel-raw/panel-bc_dr-s2-04.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 5,
+      "cell_name": "noise_sigma_low",
+      "successes": 20,
+      "episodes": 100,
+      "success_rate": 0.2,
+      "raw": "panel-raw/panel-bc_dr-s2-05.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 6,
+      "cell_name": "noise_sigma_high",
+      "successes": 31,
+      "episodes": 100,
+      "success_rate": 0.31,
+      "raw": "panel-raw/panel-bc_dr-s2-06.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 7,
+      "cell_name": "latency_low",
+      "successes": 20,
+      "episodes": 100,
+      "success_rate": 0.2,
+      "raw": "panel-raw/panel-bc_dr-s2-07.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 8,
+      "cell_name": "latency_high",
+      "successes": 14,
+      "episodes": 100,
+      "success_rate": 0.14,
+      "raw": "panel-raw/panel-bc_dr-s2-08.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 9,
+      "cell_name": "gain_low",
+      "successes": 18,
+      "episodes": 100,
+      "success_rate": 0.18,
+      "raw": "panel-raw/panel-bc_dr-s2-09.json.gz"
+    },
+    {
+      "method": "bc_dr",
+      "seed": 2,
+      "cell": 10,
+      "cell_name": "gain_high",
+      "successes": 20,
+      "episodes": 100,
+      "success_rate": 0.2,
+      "raw": "panel-raw/panel-bc_dr-s2-10.json.gz"
+    }
+  ],
+  "raw_format": ".json.gz files losslessly preserve raw JSON; uncompressed hashes are in evidence-index.json"
+}

@@ -1,0 +1,45 @@
+{
+  "artifact_root": "/opt/codex-resume/all-modules-v2/m3/world-model/artifacts/episodes",
+  "env_config": {
+    "dr_stream_seed": 720,
+    "env_id": "FetchPush-v4",
+    "fault_stream_seed": 710,
+    "training_randomization": null
+  },
+  "episodes_per_source": 200,
+  "mode": "formal",
+  "noisy_bc_std": 0.2,
+  "policy_device": "cpu",
+  "source_specs": [
+    {
+      "controller": {
+        "alignment_m": 0.018,
+        "behind_m": 0.055,
+        "hover_m": 0.08,
+        "position_gain": 20.0,
+        "push_ahead_m": 0.05
+      },
+      "model_seed": null,
+      "reset_start": 800000,
+      "source_policy": "expert"
+    },
+    {
+      "checkpoint": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/final-policy.pt",
+        "sha256": "ba236762612836210ffbcc40cb5819eda64caacc76a43aae86cd3acf70bed203"
+      },
+      "model_seed": 0,
+      "reset_start": 801000,
+      "source_policy": "bc"
+    },
+    {
+      "checkpoint": {
+        "path": "/opt/codex-resume/all-modules-v2/m3/learning-runtime-20261103/formal-bc-panel-001/bc-s0-20261103T051441Z-9d967bd7/final-policy.pt",
+        "sha256": "ba236762612836210ffbcc40cb5819eda64caacc76a43aae86cd3acf70bed203"
+      },
+      "model_seed": 0,
+      "reset_start": 802000,
+      "source_policy": "noisy_bc"
+    }
+  ]
+}

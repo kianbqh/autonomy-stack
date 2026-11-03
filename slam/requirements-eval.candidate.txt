@@ -1,0 +1,8 @@
+# Resolve/freeze complete hashes in a private environment after root releases M3.
+# These Python pins are candidates, not installed or compatibility-tested here.
+numpy==2.2.6
+scipy==1.15.3
+opencv-python-headless==4.11.0.86
+matplotlib==3.10.3
+evo==1.31.0
+pytest==8.3.5

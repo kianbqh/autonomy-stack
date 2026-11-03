@@ -1,0 +1,14 @@
+{
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "source_sha256": {
+    "package.json": "cc601ac42521b01f15095bc895974620edc28b215d3297f814135b39705c8ad2",
+    "src/main.tsx": "59db01cf7afc95b166e13ee9b85ee6e5420a23b7242cbdd47b35d3f3ad22398c",
+    "src/slam/KittiReplay.tsx": "5d7d3a81b2b51db396046dde366e51c6bb71261afc1930817871dd3a2b03055b",
+    "package-lock.json": "e96e4c56084770eecee1b58db1bc00c71006c14a9c0c0ccb68d1774a8a72393f",
+    "src/slam/entry.ts": "380f3142f62cbdf37b77d23e5528e3b56cfe7ee9113ee506324576a07c91be27",
+    "src/slam/replay.ts": "0b88d10059aaf227f1384daefa94f6b40ad8946b8e8990de366ce9ca447d7361"
+  },
+  "build_config": "API: configFile false, private outDir/cacheDir, existing react plugin",
+  "node": "G:\\ResumeProject\\.runtime\\consolidation\\f3\\tools\\node-v24.22.2-win-x64\\node.exe",
+  "typecheck_command": "tsc --noEmit --incremental false --project actual-viz/tsconfig.json"
+}

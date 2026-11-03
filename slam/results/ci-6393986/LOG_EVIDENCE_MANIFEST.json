@@ -1,0 +1,22 @@
+{
+  "run_id": 41448451512,
+  "head_sha": "6393986dae300d9fad4ea87bac21597401b1bd7c",
+  "ci_checkout_merge_sha": "70a76737d1ca59e4174c86e25a493b7f250b8569",
+  "artifact_zip_downloaded": false,
+  "files": {
+    "slam-python.raw.log": {
+      "bytes": 32169,
+      "sha256": "765dc0609c2cfb6bd920a892a404fcf2b304f7a22a18a987dae497316bc914fb",
+      "job_id": 125287354221,
+      "source": "https://api.github.com/repos/kianbqh/autonomy-stack/actions/jobs/125287354221/logs",
+      "format": "Exact connector-returned decoded text encoded as UTF-8; BOM/ANSI and LF retained"
+    },
+    "viewer.raw.log": {
+      "bytes": 42700,
+      "sha256": "3574854b1f3d6cbf655fad9bf72c68e3e4321a4daa32e9da8f84e8abc6c94059",
+      "job_id": 125287354391,
+      "source": "https://api.github.com/repos/kianbqh/autonomy-stack/actions/jobs/125287354391/logs",
+      "format": "Exact connector-returned decoded text encoded as UTF-8; BOM/ANSI and LF retained"
+    }
+  }
+}

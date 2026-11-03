@@ -1,0 +1,54 @@
+{
+  "mode": "formal",
+  "protocol": "m3-reduced-v2",
+  "env_id": "FetchPush-v4",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "horizon": 50,
+  "demo_budget": 100,
+  "fault_stream_seed": 710,
+  "dr_stream_seed": 720,
+  "training_randomization": {
+    "mass": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "friction": [
+      0.5,
+      1.0,
+      1.5
+    ],
+    "noise_sigma": [
+      0.0,
+      0.005,
+      0.01
+    ],
+    "latency": [
+      0,
+      1,
+      2
+    ],
+    "gain": [
+      0.8,
+      1.0,
+      1.2
+    ]
+  },
+  "condition": "dr",
+  "method": "bc_dr",
+  "root_review": "accepted in chat 2026-11-02 before formal outcomes",
+  "successful_demos": 100,
+  "max_attempts": 10000,
+  "reset_start": 0,
+  "expert": {
+    "behind_m": 0.055,
+    "hover_m": 0.08,
+    "position_gain": 20.0,
+    "alignment_m": 0.018,
+    "push_ahead_m": 0.05
+  }
+}

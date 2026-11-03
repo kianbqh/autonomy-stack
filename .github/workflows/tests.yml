@@ -72,3 +72,380 @@ jobs:
         with:
           name: browser-correctness-swiftshader-software
           path: viz/results/ci-software/
+  slam-python:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: .
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned evaluator test dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/slam-python-evidence"
+          python -m pip install -r slam/requirements-eval.candidate.txt
+          python -m pip freeze --all > "$RUNNER_TEMP/slam-python-evidence/dependency-freeze.txt"
+      - name: Trajectory, evo CLI, projection, replay and sensor fixtures
+        run: |
+          set -o pipefail
+          python -m pytest --capture=sys -q slam/tests --basetemp "$RUNNER_TEMP/slam-python-evidence/pytest" --junitxml "$RUNNER_TEMP/slam-python-evidence/junit.xml" 2>&1 | tee "$RUNNER_TEMP/slam-python-evidence/pytest.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: slam-python-synthetic-fixtures
+          path: ${{ runner.temp }}/slam-python-evidence/
+          retention-days: 14
+          if-no-files-found: error
+  slam-native-cpu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONPATH: .
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare isolated Python and compact CPU evidence
+        env:
+          SLAM_CI_ROOT: ${{ runner.temp }}/slam-native-cpu
+          TMPDIR: ${{ runner.temp }}/slam-native-cpu/tmp
+          M3_ORACLE_TEST_TMP: ${{ runner.temp }}/slam-native-cpu/oracle-mocks
+          M3_PIPELINE_TEST_TMP: ${{ runner.temp }}/slam-native-cpu/pipeline-mocks
+          PYTHONPYCACHEPREFIX: ${{ runner.temp }}/slam-native-cpu/pycache
+        run: |
+          printf '%s\n' \
+            "SLAM_CI_ROOT=$SLAM_CI_ROOT" \
+            "TMPDIR=$TMPDIR" \
+            "M3_ORACLE_TEST_TMP=$M3_ORACLE_TEST_TMP" \
+            "M3_PIPELINE_TEST_TMP=$M3_PIPELINE_TEST_TMP" \
+            "PYTHONPYCACHEPREFIX=$PYTHONPYCACHEPREFIX" \
+            >> "$GITHUB_ENV"
+          mkdir -p "$SLAM_CI_ROOT/evidence" "$TMPDIR"
+          python -m venv "$SLAM_CI_ROOT/venv"
+          echo "$SLAM_CI_ROOT/venv/bin" >> "$GITHUB_PATH"
+          echo "VIRTUAL_ENV=$SLAM_CI_ROOT/venv" >> "$GITHUB_ENV"
+      - name: Install Ubuntu CPU build prerequisites
+        run: |
+          set -o pipefail
+          sudo apt-get update 2>&1 | tee "$SLAM_CI_ROOT/evidence/apt-update.log"
+          sudo apt-get install --no-install-recommends -y cmake ninja-build g++ \
+            libboost-serialization-dev libboost-system-dev libboost-filesystem-dev \
+            libboost-thread-dev libboost-program-options-dev libboost-date-time-dev \
+            libboost-timer-dev libboost-chrono-dev libboost-regex-dev \
+            2>&1 | tee "$SLAM_CI_ROOT/evidence/apt-install.log"
+          python - <<'PY'
+          import json, os, pathlib, platform, subprocess, sys
+          out = pathlib.Path(os.environ["SLAM_CI_ROOT"]) / "evidence"
+          record = {"environment": "GitHub Actions ubuntu-24.04 CPU",
+                    "prerequisite_scope": "Ubuntu apt Boost; distinct from the local private Boost source build",
+                    "platform": platform.platform(), "python": sys.version,
+                    "logical_cpus": os.cpu_count(), "gpu_used": False,
+                    "github_sha": os.environ["GITHUB_SHA"],
+                    "run_id": os.environ["GITHUB_RUN_ID"],
+                    "run_attempt": os.environ["GITHUB_RUN_ATTEMPT"]}
+          for tool in ("c++", "cmake", "ninja"):
+              record[tool] = subprocess.check_output([tool, "--version"], text=True)
+          record["apt_packages"] = subprocess.check_output(
+              ["dpkg-query", "-W", "cmake", "ninja-build", "g++", "libboost*-dev"], text=True)
+          record["os_release"] = pathlib.Path("/etc/os-release").read_text()
+          (out / "environment.json").write_text(json.dumps(record, indent=2) + "\n")
+          PY
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/slam-native-cpu/sources
+          key: slam-four-sources-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('slam/dependencies.lock.json') }}
+      - name: Retrieve and hash-check the four pinned source archives
+        run: |
+          set -o pipefail
+          python slam/python/fetch_locked_sources.py \
+            --lock slam/dependencies.lock.json --output "$SLAM_CI_ROOT/sources" \
+            2>&1 | tee "$SLAM_CI_ROOT/evidence/fetch.log"
+      - name: Install hash-locked CPU evaluator wheels
+        run: |
+          set -o pipefail
+          python -m pip install --require-hashes --only-binary=:all: --no-input \
+            --report "$SLAM_CI_ROOT/evidence/eval-pip-report.json" \
+            -r slam/requirements-eval.lock.txt \
+            2>&1 | tee "$SLAM_CI_ROOT/evidence/eval-install.log"
+          python -m pip check 2>&1 | tee "$SLAM_CI_ROOT/evidence/pip-check.log"
+          python -m pip freeze --all > "$SLAM_CI_ROOT/evidence/dependency-freeze.txt"
+      - name: Parse, evaluate and replay synthetic contracts
+        run: |
+          set -o pipefail
+          python -m pytest --capture=sys -q slam/tests \
+            -o cache_dir="$SLAM_CI_ROOT/pytest-cache" \
+            --basetemp "$SLAM_CI_ROOT/pytest" \
+            --junitxml "$SLAM_CI_ROOT/evidence/python-junit.xml" \
+            2>&1 | tee "$SLAM_CI_ROOT/evidence/python-tests.log"
+      - name: Build pinned C++ dependencies and run native unit tests
+        run: |
+          set -o pipefail
+          python slam/python/build_native.py \
+            --lock slam/dependencies.lock.json --archives-dir "$SLAM_CI_ROOT/sources" \
+            --scratch-parent "$SLAM_CI_ROOT/builds" --repo-root "$GITHUB_WORKSPACE" \
+            --jobs 2 --cmake-policy-version-minimum 3.5 \
+            2>&1 | tee "$SLAM_CI_ROOT/evidence/build-launcher.log"
+      - name: Verify fifteen native tests and positive and negative CPU fixtures
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, pathlib, re, subprocess, sys, time
+          root = pathlib.Path(os.environ["SLAM_CI_ROOT"])
+          evidence = root / "evidence"
+          receipts = list((root / "builds").glob("native-build-*/build.json"))
+          if len(receipts) != 1:
+              raise RuntimeError("expected one native build receipt")
+          receipt = receipts[0]
+          build = json.loads(receipt.read_text())
+          binary = pathlib.Path(build["binary"])
+          if (build.get("status") != "complete" or build.get("verified") is not True
+                  or hashlib.sha256(binary.read_bytes()).hexdigest() != build["binary_sha256"]):
+              raise RuntimeError("native build receipt or binary identity mismatch")
+          if build["commands"][-1] != ["ctest", "--test-dir", str(binary.parent), "--output-on-failure"]:
+              raise RuntimeError("build did not finish with the actual CTest run")
+          last_test = binary.parent / "Testing/Temporary/LastTest.log"
+          actual_bytes = last_test.read_bytes()
+          actual_sha256 = hashlib.sha256(actual_bytes).hexdigest()
+          (evidence / "native-actual-LastTest.log").write_bytes(actual_bytes)
+          actual = actual_bytes.decode("utf-8")
+          listing = subprocess.check_output(
+              ["ctest", "--test-dir", str(binary.parent), "--show-only=json-v1"], text=True)
+          (evidence / "native-test-discovery.json").write_text(listing)
+          discovered = [test["name"] for test in json.loads(listing)["tests"]]
+          if len(discovered) != 15:
+              raise RuntimeError("expected exactly fifteen discovered native tests")
+          executed = re.findall(r"^\d+/15 Test: (.+)$", actual, flags=re.MULTILINE)
+          passed = len(re.findall(r"^Test Passed\.$", actual, flags=re.MULTILINE))
+          if (executed != discovered or passed != 15 or "Test Failed." in actual):
+              raise RuntimeError("actual CTest LastTest.log does not show fifteen passing tests")
+          # build_native marks complete only after this actual CTest subprocess exits zero.
+          (evidence / "native-unit-test-receipt.json").write_text(json.dumps({
+              "status": "passed", "executed_tests": executed, "passed": passed,
+              "ctest_command": build["commands"][-1], "ctest_exit_code": 0,
+              "actual_last_test_log_sha256": actual_sha256,
+              "build_receipt_sha256": hashlib.sha256(receipt.read_bytes()).hexdigest()}, indent=2) + "\n")
+          fixtures = root / "fixtures"
+          fixtures.mkdir()
+          summary = {"kind": "synthetic CPU unit fixtures; not KITTI measurements", "fixtures": []}
+          summary_path = evidence / "native-fixtures.json"
+          def save():
+              summary_path.write_text(json.dumps(summary, indent=2) + "\n")
+          def command(argv, log, expected):
+              started = time.monotonic()
+              with log.open("w") as stream:
+                  proc = subprocess.Popen(argv, stdout=stream, stderr=subprocess.STDOUT)
+                  record = {"command": argv, "pid": proc.pid, "returncode": None}
+                  summary["fixtures"][-1]["commands"].append(record)
+                  save()
+                  try:
+                      record["returncode"] = proc.wait(timeout=180)
+                  except subprocess.TimeoutExpired:
+                      proc.terminate()
+                      try:
+                          proc.wait(timeout=5)
+                      except subprocess.TimeoutExpired:
+                          proc.kill()
+                          proc.wait()
+                      record.update(timed_out=True, returncode=proc.returncode)
+                      save()
+                      raise
+              record["wall_s"] = time.monotonic() - started
+              save()
+              if record["returncode"] != expected:
+                  raise RuntimeError("unexpected fixture subprocess exit; retain " + str(log))
+          try:
+              for label, failure_frame in (("positive", None), ("negative-frame-2", 2)):
+                  fixture = fixtures / label
+                  item = {"label": label, "expected_failure_frame": failure_frame, "status": "started", "commands": []}
+                  summary["fixtures"].append(item)
+                  save()
+                  argv = [sys.executable, "slam/python/generate_fixture.py", "--output", str(fixture),
+                          "--base-config", "slam/configs/seq07.json"]
+                  if failure_frame is not None:
+                      argv += ["--degenerate-frame", str(failure_frame)]
+                  command(argv, evidence / (label + "-generate.log"), 0)
+                  command([sys.executable, "slam/python/run_experiment.py", "--config", str(fixture / "config.json"),
+                           "--input-manifest", str(fixture / "input-manifest.json"), "--binary", str(binary),
+                           "--build-receipt", str(receipt), "--repo-root", os.environ["GITHUB_WORKSPACE"],
+                           "--output-parent", str(fixture / "runs")],
+                          evidence / (label + "-run.log"), 0 if failure_frame is None else 1)
+                  runs = list((fixture / "runs").glob("slam-*"))
+                  if len(runs) != 1:
+                      raise RuntimeError("expected one immutable fixture run")
+                  run = runs[0]
+                  result = json.loads((run / "run.json").read_text())
+                  native = run / "native"
+                  if failure_frame is None:
+                      if (result["status"] != "complete" or result["native_exit_code"] != 0
+                              or result["native_summary"]["frames"] != 3):
+                          raise RuntimeError("positive fixture was not completed")
+                  else:
+                      failure = json.loads((native / "failure.json").read_text())
+                      if (result["status"] != "failed" or result["native_exit_code"] != 1
+                              or failure["frame"] != failure_frame
+                              or failure["accepted_prefix_frames"] != failure_frame
+                              or failure["message"] != "registration_failed:degenerate_normal_equations"
+                              or failure["failed_frame_pose"] is not None
+                              or failure["optimized_trajectory"] is not None):
+                          raise RuntimeError("negative fixture failure contract mismatch")
+                      for name in ("poses_odom.txt", "poses_slam.txt", "native_summary.json", "timestamps.txt"):
+                          if (native / name).exists():
+                              raise RuntimeError("negative fixture incorrectly emitted a final trajectory")
+                      for name in ("poses_odom_partial.txt", "timestamps_partial.txt"):
+                          if len((native / name).read_text().splitlines()) != failure_frame:
+                              raise RuntimeError("negative fixture accepted-prefix length mismatch")
+                      item["failure"] = failure
+                  item.update(status="passed", run_receipt=str(run / "run.json"), native_exit_code=result["native_exit_code"])
+                  save()
+              summary["status"] = "passed"
+          except BaseException as error:
+              summary.update(status="failed", failure={"type": type(error).__name__, "message": str(error)})
+              raise
+          finally:
+              save()
+          PY
+      - name: Collect compact receipts and bounded diagnostic logs
+        if: always()
+        env:
+          CI_JOB_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, pathlib
+          root = pathlib.Path(os.environ["SLAM_CI_ROOT"])
+          evidence = root / "evidence"
+          evidence.mkdir(parents=True, exist_ok=True)
+          copied = []
+          def retain(source, relative, tail=False):
+              if not source.is_file():
+                  return
+              data = source.read_bytes()
+              original = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+              limit = 256 * 1024
+              if len(data) > limit and not tail:
+                  copied.append({"source": str(source.relative_to(root)), "omitted_oversized": original})
+                  return
+              retained = data[-limit:] if tail else data
+              target = evidence / relative
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(retained)
+              copied.append({"source": str(source.relative_to(root)), "artifact": relative,
+                             "original": original, "retained_bytes": len(retained),
+                             "tail_only": len(retained) < len(data)})
+          for build in sorted((root / "builds").glob("native-build-*")):
+              retain(build / "build.json", "native/build.json")
+              retain(build / "commands.log", "native/commands-tail.log", tail=True)
+              retain(build / "slam-build/Testing/Temporary/LastTest.log", "native/LastTest.log", tail=True)
+              for log in build.glob("*-build/CMakeFiles/CMakeConfigureLog.yaml"):
+                  retain(log, "native/" + log.parents[1].name + "-configure-tail.log", tail=True)
+          for source in sorted((root / "fixtures").rglob("*")):
+              if "dataset" not in source.parts and source.suffix in (".json", ".jsonl", ".txt", ".csv", ".cfg"):
+                  retain(source, source.relative_to(root).as_posix())
+          for source in sorted((root / "pytest").rglob("*")):
+              if source.name in ("crosscheck.json", "100m-pair-selection.json") or source.name.endswith((".stdout.txt", ".stderr.txt")):
+                  retain(source, source.relative_to(root).as_posix(), tail=source.suffix == ".txt")
+          for log in evidence.glob("*.log"):
+              data = log.read_bytes()
+              if len(data) > 256 * 1024:
+                  copied.append({"artifact": log.name, "original": {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}, "tail_only": True})
+                  log.write_bytes(data[-256 * 1024:])
+          manifest = {"job_status_before_collection": os.environ["CI_JOB_STATUS"],
+                      "scope": "CPU unit fixtures and evaluator contracts; no KITTI sequence, GPU, or official oracle run",
+                      "bounded_collection": copied, "files": {}}
+          for source in sorted(evidence.rglob("*")):
+              if source.is_file():
+                  data = source.read_bytes()
+                  manifest["files"][source.relative_to(evidence).as_posix()] = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+          (evidence / "artifact-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: slam-native-cpu-unit-fixtures
+          path: ${{ runner.temp }}/slam-native-cpu/evidence/
+          retention-days: 14
+          if-no-files-found: error
+  m3-learning-cpu-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONPATH: manipulation:world_model
+      PYTHONDONTWRITEBYTECODE: '1'
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      M3_RUN_RUNTIME_TESTS: '0'
+      M3_WORLD_MODEL_RUNTIME_TESTS: '0'
+      M3_WORLD_MODEL_SIM_TESTS: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-m3-ci.lock
+      - name: Create isolated CPU package environment
+        env:
+          M3_CI_ROOT: ${{ runner.temp }}/m3-learning-cpu
+        run: |
+          set -euo pipefail
+          mkdir -p "$M3_CI_ROOT/evidence" "$M3_CI_ROOT/tmp"
+          python -m venv "$M3_CI_ROOT/venv"
+          printf '%s\n' \
+            "M3_CI_ROOT=$M3_CI_ROOT" \
+            "M3_CI_PYTHON=$M3_CI_ROOT/venv/bin/python" \
+            "PIP_CACHE_DIR=$M3_CI_ROOT/pip-cache" \
+            "TMPDIR=$M3_CI_ROOT/tmp" \
+            "TORCH_HOME=$M3_CI_ROOT/torch-cache" \
+            "MPLCONFIGDIR=$M3_CI_ROOT/matplotlib-cache" >> "$GITHUB_ENV"
+      - name: Install actual hash-locked CPU dependencies
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" -m pip install --require-hashes --only-binary=:all: --no-input \
+            --report "$M3_CI_ROOT/evidence/pip-install-report.json" -r requirements-m3-ci.lock \
+            2>&1 | tee "$M3_CI_ROOT/evidence/install.log"
+          "$M3_CI_PYTHON" -m pip check 2>&1 | tee "$M3_CI_ROOT/evidence/pip-check.log"
+          "$M3_CI_PYTHON" -m pip freeze --all > "$M3_CI_ROOT/evidence/dependency-freeze.txt"
+      - name: Assert actual CPU-only package identity
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" scripts/check_m3_cpu_environment.py \
+            --output "$M3_CI_ROOT/evidence/package-identity.json"
+      - name: Protocol, receipt, sensor timeline and geometry unit fixtures
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" -m unittest discover -s manipulation/tests -p 'test_*.py' -v \
+            2>&1 | tee "$M3_CI_ROOT/evidence/manipulation-unit-tests.log"
+          "$M3_CI_PYTHON" -m unittest discover -s world_model/tests -p test_pure.py -v \
+            2>&1 | tee "$M3_CI_ROOT/evidence/world-model-protocol-tests.log"
+      - name: Bounded CPU numerical fixtures (synthetic gradients and toy CEM)
+        env:
+          M3_WORLD_MODEL_RUNTIME_TESTS: '1'
+          M3_WORLD_MODEL_SIM_TESTS: '0'
+        run: |
+          set -euo pipefail
+          "$M3_CI_PYTHON" -m unittest discover -s world_model/tests -p test_runtime.py -v \
+            2>&1 | tee "$M3_CI_ROOT/evidence/world-model-cpu-fixtures.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m3-learning-cpu-unit-fixtures
+          path: ${{ runner.temp }}/m3-learning-cpu/evidence/
+          retention-days: 14
+          if-no-files-found: error

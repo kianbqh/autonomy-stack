@@ -1,0 +1,11 @@
+.venv
+__pycache__/
+*.pyc
+*.npz
+*.pt
+*.pth
+*.onnx
+artifacts/
+data/
+cache/
+runs/

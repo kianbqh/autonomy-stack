@@ -12,3 +12,18 @@ html, body, #root { margin: 0; height: 100%; background: #0e1116; color: #e5e7eb
 .status.collision { border-color: #f87171; background: #331b22; }
 .status.success { border-color: #4ade80; }
 .panel select { max-width: 310px; }
+
+/* Recorded SLAM route only; existing safety/benchmark selectors stay unchanged. */
+.slam-shell { box-sizing: border-box; min-height: 100%; max-width: 1440px; margin: 0 auto; padding: 16px; }
+.slam-shell__nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.slam-shell__nav h1 { margin: 0; font-size: 20px; }
+.slam-shell a { color: #93c5fd; }
+.slam-shell p { line-height: 1.55; }
+.slam-shell__message, .slam-shell [role=alert] { padding: 12px; border: 1px solid #784936; border-radius: 6px; background: #271e1c; }
+.slam-shell button, .slam-shell select { margin: 4px 8px 4px 0; padding: 5px 8px; color: inherit; background: #172033; border: 1px solid #475569; border-radius: 4px; font: inherit; }
+.slam-shell input[type=range] { width: min(55vw, 640px); max-width: 100%; vertical-align: middle; margin-right: 10px; }
+.slam-shell table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 12px 0; }
+.slam-shell th, .slam-shell td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid #334155; }
+.slam-shell small { display: block; color: #a1aab8; line-height: 1.5; margin-top: 12px; }
+.slam-shell :focus-visible { outline: 2px solid #93c5fd; outline-offset: 3px; }
+@media (max-width: 600px) { .slam-shell { padding: 10px; } .slam-shell input[type=range] { display: block; width: 100%; margin: 8px 0; } }

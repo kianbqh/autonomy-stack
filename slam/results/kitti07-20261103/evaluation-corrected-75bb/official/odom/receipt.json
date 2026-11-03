@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "passed": true,
+  "started_utc": "2026-11-03T05:44:24.885516+00:00",
+  "python_executable": "/opt/codex-resume/all-modules-v2/m3/slam/eval-venv/bin/python",
+  "context": {
+    "kind": "kitti_full",
+    "sequence": "07",
+    "expected_frames": 1101,
+    "git_sha": "75bb06e7b114a2f004d0d8c44348864e728095f8",
+    "config_sha256": "ee689925bcecd2ee7c71817e47903a2c677c7c8dd09684ef2c7e5067d9d6c5da",
+    "native_run_sha256": "aba5fe861b0cb1284fdbbd026f397afc1e10f34472f6195d9a6b33e804ea6209",
+    "evaluation_source_sha256": "968c87bb37d9d0ca7a35f6df1ab96ea22281a1ab7ef984d069909ac62b9648a6"
+  },
+  "returncode": 0,
+  "timed_out": false,
+  "timeout_s": 60.0,
+  "expected_binary_sha256": "8ed947db73d62909a4bbda75e2475f9e147928390ab9f621b7f7a1127e41bbd7",
+  "expected_binary_bytes": 68856,
+  "official_source_location": "external private GPL oracle; no vendor source included in this adapter",
+  "inputs": {
+    "truth": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/poses/07.txt",
+      "bytes": 176684,
+      "sha256": "7eb020916003a09a6b9c2744748eaadef54b96f6df22ee703a05a1d19bfe913a"
+    },
+    "prediction": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/poses_odom.txt",
+      "bytes": 271681,
+      "sha256": "4230ccc6ad380cc5c374317ff4f7ed635222ae23b857e83bef504aafe3111c87"
+    }
+  },
+  "binary": {
+    "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam/metric-review/official-oracle/official_oracle",
+    "bytes": 68856,
+    "sha256": "8ed947db73d62909a4bbda75e2475f9e147928390ab9f621b7f7a1127e41bbd7"
+  },
+  "own_comparison": {
+    "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/own-comparison.json",
+    "bytes": 192298,
+    "sha256": "1a793474f8be6053589a2fc0110155a29ae7e5a3e9f43b629b9a3e16f4eb76c1"
+  },
+  "command": [
+    "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam/metric-review/official-oracle/official_oracle",
+    "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/poses/07.txt",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/poses_odom.txt",
+    "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom"
+  ],
+  "inputs_after": {
+    "truth": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/data-completions/seq07-authoritative-calib-20261103T042102Z-8c8e2afe/verified-data/dataset/poses/07.txt",
+      "bytes": 176684,
+      "sha256": "7eb020916003a09a6b9c2744748eaadef54b96f6df22ee703a05a1d19bfe913a"
+    },
+    "prediction": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-phases/run-20261103T052935Z-3fc15573/outputs/slam-20261103T052937Z-652eb14c/native/poses_odom.txt",
+      "bytes": 271681,
+      "sha256": "4230ccc6ad380cc5c374317ff4f7ed635222ae23b857e83bef504aafe3111c87"
+    }
+  },
+  "binary_after": {
+    "path": "/mnt/g/ResumeProject/.runtime/all-modules-v2/m3/slam/metric-review/official-oracle/official_oracle",
+    "bytes": 68856,
+    "sha256": "8ed947db73d62909a4bbda75e2475f9e147928390ab9f621b7f7a1127e41bbd7"
+  },
+  "inputs_unchanged_after_invocation": true,
+  "comparison": {
+    "passed": true,
+    "frames": 1101,
+    "endpoint_rows": 888,
+    "segments": 317,
+    "distance_bits_exact": true,
+    "endpoint_and_segment_order_exact": true,
+    "atol": 1e-06,
+    "rtol": 1e-06,
+    "tolerance_rule": "abs(actual-expected) <= atol + rtol*abs(expected)",
+    "exact_segment_scalars": {
+      "translation_ratio": 317,
+      "rotation_rad_per_m": 317
+    },
+    "maximum_abs_scalar_difference": {
+      "translation_ratio": 0.0,
+      "rotation_rad_per_m": 0.0
+    },
+    "original_official_saveStats_means": {
+      "translation_ratio_mean": 0.006881891284137964,
+      "rotation_rad_per_m_mean": 8.905540016712621e-05
+    },
+    "aggregate_abs_difference": {
+      "translation_ratio_mean": 0.0,
+      "rotation_rad_per_m_mean": 0.0
+    }
+  },
+  "artifacts": {
+    "distances.tsv": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/distances.tsv",
+      "bytes": 28502,
+      "sha256": "2b51a8f5c275a9305ca46579a3002d36784180b9e6c71139a94ef1e140d00caa"
+    },
+    "endpoints.tsv": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/endpoints.tsv",
+      "bytes": 10124,
+      "sha256": "eec3b6e378007214d157c246fa9a2a680edd5cadf16e82f75967c30828543b00"
+    },
+    "errors.tsv": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/errors.tsv",
+      "bytes": 22911,
+      "sha256": "98f135690f6673d66824aa79c157bc4d8d995563d9fbf610a0093c20b9cba84d"
+    },
+    "stats-exact.tsv": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/stats-exact.tsv",
+      "bytes": 154,
+      "sha256": "4d8f3985e4932ff41e8945c434260c1896578b509c9abdc1a4c1459852c496a5"
+    },
+    "stats.txt": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/stats.txt",
+      "bytes": 18,
+      "sha256": "f72d09c465908216ae6a2a5226530cd06fbfe517175d84c45e8d5431957f5c05"
+    },
+    "stdout.bin": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/stdout.bin",
+      "bytes": 25,
+      "sha256": "a79b583b5c8fe10825c5c80c0c7ee5c0230849133025180c368994aade0b3e53"
+    },
+    "stderr.bin": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "own-comparison.json": {
+      "path": "/opt/codex-resume/all-modules-v2/m3/slam/real07-evaluation-corrections/eval75bb-20261103T054420Z-cd5179f7/outputs/evaluation-20261103T054421Z-ecc51025/official/odom/own-comparison.json",
+      "bytes": 192298,
+      "sha256": "1a793474f8be6053589a2fc0110155a29ae7e5a3e9f43b629b9a3e16f4eb76c1"
+    }
+  },
+  "finished_utc": "2026-11-03T05:44:24.979701+00:00",
+  "wall_s": 0.09420416099601425
+}

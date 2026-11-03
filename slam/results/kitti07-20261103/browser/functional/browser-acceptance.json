@@ -1,0 +1,447 @@
+{
+  "status": "passed",
+  "utc": "2026-11-03T05:39:12.182Z",
+  "command": [
+    "G:\\ResumeProject\\.runtime\\consolidation\\f3\\tools\\node-v24.22.2-win-x64\\node.exe",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\browser-acceptance.candidate.mjs",
+    "--base-url",
+    "http://127.0.0.1:2816/",
+    "--replay-json",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\full07\\replay.json",
+    "--run-root",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\full07\\run",
+    "--truth",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\full07\\truth.txt",
+    "--real-failed-json",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\real-kitti-failed27\\replay.json",
+    "--real-failed-run-root",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\real-kitti-failed27\\run",
+    "--real-failed-truth",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\real-kitti-failed27\\truth.txt",
+    "--real-failed-sha",
+    "ca9cd1e7a172a080a8715a220422d56d116a5350",
+    "--negative-json",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\synthetic-negative\\replay.json",
+    "--negative-run-root",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\synthetic-negative\\run",
+    "--negative-sha",
+    "ca9cd1e7a172a080a8715a220422d56d116a5350",
+    "--repo-root",
+    "G:\\ResumeProject\\platforms\\autonomy-stack",
+    "--viz-root",
+    "G:\\ResumeProject\\platforms\\autonomy-stack\\viz",
+    "--browser-executable",
+    "G:\\ResumeProject\\.runtime\\consolidation\\f3\\browsers\\chromium-1248\\chrome-win64\\chrome.exe",
+    "--expected-sha",
+    "61d485e79d8f1cd4ef5791f148c853555f4db390",
+    "--output",
+    "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\browser-attempt1"
+  ],
+  "node": "v24.22.2",
+  "scope": "Recorded SLAM functional browser acceptance; headless SwiftShader; shared host; no FPS or performance claim",
+  "headless": true,
+  "renderer_mode": "software SwiftShader",
+  "cases": [
+    {
+      "name": "full07",
+      "file": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\full07\\replay.json",
+      "sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122",
+      "kind": "kitti_full",
+      "data_class": "complete recorded KITTI",
+      "native_git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+      "status": "passed",
+      "accepted_frames": 1101,
+      "failure": null,
+      "expected_frames": 1101,
+      "all_original_ids_times_poses_match_native": true,
+      "source_artifact_hashes_match": true,
+      "gt_source_sha256": "7eb020916003a09a6b9c2744748eaadef54b96f6df22ee703a05a1d19bfe913a",
+      "truth_normalization_matches": true,
+      "loop_counts": {
+        "accepted": 2,
+        "rejected": 1852,
+        "temporal": 4581
+      },
+      "checks": {
+        "exact_browser_json_all_original_frames": true,
+        "actual_3d_camera0_track_buffers": true,
+        "actual_loop_decisions_and_reasons": true
+      },
+      "url": "http://127.0.0.1:2816/?view=slam&replay=%2Fdata%2Fslam%2Ffull07%2Freplay.json",
+      "served_sha256": "22789ab85de9a5fbf4100f5896e743d7c8efb1b99a37383af4ef325d3ae86122",
+      "status_text": "Completed recorded run · 1101/1101 original frames · optimization available",
+      "renderer": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1408,
+        "height": 480
+      },
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "tracks": {
+        "odom": {
+          "points": 1101,
+          "actual_float32_xyz_upload_matches": true
+        },
+        "optimized": {
+          "points": 1101,
+          "actual_float32_xyz_upload_matches": true
+        },
+        "truth": {
+          "points": 1101,
+          "actual_float32_xyz_upload_matches": true
+        }
+      },
+      "scrub": [
+        {
+          "key": "Home",
+          "frame_id": 0,
+          "raw_timestamp_s": 0,
+          "display": "Frame 0 · original timestamp 0.000000 s",
+          "slider_value": 0
+        },
+        {
+          "key": "End",
+          "frame_id": 1100,
+          "raw_timestamp_s": 114.3296,
+          "display": "Frame 1100 · original timestamp 114.329600 s",
+          "slider_value": 114.3296
+        }
+      ],
+      "visible_decision_rows": [
+        {
+          "id": 6411,
+          "cells": [
+            "1072 → 27",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6412,
+          "cells": [
+            "1072 → 564",
+            "rejected",
+            "descriptor_ambiguous_yaw"
+          ]
+        },
+        {
+          "id": 6419,
+          "cells": [
+            "1077 → 23",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6420,
+          "cells": [
+            "1077 → 31",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6421,
+          "cells": [
+            "1077 → 18",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6422,
+          "cells": [
+            "1077 → 27",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6423,
+          "cells": [
+            "1077 → 34",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6430,
+          "cells": [
+            "1082 → 31",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6431,
+          "cells": [
+            "1082 → 23",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6432,
+          "cells": [
+            "1082 → 34",
+            "rejected",
+            "descriptor_ambiguous_yaw"
+          ]
+        },
+        {
+          "id": 6433,
+          "cells": [
+            "1082 → 394",
+            "rejected",
+            "descriptor_gate"
+          ]
+        },
+        {
+          "id": 6434,
+          "cells": [
+            "1082 → 18",
+            "rejected",
+            "descriptor_gate"
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "mode": "accepted",
+          "recorded_edges": 2,
+          "buffer_matches": true
+        },
+        {
+          "mode": "rejected",
+          "recorded_edges": 1852,
+          "buffer_matches": true
+        },
+        {
+          "mode": "temporal",
+          "recorded_edges": 4581,
+          "buffer_matches": true
+        },
+        {
+          "mode": "none",
+          "recorded_edges": 0,
+          "buffer_matches": "No such edges in actual data; none manufactured"
+        }
+      ],
+      "page_errors": []
+    },
+    {
+      "name": "real-kitti-failed27",
+      "file": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\real-kitti-failed27\\replay.json",
+      "sha256": "f34560c6ec11796ff04e6f74bc756e1f3cb6ae9364d4c9b449cdfa87fd6b1b30",
+      "kind": "kitti_full",
+      "data_class": "real recorded KITTI failed prefix",
+      "native_git_sha": "ca9cd1e7a172a080a8715a220422d56d116a5350",
+      "status": "passed",
+      "accepted_frames": 27,
+      "failure": {
+        "status": "failed",
+        "frame": 27,
+        "timestamp_s": 2.80089,
+        "accepted_prefix_frames": 27,
+        "expected_frames": 1101,
+        "message": "registration_failed:invalid_or_empty_icp_input",
+        "failed_frame_pose": null,
+        "optimized_trajectory": null
+      },
+      "expected_frames": 1101,
+      "all_original_ids_times_poses_match_native": true,
+      "source_artifact_hashes_match": true,
+      "gt_source_sha256": "7eb020916003a09a6b9c2744748eaadef54b96f6df22ee703a05a1d19bfe913a",
+      "truth_normalization_matches": true,
+      "loop_counts": {
+        "accepted": 0,
+        "rejected": 0,
+        "temporal": 6
+      },
+      "checks": {
+        "exact_browser_json_all_original_frames": true,
+        "actual_3d_camera0_track_buffers": true,
+        "actual_loop_decisions_and_reasons": true
+      },
+      "url": "http://127.0.0.1:2816/?view=slam&replay=%2Fdata%2Fslam%2Freal-kitti-failed27%2Freplay.json",
+      "served_sha256": "f34560c6ec11796ff04e6f74bc756e1f3cb6ae9364d4c9b449cdfa87fd6b1b30",
+      "status_text": "Failed attempt; accepted prefix only · 27/1101 original frames · optimization unavailable",
+      "failure_text": "Failure: registration_failed:invalid_or_empty_icp_input. Failed frame: 27. Red marker = last accepted location; the failed-frame pose is unknown.",
+      "renderer": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1408,
+        "height": 480
+      },
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "tracks": {
+        "odom": {
+          "points": 27,
+          "actual_float32_xyz_upload_matches": true
+        },
+        "optimized": {
+          "points": 0,
+          "available": false
+        },
+        "truth": {
+          "points": 27,
+          "actual_float32_xyz_upload_matches": true
+        }
+      },
+      "scrub": [
+        {
+          "key": "Home",
+          "frame_id": 0,
+          "raw_timestamp_s": 0,
+          "display": "Frame 0 · original timestamp 0.000000 s",
+          "slider_value": 0
+        },
+        {
+          "key": "End",
+          "frame_id": 26,
+          "raw_timestamp_s": 2.697329,
+          "display": "Frame 26 · original timestamp 2.697329 s",
+          "slider_value": 2.697329
+        }
+      ],
+      "visible_decision_rows": [],
+      "layers": [
+        {
+          "mode": "accepted",
+          "recorded_edges": 0,
+          "buffer_matches": "No such edges in actual data; none manufactured"
+        },
+        {
+          "mode": "rejected",
+          "recorded_edges": 0,
+          "buffer_matches": "No such edges in actual data; none manufactured"
+        },
+        {
+          "mode": "temporal",
+          "recorded_edges": 6,
+          "buffer_matches": true
+        },
+        {
+          "mode": "none",
+          "recorded_edges": 0,
+          "buffer_matches": "No such edges in actual data; none manufactured"
+        }
+      ],
+      "page_errors": []
+    },
+    {
+      "name": "synthetic-negative",
+      "file": "G:\\ResumeProject\\.runtime\\all-modules-v2\\m3\\replay-acceptance-20261103\\execution-20261103-3case\\inputs\\synthetic-negative\\replay.json",
+      "sha256": "c603681b444ef5140453bbd0d5c1f7d6ef9aa8537f49b6dea3501566f18ae8b3",
+      "kind": "synthetic_unit_fixture",
+      "data_class": "synthetic failed fixture",
+      "native_git_sha": "ca9cd1e7a172a080a8715a220422d56d116a5350",
+      "status": "passed",
+      "accepted_frames": 2,
+      "failure": {
+        "status": "failed",
+        "frame": 2,
+        "timestamp_s": 0.21,
+        "accepted_prefix_frames": 2,
+        "expected_frames": 3,
+        "message": "registration_failed:degenerate_normal_equations",
+        "failed_frame_pose": null,
+        "optimized_trajectory": null
+      },
+      "expected_frames": 3,
+      "all_original_ids_times_poses_match_native": true,
+      "source_artifact_hashes_match": true,
+      "gt_source_sha256": null,
+      "truth_normalization_matches": "No truth in actual export",
+      "loop_counts": {
+        "accepted": 0,
+        "rejected": 0,
+        "temporal": 1
+      },
+      "checks": {
+        "exact_browser_json_all_original_frames": true,
+        "actual_3d_camera0_track_buffers": true,
+        "actual_loop_decisions_and_reasons": true
+      },
+      "url": "http://127.0.0.1:2816/?view=slam&replay=%2Fdata%2Fslam%2Fsynthetic-negative%2Freplay.json",
+      "served_sha256": "c603681b444ef5140453bbd0d5c1f7d6ef9aa8537f49b6dea3501566f18ae8b3",
+      "status_text": "Failed attempt; accepted prefix only · 2/3 original frames · optimization unavailable",
+      "failure_text": "Failure: registration_failed:degenerate_normal_equations. Failed frame: 2. Red marker = last accepted location; the failed-frame pose is unknown.",
+      "renderer": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "vendor": "Google Inc. (Google)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1408,
+        "height": 480
+      },
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "tracks": {
+        "odom": {
+          "points": 2,
+          "actual_float32_xyz_upload_matches": true
+        },
+        "optimized": {
+          "points": 0,
+          "available": false
+        },
+        "truth": {
+          "points": 0,
+          "available": false
+        }
+      },
+      "scrub": [
+        {
+          "key": "Home",
+          "frame_id": 0,
+          "raw_timestamp_s": 0,
+          "display": "Frame 0 · original timestamp 0.000000 s",
+          "slider_value": 0
+        },
+        {
+          "key": "End",
+          "frame_id": 1,
+          "raw_timestamp_s": 0.08,
+          "display": "Frame 1 · original timestamp 0.080000 s",
+          "slider_value": 0.08
+        }
+      ],
+      "visible_decision_rows": [],
+      "layers": [
+        {
+          "mode": "accepted",
+          "recorded_edges": 0,
+          "buffer_matches": "No such edges in actual data; none manufactured"
+        },
+        {
+          "mode": "rejected",
+          "recorded_edges": 0,
+          "buffer_matches": "No such edges in actual data; none manufactured"
+        },
+        {
+          "mode": "temporal",
+          "recorded_edges": 1,
+          "buffer_matches": true
+        },
+        {
+          "mode": "none",
+          "recorded_edges": 0,
+          "buffer_matches": "No such edges in actual data; none manufactured"
+        }
+      ],
+      "page_errors": []
+    }
+  ],
+  "errors": [],
+  "git_sha": "61d485e79d8f1cd4ef5791f148c853555f4db390",
+  "ui_source_sha256": {
+    "src/main.tsx": "59db01cf7afc95b166e13ee9b85ee6e5420a23b7242cbdd47b35d3f3ad22398c",
+    "src/slam/entry.ts": "380f3142f62cbdf37b77d23e5528e3b56cfe7ee9113ee506324576a07c91be27",
+    "src/slam/replay.ts": "0b88d10059aaf227f1384daefa94f6b40ad8946b8e8990de366ce9ca447d7361",
+    "src/slam/KittiReplay.tsx": "5d7d3a81b2b51db396046dde366e51c6bb71261afc1930817871dd3a2b03055b"
+  },
+  "camera0_heading_source_contract": "marker model = diag(1,-1,-1,1) * complete row-major camera0 SE3; source hashes retained",
+  "browser_version": "156.0.8078.4",
+  "finished_utc": "2026-11-03T05:40:57.566Z"
+}
